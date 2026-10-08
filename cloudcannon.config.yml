@@ -39,8 +39,6 @@ collections_config:
     preview:
       text:
         - key: title
-      subtext:
-        - template: '/[slug]/'
   pages_en:
     path: pages/en
     url: '/en/[full_slug]/'

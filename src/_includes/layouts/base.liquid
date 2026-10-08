@@ -36,6 +36,10 @@
 <script>
   // Édition visuelle CloudCannon : chargé uniquement dans l'éditeur, jamais sur le site public.
   if (window.inEditorMode) {
+    // Dans l'éditeur, chaque morceau d'un titre est réaffiché sans son espace de liaison (partials/hl.liquid) : on le rétablit.
+    var s = document.createElement("style");
+    s.textContent = "editable-text[data-esp-apres]::after{content:' '} editable-text[data-esp-avant]::before{content:' '}";
+    document.head.appendChild(s);
     import("/register-components.js").catch((error) => {
       console.warn("Failed to load CloudCannon component registration:", error);
     });
