@@ -1,0 +1,14 @@
+---
+# Règles de routage de l'hébergement CloudCannon (redirections 301 des anciennes adresses, page 404).
+# Référence : https://cloudcannon.com/documentation/articles/routing-reference/
+permalink: /_cloudcannon/routing.json
+eleventyExcludeFromCollections: true
+---
+{
+  "routes": [
+{%- for r in redirections %}
+    { "from": "{{ r.from }}", "to": "{{ r.to }}", "status": 301 },
+{%- endfor %}
+    { "from": "/.*", "to": "/404.html", "status": 404, "forced": false }
+  ]
+}

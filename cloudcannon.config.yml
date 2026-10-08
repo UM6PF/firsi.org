@@ -1,0 +1,385 @@
+# Configuration CloudCannon du site FIRSI.
+# Référence : https://cloudcannon.com/documentation/developer-reference/configuration-file/
+# Principe : l'équipe communication modifie uniquement le contenu (textes, images, ordre des éléments).
+# Les gabarits (src/_includes), le CSS et les fichiers techniques ne sont pas proposés à l'édition.
+
+source: src
+timezone: Africa/Casablanca
+
+paths:
+  static: ''
+  uploads: assets/img/uploads
+
+commit_templates:
+  - label: Message par défaut
+    template_string: '[default_commit_message]'
+  - label: Message personnalisé
+    template_string: '{message}'
+
+editor:
+  default_path: /
+
+collections_config:
+  # Pages fixes : modifiables, mais ni créées, ni supprimées, ni renommées.
+  pages_fr:
+    path: pages/fr
+    url: '/[full_slug]/'
+    name: Pages (français)
+    singular_name: page
+    icon: description
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+    _enabled_editors:
+      - visual
+    sort_options:
+      - key: title
+        order: ascending
+        label: Titre
+    preview:
+      text:
+        - key: title
+      subtext:
+        - template: '/[slug]/'
+  pages_en:
+    path: pages/en
+    url: '/en/[full_slug]/'
+    name: Pages (anglais)
+    singular_name: page
+    icon: translate
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+    _enabled_editors:
+      - visual
+    sort_options:
+      - key: title
+        order: ascending
+        label: Titre
+    preview:
+      text:
+        - key: title
+
+  # Actualités et événements : une fiche par article ; l'équipe peut en créer et en supprimer.
+  actualites_fr:
+    path: actualites/fr
+    url: '/actualites/[slug]/'
+    name: Actualités (français)
+    singular_name: actualité
+    icon: newspaper
+    disable_add_folder: true
+    _enabled_editors:
+      - visual
+      - content
+    create:
+      path: '[relative_base_path]/{titre|deburr|slugify}.md'
+    add_options:
+      - name: Nouvelle actualité
+        icon: post_add
+        schema: default
+    schemas:
+      default:
+        path: .cloudcannon/schemas/actualite.md
+        name: Nouvelle actualité
+        reorder_inputs: true
+        remove_extra_inputs: false
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+    _inputs: &inputs_actu
+      titre:
+        type: text
+        label: Titre
+      date:
+        type: date
+        label: Date de publication
+        comment: Sert à classer les actualités (les plus récentes en premier).
+        instance_value: NOW
+      date_affichee:
+        type: text
+        label: Date affichée sur l'article (facultatif)
+        comment: 'Laisser vide pour l''écrire automatiquement depuis la date de publication (ex. 26 Février 2026).'
+      date_courte:
+        type: text
+        label: Date affichée sur les cartes (facultatif)
+        comment: 'Laisser vide pour l''écrire automatiquement (ex. 26 Févr 2026).'
+      categorie:
+        type: select
+        label: Catégorie
+        options:
+          values:
+            - { id: portraits, name: Portraits }
+            - { id: bourses, name: Bourses }
+            - { id: evenements, name: Événements }
+            - { id: rapports, name: Rapports }
+          value_key: id
+          preview:
+            text:
+              - key: name
+      resume:
+        type: textarea
+        label: Résumé (Google et partages)
+        options:
+          max_length: 170
+      pdf:
+        type: file
+        label: Document PDF (rapports)
+        options:
+          paths:
+            uploads: assets/docs
+          accepts_mime_types:
+            - application/pdf
+      a_la_une:
+        type: switch
+        label: Afficher sur la page d'accueil
+      ordre_une:
+        type: number
+        label: Position sur la page d'accueil (1 = grande carte, puis 2, 3, 4)
+      brouillon:
+        type: switch
+        label: Brouillon (non affiché dans la liste des actualités)
+      titre_une:
+        type: text
+        label: Titre court pour la page d'accueil (facultatif)
+      evenement:
+        type: object
+        label: Informations de l'événement (catégorie Événements)
+      evenement.date_debut:
+        type: date
+        label: Date de début
+      evenement.date_fin:
+        type: date
+        label: Date de fin
+      evenement.lieu:
+        type: text
+        label: Lieu
+      evenement.lien_inscription:
+        type: url
+        label: Lien d'inscription
+    sort_options:
+      - key: date
+        order: descending
+        label: Date (plus récentes d'abord)
+    preview: &preview_actu
+      text:
+        - key: titre
+      subtext:
+        - key: date_affichee
+      image:
+        - key: image
+      metadata:
+        - icon: label
+          text:
+            - key: categorie
+  actualites_en:
+    path: actualites/en
+    url: '/en/actualites/[slug]/'
+    name: Actualités (anglais)
+    singular_name: actualité
+    icon: newspaper
+    disable_add_folder: true
+    _enabled_editors:
+      - visual
+      - content
+    create:
+      path: '[relative_base_path]/{titre|deburr|slugify}.md'
+    add_options:
+      - name: New article
+        icon: post_add
+        schema: default
+    schemas:
+      default:
+        path: .cloudcannon/schemas/actualite.md
+        name: Nouvelle actualité
+        reorder_inputs: true
+        remove_extra_inputs: false
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+    _inputs: *inputs_actu
+    sort_options:
+      - key: date
+        order: descending
+        label: Date (plus récentes d'abord)
+    preview: *preview_actu
+
+  # Données partagées modifiables (logos partenaires, libellés de la page article).
+  # Le menu (nav.json), les catégories et les fichiers techniques ne sont pas proposés.
+  donnees:
+    path: _data
+    glob:
+      - logos_partenaires.json
+      - article_ui.json
+    name: Données partagées
+    icon: data_usage
+    disable_url: true
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+
+collection_groups:
+  - heading: Pages
+    collections:
+      - pages_fr
+      - pages_en
+  - heading: Actualités & événements
+    collections:
+      - actualites_fr
+      - actualites_en
+  - heading: Données
+    collections:
+      - donnees
+
+# Barre d'outils du texte riche (corps des actualités, réponses de FAQ) :
+# mise en forme simple uniquement, pas de HTML libre, pas d'image ni de tableau dans le texte.
+_editables:
+  content: &texte_riche
+    format: p h2 h3
+    bold: true
+    italic: true
+    link: true
+    blockquote: true
+    bulletedlist: true
+    numberedlist: true
+    undo: true
+    redo: true
+    removeformat: true
+    strike: false
+    underline: false
+    image: false
+    snippet: false
+    table: false
+    embed: false
+    code: false
+    horizontalrule: false
+    allow_custom_markup: false
+  block: *texte_riche
+  text:
+    bold: true
+    italic: true
+    link: true
+    undo: true
+    redo: true
+    removeformat: true
+    image: false
+    snippet: false
+    allow_custom_markup: false
+
+_inputs:
+  # --- Champs techniques : masqués ---
+  layout:
+    hidden: true
+  body_class:
+    hidden: true
+  header_logo_height:
+    hidden: true
+  footer_logo_small:
+    hidden: true
+  section:
+    hidden: true
+  breadcrumb.parents:
+    hidden: true
+  icone:
+    hidden: true
+  icone_famille:
+    hidden: true
+  style:
+    hidden: true
+  id:
+    hidden: true
+
+  # --- Référencement ---
+  title:
+    type: text
+    label: Titre de l'onglet du navigateur (Google)
+    comment: Terminer par « | FIRSI ».
+    options:
+      max_length: 70
+  seo:
+    type: object
+    label: Référencement (Google, réseaux sociaux)
+  seo.description:
+    type: textarea
+    label: Description pour Google
+    comment: 140 à 160 caractères, résume la page.
+    options:
+      max_length: 170
+  seo.image:
+    type: image
+    label: Image de partage (réseaux sociaux)
+
+  # --- Titres avec un mot en orange ---
+  titre.avant:
+    type: text
+    label: Début du titre
+  titre.valeur:
+    type: text
+    label: Mot(s) en orange
+  titre.apres:
+    type: text
+    label: Fin du titre (facultatif)
+  breadcrumb.current:
+    type: text
+    label: Fil d'Ariane (page actuelle)
+
+  # --- Liens ---
+  page:
+    type: select
+    label: Page de destination
+    options:
+      values:
+        - { id: index, name: Accueil }
+        - { id: mission, name: Mission }
+        - { id: mot-du-president, name: Mot du Président }
+        - { id: gouvernance, name: Gouvernance }
+        - { id: partenaires, name: Partenaires }
+        - { id: faq, name: FAQ }
+        - { id: programme-lycee, name: Lycées Mohammed VI d'Excellence }
+        - { id: programme-um6p, name: Programme UM6P }
+        - { id: programme-gef, name: GEF — Grandes Écoles Françaises }
+        - { id: programme-gem, name: GEM — Grandes Écoles Marocaines }
+        - { id: pret-etudiant, name: Prêt étudiant }
+        - { id: accompagnement, name: Accompagnement }
+        - { id: entrepreneuriat, name: Entrepreneuriat & innovation }
+        - { id: entreprise, name: Entreprises & partenaires }
+        - { id: chiffres-cles, name: Chiffres clés }
+        - { id: boursier, name: Espace boursier }
+        - { id: alumni, name: Alumni }
+        - { id: actualites, name: Actualités }
+        - { id: contact, name: Contact }
+        - { id: nous-soutenir, name: Nous soutenir }
+        - { id: candidat, name: Candidater }
+      value_key: id
+      preview:
+        text:
+          - key: name
+  url:
+    type: url
+    label: Lien externe (https://…)
+
+  # --- Images ---
+  image:
+    type: image
+    label: Image
+    options:
+      accepts_mime_types:
+        - image/jpeg
+        - image/png
+        - image/webp
+        - image/svg+xml
+  image_alt:
+    type: text
+    label: Description de l'image (accessibilité)
+    comment: Décrit l'image pour les personnes malvoyantes et Google.
+  logo:
+    type: image
+    label: Logo
+  logo_alt:
+    type: text
+    label: Description du logo
+  photo:
+    type: image
+    label: Photo
+
+  # --- Divers ---
+  accent:
+    type: switch
+    label: Mettre en couleur (orange)

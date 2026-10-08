@@ -13,6 +13,19 @@ const MOIS = {
   en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
 };
 
+const MOIS_LONG = {
+  fr: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+  en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+};
+
+// Formate une date au format utilisé par le prototype, selon la langue.
+function formatDate(d, lang, style) {
+  if (!d) return "";
+  const j = d.getUTCDate(), m = d.getUTCMonth(), a = d.getUTCFullYear();
+  const mois = (style === "long" ? MOIS_LONG : MOIS)[lang][m];
+  return lang === "en" ? `${mois} ${j}, ${a}` : `${j} ${mois} ${a}`;
+}
+
 export default {
   layout: "pages/article.liquid",
   section: "actualites",
@@ -38,8 +51,10 @@ export default {
       const c = (data.categories || []).find(x => x.id === data.categorie);
       return c ? { classe: c.classe, libelle: c[parts(data)[2]].badge } : { classe: "", libelle: "" };
     },
-    // Texte court (liste, accueil) : date_courte si renseignée, sinon date_affichee.
-    date_liste: data => data.date_courte || data.date_affichee,
+    // Date affichée : texte saisi par l'équipe, sinon calculée depuis « date » (« 14 Janvier 2026 » / « January 14, 2026 »).
+    date_affichee: data => data.date_affichee || formatDate(data.page.date, parts(data)[2], "long"),
+    // Texte court (liste, accueil) : date_courte si renseignée, sinon date_affichee, sinon calculée (« 14 Janv 2026 » / « Jan 14, 2026 »).
+    date_liste: data => data.date_courte || data.date_affichee || formatDate(data.page.date, parts(data)[2], "court"),
     // Jour et mois abrégé calculés depuis « date » (accueil).
     date_jour: data => (data.page.date ? String(data.page.date.getUTCDate()) : ""),
     date_mois: data => (data.page.date ? MOIS[parts(data)[2]][data.page.date.getUTCMonth()] : ""),

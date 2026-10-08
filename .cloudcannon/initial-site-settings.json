@@ -1,0 +1,15 @@
+{
+  "ssg": "eleventy",
+  "mode": "hosted",
+  "build": {
+    "install_command": "npm ci",
+    "build_command": "npm run build",
+    "output_path": "_site",
+    "environment_variables": [],
+    "preserved_paths": "node_modules/",
+    "preserve_output": false,
+    "include_git": false,
+    "manually_configure_urls": false,
+    "node_version": "22"
+  }
+}
