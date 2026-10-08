@@ -1,0 +1,8 @@
+/*
+ * Styles proposés à l'équipe dans la barre d'outils de CloudCannon (menu « Styles »).
+ * Uniquement les couleurs de la charte FIRSI (variables de firsi.css).
+ * Référence : https://cloudcannon.com/documentation/developer-reference/configuration-file/types/_editables/content/
+ */
+span.texte-orange { color: var(--orange); }
+span.texte-bleu { color: var(--bg); }
+span.texte-gris { color: var(--muted); }
