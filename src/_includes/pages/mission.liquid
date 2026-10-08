@@ -8,7 +8,7 @@ section: fondation
   <div class="container">
     <div class="fr-hero-tag"><i class="fas fa-bullseye"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
     <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
-    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="text" data-prop="hero.texte">{{ hero.texte }}</p>
     <div class="fr-ribbon"></div>
   </div>
 </section>
@@ -19,7 +19,7 @@ section: fondation
       <h2 class="heading-lg mb-3">{% include "partials/hl.liquid", t: intro.titre, prop: "intro.titre", tag: "span" %}</h2>
       <div data-editable="array" data-prop="intro.paragraphes" style="display:contents">
 {%- for p in intro.paragraphes %}
-      <p style="font-size:15px;color:var(--muted);line-height:1.75;font-weight:300;margin-bottom:20px" data-editable="array-item"><editable-text data-type="span" data-prop="texte">{{ p.texte }}</editable-text></p>
+      <p style="font-size:15px;color:var(--muted);line-height:1.75;font-weight:300;margin-bottom:20px" data-editable="array-item"><editable-text data-type="text" data-prop="texte">{{ p.texte }}</editable-text></p>
 {%- endfor %}
       </div>
     </div>
@@ -37,7 +37,7 @@ section: fondation
       <div class="fr-card">
         <div class="fr-card-icon"><i class="fas {{ c.icone }}"></i></div>
         <h4 data-editable="text" data-type="span" data-prop="titre">{{ c.titre }}</h4>
-        <p data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</p>
+        <p data-editable="text" data-type="text" data-prop="texte">{{ c.texte }}</p>
       </div>
     </div>
 {%- endfor %}

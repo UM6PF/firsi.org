@@ -248,17 +248,28 @@ _editables:
     embed: false
     code: false
     horizontalrule: false
+    styles: /assets/css/styles-editeur.css
     allow_custom_markup: false
   block: *texte_riche
-  text:
+  # Textes courants des pages (paragraphes, cartes, citations…) : gras, italique, lien et couleurs de la charte.
+  text: &texte_courant
     bold: true
     italic: true
+    underline: false
+    strike: false
     link: true
+    styles: /assets/css/styles-editeur.css
     undo: true
     redo: true
     removeformat: true
+    blockquote: false
+    bulletedlist: false
+    numberedlist: false
     image: false
     snippet: false
+    table: false
+    embed: false
+    code: false
     allow_custom_markup: false
 
 _inputs:
@@ -376,6 +387,26 @@ _inputs:
   photo:
     type: image
     label: Photo
+
+  # --- Textes courants : texte enrichi (gras, italique, lien, couleur) ---
+  texte:
+    type: html
+    label: Texte
+    options: *texte_courant
+  citation:
+    type: html
+    label: Citation
+    options: *texte_courant
+  sous_titre:
+    type: html
+    label: Sous-titre
+    options: *texte_courant
+  reponse:
+    type: html
+    label: Réponse
+    options: *texte_courant
+  bandeau.texte:
+    type: object
 
   # --- Divers ---
   accent:
