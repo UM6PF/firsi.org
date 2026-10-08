@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Guide de l'équipe communication — Site FIRSI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0C2251; --navy-d: #07162E; --orange: #D46B2B; --orange-p: #FDF0E8;
+  --ink: #1A1A1A; --muted: #5A6570; --line: #D9DEE7; --soft: #F5F7FA;
+  --ok: #2F7D4F; --ok-p: #E6F3EB; --warn: #9A6A00; --warn-p: #FDF3D8; --danger: #B3261E; --danger-p: #FBE9E7;
+}
+@page { size: A4; margin: 18mm 17mm 20mm 17mm; }
+@page :first { margin: 0; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; font-family: "Inter", "Segoe UI", Arial, sans-serif; font-size: 10.5pt; line-height: 1.55; color: var(--ink); }
+h1, h2, h3, h4 { font-family: "Work Sans", "Segoe UI", Arial, sans-serif; color: var(--navy); margin: 0; line-height: 1.2; }
+h2 { font-size: 20pt; font-weight: 800; margin-bottom: 4mm; padding-top: 1mm; }
+h2 .num { color: var(--orange); margin-right: 3mm; }
+h3 { font-size: 12.5pt; font-weight: 700; margin: 6mm 0 2.5mm; }
+h4 { font-size: 10.5pt; font-weight: 700; margin: 4mm 0 1.5mm; }
+p { margin: 0 0 2.5mm; }
+ul, ol { margin: 0 0 3mm; padding-left: 6mm; }
+li { margin-bottom: 1.4mm; }
+a { color: var(--orange); text-decoration: none; }
+strong { color: var(--navy-d); }
+.chapter { page-break-before: always; }
+.lead { font-size: 11pt; color: var(--muted); margin-bottom: 5mm; }
+.ui { font-weight: 600; background: #EEF1F7; border: 1px solid #DCE2EE; padding: 0 1.6mm; border-radius: 1.2mm; white-space: nowrap; font-size: 9.6pt; color: var(--navy); }
+code { font-family: Consolas, "Courier New", monospace; font-size: 9.3pt; background: #EEF1F7; padding: 0 1.2mm; border-radius: 1mm; }
+.box { border-radius: 2mm; padding: 3.5mm 4.5mm; margin: 3mm 0 4mm; page-break-inside: avoid; }
+.box p:last-child, .box ul:last-child, .box ol:last-child { margin-bottom: 0; }
+.box .t { font-family: "Work Sans", sans-serif; font-weight: 700; font-size: 9pt; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 1.5mm; display: block; }
+.tip { background: var(--ok-p); border-left: 1.2mm solid var(--ok); } .tip .t { color: var(--ok); }
+.warn { background: var(--warn-p); border-left: 1.2mm solid var(--warn); } .warn .t { color: var(--warn); }
+.rule { background: var(--danger-p); border-left: 1.2mm solid var(--danger); } .rule .t { color: var(--danger); }
+.info { background: var(--orange-p); border-left: 1.2mm solid var(--orange); } .info .t { color: var(--orange); }
+table { width: 100%; border-collapse: collapse; margin: 2mm 0 4mm; font-size: 9.6pt; page-break-inside: avoid; }
+th { text-align: left; font-family: "Work Sans", sans-serif; font-size: 8.5pt; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); border-bottom: 1.5px solid var(--navy); padding: 1.8mm 2mm; }
+td { padding: 1.8mm 2mm; border-bottom: 1px solid var(--line); vertical-align: top; }
+.steps { counter-reset: s; list-style: none; padding: 0; margin: 2mm 0 4mm; }
+.steps > li { counter-increment: s; position: relative; padding-left: 10mm; margin-bottom: 2.6mm; page-break-inside: avoid; }
+.steps > li::before { content: counter(s); position: absolute; left: 0; top: -.3mm; width: 6.4mm; height: 6.4mm; border-radius: 50%; background: var(--navy); color: #fff; font-family: "Work Sans", sans-serif; font-weight: 700; font-size: 9pt; display: flex; align-items: center; justify-content: center; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+
+/* Couverture */
+.cover { height: 297mm; background: var(--navy); color: #fff; padding: 34mm 22mm 22mm; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+.cover::after { content: ""; position: absolute; right: -55mm; top: 70mm; width: 150mm; height: 150mm; border: 26mm solid rgba(255,255,255,.05); border-radius: 50%; }
+.cover .tag { font-family: "Work Sans", sans-serif; font-size: 9pt; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--orange); }
+.cover h1 { color: #fff; font-size: 38pt; font-weight: 800; margin: 8mm 0 6mm; line-height: 1.08; }
+.cover h1 span { color: var(--orange); }
+.cover p { color: rgba(255,255,255,.75); font-size: 12pt; max-width: 135mm; }
+.cover .ribbon { height: 1.4mm; background: linear-gradient(90deg, var(--orange), rgba(212,107,43,.15)); margin: 12mm 0; width: 120mm; }
+.cover .meta { margin-top: auto; font-size: 9.5pt; color: rgba(255,255,255,.6); display: grid; gap: 1.5mm; position: relative; z-index: 1; }
+.cover .meta strong { color: #fff; }
+.toc { list-style: none; padding: 0; margin: 0; position: relative; z-index: 1; }
+.toc li { display: flex; gap: 4mm; font-size: 11pt; color: rgba(255,255,255,.9); margin-bottom: 2mm; }
+.toc li b { color: var(--orange); width: 7mm; font-family: "Work Sans", sans-serif; }
+
+/* Schéma du circuit */
+.flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2.5mm; margin: 4mm 0 5mm; page-break-inside: avoid; }
+.flow div { border: 1px solid var(--line); border-radius: 2mm; padding: 3mm; background: var(--soft); position: relative; }
+.flow div b { display: block; font-family: "Work Sans", sans-serif; color: var(--navy); font-size: 10pt; margin-bottom: 1mm; }
+.flow div span { font-size: 8.6pt; color: var(--muted); line-height: 1.4; display: block; }
+.flow div i { font-style: normal; font-size: 7.6pt; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 1mm; }
+.flow div.pub { background: var(--orange-p); border-color: #F0C4A0; }
+.sites { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin: 3mm 0 5mm; page-break-inside: avoid; }
+.site { border-radius: 2mm; padding: 4mm; }
+.site.st { background: var(--soft); border: 1px solid var(--line); }
+.site.pr { background: var(--navy); color: #fff; }
+.site h4 { margin: 0 0 1mm; font-size: 12pt; }
+.site.pr h4 { color: #fff; }
+.site .u { font-family: Consolas, monospace; font-size: 9pt; color: var(--orange); }
+.site p { font-size: 9.6pt; margin: 1.5mm 0 0; }
+.site.pr p { color: rgba(255,255,255,.8); }
+.small { font-size: 9pt; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- ============ COUVERTURE ============ -->
+<section class="cover">
+  <div class="tag">Fondation Ibn Rochd · Site web</div>
+  <h1>Guide de l'équipe <span>communication</span></h1>
+  <p>Modifier le site, publier des actualités et des événements, faire relire, mettre en ligne et revenir en arrière si besoin.</p>
+  <div class="ribbon"></div>
+  <ul class="toc">
+    <li><b>1</b> L'essentiel en une page</li>
+    <li><b>2</b> Se connecter et se repérer</li>
+    <li><b>3</b> Modifier une page</li>
+    <li><b>4</b> Créer une actualité ou un événement</li>
+    <li><b>5</b> Prévisualiser</li>
+    <li><b>6</b> Faire relire et publier</li>
+    <li><b>7</b> Revenir à une version précédente</li>
+    <li><b>8</b> Bonnes pratiques et limites</li>
+    <li><b>A</b> Annexe : les pages et leurs fichiers</li>
+  </ul>
+  <div class="meta">
+    <div>Outil : <strong>CloudCannon</strong> · <span>app.cloudcannon.com</span></div>
+    <div>Équipe : <strong>Tarik El Fehri</strong> · <strong>Mamoun El Machrafi</strong></div>
+    <div>Version du 8 octobre 2026</div>
+  </div>
+</section>
+
+<!-- ============ 1. ESSENTIEL ============ -->
+<section class="chapter">
+  <h2><span class="num">1</span>L'essentiel en une page</h2>
+  <p class="lead">Le site existe en deux exemplaires. On prépare toujours sur le premier ; le second est ce que voit le public.</p>
+
+  <div class="sites">
+    <div class="site st">
+      <h4>FIRSI - Staging · l'atelier</h4>
+      <div class="u">endless-chickpea.cloudvent.net</div>
+      <p>C'est ici que vous modifiez, essayez, enregistrez. Rien n'est visible du public. Vous pouvez y faire des erreurs sans conséquence.</p>
+    </div>
+    <div class="site pr">
+      <h4>FIRSI - Production · la vitrine</h4>
+      <div class="u">handsome-jay.cloudvent.net → bientôt firsi.org</div>
+      <p>Le site public. Il ne change que lorsqu'une demande de publication venue de l'atelier est acceptée. On n'y travaille jamais directement.</p>
+    </div>
+  </div>
+
+  <h3>Le circuit d'une modification</h3>
+  <div class="flow">
+    <div><i>Personne A</i><b>Modifier</b><span>sur FIRSI - Staging (chapitres 3 et 4)</span></div>
+    <div><i>Personne A</i><b>Enregistrer</b><span><span class="ui">Save</span> puis <span class="ui">Save selected</span></span></div>
+    <div><i>Personne A</i><b>Vérifier</b><span>sur l'aperçu de l'atelier (chapitre 5)</span></div>
+    <div><i>Personne A</i><b>Demander</b><span>la publication et prévenir l'autre (chapitre 6)</span></div>
+    <div class="pub"><i>Personne B</i><b>Relire et publier</b><span>le site public est à jour en 1 minute</span></div>
+  </div>
+
+  <div class="box rule"><span class="t">Trois règles d'or</span>
+    <ol>
+      <li><strong>Toujours travailler sur FIRSI - Staging</strong>, jamais sur FIRSI - Production.</li>
+      <li><strong>Celui qui prépare ne publie pas</strong> : c'est l'autre personne qui relit et clique sur « Publier ». L'outil ne l'impose pas : c'est notre règle d'équipe.</li>
+      <li><strong>Penser aux deux langues</strong> : chaque page existe en français et en anglais ; une modification en français doit être reportée dans la version anglaise.</li>
+    </ol>
+  </div>
+
+  <h3>Ce que vous pouvez modifier, et ce qui est protégé</h3>
+  <table>
+    <thead><tr><th>Vous pouvez</th><th>C'est protégé (le design est figé)</th></tr></thead>
+    <tbody>
+      <tr><td>Tous les textes visibles des pages</td><td>La mise en page, les polices, la taille du texte</td></tr>
+      <tr><td>Le gras, l'italique, les liens, 3 couleurs de la charte dans les textes courants</td><td>Les couleurs libres (seules l'orange, le bleu et le gris de la charte sont proposés)</td></tr>
+      <tr><td>Les images et leur description</td><td>Le menu, le pied de page, les icônes</td></tr>
+      <tr><td>L'ordre des cartes, questions, étapes, logos… ; en ajouter ou en retirer</td><td>L'organigramme de la page Gouvernance, le formulaire de contact</td></tr>
+      <tr><td>Les actualités et événements : créer, modifier, masquer</td><td>La création ou la suppression de pages</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 2. CONNEXION ============ -->
+<section class="chapter">
+  <h2><span class="num">2</span>Se connecter et se repérer</h2>
+
+  <h3>Première connexion (Mamoun)</h3>
+  <ol class="steps">
+    <li>Ouvrez l'e-mail d'invitation de <strong>CloudCannon</strong> reçu sur <code>mamoun.elmachrafi@firsi.org</code> et cliquez sur le lien.</li>
+    <li>Créez votre compte (nom et mot de passe personnels). Indiquez votre <strong>vrai nom</strong> : il apparaît dans l'historique des modifications.</li>
+    <li>Vous arrivez sur votre tableau de bord : un seul site vous est proposé, <strong>FIRSI - Staging</strong>. C'est normal.</li>
+  </ol>
+
+  <h3>Les connexions suivantes</h3>
+  <ol class="steps">
+    <li>Allez sur <a href="https://app.cloudcannon.com">app.cloudcannon.com</a> et connectez-vous.</li>
+    <li>Cliquez sur <strong>FIRSI - Staging</strong>.</li>
+  </ol>
+  <div class="box warn"><span class="t">Pour Tarik</span>
+    <p>Comme propriétaire du compte, vous voyez aussi <strong>FIRSI - Production</strong> et des menus techniques (<span class="ui">Developer</span>, <span class="ui">Site Settings</span>, <span class="ui">Source Editor</span>). N'y touchez pas pour le travail courant : ouvrez toujours FIRSI - Staging.</p>
+  </div>
+
+  <h3>Les repères de l'écran</h3>
+  <table>
+    <thead><tr><th>Où</th><th>Ce que c'est</th></tr></thead>
+    <tbody>
+      <tr><td>Colonne de gauche, <span class="ui">Pages (français)</span> / <span class="ui">Pages (anglais)</span></td><td>Les 22 pages du site, dans chaque langue</td></tr>
+      <tr><td><span class="ui">Actualités (français)</span> / <span class="ui">Actualités (anglais)</span></td><td>Les fiches d'actualités et d'événements</td></tr>
+      <tr><td><span class="ui">Données partagées</span></td><td>Les logos partenaires (accueil et « Nous soutenir ») et quelques libellés communs</td></tr>
+      <tr><td><span class="ui">Publishing</span></td><td>Les demandes de publication (chapitre 6)</td></tr>
+      <tr><td>En haut à droite, <span class="ui">Save</span></td><td>Enregistrer. Un chiffre indique le nombre de modifications non enregistrées.</td></tr>
+      <tr><td>Quand une page est ouverte : à gauche le panneau des champs, à droite la page elle-même</td><td>Vous pouvez modifier au choix directement sur la page ou dans les champs du panneau.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 3. MODIFIER UNE PAGE ============ -->
+<section class="chapter">
+  <h2><span class="num">3</span>Modifier une page</h2>
+  <p class="lead">Exemple : la page Mission. Tout se fait de la même façon sur les autres pages.</p>
+
+  <ol class="steps">
+    <li>Dans la colonne de gauche, cliquez sur <span class="ui">Pages (français)</span>, puis sur <span class="ui">Mission | FIRSI</span>. La page s'ouvre telle qu'elle apparaît sur le site.</li>
+    <li><strong>Cliquez sur le texte à modifier</strong> directement sur la page et tapez. Les zones modifiables se signalent au survol de la souris.</li>
+    <li>Recommencez pour toutes vos modifications sur la page.</li>
+    <li>Cliquez sur <span class="ui">Save</span> en haut à droite, vérifiez la liste, puis <span class="ui">Save selected</span>. L'enregistrement prend quelques secondes (« Saving… »).</li>
+  </ol>
+
+  <h3>Les titres avec un mot en orange</h3>
+  <p>Les grands titres sont découpés en trois cases, visibles dans le panneau de gauche : <span class="ui">Début du titre</span>, <span class="ui">Mot(s) en orange</span>, <span class="ui">Fin du titre (facultatif)</span>.</p>
+  <p class="small">Exemple : « Notre » + « mission » + (vide) donne « Notre <span style="color:var(--orange);font-weight:700">mission</span> ». Les espaces entre les cases sont ajoutés automatiquement, ainsi que l'espace avant « ? » en français.</p>
+
+  <h3>Gras, italique, lien, couleur</h3>
+  <p>Dans les <strong>textes courants</strong> (paragraphes, textes des cartes, citations, réponses), sélectionnez des mots : une barre d'outils apparaît.</p>
+  <table>
+    <tbody>
+      <tr><td style="width:32%"><span class="ui">B</span> · <span class="ui">I</span></td><td>Gras · italique (raccourcis Ctrl+B, Ctrl+I)</td></tr>
+      <tr><td><span class="ui">Lien</span> (Ctrl+K)</td><td>Collez l'adresse complète (https://…) ou une adresse du site (ex. <code>/candidat/</code>)</td></tr>
+      <tr><td><span class="ui">Styles</span></td><td><strong>Texte Orange</strong>, <strong>Texte Bleu</strong>, <strong>Texte Gris</strong> : les couleurs de la charte</td></tr>
+      <tr><td><span class="ui">Supprimer la mise en forme</span></td><td>Remet le texte sélectionné en texte normal</td></tr>
+    </tbody>
+  </table>
+  <div class="box warn"><span class="t">Attention aux couleurs</span>
+    <p><strong>Texte Bleu</strong> est invisible sur les zones à fond bleu foncé (le haut des pages, les bandeaux sombres). Réservez-le aux zones claires. Les titres, boutons et petites étiquettes n'ont pas de barre d'outils : c'est voulu.</p>
+  </div>
+
+  <h3>Les images</h3>
+  <ol class="steps">
+    <li>Cliquez sur l'image dans la page : choisissez une image déjà envoyée ou envoyez-en une depuis votre ordinateur.</li>
+    <li>Renseignez la <strong>description de l'image</strong> (champ « Description de l'image ») : une phrase courte qui dit ce que montre l'image. Elle sert aux personnes malvoyantes et à Google.</li>
+  </ol>
+  <p class="small">Le cadrage est automatique : l'image remplit la même zone que la précédente. Préférez des photos au format paysage, en JPG, de moins de 500 Ko (voir chapitre 8).</p>
+
+  <h3>Les listes : cartes, questions, étapes, logos…</h3>
+  <p>Survolez un élément d'une liste : une petite barre apparaît pour le <strong>déplacer</strong> (flèches ou glisser), le <strong>dupliquer</strong> ou le <strong>supprimer</strong>. Pour ajouter un élément, dupliquez-en un existant puis modifiez-le, ou utilisez le bouton <span class="ui">Add …</span> dans le panneau de gauche.</p>
+
+  <h3>Les champs du panneau de gauche</h3>
+  <ul>
+    <li><strong>Titre de l'onglet du navigateur</strong> et <strong>Description pour Google</strong> : ce qui s'affiche dans les résultats de recherche. Gardez « | FIRSI » à la fin du titre.</li>
+    <li><strong>Page de destination</strong> (sous un bouton ou un lien) : choisissez la page dans la liste. <strong>Lien externe</strong> : une adresse complète.</li>
+    <li>Les données des graphiques et de la carte (pages Chiffres clés et Alumni) se modifient uniquement ici.</li>
+  </ul>
+
+  <div class="box tip"><span class="t">N'oubliez pas l'anglais</span>
+    <p>Ouvrez ensuite <span class="ui">Pages (anglais)</span> → la même page, et reportez la modification traduite. Les deux versions sont indépendantes.</p>
+  </div>
+</section>
+
+<!-- ============ 4. ACTUALITÉ / ÉVÉNEMENT ============ -->
+<section class="chapter">
+  <h2><span class="num">4</span>Créer une actualité ou un événement</h2>
+  <p class="lead">Chaque actualité est une fiche. La liste des actualités, les compteurs des filtres et les 4 actualités de la page d'accueil se mettent à jour tout seuls.</p>
+
+  <ol class="steps">
+    <li>Colonne de gauche : <span class="ui">Actualités (français)</span>.</li>
+    <li>Cliquez sur <span class="ui">Add</span>, puis <span class="ui">Nouvelle actualité</span>. Une fiche vierge s'ouvre, en <strong>brouillon</strong>.</li>
+    <li>Remplissez les champs (tableau ci-dessous), puis rédigez le texte de l'article dans la page.</li>
+    <li>Quand l'article est prêt : désactivez <span class="ui">Brouillon</span>, enregistrez (<span class="ui">Save</span> → <span class="ui">Save selected</span>), puis demandez la publication (chapitre 6).</li>
+  </ol>
+
+  <table>
+    <thead><tr><th>Champ</th><th>À quoi il sert</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Titre</strong></td><td>Titre de l'article. Il sert aussi à nommer la fiche : choisissez-le avec soin dès le départ.</td></tr>
+      <tr><td><strong>Date de publication</strong></td><td>Sert à classer les actualités, les plus récentes en premier.</td></tr>
+      <tr><td>Date affichée sur l'article / sur les cartes</td><td><strong>Laissez vide</strong> : la date s'écrit toute seule (« 26 Février 2026 », « 26 Févr 2026 »). Remplissez seulement pour un texte particulier (« Avril 2025 »).</td></tr>
+      <tr><td><strong>Catégorie</strong></td><td>Portraits, Bourses, <strong>Événements</strong> ou Rapports. Elle détermine le badge et le filtre de la page Actualités.</td></tr>
+      <tr><td><strong>Image</strong> + description</td><td>Image de la carte et de l'article.</td></tr>
+      <tr><td><strong>Résumé</strong></td><td>2 phrases. Utilisé par Google et lors des partages sur les réseaux sociaux.</td></tr>
+      <tr><td>Afficher sur la page d'accueil + position</td><td>Pour faire apparaître l'article dans les 4 actualités de l'accueil. Position 1 = la grande carte, puis 2, 3, 4. Retirez l'option d'un ancien article pour libérer sa place.</td></tr>
+      <tr><td>Document PDF</td><td>Pour la catégorie Rapports : le PDF à télécharger.</td></tr>
+      <tr><td><strong>Brouillon</strong></td><td>Activé : l'article n'apparaît pas dans la liste du site. Pratique pour préparer à l'avance ou masquer un article sans le supprimer.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Le texte de l'article</h3>
+  <p>Cliquez dans le corps de l'article sur la page. La barre d'outils propose : paragraphe, intertitres (<strong>H2</strong>, <strong>H3</strong>), gras, italique, lien, listes à puces ou numérotées, citation, et les 3 couleurs de la charte. Pas d'images ni de tableaux dans le texte.</p>
+
+  <h3>Un événement</h3>
+  <p>Un événement est une actualité de catégorie <strong>Événements</strong>. Remplissez en plus le bloc <span class="ui">Informations de l'événement</span> : dates de début et de fin, lieu, lien d'inscription.</p>
+  <div class="box info"><span class="t">Bon à savoir</span>
+    <p>Pour l'instant, ces informations sont <strong>enregistrées mais pas affichées</strong> : le prototype validé ne prévoit pas de mise en page pour elles. Écrivez donc aussi la date et le lieu dans le texte de l'article. Elles s'afficheront automatiquement le jour où une mise en page « agenda » sera ajoutée.</p>
+  </div>
+
+  <h3>La version anglaise</h3>
+  <p>Créez la fiche de la même façon dans <span class="ui">Actualités (anglais)</span>. Pour que le bouton FR/EN de l'article mène directement à sa traduction, les deux fiches doivent avoir <strong>le même nom de fichier</strong>. Sinon, le bouton mène à la liste des actualités de l'autre langue, ce qui reste correct.</p>
+
+  <h3>Retirer une actualité</h3>
+  <p>Préférez <strong>Brouillon</strong> à la suppression : l'article disparaît de la liste et peut revenir à tout moment.</p>
+</section>
+
+<!-- ============ 5. PRÉVISUALISER ============ -->
+<section class="chapter">
+  <h2><span class="num">5</span>Prévisualiser</h2>
+  <p class="lead">Trois façons de voir le résultat avant qu'il soit public.</p>
+
+  <table>
+    <thead><tr><th>Quand</th><th>Comment</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Pendant la saisie</strong></td><td>La page affichée dans l'éditeur se met à jour au fur et à mesure.</td></tr>
+      <tr><td><strong>Après l'enregistrement</strong></td><td>Ouvrez l'atelier : <code>endless-chickpea.cloudvent.net</code>. Il est reconstruit environ <strong>1 à 2 minutes</strong> après chaque enregistrement. Rechargez la page si besoin.</td></tr>
+      <tr><td><strong>Sur téléphone</strong></td><td>Ouvrez la même adresse sur votre téléphone, ou réduisez la largeur de la fenêtre de votre navigateur.</td></tr>
+    </tbody>
+  </table>
+  <div class="box tip"><span class="t">Avant de demander la publication, vérifiez</span>
+    <ul>
+      <li>la page en français <strong>et</strong> en anglais ;</li>
+      <li>les liens (cliquez dessus) ;</li>
+      <li>l'affichage sur téléphone ;</li>
+      <li>pour une actualité : la page Actualités, la page de l'article et, si elle est « à la une », la page d'accueil.</li>
+    </ul>
+  </div>
+  <div class="box info"><span class="t">L'aperçu de l'atelier n'est pas public</span>
+    <p>L'adresse de l'atelier n'est pas référencée par Google. Vous pouvez la partager en interne pour avoir un avis, mais ce n'est pas le site officiel.</p>
+  </div>
+</section>
+
+<!-- ============ 6. FAIRE RELIRE ET PUBLIER ============ -->
+<section class="chapter">
+  <h2><span class="num">6</span>Faire relire et publier</h2>
+  <p class="lead">La mise en ligne passe par une « demande de publication ». Celui qui prépare la crée ; l'autre relit et publie.</p>
+
+  <div class="two">
+    <div>
+      <h3>Personne A : demander la publication</h3>
+      <ol class="steps">
+        <li>Vérifiez que tout est enregistré (pas de chiffre à côté de <span class="ui">Save</span>).</li>
+        <li>Colonne de gauche : <span class="ui">Publishing</span>.</li>
+        <li>Dans <span class="ui">Title</span>, décrivez la modification en une ligne. Exemple : « Actualité : lancement campagne GEF 2027 ».</li>
+        <li>Si utile, détaillez dans <span class="ui">Body</span> (pages touchées, points à vérifier).</li>
+        <li>Cliquez sur <span class="ui">Create Pull Request</span>.</li>
+        <li><strong>Prévenez l'autre personne</strong> (message, Teams, e-mail) : l'outil ne l'avertit pas.</li>
+      </ol>
+    </div>
+    <div>
+      <h3>Personne B : relire et publier</h3>
+      <ol class="steps">
+        <li>Ouvrez <strong>FIRSI - Staging</strong> → <span class="ui">Publishing</span>.</li>
+        <li>Onglet <span class="ui">Changes</span> : la liste des fichiers modifiés.</li>
+        <li>Vérifiez le résultat sur l'atelier (<code>endless-chickpea.cloudvent.net</code>), comme au chapitre 5.</li>
+        <li>Tout est bon : <span class="ui">Publish pull request</span> → <span class="ui">Confirm</span>.</li>
+        <li>Après environ <strong>1 minute</strong>, vérifiez le site public.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h3>Si la relecture révèle un problème</h3>
+  <ul>
+    <li><strong>Petite correction</strong> : la personne B peut corriger elle-même dans l'atelier et enregistrer. La correction s'ajoute à la demande en cours. Publiez ensuite.</li>
+    <li><strong>À revoir</strong> : ne publiez pas. Expliquez à la personne A ce qui ne va pas ; elle corrige dans l'atelier, et la demande se met à jour toute seule.</li>
+    <li><strong>À abandonner complètement</strong> : <span class="ui">Close pull request</span> ferme la demande. Attention, les modifications restent dans l'atelier : il faut les défaire (chapitre 7) avant la prochaine publication.</li>
+  </ul>
+
+  <div class="box rule"><span class="t">Une demande à la fois</span>
+    <p>Tout ce qui est enregistré dans l'atelier part dans la même publication. Évitez de laisser traîner des modifications non relues dans l'atelier : elles seraient publiées avec la demande suivante.</p>
+  </div>
+</section>
+
+<!-- ============ 7. REVENIR EN ARRIÈRE ============ -->
+<section class="chapter">
+  <h2><span class="num">7</span>Revenir à une version précédente</h2>
+  <p class="lead">CloudCannon ne propose pas de bouton « historique » dans l'éditeur. Toutes les versions sont cependant conservées, sur GitHub, où le site est stocké. Choisissez le niveau qui correspond à votre situation.</p>
+
+  <h3>Niveau 1 · Pas encore enregistré</h3>
+  <ul>
+    <li>Annulez la dernière action avec <strong>Ctrl+Z</strong> (ou le bouton Annuler de la barre d'outils).</li>
+    <li>Pour abandonner toutes les modifications d'une page : menu <strong>⋮</strong> (trois points) en haut de l'écran → <span class="ui">Discard unsaved changes</span>.</li>
+    <li>Ou : <span class="ui">Save</span> → cochez la page dans la liste → <span class="ui">Discard selected</span>.</li>
+  </ul>
+
+  <h3>Niveau 2 · Enregistré, ou déjà publié : retrouver un ancien texte</h3>
+  <ol class="steps">
+    <li>Trouvez le fichier de la page dans l'<strong>annexe</strong> (ex. Mission → <code>src/pages/fr/mission.md</code>).</li>
+    <li>Ouvrez son historique dans votre navigateur (aucun compte n'est nécessaire) :<br><code>github.com/UM6PF/firsi.org/commits/staging/</code> + le nom du fichier.<br><span class="small">Exemple : github.com/UM6PF/firsi.org/commits/staging/src/pages/fr/mission.md</span></li>
+    <li>Chaque ligne est un enregistrement, avec sa date. Cliquez sur celui d'avant l'erreur : les lignes en rouge sont l'ancien texte, en vert le nouveau.</li>
+    <li>Copiez l'ancien texte, recollez-le dans CloudCannon à sa place, enregistrez.</li>
+    <li>Si l'erreur était déjà en ligne : demandez la publication (chapitre 6).</li>
+  </ol>
+
+  <h3>Niveau 3 · Annuler toute une publication (Tarik)</h3>
+  <p>Quand une publication entière doit être retirée d'urgence. Nécessite le compte GitHub du propriétaire.</p>
+  <ol class="steps">
+    <li>Sur <code>github.com/UM6PF/firsi.org/pulls?q=is:closed</code>, ouvrez la demande de publication concernée.</li>
+    <li>En bas de la page, cliquez sur <span class="ui">Revert</span>, puis <span class="ui">Create pull request</span>, puis <span class="ui">Merge pull request</span> → <span class="ui">Confirm merge</span>. Le site public revient à l'état précédent en 1 minute.</li>
+    <li><strong>Remettez l'atelier à niveau</strong> : ouvrez <code>github.com/UM6PF/firsi.org/compare/staging...production</code>, cliquez sur <span class="ui">Create pull request</span>, puis <span class="ui">Merge pull request</span>. Sans cette étape, l'atelier contiendrait encore la version retirée.</li>
+  </ol>
+  <div class="box warn"><span class="t">En cas de doute</span>
+    <p>Une erreur sur le site public n'est jamais grave : rien n'est perdu, toutes les versions sont conservées. Commencez par le niveau 2 ; si la situation vous paraît confuse, n'enchaînez pas les manipulations et demandez de l'aide.</p>
+  </div>
+</section>
+
+<!-- ============ 8. BONNES PRATIQUES ============ -->
+<section class="chapter">
+  <h2><span class="num">8</span>Bonnes pratiques et limites</h2>
+
+  <h3>Images</h3>
+  <ul>
+    <li>Format <strong>JPG</strong> pour les photos, <strong>PNG</strong> ou <strong>SVG</strong> pour les logos.</li>
+    <li>Largeur <strong>1600 à 2000 pixels</strong> maximum, poids <strong>moins de 500 Ko</strong> (une photo de téléphone pèse souvent 3 à 8 Mo : réduisez-la d'abord, par exemple avec squoosh.app).</li>
+    <li>Nommez le fichier clairement avant l'envoi (<code>campagne-gef-2027.jpg</code> plutôt que <code>IMG_4512.jpg</code>).</li>
+    <li>Toujours une description d'image.</li>
+  </ul>
+
+  <h3>Textes</h3>
+  <ul>
+    <li>Gardez des longueurs proches des textes actuels : un titre deux fois plus long peut passer sur trois lignes et déséquilibrer la page. Vérifiez sur téléphone.</li>
+    <li>Ne copiez-collez pas depuis Word en gardant la mise en forme : collez en texte simple (<strong>Ctrl+Maj+V</strong>) puis remettez le gras avec la barre d'outils.</li>
+    <li>Gardez les chiffres cohérents d'une page à l'autre (nombre de boursiers, de pays, de partenaires…) : ils apparaissent sur l'accueil, Mission, Chiffres clés et Alumni.</li>
+  </ul>
+
+  <h3>Ce que l'outil ne fait pas (demandez au développeur)</h3>
+  <table>
+    <tbody>
+      <tr><td style="width:45%">Créer ou supprimer une page, changer le menu ou le pied de page</td><td>Structure du site, volontairement verrouillée.</td></tr>
+      <tr><td>Changer une icône, une mise en page, une police</td><td>Design figé.</td></tr>
+      <tr><td>Modifier l'organigramme de la page Gouvernance</td><td>Textes placés au pixel près dans un dessin.</td></tr>
+      <tr><td>Faire fonctionner le formulaire de contact</td><td>Il n'est relié à aucun destinataire pour l'instant.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Qui fait quoi</h3>
+  <table>
+    <thead><tr><th>Rôle</th><th>Personne</th></tr></thead>
+    <tbody>
+      <tr><td>Modifier, créer, demander et relire les publications</td><td>Tarik et Mamoun</td></tr>
+      <tr><td>Comptes, abonnement CloudCannon, retour arrière de niveau 3</td><td>Tarik (propriétaire)</td></tr>
+      <tr><td>Changements de structure ou de design</td><td>Développeur du site</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ ANNEXE ============ -->
+<section class="chapter">
+  <h2><span class="num">A</span>Les pages et leurs fichiers</h2>
+  <p class="lead">Utile pour retrouver l'historique d'une page (chapitre 7, niveau 2). Pour la version anglaise, remplacez <code>fr</code> par <code>en</code> dans le chemin.</p>
+  <table>
+    <thead><tr><th>Page</th><th>Adresse sur le site</th><th>Fichier (français)</th></tr></thead>
+    <tbody>
+      <tr><td>Accueil</td><td><code>/</code></td><td><code>src/pages/fr/index.md</code></td></tr>
+      <tr><td>Mission</td><td><code>/mission/</code></td><td><code>src/pages/fr/mission.md</code></td></tr>
+      <tr><td>Mot du Président</td><td><code>/mot-du-president/</code></td><td><code>src/pages/fr/mot-du-president.md</code></td></tr>
+      <tr><td>Gouvernance</td><td><code>/gouvernance/</code></td><td><code>src/pages/fr/gouvernance.md</code></td></tr>
+      <tr><td>Partenaires</td><td><code>/partenaires/</code></td><td><code>src/pages/fr/partenaires.md</code></td></tr>
+      <tr><td>FAQ</td><td><code>/faq/</code></td><td><code>src/pages/fr/faq.md</code></td></tr>
+      <tr><td>Lycées Mohammed VI d'Excellence</td><td><code>/programme-lycee/</code></td><td><code>src/pages/fr/programme-lycee.md</code></td></tr>
+      <tr><td>Programme UM6P</td><td><code>/programme-um6p/</code></td><td><code>src/pages/fr/programme-um6p.md</code></td></tr>
+      <tr><td>GEF — Grandes Écoles Françaises</td><td><code>/programme-gef/</code></td><td><code>src/pages/fr/programme-gef.md</code></td></tr>
+      <tr><td>GEM — Grandes Écoles Marocaines</td><td><code>/programme-gem/</code></td><td><code>src/pages/fr/programme-gem.md</code></td></tr>
+      <tr><td>Prêt étudiant</td><td><code>/pret-etudiant/</code></td><td><code>src/pages/fr/pret-etudiant.md</code></td></tr>
+      <tr><td>Accompagnement</td><td><code>/accompagnement/</code></td><td><code>src/pages/fr/accompagnement.md</code></td></tr>
+      <tr><td>Entrepreneuriat &amp; innovation</td><td><code>/entrepreneuriat/</code></td><td><code>src/pages/fr/entrepreneuriat.md</code></td></tr>
+      <tr><td>Entreprises &amp; partenaires</td><td><code>/entreprise/</code></td><td><code>src/pages/fr/entreprise.md</code></td></tr>
+      <tr><td>Chiffres clés</td><td><code>/chiffres-cles/</code></td><td><code>src/pages/fr/chiffres-cles.md</code></td></tr>
+      <tr><td>Espace boursier</td><td><code>/boursier/</code></td><td><code>src/pages/fr/boursier.md</code></td></tr>
+      <tr><td>Alumni</td><td><code>/alumni/</code></td><td><code>src/pages/fr/alumni.md</code></td></tr>
+      <tr><td>Actualités (textes de la page)</td><td><code>/actualites/</code></td><td><code>src/pages/fr/actualites.md</code></td></tr>
+      <tr><td>Une actualité</td><td><code>/actualites/nom-de-l-article/</code></td><td><code>src/actualites/fr/nom-de-l-article.md</code></td></tr>
+      <tr><td>Contact</td><td><code>/contact/</code></td><td><code>src/pages/fr/contact.md</code></td></tr>
+      <tr><td>Nous soutenir</td><td><code>/nous-soutenir/</code></td><td><code>src/pages/fr/nous-soutenir.md</code></td></tr>
+      <tr><td>Candidater</td><td><code>/candidat/</code></td><td><code>src/pages/fr/candidat.md</code></td></tr>
+      <tr><td>Logos partenaires (accueil, Nous soutenir)</td><td>—</td><td><code>src/_data/logos_partenaires.json</code></td></tr>
+    </tbody>
+  </table>
+  <p class="small">Versions anglaises : même adresse précédée de <code>/en</code> (ex. <code>/en/mission/</code>).</p>
+</section>
+
+</body>
+</html>
