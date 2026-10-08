@@ -9,7 +9,7 @@ section: communaute
   <div class="container">
     <div class="fr-hero-tag"><i class="fas fa-award"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
     <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
-    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="text" data-prop="hero.texte">{{ hero.texte }}</p>
     <div class="fr-ribbon"></div>
   </div>
 </section>
@@ -20,7 +20,7 @@ section: communaute
   <div class="mb-5">
     <p class="fr-label" data-editable="text" data-type="span" data-prop="engagement.surtitre">{{ engagement.surtitre }}</p>
     <h2 class="heading-lg mb-3">{% include "partials/hl.liquid", t: engagement.titre, prop: "engagement.titre", tag: "span" %}</h2>
-    <p style="font-size:15px;color:var(--muted);line-height:1.75;font-weight:300;max-width:760px;margin-bottom:32px" data-editable="text" data-type="span" data-prop="engagement.texte">{{ engagement.texte }}</p>
+    <p style="font-size:15px;color:var(--muted);line-height:1.75;font-weight:300;max-width:760px;margin-bottom:32px" data-editable="text" data-type="text" data-prop="engagement.texte">{{ engagement.texte }}</p>
     <div class="row g-4">
       <div class="col-12 col-lg-6">
         <div style="background:#f7f7f5;border-radius:12px;padding:28px;height:100%">
@@ -29,7 +29,7 @@ section: communaute
 {%- for e in engagement.apports.elements %}
             <div style="display:flex;align-items:center;gap:14px" data-editable="array-item">
               <div style="width:40px;height:40px;background:#e8edf5;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas fa-check" style="color:#0C2251"></i></div>
-              <span style="font-size:14px;color:var(--text)" data-editable="text" data-type="span" data-prop="texte">{{ e.texte }}</span>
+              <span style="font-size:14px;color:var(--text)" data-editable="text" data-type="text" data-prop="texte">{{ e.texte }}</span>
             </div>
 {%- endfor %}
           </div>
@@ -42,7 +42,7 @@ section: communaute
 {%- for e in engagement.attentes.elements %}
             <div style="display:flex;align-items:center;gap:14px" data-editable="array-item">
               <div style="width:40px;height:40px;background:rgba(255,255,255,.08);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="fas {{ e.icone }}" style="color:var(--orange)"></i></div>
-              <span style="font-size:14px;color:#fff" data-editable="text" data-type="span" data-prop="texte">{{ e.texte }}</span>
+              <span style="font-size:14px;color:#fff" data-editable="text" data-type="text" data-prop="texte">{{ e.texte }}</span>
             </div>
 {%- endfor %}
           </div>
@@ -61,7 +61,7 @@ section: communaute
         <div class="fr-card" style="border-top:3px solid var(--orange);height:100%">
           <div class="fr-card-icon"><i class="fas {{ e.icone }}"></i></div>
           <h4 data-editable="text" data-type="span" data-prop="titre">{{ e.titre }}</h4>
-          <p data-editable="text" data-type="span" data-prop="texte">{{ e.texte }}</p>
+          <p data-editable="text" data-type="text" data-prop="texte">{{ e.texte }}</p>
         </div>
       </div>
 {%- endfor %}
@@ -82,14 +82,14 @@ section: communaute
       </div>
 {%- endfor %}
     </div>
-    <p style="font-size:13px;color:var(--muted);margin-top:16px"><editable-text data-type="span" data-prop="a_savoir.contact.texte">{{ a_savoir.contact.texte }} </editable-text><a href="{{ a_savoir.contact.page | page_url: lang }}" class="fr-link"><editable-text data-type="span" data-prop="a_savoir.contact.lien">{{ a_savoir.contact.lien }} </editable-text><i class="fas fa-arrow-right"></i></a></p>
+    <p style="font-size:13px;color:var(--muted);margin-top:16px"><editable-text data-type="text" data-prop="a_savoir.contact.texte">{{ a_savoir.contact.texte }} </editable-text><a href="{{ a_savoir.contact.page | page_url: lang }}" class="fr-link"><editable-text data-type="span" data-prop="a_savoir.contact.lien">{{ a_savoir.contact.lien }} </editable-text><i class="fas fa-arrow-right"></i></a></p>
   </div>
 
   <!-- CTA vers accompagnement -->
   <div style="background:var(--bg);border-radius:12px;padding:48px;text-align:center">
     <p class="fr-label inv" style="justify-content:center" data-editable="text" data-type="span" data-prop="cta.surtitre">{{ cta.surtitre }}</p>
     <h2 style="color:#fff;font-weight:300;font-size:24px;margin-bottom:12px"><editable-text data-type="span" data-prop="cta.titre.avant">{{ cta.titre.avant }} </editable-text><strong style="color:var(--orange)" data-editable="text" data-type="span" data-prop="cta.titre.valeur">{{ cta.titre.valeur }}</strong></h2>
-    <p style="color:rgba(255,255,255,.65);font-size:14px;max-width:480px;margin:0 auto 28px;line-height:1.75;font-weight:300" data-editable="text" data-type="span" data-prop="cta.texte">{{ cta.texte }}</p>
+    <p style="color:rgba(255,255,255,.65);font-size:14px;max-width:480px;margin:0 auto 28px;line-height:1.75;font-weight:300" data-editable="text" data-type="text" data-prop="cta.texte">{{ cta.texte }}</p>
     <div class="d-flex gap-3 justify-content-center flex-wrap">
       <a href="{{ cta.bouton.page | page_url: lang }}" class="btn-orange"><i class="fas fa-hands-helping me-2"></i><editable-text data-type="span" data-prop="cta.bouton.texte">{{ cta.bouton.texte }}</editable-text></a>
       <a href="{{ cta.bouton_2.page | page_url: lang }}" class="btn-outline-w" data-editable="text" data-type="span" data-prop="cta.bouton_2.texte">{{ cta.bouton_2.texte }}</a>

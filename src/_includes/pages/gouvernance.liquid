@@ -8,7 +8,7 @@ section: fondation
   <div class="container">
     <div class="fr-hero-tag"><i class="fas fa-sitemap"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
     <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
-    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="text" data-prop="hero.texte">{{ hero.texte }}</p>
     <div class="fr-ribbon"></div>
   </div>
 </section>
@@ -31,7 +31,7 @@ section: fondation
 
   <div class="row">
     <div class="col-12 text-center">
-      <p style="font-size:13px;color:var(--muted);margin-bottom:16px" data-editable="text" data-type="span" data-prop="contact.texte">{{ contact.texte }}</p>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px" data-editable="text" data-type="text" data-prop="contact.texte">{{ contact.texte }}</p>
       <a href="{{ contact.page | page_url: lang }}" class="btn-orange" data-editable="text" data-type="span" data-prop="contact.bouton">{{ contact.bouton }}</a>
     </div>
   </div>

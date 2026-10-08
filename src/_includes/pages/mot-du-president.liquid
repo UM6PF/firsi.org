@@ -23,12 +23,12 @@ section: fondation
     </div>
     <div class="col-12 col-lg-9">
       <blockquote style="border-left:4px solid var(--orange);padding:0 0 0 24px;margin-bottom:28px">
-        <p style="font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.8;font-weight:300" data-editable="text" data-type="span" data-prop="message.citation">{{ message.citation }}</p>
+        <p style="font-size:1.05rem;font-style:italic;color:var(--text);line-height:1.8;font-weight:300" data-editable="text" data-type="text" data-prop="message.citation">{{ message.citation }}</p>
       </blockquote>
       <h2 class="heading-lg mb-4">{% include "partials/hl.liquid", t: message.titre, prop: "message.titre", tag: "span" %}</h2>
       <div data-editable="array" data-prop="message.paragraphes" style="display:contents">
 {%- for p in message.paragraphes %}
-      <p style="font-size:15px;color:var(--muted);line-height:1.8;font-weight:300{% unless forloop.last %};margin-bottom:18px{% endunless %}" data-editable="array-item"><editable-text data-type="span" data-prop="texte">{{ p.texte }}</editable-text></p>
+      <p style="font-size:15px;color:var(--muted);line-height:1.8;font-weight:300{% unless forloop.last %};margin-bottom:18px{% endunless %}" data-editable="array-item"><editable-text data-type="text" data-prop="texte">{{ p.texte }}</editable-text></p>
 {%- endfor %}
       </div>
     </div>

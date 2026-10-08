@@ -268,7 +268,7 @@ header_logo_height: 36
       <div class="col-12 col-lg-7">
         <div class="fr-hero-tag"><i class="fas fa-star"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
         <h1 class="heading-xl mb-3"><editable-text data-type="span" data-prop="hero.titre.ligne_1">{{ hero.titre.ligne_1 }}</editable-text><br>{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
-        <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);line-height:1.75;max-width:500px;margin-bottom:32px" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+        <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);line-height:1.75;max-width:500px;margin-bottom:32px" data-editable="text" data-type="text" data-prop="hero.texte">{{ hero.texte }}</p>
         <div class="d-flex gap-3 flex-wrap">
           <a href="{{ hero.bouton_principal.page | page_url: lang }}" class="btn-orange"><i class="fas {{ hero.bouton_principal.icone }}"></i> <editable-text data-type="span" data-prop="hero.bouton_principal.texte">{{ hero.bouton_principal.texte }}</editable-text></a>
           <a href="{{ hero.bouton_secondaire.page | page_url: lang }}" class="btn-outline-w"><i class="fas {{ hero.bouton_secondaire.icone }}"></i> <editable-text data-type="span" data-prop="hero.bouton_secondaire.texte">{{ hero.bouton_secondaire.texte }}</editable-text></a>
@@ -297,7 +297,7 @@ header_logo_height: 36
     <div class="col-12 col-lg-6">
       <p class="fr-label" data-editable="text" data-type="span" data-prop="chiffres.surtitre">{{ chiffres.surtitre }}</p>
       <h2 class="heading-lg mb-2">{% include "partials/hl.liquid", t: chiffres.titre, prop: "chiffres.titre", tag: "span" %}</h2>
-      <p class="fr-sub" data-editable="text" data-type="span" data-prop="chiffres.texte">{{ chiffres.texte }}</p>
+      <p class="fr-sub" data-editable="text" data-type="text" data-prop="chiffres.texte">{{ chiffres.texte }}</p>
     </div>
   </div>
   <div class="row g-3" data-editable="array" data-prop="chiffres.elements">
@@ -321,7 +321,7 @@ header_logo_height: 36
     <div class="col-12 col-md-6 col-lg-3" data-editable="array-item">
       <a href="{{ c.page | page_url: lang }}" class="fr-prog">
         <div class="fr-prog-header"><img src="{{ c.image }}" alt="{{ c.image_alt }}" loading="lazy" decoding="async" data-editable="image" data-prop-src="image" data-prop-alt="image_alt"><span class="fr-prog-badge" data-editable="text" data-type="span" data-prop="badge">{{ c.badge }}</span></div>
-        <div class="fr-prog-body"><h3 data-editable="text" data-type="span" data-prop="titre">{{ c.titre }}</h3><p data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</p><span class="fr-link"><editable-text data-type="span" data-prop="lien_texte">{{ c.lien_texte }}</editable-text> <i class="fas fa-arrow-right"></i></span></div>
+        <div class="fr-prog-body"><h3 data-editable="text" data-type="span" data-prop="titre">{{ c.titre }}</h3><p data-editable="text" data-type="text" data-prop="texte">{{ c.texte }}</p><span class="fr-link"><editable-text data-type="span" data-prop="lien_texte">{{ c.lien_texte }}</editable-text> <i class="fas fa-arrow-right"></i></span></div>
       </a>
     </div>
 {%- endfor %}
@@ -339,7 +339,7 @@ header_logo_height: 36
       <div class="fr-temo-slide{% if forloop.first %} temo-active{% endif %}" data-editable="array-item">
         <img class="fr-temo-photo" src="{{ t.photo }}" alt="{{ t.nom }}" decoding="async" data-editable="image" data-prop-src="photo">
         <div class="fr-temo-body">
-          <p class="fr-temo-quote" data-editable="text" data-type="span" data-prop="citation">{{ t.citation }}</p>
+          <p class="fr-temo-quote" data-editable="text" data-type="text" data-prop="citation">{{ t.citation }}</p>
           <div class="fr-temo-name" data-editable="text" data-type="span" data-prop="nom">{{ t.nom }}</div>
           <div class="fr-temo-school" data-editable="text" data-type="span" data-prop="ecole">{{ t.ecole }}</div>
           <div class="fr-temo-origin" data-editable="text" data-type="span" data-prop="origine">{{ t.origine }}</div>
@@ -365,7 +365,7 @@ header_logo_height: 36
       <div class="col-12 col-lg-7">
         <p class="fr-label" data-editable="text" data-type="span" data-prop="partenaires.surtitre">{{ partenaires.surtitre }}</p>
         <h2 class="heading-lg mb-2">{% include "partials/hl.liquid", t: partenaires.titre, prop: "partenaires.titre", tag: "span" %}</h2>
-        <p class="fr-sub" data-editable="text" data-type="span" data-prop="partenaires.texte">{{ partenaires.texte }}</p>
+        <p class="fr-sub" data-editable="text" data-type="text" data-prop="partenaires.texte">{{ partenaires.texte }}</p>
       </div>
     </div>
     <div class="fr-partners-grid" data-editable="array" data-prop="@data[logos_partenaires].logos">
