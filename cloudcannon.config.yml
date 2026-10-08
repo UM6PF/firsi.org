@@ -247,6 +247,7 @@ _editables:
     table: false
     embed: false
     code: false
+    align: false
     horizontalrule: false
     styles: /assets/css/styles-editeur.css
     allow_custom_markup: false
@@ -262,6 +263,7 @@ _editables:
     undo: true
     redo: true
     removeformat: true
+    align: false
     blockquote: false
     bulletedlist: false
     numberedlist: false
