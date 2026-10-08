@@ -43,9 +43,9 @@ intro:
 cartes:
   - icone: fa-eye
     titre: Vision
-    texte: Faire du Maroc et de l'Afrique un pôle d'excellence scientifique mondial,
-      en formant une nouvelle génération de leaders capables de répondre aux
-      grands défis du continent.
+    texte: <strong>Faire</strong> du Maroc et de l'Afrique un pôle d'excellence
+      scientifique mondial, en formant une nouvelle génération de leaders
+      capables de répondre aux grands défis du continent.
   - icone: fa-star
     titre: Valeurs
     texte: Excellence, équité, inclusion et diversité sociale. La FIRSI croit que le
