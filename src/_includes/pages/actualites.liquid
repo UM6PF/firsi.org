@@ -1,0 +1,97 @@
+---
+layout: layouts/base.liquid
+section: actualites
+---
+{%- if lang == "en" %}{% assign liste = collections.actualites_en %}{% else %}{% assign liste = collections.actualites_fr %}{% endif -%}
+{% include "partials/header.liquid" %}
+{% include "partials/breadcrumb.liquid" %}
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas fa-newspaper"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
+    <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+<div class="container py-5">
+<style>
+.actu-layout { display: grid; grid-template-columns: 200px 1fr; gap: 32px; }
+.actu-sidebar-inner { border: 1px solid var(--bd); border-radius: 12px; padding: 1rem; position: sticky; top: 90px; }
+.filter-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; font-weight: 500; }
+.filter-btn { display: flex; align-items: center; gap: 8px; width: 100%; padding: 8px 12px; border-radius: 8px; border: none; background: transparent; font-size: 13px; color: var(--muted); cursor: pointer; text-align: left; margin-bottom: 2px; }
+.filter-btn:hover { background: #f7f7f5; color: var(--text); }
+.filter-btn.active { background: #0C2251; color: #fff; font-weight: 500; }
+.filter-btn .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.filter-count { margin-left: auto; font-size: 11px; opacity: 0.6; }
+.filter-sep { height: 0.5px; background: var(--bd); margin: 10px 0; }
+.actu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.actu-card { background: #fff; border: 1px solid var(--bd); border-radius: 12px; overflow: hidden; transition: border-color 0.15s; text-decoration: none; display: block; }
+.actu-card:hover { border-color: var(--orange); }
+.actu-card.hidden { display: none; }
+.actu-img { width: 100%; height: 140px; object-fit: cover; display: block; background: #f0f0f0; }
+.actu-body { padding: 12px; }
+.actu-badge { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 20px; display: inline-block; margin-bottom: 6px; }
+.badge-portrait { background: #faeeda; color: #854f0b; }
+.badge-bourse { background: #e6f1fb; color: #185fa5; }
+.badge-rapport { background: #eaf3de; color: #3b6d11; }
+.badge-evenement { background: #faece7; color: #993c1d; }
+.actu-title { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 6px; }
+.actu-date { font-size: 11px; color: var(--muted); }
+.actu-dl { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--orange); font-weight: 600; margin-top: 8px; }
+</style>
+
+<div class="actu-layout">
+  <div class="actu-sidebar">
+    <div class="actu-sidebar-inner">
+      <div class="filter-label" data-editable="text" data-type="span" data-prop="filtres.titre">{{ filtres.titre }}</div>
+      <button class="filter-btn active" data-cat="tous">
+        <span class="dot" style="background:#888;"></span> <editable-text data-type="span" data-prop="filtres.tous">{{ filtres.tous }}</editable-text>
+        <span class="filter-count" id="count-tous">{{ liste | size }}</span>
+      </button>
+      <div class="filter-sep"></div>
+{%- for c in categories %}
+      {%- assign nb = liste | where_value: "categorie", c.id | size %}
+      <button class="filter-btn" data-cat="{{ c.id }}">
+        <span class="dot" style="background:{{ c.couleur }};"></span> {{ c[lang].filtre }}
+        <span class="filter-count" id="count-{{ c.id }}">{{ nb }}</span>
+      </button>
+{%- endfor %}
+    </div>
+  </div>
+
+  <div class="actu-grid" id="actu-grid">
+{% for a in liste %}
+{%- if a.data.categorie == "rapports" %}
+    <a href="{% if a.data.pdf != blank %}{{ a.data.pdf }}{% else %}#{% endif %}" download class="actu-card" data-cat="{{ a.data.categorie }}">
+{%- else %}
+    <a href="{{ 'actualites' | page_url: lang }}{{ a.data.article_id }}/" class="actu-card" data-cat="{{ a.data.categorie }}">
+{%- endif %}
+      <img class="actu-img" src="{{ a.data.image }}" alt="{{ a.data.image_alt }}">
+      <div class="actu-body">
+        <span class="actu-badge {{ a.data.badge.classe }}">{{ a.data.badge.libelle }}</span>
+        <div class="actu-title">{{ a.data.titre }}</div>
+        <div class="actu-date">{{ a.data.date_liste }}</div>
+{%- if a.data.categorie == "rapports" %}
+        <div class="actu-dl"><i class="fas fa-file-pdf"></i> <editable-text data-type="span" data-prop="libelle_pdf">{{ libelle_pdf }}</editable-text></div>
+{%- endif %}
+      </div>
+    </a>
+{% endfor %}
+  </div>
+</div>
+</div>
+
+<script>
+document.querySelectorAll('.filter-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    var cat = btn.dataset.cat;
+    document.querySelectorAll('.actu-card').forEach(function(card) {
+      card.classList.toggle('hidden', cat !== 'tous' && card.dataset.cat !== cat);
+    });
+  });
+});
+</script>
+
+{% include "partials/footer.liquid" %}
+{% include "partials/scripts.liquid" %}

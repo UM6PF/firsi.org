@@ -1,0 +1,268 @@
+---
+layout: layouts/base.liquid
+section: communaute
+---
+{% include "partials/header.liquid" %}
+{% include "partials/breadcrumb.liquid" %}
+
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas {{ hero.icone }}"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
+    <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+
+<div class="container py-5">
+
+  <!-- Compteurs globaux -->
+  <p class="fr-label" data-editable="text" data-type="span" data-prop="reseau.surtitre">{{ reseau.surtitre }}</p>
+  <h2 class="heading-lg mb-4">{% include "partials/hl.liquid", t: reseau.titre, prop: "reseau.titre", tag: "span" %}</h2>
+
+  <div class="row g-3 mb-4" data-editable="array" data-prop="reseau.chiffres">
+{%- for s in reseau.chiffres %}
+    <div class="col-6 col-md-3" data-editable="array-item"><div class="fr-stat"><span class="fr-stat-num" data-editable="text" data-type="span" data-prop="nombre">{{ s.nombre }}</span><div class="fr-stat-label" data-editable="text" data-type="span" data-prop="libelle">{{ s.libelle }}</div></div></div>
+{%- endfor %}
+  </div>
+
+  <style>
+  #map-wrap { background:#f0f4fa; border-radius:12px; overflow:hidden; position:relative; user-select:none; }
+  #map-svg { display:block; width:100%; cursor:grab; }
+  #map-svg.grabbing { cursor:grabbing; }
+  .zoom-ctrl { position:absolute; top:8px; right:8px; display:flex; flex-direction:column; gap:4px; z-index:5; }
+  .zb { background:#fff; border:0.5px solid rgba(0,0,0,0.15); border-radius:6px; width:26px; height:26px; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:14px; color:#333; }
+  .zb:hover { background:#f7f7f5; }
+  #map-hint { position:absolute; bottom:6px; left:50%; transform:translateX(-50%); background:rgba(12,34,81,0.8); color:#fff; font-size:10px; padding:3px 10px; border-radius:20px; pointer-events:none; white-space:nowrap; }
+  #tt { position:absolute; background:#0C2251; color:#fff; padding:6px 12px; border-radius:6px; font-size:13px; font-weight:500; pointer-events:none; opacity:0; transition:opacity 0.15s; white-space:nowrap; z-index:20; }
+  #tt.show { opacity:1; }
+  #tt small { color:#D46B2B; font-size:11px; display:block; margin-top:1px; }
+  .top5-item { display:flex; align-items:center; gap:8px; padding:8px 0; border-bottom:1px solid var(--bd); }
+  .top5-item:last-child { border-bottom:none; }
+  .top5-rank { width:20px; height:20px; border-radius:50%; background:#0C2251; color:#fff; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .top5-bar-wrap { flex:1; height:5px; background:#eef1f5; border-radius:3px; overflow:hidden; }
+  .top5-bar { height:100%; background:var(--orange); border-radius:3px; }
+  .side-card { background:#f7f7f5; border-radius:12px; padding:18px 20px; height:100%; }
+  .side-card .fr-label { margin-bottom:12px; }
+  .sector-item { margin-bottom:11px; }
+  .sector-item:last-child { margin-bottom:0; }
+  .sector-item-top { display:flex; justify-content:space-between; font-size:12px; color:var(--text); margin-bottom:3px; }
+  .sector-item-top b { font-weight:600; }
+  .sector-bar-wrap { height:6px; background:#eef1f5; border-radius:3px; overflow:hidden; }
+  .sector-bar { height:100%; background:#0C2251; border-radius:3px; }
+  </style>
+
+  <div class="row g-3 mb-2">
+    <div class="col-12 col-lg-6">
+      <div id="map-wrap">
+        <div class="zoom-ctrl">
+          <div class="zb" id="zi">+</div>
+          <div class="zb" id="zo">−</div>
+          <div class="zb" id="zr" style="font-size:10px;">↺</div>
+        </div>
+        <div id="map-hint" data-editable="text" data-type="span" data-prop="carte.aide">{{ carte.aide }}</div>
+        <svg id="map-svg" viewBox="0 0 680 354">
+          <g id="countries"></g>
+          <g id="dots"></g>
+        </svg>
+        <div id="tt"><span id="tt-name"></span><small id="tt-sub"></small></div>
+      </div>
+      <p style="font-size:11px;color:var(--muted);margin-top:8px;margin-bottom:0" data-editable="text" data-type="span" data-prop="carte.legende">{{ carte.legende }}</p>
+    </div>
+
+    <div class="col-6 col-lg-3">
+      <div class="side-card">
+        <p class="fr-label" data-editable="text" data-type="span" data-prop="carte.titre_top5">{{ carte.titre_top5 }}</p>
+        <div id="top5-list"></div>
+      </div>
+    </div>
+
+    <div class="col-6 col-lg-3">
+      <div class="side-card">
+        <p class="fr-label" data-editable="text" data-type="span" data-prop="secteurs.titre">{{ secteurs.titre }}</p>
+        <div data-editable="array" data-prop="secteurs.elements" style="display:contents">
+{%- for s in secteurs.elements %}
+        <div class="sector-item" data-editable="array-item"><div class="sector-item-top"><span data-editable="text" data-type="span" data-prop="nom">{{ s.nom }}</span><b>{{ s.pourcentage }}%</b></div><div class="sector-bar-wrap"><div class="sector-bar" style="width:{{ s.pourcentage }}%"></div></div></div>
+{%- endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="country-card" style="background:#fff;border-radius:12px;padding:0.85rem 1.5rem;display:none;margin-bottom:12px;border-left:4px solid #D46B2B;border-top:0.5px solid var(--bd);border-right:0.5px solid var(--bd);border-bottom:0.5px solid var(--bd);">
+    <div style="display:flex;align-items:center;justify-content:space-between;">
+      <div>
+        <div id="card-country-name" style="font-size:15px;font-weight:600;color:var(--text);"></div>
+        <div id="card-country-detail" style="font-size:12px;color:var(--muted);margin-top:2px;"></div>
+      </div>
+      <div id="card-country-count" style="font-size:22px;font-weight:700;color:var(--orange);"></div>
+    </div>
+  </div>
+
+  <p style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:2.5rem" data-editable="text" data-type="span" data-prop="carte.avertissement">{{ carte.avertissement }}</p>
+
+  <!-- ══ CONTRIBUTION ══ -->
+  <div style="margin-top:2rem;margin-bottom:2.5rem">
+    <p class="fr-label" data-editable="text" data-type="span" data-prop="contribuer.surtitre">{{ contribuer.surtitre }}</p>
+    <h2 class="heading-lg mb-4">{% include "partials/hl.liquid", t: contribuer.titre, prop: "contribuer.titre", tag: "span" %}</h2>
+    <div class="row g-4" data-editable="array" data-prop="contribuer.cartes">
+{%- for c in contribuer.cartes %}
+      <div class="col-12 col-md-4" data-editable="array-item">
+        <div class="fr-card" style="border-top:3px solid var(--bg)">
+          <div class="fr-card-icon"><i class="fas {{ c.icone }}"></i></div>
+          <h4 data-editable="text" data-type="span" data-prop="titre">{{ c.titre }}</h4>
+          <p data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</p>
+          <a href="{{ c.lien.page | page_url: lang }}" class="fr-link"><editable-text data-type="span" data-prop="lien.texte">{{ c.lien.texte }}</editable-text> <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+{%- endfor %}
+    </div>
+  </div>
+
+
+</div>
+
+<div class="fr-sticky">
+  <span data-editable="text" data-type="span" data-prop="barre.texte">{{ barre.texte }}</span>
+  <a href="{{ barre.bouton.page | page_url: lang }}" class="btn-orange" style="font-size:12px;padding:7px 18px" data-editable="text" data-type="span" data-prop="barre.bouton.texte">{{ barre.bouton.texte }}</a>
+</div>
+
+{% include "partials/footer.liquid" %}
+{% include "partials/scripts.liquid" %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script>
+const W = 680, H = 354, BASE_R = 6;
+let tx = 0, ty = 0, scale = 1;
+let dragging = false, startX, startY, startTx, startTy, lastClick = 0;
+
+// Données de la carte : front matter « pays », « autres_pays » et « carte » de la page.
+const countries = {{ pays | json }}.map(c => ({ name: c.nom, count: Number(c.nombre), lat: Number(c.lat), lng: Number(c.lng) }));
+const AUTRES = {{ autres_pays | json }};
+const TEXTES = {{ carte | json }};
+const AUTRES_PAYS_COUNT = Number(AUTRES.nombre_pays);
+const AUTRES_PAYS_ALUMNI = Number(AUTRES.nombre_alumni);
+const TOTAL_ALUMNI = countries.reduce((s, c) => s + c.count, 0) + AUTRES_PAYS_ALUMNI;
+
+const maxCount = Math.max(...countries.map(c => c.count));
+function radiusFor(count) {
+  return 5 + Math.sqrt(count / maxCount) * 22;
+}
+
+const proj = d3.geoNaturalEarth1().scale(W / 6.5).translate([W / 2, H / 2]);
+const pathGen = d3.geoPath().projection(proj);
+const svgEl = document.getElementById('map-svg');
+const dotsG = document.getElementById('dots');
+const tt = document.getElementById('tt');
+
+function clamp(v, mn, mx) { return Math.max(mn, Math.min(mx, v)); }
+
+function applyTransform() {
+  const t = 'translate(' + tx + ',' + ty + ') scale(' + scale + ')';
+  document.getElementById('countries').setAttribute('transform', t);
+  dotsG.setAttribute('transform', t);
+  dotsG.querySelectorAll('circle').forEach(c => {
+    const baseR = parseFloat(c.dataset.baseR);
+    c.setAttribute('r', baseR / scale);
+    c.setAttribute('stroke-width', 1.5 / scale);
+  });
+}
+
+function zoomTo(newScale, cx, cy) {
+  cx = cx ?? W/2; cy = cy ?? H/2;
+  const prev = scale;
+  scale = clamp(newScale, 1, 12);
+  tx = cx - (cx - tx) * (scale / prev);
+  ty = cy - (cy - ty) * (scale / prev);
+  tx = clamp(tx, Math.min(W*(1-scale), 0), 0);
+  ty = clamp(ty, Math.min(H*(1-scale), 0), 0);
+  applyTransform();
+}
+
+document.getElementById('zi').addEventListener('click', () => zoomTo(scale * 1.6));
+document.getElementById('zo').addEventListener('click', () => zoomTo(scale / 1.6));
+document.getElementById('zr').addEventListener('click', () => { tx=0; ty=0; scale=1; applyTransform(); });
+
+svgEl.addEventListener('mousedown', e => {
+  if (e.target.tagName === 'circle') return;
+  dragging = true; startX = e.clientX; startY = e.clientY; startTx = tx; startTy = ty;
+  svgEl.classList.add('grabbing');
+});
+window.addEventListener('mousemove', e => {
+  if (!dragging) return;
+  const rw = svgEl.getBoundingClientRect().width / W;
+  tx = clamp(startTx + (e.clientX - startX) / rw, Math.min(W*(1-scale),0), 0);
+  ty = clamp(startTy + (e.clientY - startY) / rw, Math.min(H*(1-scale),0), 0);
+  applyTransform();
+});
+window.addEventListener('mouseup', () => { dragging = false; svgEl.classList.remove('grabbing'); });
+
+svgEl.addEventListener('click', e => {
+  if (e.target.tagName === 'circle') return;
+  const now = Date.now();
+  if (now - lastClick < 350) {
+    const rect = svgEl.getBoundingClientRect();
+    const cx = (e.clientX - rect.left) * (W / rect.width);
+    const cy = (e.clientY - rect.top) * (H / rect.height);
+    scale < 10 ? zoomTo(scale * 2, cx, cy) : (tx=0, ty=0, scale=1, applyTransform());
+  }
+  lastClick = now;
+});
+
+// Top 5 pays
+const top5El = document.getElementById('top5-list');
+const top5 = [...countries].sort((a, b) => b.count - a.count).slice(0, 5);
+top5.forEach((c, i) => {
+  const pct = Math.round((c.count / top5[0].count) * 100);
+  const row = document.createElement('div');
+  row.className = 'top5-item';
+  row.innerHTML = '<div class="top5-rank">' + (i+1) + '</div>' +
+    '<div style="flex:1"><div style="font-size:13px;color:var(--text);margin-bottom:4px">' + c.name + '</div>' +
+    '<div class="top5-bar-wrap"><div class="top5-bar" style="width:' + pct + '%"></div></div></div>' +
+    '<div style="font-size:13px;font-weight:600;color:var(--text);min-width:36px;text-align:right">' + c.count + '</div>';
+  top5El.appendChild(row);
+});
+const note = document.createElement('p');
+note.style.cssText = 'font-size:12px;color:var(--muted);margin-top:14px;margin-bottom:0';
+note.textContent = '+ ' + AUTRES_PAYS_COUNT + ' ' + AUTRES.texte;
+top5El.parentElement.appendChild(note);
+
+d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(world => {
+  d3.select('#countries').selectAll('path')
+    .data(topojson.feature(world, world.objects.countries).features)
+    .join('path').attr('d', pathGen).attr('fill', '#dce8f5').attr('stroke', '#fff').attr('stroke-width', 0.5);
+
+  countries.forEach(c => {
+    const [x, y] = proj([c.lng, c.lat]);
+    if (!x || !y) return;
+    const r = radiusFor(c.count);
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    circle.setAttribute('cx', x); circle.setAttribute('cy', y);
+    circle.setAttribute('r', r); circle.setAttribute('fill', '#D46B2B');
+    circle.setAttribute('fill-opacity', '0.75');
+    circle.setAttribute('stroke', '#fff'); circle.setAttribute('stroke-width', 1.5);
+    circle.dataset.baseR = r;
+    circle.style.cursor = 'pointer';
+    circle.addEventListener('mouseenter', () => {
+      document.getElementById('tt-name').textContent = c.name;
+      document.getElementById('tt-sub').textContent = c.count + TEXTES.infobulle_suffixe;
+      const svgRect = svgEl.getBoundingClientRect();
+      const wrapRect = svgEl.parentElement.getBoundingClientRect();
+      const rw = svgRect.width / W, rh = svgRect.height / H;
+      tt.style.left = ((tx + x*scale)*rw + svgRect.left - wrapRect.left + 10) + 'px';
+      tt.style.top = ((ty + y*scale)*rh + svgRect.top - wrapRect.top - 38) + 'px';
+      tt.classList.add('show');
+    });
+    circle.addEventListener('mouseleave', () => { tt.classList.remove('show'); });
+    circle.addEventListener('click', e => {
+      e.stopPropagation();
+      const pct = Math.round((c.count / TOTAL_ALUMNI) * 100);
+      document.getElementById('card-country-name').textContent = c.name;
+      document.getElementById('card-country-detail').textContent = pct + TEXTES.fiche_suffixe;
+      document.getElementById('card-country-count').textContent = c.count;
+      document.getElementById('country-card').style.display = 'block';
+    });
+    dotsG.appendChild(circle);
+  });
+});
+</script>

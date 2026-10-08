@@ -1,0 +1,39 @@
+---
+layout: layouts/base.liquid
+section: fondation
+---
+{% include "partials/header.liquid" %}
+{% include "partials/breadcrumb.liquid" %}
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas fa-question-circle"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
+    <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-lg-8 offset-lg-2" data-editable="array" data-prop="groupes">
+{%- for g in groupes %}
+{%- assign premier_groupe = forloop.first %}
+      <div class="mb-5" data-editable="array-item">
+        <p class="fr-label" data-editable="text" data-type="span" data-prop="titre">{{ g.titre }}</p>
+        <div data-editable="array" data-prop="questions" style="display:contents">
+{%- for q in g.questions %}
+        <div class="fr-faq-item{% if premier_groupe and forloop.first %} open{% endif %}" data-editable="array-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)"><editable-text data-type="span" data-prop="question">{{ q.question }}</editable-text><i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a" data-editable="text" data-type="text" data-prop="reponse">{{ q.reponse }}</div>
+        </div>
+{%- endfor %}
+        </div>
+      </div>
+{%- endfor %}
+    </div>
+  </div>
+</div>
+
+{% include "partials/footer.liquid" %}
+{% include "partials/scripts.liquid" %}
+<script>
+function toggleFaq(el){const i=el.parentElement;const o=i.classList.contains('open');document.querySelectorAll('.fr-faq-item').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')}
+</script>

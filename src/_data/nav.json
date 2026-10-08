@@ -1,0 +1,146 @@
+{
+  "fr": {
+    "logo_alt": "UM6P — Fondation Ibn Rochd pour les Sciences et l'Innovation",
+    "groups": [
+      { "id": "fondation", "label": "La Fondation", "items": [
+        { "page": "mission", "icon": "fa-bullseye", "label": "Mission" },
+        { "page": "mot-du-president", "icon": "fa-user-tie", "label": "Mot du Président" },
+        { "page": "gouvernance", "icon": "fa-sitemap", "label": "Gouvernance" },
+        { "page": "partenaires", "icon": "fa-handshake", "label": "Partenaires" },
+        { "sep": true },
+        { "page": "faq", "icon": "fa-question-circle", "label": "FAQ" }
+      ]},
+      { "id": "programmes", "label": "Nos programmes", "items": [
+        { "heading": true, "page": "programme-lycee", "label": "Bourses &amp; aides" },
+        { "page": "programme-lycee", "icon": "fa-school", "label": "Lycées Mohammed VI d'Excellence" },
+        { "page": "programme-um6p", "icon": "fa-university", "label": "UM6P" },
+        { "page": "programme-gef", "icon": "fa-flag", "label": "GEF — Grandes Écoles Françaises" },
+        { "page": "programme-gem", "icon": "fa-star-and-crescent", "label": "GEM — Grandes Écoles Marocaines" },
+        { "page": "pret-etudiant", "icon": "fa-hand-holding-usd", "label": "Prêt étudiant" },
+        { "page": "accompagnement", "icon": "fa-hands-helping", "label": "Accompagnement" },
+        { "sep": true },
+        { "heading": true, "page": "entrepreneuriat", "label": "Entrepreneuriat &amp; innovation" },
+        { "page": "entrepreneuriat", "icon": "fa-rocket", "label": "Nos initiatives" }
+      ]},
+      { "id": "communaute", "label": "Notre communauté", "items": [
+        { "page": "chiffres-cles", "icon": "fa-chart-bar", "label": "Chiffres clés" },
+        { "page": "boursier", "icon": "fa-award", "label": "Boursiers" },
+        { "page": "alumni", "icon": "fa-users", "label": "Alumni" }
+      ]}
+    ],
+    "links": [
+      { "id": "actualites", "page": "actualites", "label": "Toutes les actualités" },
+      { "id": "contact", "page": "contact", "label": "Contact" },
+      { "id": "soutenir", "page": "nous-soutenir", "label": "Nous soutenir" }
+    ],
+    "cta": { "id": "candidater", "page": "candidat", "label": "Candidater →" },
+    "lang_code": "FR",
+    "footer": {
+      "logo_alt": "UM6P — Fondation Ibn Rochd",
+      "about": "Fondation Ibn Rochd pour les Sciences et l'Innovation — adossée à l'Université Mohammed VI Polytechnique de Benguérir.",
+      "cols": [
+        { "title": "La fondation", "items": [
+          { "page": "mission", "label": "Mission" },
+          { "page": "mot-du-president", "label": "Mot du Président" },
+          { "page": "gouvernance", "label": "Gouvernance" },
+          { "page": "partenaires", "label": "Partenaires" },
+          { "page": "faq", "label": "FAQ" }
+        ]},
+        { "title": "Nos programmes", "items": [
+          { "heading": "first", "label": "Bourses &amp; aides" },
+          { "page": "programme-lycee", "label": "Lycées Mohammed VI d'Excellence" },
+          { "page": "programme-um6p", "label": "UM6P" },
+          { "page": "programme-gef", "label": "Grandes Écoles FR" },
+          { "page": "programme-gem", "label": "Grandes Écoles MA" },
+          { "page": "pret-etudiant", "label": "Prêt étudiant" },
+          { "page": "accompagnement", "label": "Accompagnement" },
+          { "heading": "next", "label": "Entrepreneuriat &amp; innovation" },
+          { "page": "entrepreneuriat", "label": "Nos initiatives" }
+        ]},
+        { "title": "Notre communauté", "items": [
+          { "page": "chiffres-cles", "label": "Chiffres clés" },
+          { "page": "boursier", "label": "Boursiers" },
+          { "page": "alumni", "label": "Alumni" }
+        ]}
+      ],
+      "last_col": [
+        { "title": "Actualités", "items": [ { "page": "actualites", "label": "Toutes les actualités" } ] },
+        { "title": "Contact", "items": [ { "page": "contact", "label": "Nous contacter" } ] },
+        { "title": "Nous soutenir", "items": [ { "page": "nous-soutenir", "label": "Faire un don" }, { "page": "nous-soutenir", "label": "Devenir mécène" } ] }
+      ],
+      "copyright": "2026 © Tous droits réservés — FIRSI"
+    }
+  },
+  "en": {
+    "logo_alt": "UM6P — Ibn Rochd Foundation for Sciences and Innovation",
+    "groups": [
+      { "id": "fondation", "label": "The Foundation", "items": [
+        { "page": "mission", "icon": "fa-bullseye", "label": "Mission" },
+        { "page": "mot-du-president", "icon": "fa-user-tie", "label": "President's Message" },
+        { "page": "gouvernance", "icon": "fa-sitemap", "label": "Governance" },
+        { "page": "partenaires", "icon": "fa-handshake", "label": "Partners" },
+        { "sep": true },
+        { "page": "faq", "icon": "fa-question-circle", "label": "FAQ" }
+      ]},
+      { "id": "programmes", "label": "Our Programs", "items": [
+        { "heading": true, "page": "programme-lycee", "label": "Scholarships &amp; Financial Aid" },
+        { "page": "programme-lycee", "icon": "fa-school", "label": "Mohammed VI Excellence High Schools" },
+        { "page": "programme-um6p", "icon": "fa-university", "label": "UM6P" },
+        { "page": "programme-gef", "icon": "fa-flag", "label": "GEF — French Engineering &amp; Business Schools" },
+        { "page": "programme-gem", "icon": "fa-star-and-crescent", "label": "GEM — Moroccan Engineering &amp; Business Schools" },
+        { "page": "pret-etudiant", "icon": "fa-hand-holding-usd", "label": "Student Loan" },
+        { "page": "accompagnement", "icon": "fa-hands-helping", "label": "Support &amp; Mentoring" },
+        { "sep": true },
+        { "heading": true, "page": "entrepreneuriat", "label": "Entrepreneurship &amp; Innovation" },
+        { "page": "entrepreneuriat", "icon": "fa-rocket", "label": "Our Initiatives" }
+      ]},
+      { "id": "communaute", "label": "Our Community", "items": [
+        { "page": "chiffres-cles", "icon": "fa-chart-bar", "label": "Key Figures" },
+        { "page": "boursier", "icon": "fa-award", "label": "Scholars" },
+        { "page": "alumni", "icon": "fa-users", "label": "Alumni" }
+      ]}
+    ],
+    "links": [
+      { "id": "actualites", "page": "actualites", "label": "All News" },
+      { "id": "contact", "page": "contact", "label": "Contact" },
+      { "id": "soutenir", "page": "nous-soutenir", "label": "Support Us" }
+    ],
+    "cta": { "id": "candidater", "page": "candidat", "label": "Apply →" },
+    "lang_code": "EN",
+    "footer": {
+      "logo_alt": "UM6P — Ibn Rochd Foundation",
+      "about": "Ibn Rochd Foundation for Sciences and Innovation — affiliated with Mohammed VI Polytechnic University in Benguerir.",
+      "cols": [
+        { "title": "The Foundation", "items": [
+          { "page": "mission", "label": "Mission" },
+          { "page": "mot-du-president", "label": "President's Message" },
+          { "page": "gouvernance", "label": "Governance" },
+          { "page": "partenaires", "label": "Partners" },
+          { "page": "faq", "label": "FAQ" }
+        ]},
+        { "title": "Our Programs", "items": [
+          { "heading": "first", "label": "Scholarships &amp; Financial Aid" },
+          { "page": "programme-lycee", "label": "Mohammed VI Excellence High Schools" },
+          { "page": "programme-um6p", "label": "UM6P" },
+          { "page": "programme-gef", "label": "French Engineering &amp; Business Schools" },
+          { "page": "programme-gem", "label": "Moroccan Engineering &amp; Business Schools" },
+          { "page": "pret-etudiant", "label": "Student Loan" },
+          { "page": "accompagnement", "label": "Support &amp; Mentoring" },
+          { "heading": "next", "label": "Entrepreneurship &amp; Innovation" },
+          { "page": "entrepreneuriat", "label": "Our Initiatives" }
+        ]},
+        { "title": "Our Community", "items": [
+          { "page": "chiffres-cles", "label": "Key Figures" },
+          { "page": "boursier", "label": "Scholars" },
+          { "page": "alumni", "label": "Alumni" }
+        ]}
+      ],
+      "last_col": [
+        { "title": "News", "items": [ { "page": "actualites", "label": "All News" } ] },
+        { "title": "Contact", "items": [ { "page": "contact", "label": "Get in Touch" } ] },
+        { "title": "Support Us", "items": [ { "page": "nous-soutenir", "label": "Give" }, { "page": "nous-soutenir", "label": "Become a Partner" } ] }
+      ],
+      "copyright": "2026 © All rights reserved — FIRSI"
+    }
+  }
+}

@@ -1,0 +1,114 @@
+---
+layout: layouts/base.liquid
+section: programmes
+---
+{% include "partials/header.liquid" %}
+{% include "partials/breadcrumb.liquid" %}
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas {{ hero.icone }}"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
+    <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+
+<div class="container py-5">
+
+  <!-- THE FORGE -->
+  <div class="row g-5 align-items-center mb-5 pb-5" style="border-bottom:1px solid var(--border-light)">
+    <div class="col-12 col-lg-6">
+      <p class="fr-label" data-editable="text" data-type="span" data-prop="forge.surtitre">{{ forge.surtitre }}</p>
+      <h2 class="heading-lg mb-3"><span data-editable="text" data-type="span" data-prop="forge.titre">{{ forge.titre }}</span></h2>
+      <div data-editable="array" data-prop="forge.paragraphes" style="display:contents">
+{%- for p in forge.paragraphes %}
+      <p style="font-size:15px;color:var(--muted);line-height:1.75;font-weight:300;margin-bottom:{% if forloop.last %}28{% else %}20{% endif %}px" data-editable="array-item"><editable-text data-type="span" data-prop="texte">{{ p.texte }}</editable-text></p>
+{%- endfor %}
+      </div>
+      <div class="d-flex gap-3 flex-wrap mb-4" data-editable="array" data-prop="forge.chiffres">
+{%- for c in forge.chiffres %}
+        <div style="background:#f7f7f5;border-radius:8px;padding:12px 20px;text-align:center" data-editable="array-item">
+          <div style="font-size:24px;font-weight:700;color:var(--{% if c.accent %}orange{% else %}bg{% endif %})" data-editable="text" data-type="span" data-prop="valeur">{{ c.valeur }}</div>
+          <div style="font-size:11px;color:var(--muted)" data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</div>
+        </div>
+{%- endfor %}
+      </div>
+      <a href="{{ forge.bouton.url }}" target="_blank" class="btn-orange"><i class="fas fa-external-link-alt me-2"></i><editable-text data-type="span" data-prop="forge.bouton.texte">{{ forge.bouton.texte }}</editable-text></a>
+    </div>
+    <div class="col-12 col-lg-5 offset-lg-1">
+      <div style="background:#0C2251;border-radius:12px;padding:40px;display:flex;align-items:center;justify-content:center;height:280px">
+        <img src="{{ forge.logo }}" alt="{{ forge.logo_alt }}" style="max-width:220px;max-height:160px;object-fit:contain" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" data-editable="image" data-prop-src="forge.logo" data-prop-alt="forge.logo_alt">
+        <div style="display:none;text-align:center">
+          <div style="color:#fff;font-family:'Work Sans',sans-serif;font-weight:800;font-size:28px;letter-spacing:2px">{{ forge.visuel.titre }}</div>
+          <div style="color:rgba(255,255,255,.5);font-size:13px;margin-top:4px">{{ forge.visuel.sous_titre }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MASSARATES -->
+  <div class="row g-5 align-items-center mb-5 pb-5" style="border-bottom:1px solid var(--border-light)">
+    <div class="col-12 col-lg-5 order-lg-1 order-2">
+      <div style="background:#0C2251;border-radius:12px;padding:40px;display:flex;align-items:center;justify-content:center;height:280px">
+        <div style="text-align:center">
+          <i class="fas {{ massarates.visuel.icone }}" style="font-size:4rem;color:#D46B2B;margin-bottom:16px;display:block"></i>
+          <div style="color:#fff;font-family:'Work Sans',sans-serif;font-weight:800;font-size:28px;letter-spacing:2px" data-editable="text" data-type="span" data-prop="massarates.visuel.titre">{{ massarates.visuel.titre }}</div>
+          <div style="color:rgba(255,255,255,.5);font-size:13px;margin-top:4px" data-editable="text" data-type="span" data-prop="massarates.visuel.sous_titre">{{ massarates.visuel.sous_titre }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6 offset-lg-1 order-lg-2 order-1">
+      <p class="fr-label" data-editable="text" data-type="span" data-prop="massarates.surtitre">{{ massarates.surtitre }}</p>
+      <h2 class="heading-lg mb-3"><span data-editable="text" data-type="span" data-prop="massarates.titre">{{ massarates.titre }}</span></h2>
+      <div data-editable="array" data-prop="massarates.paragraphes" style="display:contents">
+{%- for p in massarates.paragraphes %}
+      <p style="font-size:15px;color:var(--muted);line-height:1.75;font-weight:300;margin-bottom:{% if forloop.last %}28{% else %}20{% endif %}px" data-editable="array-item"><editable-text data-type="span" data-prop="texte">{{ p.texte }}</editable-text></p>
+{%- endfor %}
+      </div>
+      <div class="d-flex gap-3 flex-wrap mb-4" data-editable="array" data-prop="massarates.chiffres">
+{%- for c in massarates.chiffres %}
+        <div style="background:#f7f7f5;border-radius:8px;padding:12px 20px;text-align:center" data-editable="array-item">
+          <div style="font-size:24px;font-weight:700;color:var(--{% if c.accent %}orange{% else %}bg{% endif %})" data-editable="text" data-type="span" data-prop="valeur">{{ c.valeur }}</div>
+          <div style="font-size:11px;color:var(--muted)" data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</div>
+        </div>
+{%- endfor %}
+      </div>
+      <a href="{{ massarates.bouton.url }}" target="_blank" class="btn-orange"><i class="fas fa-external-link-alt me-2"></i><editable-text data-type="span" data-prop="massarates.bouton.texte">{{ massarates.bouton.texte }}</editable-text></a>
+    </div>
+  </div>
+
+  <!-- HEWB -->
+  <div class="row g-5 align-items-center mb-5">
+    <div class="col-12 col-lg-6">
+      <p class="fr-label" data-editable="text" data-type="span" data-prop="hewb.surtitre">{{ hewb.surtitre }}</p>
+      <h2 class="heading-lg mb-3"><span data-editable="text" data-type="span" data-prop="hewb.titre">{{ hewb.titre }}</span></h2>
+      <div data-editable="array" data-prop="hewb.paragraphes" style="display:contents">
+{%- for p in hewb.paragraphes %}
+      <p style="font-size:15px;color:var(--muted);line-height:1.75;font-weight:300;margin-bottom:{% if forloop.last %}28{% else %}20{% endif %}px" data-editable="array-item"><editable-text data-type="span" data-prop="texte">{{ p.texte }}</editable-text></p>
+{%- endfor %}
+      </div>
+      <div class="d-flex gap-3 flex-wrap mb-4" data-editable="array" data-prop="hewb.chiffres">
+{%- for c in hewb.chiffres %}
+        <div style="background:#f7f7f5;border-radius:8px;padding:12px 20px;text-align:center" data-editable="array-item">
+          <div style="font-size:24px;font-weight:700;color:var(--{% if c.accent %}orange{% else %}bg{% endif %})" data-editable="text" data-type="span" data-prop="valeur">{{ c.valeur }}</div>
+          <div style="font-size:11px;color:var(--muted)" data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</div>
+        </div>
+{%- endfor %}
+      </div>
+      <a href="{{ hewb.bouton.url }}" target="_blank" class="btn-orange"><i class="fas fa-external-link-alt me-2"></i><editable-text data-type="span" data-prop="hewb.bouton.texte">{{ hewb.bouton.texte }}</editable-text></a>
+    </div>
+    <div class="col-12 col-lg-5 offset-lg-1">
+      <div style="background:#0C2251;border-radius:12px;padding:40px;display:flex;align-items:center;justify-content:center;height:280px">
+        <img src="{{ hewb.logo }}" alt="{{ hewb.logo_alt }}" style="max-width:220px;max-height:160px;object-fit:contain" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" data-editable="image" data-prop-src="hewb.logo" data-prop-alt="hewb.logo_alt">
+        <div style="display:none;text-align:center">
+          <div style="color:#fff;font-family:'Work Sans',sans-serif;font-weight:800;font-size:28px;letter-spacing:2px">{{ hewb.visuel.titre }}</div>
+          <div style="color:rgba(255,255,255,.5);font-size:13px;margin-top:4px">{{ hewb.visuel.sous_titre }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% include "partials/footer.liquid" %}
+{% include "partials/scripts.liquid" %}

@@ -1,0 +1,115 @@
+---
+layout: layouts/base.liquid
+section: programmes
+---
+{%- comment -%}
+Gabarit commun aux pages programme (lycée, UM6P, GEF, GEM), FR et EN.
+Blocs facultatifs : reseau (campus du lycée), bandeau (écoles partenaires du GEF).
+cta.style : "sombre" (fond foncé) ou "clair" (fond gris).
+Boutons : page (identifiant de page interne) ou url (lien externe, ouvert dans un nouvel onglet).
+{%- endcomment -%}
+{% include "partials/header.liquid" %}
+{% include "partials/breadcrumb.liquid" %}
+
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas {{ hero.icone }}"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
+    <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:600px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <div class="d-flex gap-3 flex-wrap mt-4" data-editable="array" data-prop="hero.boutons">
+{%- for b in hero.boutons %}
+      <a href="{% if b.url != blank %}{{ b.url }}{% else %}{{ b.page | page_url: lang }}{% endif %}"{% if b.url != blank %} target="_blank"{% endif %} class="{% if forloop.first %}btn-orange{% else %}btn-outline-w{% endif %}" data-editable="array-item"><i class="fas {{ b.icone }} me-2"></i><editable-text data-type="span" data-prop="texte">{{ b.texte }}</editable-text></a>
+{%- endfor %}
+    </div>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+
+<div class="container py-5">
+
+  <!-- ══ BLOC PRINCIPAL ══ -->
+  <div class="row g-5 align-items-center mb-5">
+    <div class="col-12 col-lg-6">
+      <p class="fr-label" data-editable="text" data-type="span" data-prop="intro.surtitre">{{ intro.surtitre }}</p>
+      <h2 class="heading-lg mb-3">{% include "partials/hl.liquid", t: intro.titre, prop: "intro.titre", tag: "span" %}</h2>
+      <div data-editable="array" data-prop="intro.paragraphes" style="display:contents">
+{%- for p in intro.paragraphes %}
+      <p style="font-size:15px;color:var(--muted);line-height:1.8;font-weight:300{% unless forloop.last %};margin-bottom:18px{% endunless %}" data-editable="array-item"><editable-text data-type="span" data-prop="texte">{{ p.texte }}</editable-text></p>
+{%- endfor %}
+      </div>
+    </div>
+    <div class="col-12 col-lg-5 offset-lg-1">
+      <img src="{{ intro.image }}" alt="{{ intro.image_alt }}" style="width:100%;border-radius:12px;object-fit:cover;height:340px" data-editable="image" data-prop-src="intro.image" data-prop-alt="intro.image_alt">
+    </div>
+  </div>
+
+  <!-- ══ 3 CARDS ══ -->
+  <div class="row g-4 mb-5" data-editable="array" data-prop="cartes">
+{%- for c in cartes %}
+    <div class="col-12 col-md-4" data-editable="array-item">
+      <div class="fr-card">
+        <div class="fr-card-icon"><i class="fas {{ c.icone }}"></i></div>
+        <h4 data-editable="text" data-type="span" data-prop="titre">{{ c.titre }}</h4>
+        <p data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</p>
+      </div>
+    </div>
+{%- endfor %}
+  </div>
+{%- if reseau %}
+
+  <!-- ══ RÉSEAU ══ -->
+  <div style="background:#f7f7f5;border-radius:12px;padding:40px">
+    <p class="fr-label" data-editable="text" data-type="span" data-prop="reseau.surtitre">{{ reseau.surtitre }}</p>
+    <h2 class="heading-lg mb-4">{% include "partials/hl.liquid", t: reseau.titre, prop: "reseau.titre", tag: "span" %}</h2>
+    <div class="row g-4" data-editable="array" data-prop="reseau.cartes">
+{%- for c in reseau.cartes %}
+{%- if c.accent %}{% assign couleur = "var(--orange)" %}{% else %}{% assign couleur = "var(--bg)" %}{% endif %}
+      <div class="col-12 col-md-4" data-editable="array-item">
+        <div class="fr-card" style="border-top:3px solid {{ couleur }}">
+          <h4 style="color:{{ couleur }};font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px" data-editable="text" data-type="span" data-prop="ville">{{ c.ville }}</h4>
+          <h4 data-editable="text" data-type="span" data-prop="titre">{{ c.titre }}</h4>
+          <p data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</p>
+{%- if c.lien.url != blank %}
+          <a href="{{ c.lien.url }}" target="_blank" class="fr-link"><editable-text data-type="span" data-prop="lien.texte">{{ c.lien.texte }} </editable-text><i class="fas fa-arrow-right"></i></a>
+{%- endif %}
+        </div>
+      </div>
+{%- endfor %}
+    </div>
+  </div>
+{%- endif %}
+{%- if bandeau %}
+
+  <!-- ══ ÉCOLES PARTENAIRES ══ -->
+  <div style="background:var(--bg);border-radius:12px;padding:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:24px">
+    <div>
+      <p style="color:var(--orange);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:6px" data-editable="text" data-type="span" data-prop="bandeau.surtitre">{{ bandeau.surtitre }}</p>
+      <p style="color:#fff;font-size:18px;font-weight:300;margin:0"><editable-text data-type="span" data-prop="bandeau.texte.avant">{{ bandeau.texte.avant }} </editable-text><strong data-editable="text" data-type="span" data-prop="bandeau.texte.valeur">{{ bandeau.texte.valeur }}</strong></p>
+    </div>
+    <a href="{{ bandeau.bouton.page | page_url: lang }}" class="btn-outline-w"><i class="fas {{ bandeau.bouton.icone }} me-2"></i><editable-text data-type="span" data-prop="bandeau.bouton.texte">{{ bandeau.bouton.texte }}</editable-text></a>
+  </div>
+{%- endif %}
+
+  <!-- ══ CTA ══ -->
+{%- if cta.style == "sombre" %}
+  <div style="background:var(--bg);border-radius:12px;padding:40px;text-align:center{% if reseau %};margin-top:32px{% endif %}">
+    <p class="fr-label inv" style="justify-content:center" data-editable="text" data-type="span" data-prop="cta.surtitre">{{ cta.surtitre }}</p>
+    <h3 style="color:#fff;font-weight:300;font-size:22px;margin-bottom:12px">{% include "partials/hl.liquid", t: cta.titre, prop: "cta.titre", tag: "strong", style: "color:var(--orange)" %}</h3>
+    <p style="color:rgba(255,255,255,.65);font-size:14px;max-width:480px;margin:0 auto 24px;line-height:1.75;font-weight:300" data-editable="text" data-type="span" data-prop="cta.texte">{{ cta.texte }}</p>
+{%- else %}
+  <div style="background:#f7f7f5;border-radius:12px;padding:40px;text-align:center{% if reseau %};margin-top:32px{% endif %}">
+    <p class="fr-label" style="justify-content:center" data-editable="text" data-type="span" data-prop="cta.surtitre">{{ cta.surtitre }}</p>
+    <h3 style="font-weight:300;font-size:22px;margin-bottom:12px">{% include "partials/hl.liquid", t: cta.titre, prop: "cta.titre", tag: "strong" %}</h3>
+    <p style="font-size:14px;color:var(--muted);max-width:480px;margin:0 auto 24px;line-height:1.75;font-weight:300" data-editable="text" data-type="span" data-prop="cta.texte">{{ cta.texte }}</p>
+{%- endif %}
+    <div class="d-flex gap-3 justify-content-center flex-wrap" data-editable="array" data-prop="cta.boutons">
+{%- for b in cta.boutons %}
+      <a href="{% if b.url != blank %}{{ b.url }}{% else %}{{ b.page | page_url: lang }}{% endif %}"{% if b.url != blank %} target="_blank"{% endif %} class="{% if forloop.first %}btn-orange{% else %}btn-outline-w{% endif %}"{% unless forloop.first or cta.style == "sombre" %} style="border-color:var(--bg);color:var(--bg)"{% endunless %} data-editable="array-item"><i class="fas {{ b.icone }} me-2"></i><editable-text data-type="span" data-prop="texte">{{ b.texte }}</editable-text></a>
+{%- endfor %}
+    </div>
+  </div>
+
+</div>
+
+{% include "partials/footer.liquid" %}
+{% include "partials/scripts.liquid" %}

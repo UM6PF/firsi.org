@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>{{ seo.title | default: title }}</title>
+{%- if seo.description %}
+<meta name="description" content="{{ seo.description | escape }}">
+{%- endif %}
+{%- assign alt_lang = "en" %}{% if lang == "en" %}{% assign alt_lang = "fr" %}{% endif %}
+{%- assign self_url = page.url %}
+<link rel="canonical" href="{{ site.url }}{{ self_url }}">
+{%- if alternate_url %}
+<link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}{{ self_url }}">
+<link rel="alternate" hreflang="{{ alt_lang }}" href="{{ site.url }}{{ alternate_url }}">
+{%- endif %}
+<meta property="og:type" content="{% if og_type %}{{ og_type }}{% else %}website{% endif %}">
+<meta property="og:site_name" content="FIRSI">
+<meta property="og:title" content="{{ seo.title | default: title | escape }}">
+{%- if seo.description %}
+<meta property="og:description" content="{{ seo.description | escape }}">
+{%- endif %}
+<meta property="og:url" content="{{ site.url }}{{ self_url }}">
+<meta property="og:image" content="{{ site.url }}{{ seo.image | default: site.og_image }}">
+<meta property="og:locale" content="{% if lang == 'en' %}en_US{% else %}fr_FR{% endif %}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/firsi.css">
+{{ head_extra }}
+<script>
+  // Édition visuelle CloudCannon : chargé uniquement dans l'éditeur, jamais sur le site public.
+  if (window.inEditorMode) {
+    import("/register-components.js").catch((error) => {
+      console.warn("Failed to load CloudCannon component registration:", error);
+    });
+  }
+</script>
+</head>
+<body{% if body_class != "" %} class="{{ body_class | default: 'pb-sticky' }}"{% endif %}>
+{{ content }}
+</body>
+</html>

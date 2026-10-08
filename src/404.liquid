@@ -1,0 +1,27 @@
+---
+# Page « introuvable ». Réutilise uniquement des composants existants du site (en-tête, bannière, boutons, pied de page).
+layout: layouts/base.liquid
+permalink: /404.html
+eleventyExcludeFromCollections: true
+lang: fr
+title: Page introuvable | FIRSI
+seo:
+  description: "Cette page n'existe pas ou a été déplacée."
+---
+{% include "partials/header.liquid" %}
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas fa-compass"></i> Erreur 404</div>
+    <h1 class="heading-xl mb-3">Page <strong>introuvable</strong></h1>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75">
+      Cette page n'existe pas ou a été déplacée. — <em>This page does not exist or has been moved.</em>
+    </p>
+    <div class="d-flex flex-wrap gap-3 mt-4">
+      <a href="/" class="btn-orange">Retour à l'accueil</a>
+      <a href="/en/" class="btn-outline-w">Back to homepage</a>
+    </div>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+{% include "partials/footer.liquid" %}
+{% include "partials/scripts.liquid" %}

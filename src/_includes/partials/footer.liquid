@@ -1,0 +1,50 @@
+{%- assign f = nav[lang].footer -%}
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-lg-4 fr-foot-col">
+{%- if footer_logo_small %}
+        <a href="{{ 'index' | page_url: lang }}" style="text-decoration:none">
+          <img src="/assets/img/logo-firsi-white.svg" alt="FIRSI" style="height:28px;margin-bottom:12px">
+        </a>
+{%- else %}
+        <a href="{{ 'index' | page_url: lang }}" style="text-decoration:none"><img src="/assets/img/logo-firsi-white.svg" alt="{{ f.logo_alt }}" style="height:36px;margin-bottom:12px"></a>
+{%- endif %}
+        <p>{{ f.about }}</p>
+      </div>
+{%- for col in f.cols %}
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>{{ col.title }}</h6>
+        <ul>
+{%- for it in col.items %}
+{%- if it.heading == "first" %}
+          <li style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.4;pointer-events:none;color:rgba(255,255,255,.4);padding-bottom:2px">{{ it.label }}</li>
+{%- elsif it.heading == "next" %}
+          <li style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.4;pointer-events:none;color:rgba(255,255,255,.4);padding-top:6px;padding-bottom:2px">{{ it.label }}</li>
+{%- else %}
+          <li><a href="{{ it.page | page_url: lang }}">{{ it.label }}</a></li>
+{%- endif %}
+{%- endfor %}
+        </ul>
+      </div>
+{%- endfor %}
+      <div class="col-6 col-md-2 fr-foot-col">
+{%- for blk in f.last_col %}
+        <h6{% unless forloop.first %} style="margin-top:20px"{% endunless %}>{{ blk.title }}</h6>
+        <ul>
+{%- for it in blk.items %}
+          <li><a href="{{ it.page | page_url: lang }}">{{ it.label }}</a></li>
+{%- endfor %}
+        </ul>
+{%- endfor %}
+      </div>
+    </div>
+    <div class="fr-foot-bottom">
+      <p>{{ f.copyright }}</p>
+      <div class="fr-social">
+        <a href="https://www.linkedin.com/company/firsi" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@FondationIbnRochd" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>

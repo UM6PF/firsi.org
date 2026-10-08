@@ -1,0 +1,25 @@
+{%- comment -%}
+Titre avec un mot mis en valeur (orange) : « avant <tag>mis en valeur</tag> après ».
+Paramètres : t (objet {avant, valeur, apres}), prop (chemin de la donnée), tag (strong ou span),
+style (facultatif : style inline de l'élément mis en valeur).
+Chaque morceau est une zone de texte simple : l'équipe ne peut pas casser le balisage.
+Les morceaux non mis en valeur utilisent <editable-text> (élément en ligne neutre) et non <span>,
+car le CSS colore en orange tout <span> placé dans un titre.
+Les espaces sont placés à l'intérieur des éléments pour un rendu identique au texte d'origine.
+Pas d'espace après une apostrophe (« l'<strong>excellence</strong> »).
+{%- endcomment -%}
+{%- if t.avant != blank -%}
+{%- assign last = t.avant | slice: -1 -%}
+{%- assign sp = " " -%}{%- if last == "'" or last == "’" or last == "-" -%}{%- assign sp = "" -%}{%- endif -%}
+<editable-text data-type="span" data-prop="{{ prop }}.avant">{{ t.avant }}{{ sp }}</editable-text>
+{%- endif -%}
+<{{ tag }}{% if style %} style="{{ style }}"{% endif %} data-editable="text" data-type="span" data-prop="{{ prop }}.valeur">{{ t.valeur }}</{{ tag }}>
+{%- if t.apres != blank -%}
+{%- assign apres = t.apres | strip -%}
+{%- assign first = apres | slice: 0 -%}
+{%- comment -%} Typographie : pas d'espace avant , et . ; en français, espace avant ? ! : ; (en anglais, aucune). {%- endcomment -%}
+{%- assign sp2 = " " -%}
+{%- if first == "," or first == "." -%}{%- assign sp2 = "" -%}{%- endif -%}
+{%- if lang != "fr" -%}{%- if first == "?" or first == "!" or first == ":" or first == ";" -%}{%- assign sp2 = "" -%}{%- endif -%}{%- endif -%}
+<editable-text data-type="span" data-prop="{{ prop }}.apres">{{ sp2 }}{{ apres }}</editable-text>
+{%- endif -%}

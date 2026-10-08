@@ -1,0 +1,49 @@
+---
+layout: layouts/base.liquid
+section: fondation
+---
+{% include "partials/header.liquid" %}
+{% include "partials/breadcrumb.liquid" %}
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas fa-bullseye"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
+    <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+<div class="container py-5">
+  <div class="row g-5 align-items-center mb-5">
+    <div class="col-12 col-lg-6">
+      <p class="fr-label" data-editable="text" data-type="span" data-prop="intro.surtitre">{{ intro.surtitre }}</p>
+      <h2 class="heading-lg mb-3">{% include "partials/hl.liquid", t: intro.titre, prop: "intro.titre", tag: "span" %}</h2>
+      <div data-editable="array" data-prop="intro.paragraphes" style="display:contents">
+{%- for p in intro.paragraphes %}
+      <p style="font-size:15px;color:var(--muted);line-height:1.75;font-weight:300;margin-bottom:20px" data-editable="array-item"><editable-text data-type="span" data-prop="texte">{{ p.texte }}</editable-text></p>
+{%- endfor %}
+      </div>
+    </div>
+    <div class="col-12 col-lg-5 offset-lg-1">
+      <img src="{{ intro.image }}" alt="{{ intro.image_alt }}" style="width:100%;border-radius:12px;object-fit:cover;height:360px" data-editable="image" data-prop-src="intro.image" data-prop-alt="intro.image_alt">
+    </div>
+  </div>
+</div>
+
+<section style="background:#f7f7f5;padding:32px 0;margin-top:-24px">
+  <div class="container">
+  <div class="row g-4 mb-0" data-editable="array" data-prop="cartes">
+{%- for c in cartes %}
+    <div class="col-12 col-md-4" data-editable="array-item">
+      <div class="fr-card">
+        <div class="fr-card-icon"><i class="fas {{ c.icone }}"></i></div>
+        <h4 data-editable="text" data-type="span" data-prop="titre">{{ c.titre }}</h4>
+        <p data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</p>
+      </div>
+    </div>
+{%- endfor %}
+  </div>
+  </div>
+</section>
+
+{% include "partials/footer.liquid" %}
+{% include "partials/scripts.liquid" %}

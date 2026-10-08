@@ -1,0 +1,10 @@
+{
+  "logos": [
+    { "nom": "IMT Atlantique", "logo": "/assets/img/logo-imt-atlantique.svg-0.png", "url": "https://www.imt-atlantique.fr/fr", "alt": "IMT Atlantique" },
+    { "nom": "Centrale Nantes", "logo": "/assets/img/logocn-q-0.png", "url": "https://www.ec-nantes.fr/", "alt": "Centrale Nantes" },
+    { "nom": "École Polytechnique", "logo": "/assets/img/lgogogo.png", "url": "https://www.polytechnique.edu/", "alt": "École Polytechnique" },
+    { "nom": "CentraleSupélec", "logo": "/assets/img/centralesupelec-quadri-upsaclay-002-4.png", "url": "https://www.centralesupelec.fr/", "alt": "CentraleSupélec" },
+    { "nom": "ENSIMAG", "logo": "/assets/img/inp-grenoble.png", "url": "https://ensimag.grenoble-inp.fr/", "alt": "ENSIMAG Grenoble" },
+    { "nom": "Studcorp", "logo": "/assets/img/logostudcorp-green-small.png", "url": "https://studcorp.com/firsi", "alt": "Studcorp" }
+  ]
+}

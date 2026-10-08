@@ -1,0 +1,25 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js" defer></script>
+<script>
+// Burger menu
+const burger = document.getElementById('burger');
+const nav = document.getElementById('main-nav');
+if (burger) {
+  burger.addEventListener('click', function() {
+    nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', nav.classList.contains('open'));
+  });
+}
+// No-nav : empêcher la navigation sur les rubriques parent
+document.querySelectorAll('a.no-nav').forEach(function(a) {
+  a.addEventListener('click', function(e) { e.preventDefault(); });
+});
+// Mobile : toggle dropdown au clic
+document.querySelectorAll('.fr-nav .has-dropdown > a').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    if (window.innerWidth < 992) {
+      e.preventDefault();
+      a.parentElement.classList.toggle('open');
+    }
+  });
+});
+</script>

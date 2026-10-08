@@ -1,0 +1,41 @@
+---
+layout: layouts/base.liquid
+section: fondation
+---
+{% include "partials/header.liquid" %}
+{% include "partials/breadcrumb.liquid" %}
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas fa-sitemap"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
+    <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+<div class="container py-5">
+  <div class="row mb-4">
+    <div class="col-12">
+      <p class="fr-label" data-editable="text" data-type="span" data-prop="intro.surtitre">{{ intro.surtitre }}</p>
+      <h2 class="heading-lg mb-2">{% include "partials/hl.liquid", t: intro.titre, prop: "intro.titre", tag: "span" %}</h2>
+    </div>
+  </div>
+
+  <!-- ══ ORGANIGRAMME SVG (non éditable : textes positionnés au pixel, un fichier par langue) ══ -->
+  <div class="row mb-5">
+    <div class="col-12">
+      <div style="background:#f7f7f5;border-radius:12px;padding:40px 24px">
+        {% if lang == "en" %}{% include "svg/gouvernance-en.liquid" %}{% else %}{% include "svg/gouvernance-fr.liquid" %}{% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 text-center">
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px" data-editable="text" data-type="span" data-prop="contact.texte">{{ contact.texte }}</p>
+      <a href="{{ contact.page | page_url: lang }}" class="btn-orange" data-editable="text" data-type="span" data-prop="contact.bouton">{{ contact.bouton }}</a>
+    </div>
+  </div>
+</div>
+
+{% include "partials/footer.liquid" %}
+{% include "partials/scripts.liquid" %}

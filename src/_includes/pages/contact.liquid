@@ -1,0 +1,135 @@
+---
+layout: layouts/base.liquid
+section: contact
+---
+{%- assign f = formulaire -%}
+{% include "partials/header.liquid" %}
+{% include "partials/breadcrumb.liquid" %}
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas fa-envelope"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
+    <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+<div class="container py-5">
+<style>
+.contact-card { background:#EEF3FA; border-radius:10px; padding:20px; transition: border 0.25s, background 0.25s; border: 2px solid transparent; }
+.contact-card.highlighted { border-color: var(--orange); background: #fff8f3; }
+.ctx-field { display: none; animation: fadeIn 0.25s ease; }
+.ctx-field.show { display: block; }
+@keyframes fadeIn { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:translateY(0); } }
+</style>
+  <div class="row g-5">
+    <div class="col-12 col-lg-7">
+      <p class="fr-label" data-editable="text" data-type="span" data-prop="formulaire.surtitre">{{ f.surtitre }}</p>
+      <h2 class="heading-lg mb-4"><editable-text data-type="span" data-prop="formulaire.titre.avant">{{ f.titre.avant }}</editable-text><span data-editable="text" data-type="span" data-prop="formulaire.titre.valeur">{{ f.titre.valeur }}</span></h2>
+      {%- comment -%} Formulaire repris tel quel du prototype : aucun envoi n'est branché (pas d'action ni de name). {%- endcomment %}
+      <div class="fr-form">
+        <div class="row g-3 mb-3">
+          <div class="col-12 col-md-6"><label data-editable="text" data-type="span" data-prop="formulaire.prenom.label">{{ f.prenom.label }}</label><input type="text" class="form-control" placeholder="{{ f.prenom.placeholder }}"></div>
+          <div class="col-12 col-md-6"><label data-editable="text" data-type="span" data-prop="formulaire.nom.label">{{ f.nom.label }}</label><input type="text" class="form-control" placeholder="{{ f.nom.placeholder }}"></div>
+        </div>
+        <div class="mb-3"><label data-editable="text" data-type="span" data-prop="formulaire.email.label">{{ f.email.label }}</label><input type="email" class="form-control" placeholder="{{ f.email.placeholder }}"></div>
+        <div class="mb-3">
+          <label data-editable="text" data-type="span" data-prop="formulaire.profil.label">{{ f.profil.label }}</label>
+          <select class="form-select" id="profil-select">
+            <option value="">{{ f.profil.vide }}</option>
+{%- for o in f.profil.options %}
+            <option value="{{ o.valeur }}">{{ o.libelle }}</option>
+{%- endfor %}
+          </select>
+        </div>
+        <div class="mb-3 ctx-field" id="ctx-candidat">
+          <label data-editable="text" data-type="span" data-prop="formulaire.programme_vise.label">{{ f.programme_vise.label }}</label>
+          <select class="form-select">
+            <option value="">{{ f.programme_vise.vide }}</option>
+{%- for o in f.programme_vise.options %}
+            <option>{{ o.libelle }}</option>
+{%- endfor %}
+          </select>
+        </div>
+        <div class="mb-3 ctx-field" id="ctx-boursier">
+          <label data-editable="text" data-type="span" data-prop="formulaire.programme_actuel.label">{{ f.programme_actuel.label }}</label>
+          <select class="form-select">
+            <option value="">{{ f.programme_actuel.vide }}</option>
+{%- for o in f.programme_actuel.options %}
+            <option>{{ o.libelle }}</option>
+{%- endfor %}
+          </select>
+        </div>
+        <div class="mb-3 ctx-field" id="ctx-alumni">
+          <label data-editable="text" data-type="span" data-prop="formulaire.promotion.label">{{ f.promotion.label }}</label>
+          <input type="number" class="form-control" placeholder="{{ f.promotion.placeholder }}" min="2015" max="2030">
+        </div>
+        <div class="mb-3 ctx-field" id="ctx-entreprise">
+          <label data-editable="text" data-type="span" data-prop="formulaire.nature.label">{{ f.nature.label }}</label>
+          <select class="form-select">
+            <option value="">{{ f.nature.vide }}</option>
+{%- for o in f.nature.options %}
+            <option>{{ o.libelle }}</option>
+{%- endfor %}
+          </select>
+        </div>
+        <div class="mb-3 ctx-field" id="ctx-presse">
+          <label data-editable="text" data-type="span" data-prop="formulaire.media.label">{{ f.media.label }}</label>
+          <input type="text" class="form-control" placeholder="{{ f.media.placeholder }}">
+        </div>
+        <div class="mb-3"><label data-editable="text" data-type="span" data-prop="formulaire.sujet.label">{{ f.sujet.label }}</label><input type="text" class="form-control" placeholder="{{ f.sujet.placeholder }}"></div>
+        <div class="mb-4"><label data-editable="text" data-type="span" data-prop="formulaire.message.label">{{ f.message.label }}</label><textarea class="form-control" rows="5" placeholder="{{ f.message.placeholder }}"></textarea></div>
+        <button class="btn-orange" style="font-size:14px;padding:13px 32px"><i class="fas fa-paper-plane me-2"></i><editable-text data-type="span" data-prop="formulaire.bouton">{{ f.bouton }}</editable-text></button>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 offset-lg-1">
+      <p class="fr-label" data-editable="text" data-type="span" data-prop="coordonnees.surtitre">{{ coordonnees.surtitre }}</p>
+      <h2 class="heading-md mb-4">{% include "partials/hl.liquid", t: coordonnees.titre, prop: "coordonnees.titre", tag: "span" %}</h2>
+      <div class="d-flex flex-column gap-3 mb-5" data-editable="array" data-prop="coordonnees.cartes">
+{%- for c in coordonnees.cartes %}
+        <div class="contact-card" id="{{ c.id }}" data-editable="array-item">
+          <p style="font-size:11px;color:var(--orange);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px" data-editable="text" data-type="span" data-prop="categorie">{{ c.categorie }}</p>
+{%- if c.equipe != blank %}
+          <p style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px" data-editable="text" data-type="span" data-prop="equipe">{{ c.equipe }}</p>
+{%- endif %}
+{%- if c.email != blank %}
+          <p style="font-size:12px;color:var(--muted);margin-bottom:4px"><i class="fas fa-envelope me-2"></i><editable-text data-type="span" data-prop="email">{{ c.email }}</editable-text></p>
+{%- endif %}
+{%- if c.horaires != blank %}
+          <p style="font-size:12px;color:var(--muted)"><i class="fas fa-clock me-2"></i><editable-text data-type="span" data-prop="horaires">{{ c.horaires }}</editable-text></p>
+{%- endif %}
+{%- if c.adresse.ligne_1 != blank %}
+          <p style="font-size:13px;color:var(--text);font-weight:300;line-height:1.6"><i class="fas fa-map-marker-alt me-2" style="color:var(--orange)"></i><editable-text data-type="span" data-prop="adresse.ligne_1">{{ c.adresse.ligne_1 }}</editable-text><br><editable-text data-type="span" data-prop="adresse.ligne_2">{{ c.adresse.ligne_2 }}</editable-text></p>
+{%- endif %}
+        </div>
+{%- endfor %}
+      </div>
+      <div style="background:var(--bg);border-radius:10px;padding:24px;text-align:center">
+        <p style="color:rgba(255,255,255,.7);font-size:13px;font-weight:300;margin-bottom:16px" data-editable="text" data-type="span" data-prop="coordonnees.reseaux">{{ coordonnees.reseaux }}</p>
+        <div class="fr-social d-flex justify-content-center gap-2">
+          <a href="https://www.linkedin.com/company/firsi" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/@FondationIbnRochd" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var select = document.getElementById('profil-select');
+  if (!select) return;
+  var cards = { candidat:'card-bourses', boursier:'card-bourses', alumni:'card-bourses', entreprise:'card-partenariats', soutien:'card-partenariats', presse:null, autre:null };
+  select.addEventListener('change', function() {
+    var val = this.value;
+    document.querySelectorAll('.ctx-field').forEach(function(f) { f.classList.remove('show'); });
+    var ctx = document.getElementById('ctx-' + val);
+    if (ctx) ctx.classList.add('show');
+    document.querySelectorAll('.contact-card').forEach(function(c) { c.classList.remove('highlighted'); });
+    var cid = cards[val];
+    if (cid) document.getElementById(cid).classList.add('highlighted');
+  });
+})();
+</script>
+
+{% include "partials/footer.liquid" %}
+{% include "partials/scripts.liquid" %}

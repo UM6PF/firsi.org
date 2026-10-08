@@ -1,0 +1,71 @@
+{%- assign n = nav[lang] -%}
+<style>
+/* ══ HEADER DROPDOWN ══ */
+.fr-nav ul li { position: relative; }
+.fr-nav ul li > a { display: flex; align-items: center; gap: 5px; height: 68px; }
+.fr-nav ul li > a .chevron { font-size: 9px; opacity: 0.6; transition: transform .2s; }
+.fr-nav ul li:hover > a .chevron { transform: rotate(180deg); }
+.fr-dropdown { position: absolute; top: 100%; left: 0; background: var(--bg-d); border: 1px solid var(--bd); border-top: 2px solid var(--orange); border-radius: 0 0 8px 8px; min-width: 260px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .2s, transform .2s, visibility .2s; box-shadow: 0 12px 32px rgba(0,0,0,.35); z-index: 300; }
+.fr-nav ul li:hover .fr-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.fr-dropdown a { display: flex; align-items: center; gap: 10px; padding: 10px 20px; color: var(--w70); font-size: 13px; font-weight: 400; transition: background .15s, color .15s; text-decoration: none; }
+.fr-dropdown a:hover { background: rgba(255,255,255,.06); color: #fff; }
+.fr-dropdown a i { width: 16px; text-align: center; opacity: .6; font-size: 12px; }
+.fr-drop-sep { height: 1px; background: var(--bd); margin: 6px 0; }
+@media (max-width: 991px) {
+  .fr-nav { display: none; position: fixed; top: 0; right: 0; bottom: 0; width: 300px; background: var(--bg-d); z-index: 500; padding: 80px 24px 24px; overflow-y: auto; flex-direction: column; }
+  .fr-nav.open { display: flex; }
+  .fr-nav ul { flex-direction: column; gap: 0; }
+  .fr-nav ul li > a { height: auto; padding: 12px 0; border-bottom: 1px solid var(--bd); }
+  .fr-dropdown { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; border-top: none; padding: 0 0 0 16px; display: none; }
+  .fr-nav ul li.open .fr-dropdown { display: block; }
+  .fr-burger { display: flex; }
+}
+</style>
+<header>
+  <div class="fr-header">
+    <div class="fr-logo-area">
+      <a href="{{ 'index' | page_url: lang }}" class="fr-logo">
+        <img src="/assets/img/logo-firsi-white.svg" alt="{{ n.logo_alt }}" style="height:{{ header_logo_height | default: 42 }}px;width:auto">
+      </a>
+    </div>
+    <button class="fr-burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="fr-nav" id="main-nav">
+      <ul>
+{%- for g in n.groups %}
+        <li class="has-dropdown{% if section == g.id %} active{% endif %}">
+          <a href="#" class="no-nav">{{ g.label }} <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+{%- for it in g.items %}
+{%- if it.sep %}
+            <div class="fr-drop-sep"></div>
+{%- elsif it.heading %}
+            <a href="{{ it.page | page_url: lang }}" style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.5;pointer-events:none;padding-bottom:4px">{{ it.label }}</a>
+{%- else %}
+            <a href="{{ it.page | page_url: lang }}"><i class="fas {{ it.icon }}"></i> {{ it.label }}</a>
+{%- endif %}
+{%- endfor %}
+          </div>
+        </li>
+{%- endfor %}
+{%- for l in n.links %}
+        <li{% if section == l.id %} class="active"{% endif %}><a href="{{ l.page | page_url: lang }}">{{ l.label }}</a></li>
+{%- endfor %}
+        <li class="cta{% if section == n.cta.id %} active{% endif %}"><a href="{{ n.cta.page | page_url: lang }}">{{ n.cta.label }}</a></li>
+        <li class="has-dropdown fr-lang-switch">
+          <a href="#" class="no-nav"><i class="fas fa-globe"></i> {{ n.lang_code }} <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown" style="min-width:150px">
+{%- if lang == "en" %}
+            <a href="{{ alternate_url | default: '/' }}">Français</a>
+            <a href="{{ page.url }}" style="color:var(--orange);font-weight:600">English</a>
+{%- else %}
+            <a href="{{ page.url }}" style="color:var(--orange);font-weight:600">Français</a>
+            <a href="{{ alternate_url | default: '/en/' }}">English</a>
+{%- endif %}
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

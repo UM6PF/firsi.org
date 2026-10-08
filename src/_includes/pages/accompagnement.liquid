@@ -1,0 +1,51 @@
+---
+layout: layouts/base.liquid
+section: programmes
+---
+{% include "partials/header.liquid" %}
+{% include "partials/breadcrumb.liquid" %}
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas {{ hero.icone }}"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
+    <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+<div class="container py-5">
+
+  <!-- ══ 4 SERVICES ══ -->
+  <div class="row g-4 mb-5" data-editable="array" data-prop="services">
+{%- for c in services %}
+    <div class="col-12 col-md-6" data-editable="array-item">
+      <div class="fr-card" style="border-top:3px solid var(--bg)">
+        <div class="fr-card-icon"><i class="fas {{ c.icone }}"></i></div>
+        <h4 data-editable="text" data-type="span" data-prop="titre">{{ c.titre }}</h4>
+        <p data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</p>
+      </div>
+    </div>
+{%- endfor %}
+  </div>
+
+  <!-- ══ INITIATIVES ══ -->
+  <div style="background:#f7f7f5;border-radius:12px;padding:40px 36px;border-left:4px solid var(--orange)">
+    <p class="fr-label" data-editable="text" data-type="span" data-prop="initiatives.surtitre">{{ initiatives.surtitre }}</p>
+    <h2 class="heading-lg mb-4">{% include "partials/hl.liquid", t: initiatives.titre, prop: "initiatives.titre", tag: "span" %}</h2>
+    <div class="row g-4" data-editable="array" data-prop="initiatives.cartes">
+{%- for c in initiatives.cartes %}
+      <div class="col-12 col-md-6" data-editable="array-item">
+        <div class="fr-card">
+          <div class="fr-card-icon"><i class="{{ c.icone_famille | default: 'fas' }} {{ c.icone }}"></i></div>
+          <h4 data-editable="text" data-type="span" data-prop="titre">{{ c.titre }}</h4>
+          <p data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</p>
+          <a href="{% if c.lien.page %}{{ c.lien.page | page_url: lang }}{% else %}{{ c.lien.url }}{% endif %}"{% if c.lien.url %} target="_blank"{% endif %} class="fr-link"><editable-text data-type="span" data-prop="lien.texte">{{ c.lien.texte }} </editable-text><i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+{%- endfor %}
+    </div>
+  </div>
+
+</div>
+
+{% include "partials/footer.liquid" %}
+{% include "partials/scripts.liquid" %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Redirection | FIRSI</title>
+<script>
+  // Ancienne adresse article.html?id=<id> : redirige vers actualites/<id>/ (chemin relatif, compatible avec un préfixe de site).
+  (function () {
+    var id = new URLSearchParams(window.location.search).get('id') || '';
+    var cible = /^[a-z0-9-]+$/.test(id) ? 'actualites/' + id + '/' : 'actualites/';
+    window.location.replace(cible);
+  })();
+</script>
+</head>
+<body>
+<p><a href="actualites/" id="lien">Voir les actualités</a></p>
+<script>
+  (function () {
+    var id = new URLSearchParams(window.location.search).get('id') || '';
+    if (/^[a-z0-9-]+$/.test(id)) document.getElementById('lien').href = 'actualites/' + id + '/';
+  })();
+</script>
+</body>
+</html>

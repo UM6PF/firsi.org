@@ -1,0 +1,115 @@
+---
+layout: layouts/base.liquid
+section: candidater
+---
+{%- comment -%} Styles du tableau des documents (absents de la version EN du prototype : corrigé, appliqués aux deux langues). {%- endcomment %}
+
+<style>
+/* Tableau docs */
+.docs-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.docs-table th { background: var(--bg); color: #fff; padding: 12px 16px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.5px; }
+.docs-table td { padding: 11px 16px; border-bottom: 1px solid var(--bd); color: var(--text); vertical-align: top; }
+.docs-table tr:last-child td { border-bottom: none; }
+.docs-table tr:hover td { background: #f7f7f5; }
+.doc-check { color: var(--orange); font-size: 14px; }
+.doc-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
+</style>
+{% include "partials/header.liquid" %}
+{% include "partials/breadcrumb.liquid" %}
+
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas fa-graduation-cap"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
+    <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+
+<div class="container py-5">
+
+  <!-- ══ 4 ÉTAPES ══ -->
+  <p class="fr-label" data-editable="text" data-type="span" data-prop="etapes.surtitre">{{ etapes.surtitre }}</p>
+  <h2 class="heading-lg mb-4">{% include "partials/hl.liquid", t: etapes.titre, prop: "etapes.titre", tag: "span" %}</h2>
+  <div class="row g-4 mb-5" data-editable="array" data-prop="etapes.elements">
+{%- for e in etapes.elements %}
+{%- if forloop.first %}{% assign couleur = "var(--orange)" %}{% else %}{% assign couleur = "var(--bg)" %}{% endif %}
+    <div class="col-12 col-md-3" data-editable="array-item">
+      <div class="fr-card" style="border-top:3px solid {{ couleur }};text-align:center">
+        <div style="width:40px;height:40px;border-radius:50%;background:{{ couleur }};color:#fff;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">{{ forloop.index }}</div>
+        <h4 style="font-size:15px" data-editable="text" data-type="span" data-prop="titre">{{ e.titre }}</h4>
+        <p style="font-size:13px;color:var(--muted)" data-editable="text" data-type="span" data-prop="texte">{{ e.texte }}</p>
+      </div>
+    </div>
+{%- endfor %}
+  </div>
+
+  <!-- ══ CRITÈRES UNIVERSELS ══ -->
+  <div class="row g-4 mb-5">
+    <div class="col-12">
+      <p class="fr-label" data-editable="text" data-type="span" data-prop="criteres.surtitre">{{ criteres.surtitre }}</p>
+      <h2 class="heading-lg mb-4">{% include "partials/hl.liquid", t: criteres.titre, prop: "criteres.titre", tag: "span" %}</h2>
+    </div>
+{%- comment -%} Pas de zone « array » ici : le titre partage la même rangée .row que les cartes (chemins indexés). {%- endcomment -%}
+{%- for c in criteres.cartes %}
+    <div class="col-12 col-md-6">
+      <div class="fr-card" style="border-left:4px solid var(--orange)">
+        <div class="fr-card-icon"><i class="fas {{ c.icone }}"></i></div>
+        <h4 data-editable="text" data-type="span" data-prop="criteres.cartes.{{ forloop.index0 }}.titre">{{ c.titre }}</h4>
+        <p data-editable="text" data-type="span" data-prop="criteres.cartes.{{ forloop.index0 }}.texte">{{ c.texte }}</p>
+      </div>
+    </div>
+{%- endfor %}
+  </div>
+
+  <!-- ══ TABLEAU DOCUMENTS ══ -->
+  <div class="mb-5">
+    <p class="fr-label" data-editable="text" data-type="span" data-prop="documents.surtitre">{{ documents.surtitre }}</p>
+    <h2 class="heading-lg mb-4">{% include "partials/hl.liquid", t: documents.titre, prop: "documents.titre", tag: "span" %}</h2>
+    <div style="border:1px solid var(--bd);border-radius:12px;overflow:hidden">
+      <table class="docs-table">
+        <thead>
+          <tr>
+            <th style="width:36%" data-editable="text" data-type="span" data-prop="documents.entete">{{ documents.entete }}</th>
+            <th style="text-align:center">LM6E</th>
+            <th style="text-align:center">UM6P</th>
+            <th style="text-align:center">GEF</th>
+            <th style="text-align:center">GEM</th>
+          </tr>
+        </thead>
+        <tbody data-editable="array" data-prop="documents.lignes">
+{%- for l in documents.lignes %}
+          <tr data-editable="array-item">
+            <td><editable-text data-type="span" data-prop="libelle">{{ l.libelle }}</editable-text>{% if l.precision != blank %}<div class="doc-label" data-editable="text" data-type="span" data-prop="precision">{{ l.precision }}</div>{% endif %}</td>
+            <td style="text-align:center">{% if l.lycee %}<i class="fas fa-check doc-check"></i>{% else %}—{% endif %}</td>
+            <td style="text-align:center">{% if l.um6p %}<i class="fas fa-check doc-check"></i>{% else %}—{% endif %}</td>
+            <td style="text-align:center">{% if l.gef %}<i class="fas fa-check doc-check"></i>{% else %}—{% endif %}</td>
+            <td style="text-align:center">{% if l.gem %}<i class="fas fa-check doc-check"></i>{% else %}—{% endif %}</td>
+          </tr>
+{%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ══ FAQ ══ -->
+  <div class="row">
+    <div class="col-12 col-lg-8 offset-lg-2">
+      <p class="fr-label" style="text-align:center;justify-content:center" data-editable="text" data-type="span" data-prop="faq.surtitre">{{ faq.surtitre }}</p>
+      <h2 class="heading-lg mb-4" style="text-align:center">{% include "partials/hl.liquid", t: faq.titre, prop: "faq.titre", tag: "span" %}</h2>
+      <div data-editable="array" data-prop="faq.questions" style="display:contents">
+{%- for q in faq.questions %}
+      <div class="fr-faq-item{% if forloop.first %} open{% endif %}" data-editable="array-item"><div class="fr-faq-q" onclick="toggleFaq(this)"><editable-text data-type="span" data-prop="question">{{ q.question }}</editable-text><i class="fas fa-plus"></i></div><div class="fr-faq-a" data-editable="text" data-type="text" data-prop="reponse">{{ q.reponse }}</div></div>
+{%- endfor %}
+      </div>
+      <div class="mt-4 text-center"><a href="{{ faq.lien.page | page_url: lang }}" class="fr-link"><editable-text data-type="span" data-prop="faq.lien.texte">{{ faq.lien.texte }} </editable-text><i class="fas fa-arrow-right"></i></a></div>
+    </div>
+  </div>
+
+</div>
+
+{% include "partials/footer.liquid" %}
+{% include "partials/scripts.liquid" %}
+<script>
+function toggleFaq(el){var i=el.parentElement;var o=i.classList.contains('open');document.querySelectorAll('.fr-faq-item').forEach(function(x){x.classList.remove('open')});if(!o)i.classList.add('open')}
+</script>

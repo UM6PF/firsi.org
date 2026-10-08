@@ -1,0 +1,34 @@
+{
+    "name": "firsi-site",
+    "version": "1.0.0",
+    "description": "Site de la Fondation Ibn Rochd (FIRSI)",
+    "main": "index.js",
+    "scripts": {
+        "build": "eleventy",
+        "start": "eleventy --serve",
+        "build:ghpages": "eleventy --pathprefix=/firsi.org/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/UM6PF/firsi.org.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/UM6PF/firsi.org/issues"
+    },
+    "homepage": "https://github.com/UM6PF/firsi.org#readme",
+    "devDependencies": {
+        "@11ty/eleventy": "^3.1.6",
+        "@cloudcannon/editable-regions": "^0.0.21",
+        "cheerio": "^1.2.0",
+        "pixelmatch": "^8.0.0",
+        "playwright-core": "^1.64.0",
+        "pngjs": "^7.0.0"
+    },
+    "type": "module",
+    "allowScripts": {
+        "esbuild@0.28.2": true
+    }
+}

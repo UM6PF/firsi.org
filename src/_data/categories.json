@@ -1,0 +1,30 @@
+[
+  {
+    "id": "portraits",
+    "classe": "badge-portrait",
+    "couleur": "#EF9F27",
+    "fr": { "badge": "Portrait", "filtre": "Portraits" },
+    "en": { "badge": "Profile", "filtre": "Profiles" }
+  },
+  {
+    "id": "bourses",
+    "classe": "badge-bourse",
+    "couleur": "#378ADD",
+    "fr": { "badge": "Bourse GEF", "filtre": "Bourses" },
+    "en": { "badge": "GEF Scholarship", "filtre": "Scholarships" }
+  },
+  {
+    "id": "evenements",
+    "classe": "badge-evenement",
+    "couleur": "#D85A30",
+    "fr": { "badge": "Évènement", "filtre": "Évènements" },
+    "en": { "badge": "Event", "filtre": "Events" }
+  },
+  {
+    "id": "rapports",
+    "classe": "badge-rapport",
+    "couleur": "#639922",
+    "fr": { "badge": "Rapport", "filtre": "Rapports" },
+    "en": { "badge": "Report", "filtre": "Reports" }
+  }
+]

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Redirecting | FIRSI</title>
+<script>
+  // Old address article-en.html?id=<id>: redirects to en/actualites/<id>/ (relative path, works with a site prefix).
+  (function () {
+    var id = new URLSearchParams(window.location.search).get('id') || '';
+    var target = /^[a-z0-9-]+$/.test(id) ? 'en/actualites/' + id + '/' : 'en/actualites/';
+    window.location.replace(target);
+  })();
+</script>
+</head>
+<body>
+<p><a href="en/actualites/" id="link">See all news</a></p>
+<script>
+  (function () {
+    var id = new URLSearchParams(window.location.search).get('id') || '';
+    if (/^[a-z0-9-]+$/.test(id)) document.getElementById('link').href = 'en/actualites/' + id + '/';
+  })();
+</script>
+</body>
+</html>

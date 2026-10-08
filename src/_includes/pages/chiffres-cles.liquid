@@ -1,0 +1,135 @@
+---
+layout: layouts/base.liquid
+section: communaute
+---
+{%- assign locale = "fr-FR" %}{% if lang == "en" %}{% assign locale = "en-US" %}{% endif -%}
+{% include "partials/header.liquid" %}
+{% include "partials/breadcrumb.liquid" %}
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas {{ hero.icone }}"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
+    <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+<section id="chiffres" class="container py-5">
+  <p class="fr-label" data-editable="text" data-type="span" data-prop="chiffres.surtitre">{{ chiffres.surtitre }}</p>
+  <h2 class="heading-lg mb-5">{% include "partials/hl.liquid", t: chiffres.titre, prop: "chiffres.titre", tag: "span" %}</h2>
+
+  <!-- Stats animées (valeurs finales dans « compteurs », animées par le script en bas de page) -->
+  <div class="row g-3 mb-4" data-editable="array" data-prop="compteurs">
+{%- for c in compteurs %}
+{%- assign impair = forloop.index0 | modulo: 2 %}
+    <div class="col-12 col-md-4" data-editable="array-item">
+      <div class="fr-card" style="border-radius:12px">
+        <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px" data-editable="text" data-type="span" data-prop="libelle">{{ c.libelle }}</div>
+        <div id="stat{{ forloop.index }}" style="font-size:44px;font-weight:700;color:var({% if impair == 1 %}--orange{% else %}--bg{% endif %});line-height:1">0{% if c.suffixe == "%" %}%{% endif %}</div>
+        <div style="width:28px;height:3px;background:var({% if impair == 1 %}--bg{% else %}--orange{% endif %});margin-top:10px;border-radius:2px"></div>
+      </div>
+    </div>
+{%- endfor %}
+  </div>
+
+  <!-- Courbe de croissance -->
+  <div class="fr-card mb-4" style="border-radius:12px;padding:28px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem">
+      <div>
+        <div style="font-size:14px;font-weight:600;color:var(--text)" data-editable="text" data-type="span" data-prop="graphique.titre">{{ graphique.titre }}</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px" data-editable="text" data-type="span" data-prop="graphique.sous_titre">{{ graphique.sous_titre }}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)">
+        <span style="width:20px;height:2px;background:var(--orange);display:inline-block;border-radius:1px"></span>
+        <editable-text data-type="span" data-prop="graphique.legende">{{ graphique.legende }}</editable-text>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;height:220px">
+      <canvas id="growthChart" role="img" aria-label="{{ graphique.description | escape }}">{{ graphique.texte_alternatif }}</canvas>
+    </div>
+  </div>
+
+  <!-- Chiffres secondaires -->
+  <div class="row g-3" data-editable="array" data-prop="chiffres.elements">
+{%- for s in chiffres.elements %}
+    <div class="col-6 col-md-3" data-editable="array-item"><div class="fr-stat"><span class="fr-stat-num" data-editable="text" data-type="span" data-prop="nombre">{{ s.nombre }}</span><div class="fr-stat-label" data-editable="text" data-type="span" data-prop="libelle">{{ s.libelle }}</div></div></div>
+{%- endfor %}
+  </div>
+
+</section>
+
+<div class="fr-sticky">
+  <a href="{{ barre.bouton.page | page_url: lang }}" class="btn-orange" style="font-size:12px;padding:7px 18px"><i class="fas {{ barre.bouton.icone }} me-2"></i><editable-text data-type="span" data-prop="barre.bouton.texte">{{ barre.bouton.texte }}</editable-text></a>
+  <a href="{{ barre.bouton2.page | page_url: lang }}" class="btn-outline-w" style="font-size:12px;padding:7px 18px" data-editable="text" data-type="span" data-prop="barre.bouton2.texte">{{ barre.bouton2.texte }}</a>
+</div>
+{% include "partials/footer.liquid" %}
+{% include "partials/scripts.liquid" %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const LOCALE = {{ locale | json }};
+const COMPTEURS = {{ compteurs | json }};
+const GRAPHIQUE = {{ graphique | json }};
+
+function animateCount(el, target, suffix, duration) {
+  const start = Date.now();
+  const tick = () => {
+    const elapsed = Date.now() - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const val = Math.round(ease * target);
+    el.textContent = val.toLocaleString(LOCALE) + suffix;
+    if (progress < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+setTimeout(() => {
+  COMPTEURS.forEach((c, i) => {
+    animateCount(document.getElementById('stat' + (i + 1)), Number(c.valeur), c.suffixe || '', Number(c.duree) || 1800);
+  });
+}, 300);
+
+const years = GRAPHIQUE.annees;
+const data  = GRAPHIQUE.valeurs.map(Number);
+
+new Chart(document.getElementById('growthChart'), {
+  type: 'line',
+  data: {
+    labels: years,
+    datasets: [{
+      data: data,
+      borderColor: '#D46B2B',
+      borderWidth: 2,
+      pointBackgroundColor: '#D46B2B',
+      pointBorderColor: '#D46B2B',
+      pointRadius: 4,
+      pointHoverRadius: 6,
+      fill: true,
+      backgroundColor: function(ctx) {
+        const g = ctx.chart.canvas.getContext('2d').createLinearGradient(0, 0, 0, 200);
+        g.addColorStop(0, 'rgba(212,107,43,0.15)');
+        g.addColorStop(1, 'rgba(212,107,43,0)');
+        return g;
+      },
+      tension: 0.4
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: { duration: 1500, easing: 'easeInOutQuart' },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#0C2251',
+        titleColor: 'rgba(255,255,255,0.6)',
+        bodyColor: '#fff',
+        padding: 10,
+        callbacks: { label: ctx => ctx.parsed.y.toLocaleString(LOCALE) + GRAPHIQUE.infobulle_suffixe }
+      }
+    },
+    scales: {
+      x: { grid: { display: false }, border: { display: false }, ticks: { color: '#888', font: { size: 11 } } },
+      y: { grid: { color: 'rgba(0,0,0,0.05)' }, border: { display: false }, ticks: { color: '#888', font: { size: 11 }, callback: v => v.toLocaleString(LOCALE) } }
+    }
+  }
+});
+</script>

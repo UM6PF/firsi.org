@@ -1,0 +1,71 @@
+---
+layout: layouts/base.liquid
+section: programmes
+---
+{% include "partials/header.liquid" %}
+{% include "partials/breadcrumb.liquid" %}
+
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas {{ hero.icone }}"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
+    <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:600px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+
+<div class="container py-5">
+
+  <!-- ══ BLOC PRINCIPAL ══ -->
+  <div class="row g-5 align-items-center mb-5">
+    <div class="col-12 col-lg-6">
+      <p class="fr-label" data-editable="text" data-type="span" data-prop="dispositif.surtitre">{{ dispositif.surtitre }}</p>
+      <h2 class="heading-lg mb-3">{% include "partials/hl.liquid", t: dispositif.titre, prop: "dispositif.titre", tag: "span" %}</h2>
+      <div data-editable="array" data-prop="dispositif.paragraphes" style="display:contents">
+{%- for p in dispositif.paragraphes %}
+      <p style="font-size:15px;color:var(--muted);line-height:1.8;font-weight:300{% unless forloop.last %};margin-bottom:18px{% endunless %}" data-editable="array-item"><editable-text data-type="span" data-prop="texte">{{ p.texte }}</editable-text></p>
+{%- endfor %}
+      </div>
+    </div>
+    <div class="col-12 col-lg-5 offset-lg-1">
+      <div style="background:#f7f7f5;border-radius:12px;padding:36px;display:flex;flex-direction:column;gap:24px" data-editable="array" data-prop="dispositif.chiffres">
+{%- for c in dispositif.chiffres %}
+        <div style="display:contents" data-editable="array-item">
+{%- unless forloop.first %}
+        <div style="height:1px;background:var(--bl)"></div>
+{%- endunless %}
+        <div style="display:flex;align-items:center;gap:20px">
+          <div style="font-size:36px;font-weight:700;color:var(--{% if c.accent %}orange{% else %}bg{% endif %});min-width:70px" data-editable="text" data-type="span" data-prop="valeur">{{ c.valeur }}</div>
+          <div style="font-size:14px;color:var(--muted);line-height:1.5" data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</div>
+        </div>
+        </div>
+{%- endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 3 CARDS ══ -->
+  <div class="row g-4 mb-5" data-editable="array" data-prop="cartes">
+{%- for c in cartes %}
+    <div class="col-12 col-md-4" data-editable="array-item">
+      <div class="fr-card">
+        <div class="fr-card-icon"><i class="fas {{ c.icone }}"></i></div>
+        <h4 data-editable="text" data-type="span" data-prop="titre">{{ c.titre }}</h4>
+        <p data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</p>
+      </div>
+    </div>
+{%- endfor %}
+  </div>
+
+  <!-- ══ CTA ══ -->
+  <div style="background:#f7f7f5;border-radius:12px;padding:40px;text-align:center">
+    <p class="fr-label" style="justify-content:center" data-editable="text" data-type="span" data-prop="cta.surtitre">{{ cta.surtitre }}</p>
+    <h3 style="font-weight:300;font-size:22px;margin-bottom:12px">{% include "partials/hl.liquid", t: cta.titre, prop: "cta.titre", tag: "strong" %}</h3>
+    <p style="font-size:14px;color:var(--muted);max-width:480px;margin:0 auto 24px;line-height:1.75;font-weight:300" data-editable="text" data-type="span" data-prop="cta.texte">{{ cta.texte }}</p>
+    <a href="{{ cta.bouton.page | page_url: lang }}" class="btn-orange"><i class="fas fa-envelope me-2"></i><editable-text data-type="span" data-prop="cta.bouton.texte">{{ cta.bouton.texte }}</editable-text></a>
+  </div>
+
+</div>
+
+{% include "partials/footer.liquid" %}
+{% include "partials/scripts.liquid" %}
