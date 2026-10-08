@@ -1,6 +1,6 @@
 ---
 layout: pages/mission.liquid
-title: Mission (test) | FIRSI
+title: Mission | FIRSI
 seo:
   description: La Fondation Ibn Rochd pour les Sciences et l'Innovation identifie,
     accompagne et soutient les jeunes talents marocains vers les meilleures
