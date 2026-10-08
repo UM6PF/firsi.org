@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>News | FIRSI</title>
+<link rel="icon" href="https://firsi.org/sites/default/files/firsiicon_1.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="firsi.css">
+</head>
+<body class="pb-sticky">
+<style>
+/* ══ HEADER DROPDOWN ══ */
+.fr-nav ul li { position: relative; }
+.fr-nav ul li > a { display: flex; align-items: center; gap: 5px; height: 68px; }
+.fr-nav ul li > a .chevron { font-size: 9px; opacity: 0.6; transition: transform .2s; }
+.fr-nav ul li:hover > a .chevron { transform: rotate(180deg); }
+.fr-dropdown { position: absolute; top: 100%; left: 0; background: var(--bg-d); border: 1px solid var(--bd); border-top: 2px solid var(--orange); border-radius: 0 0 8px 8px; min-width: 260px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .2s, transform .2s, visibility .2s; box-shadow: 0 12px 32px rgba(0,0,0,.35); z-index: 300; }
+.fr-nav ul li:hover .fr-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.fr-dropdown a { display: flex; align-items: center; gap: 10px; padding: 10px 20px; color: var(--w70); font-size: 13px; font-weight: 400; transition: background .15s, color .15s; text-decoration: none; }
+.fr-dropdown a:hover { background: rgba(255,255,255,.06); color: #fff; }
+.fr-dropdown a i { width: 16px; text-align: center; opacity: .6; font-size: 12px; }
+.fr-drop-sep { height: 1px; background: var(--bd); margin: 6px 0; }
+.fr-lang-switch a { display: flex; align-items: center; height: 68px; padding: 0 4px; font-size: 12px; font-weight: 600; letter-spacing: .5px; color: var(--w70); text-decoration: none; }
+.fr-lang-switch a:hover { color: #fff; }
+@media (max-width: 991px) {
+  .fr-nav { display: none; position: fixed; top: 0; right: 0; bottom: 0; width: 300px; background: var(--bg-d); z-index: 500; padding: 80px 24px 24px; overflow-y: auto; flex-direction: column; }
+  .fr-nav.open { display: flex; }
+  .fr-nav ul { flex-direction: column; gap: 0; }
+  .fr-nav ul li > a { height: auto; padding: 12px 0; border-bottom: 1px solid var(--bd); }
+  .fr-lang-switch a { height: auto; padding: 12px 0; border-bottom: 1px solid var(--bd); }
+  .fr-dropdown { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; border-top: none; padding: 0 0 0 16px; display: none; }
+  .fr-nav ul li.open .fr-dropdown { display: block; }
+  .fr-burger { display: flex; }
+}
+</style>
+<header>
+  <div class="fr-header">
+    <div class="fr-logo-area">
+      <a href="index-en.html" class="fr-logo">
+        <img src="logo-firsi-white.svg" alt="UM6P — Ibn Rochd Foundation for Sciences and Innovation" style="height:42px;width:auto">
+      </a>
+    </div>
+    <button class="fr-burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="fr-nav" id="main-nav">
+      <ul>
+        <li class="has-dropdown">
+          <a href="#" class="no-nav">The Foundation <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="mission-en.html"><i class="fas fa-bullseye"></i> Mission</a>
+            <a href="mot-du-president-en.html"><i class="fas fa-user-tie"></i> President's Message</a>
+            <a href="gouvernance-en.html"><i class="fas fa-sitemap"></i> Governance</a>
+            <a href="partenaires-en.html"><i class="fas fa-handshake"></i> Partners</a>
+            <div class="fr-drop-sep"></div>
+            <a href="faq-en.html"><i class="fas fa-question-circle"></i> FAQ</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#" class="no-nav">Our Programs <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="programme-lycee-en.html" style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.5;pointer-events:none;padding-bottom:4px">Scholarships &amp; Financial Aid</a>
+            <a href="programme-lycee-en.html"><i class="fas fa-school"></i> Mohammed VI Excellence High Schools</a>
+            <a href="programme-um6p-en.html"><i class="fas fa-university"></i> UM6P</a>
+            <a href="programme-gef-en.html"><i class="fas fa-flag"></i> GEF — French Engineering &amp; Business Schools</a>
+            <a href="programme-gem-en.html"><i class="fas fa-star-and-crescent"></i> GEM — Moroccan Engineering &amp; Business Schools</a>
+            <a href="pret-etudiant-en.html"><i class="fas fa-hand-holding-usd"></i> Student Loan</a>
+            <a href="accompagnement-en.html"><i class="fas fa-hands-helping"></i> Support &amp; Mentoring</a>
+            <div class="fr-drop-sep"></div>
+            <a href="entrepreneuriat-en.html" style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.5;pointer-events:none;padding-bottom:4px">Entrepreneurship &amp; Innovation</a>
+            <a href="entrepreneuriat-en.html"><i class="fas fa-rocket"></i> Our Initiatives</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#" class="no-nav">Our Community <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="chiffres-cles-en.html"><i class="fas fa-chart-bar"></i> Key Figures</a>
+            <a href="boursier-en.html"><i class="fas fa-award"></i> Scholars</a>
+            <a href="alumni-en.html"><i class="fas fa-users"></i> Alumni</a>
+          </div>
+        </li>
+        <li class="active">
+          <a href="actualites-en.html">All News</a>
+        </li>
+        <li><a href="contact-en.html">Contact</a></li>
+        <li><a href="nous-soutenir-en.html">Support Us</a></li>
+        <li class="fr-lang-switch"><a href="mission.html">FR</a></li>
+        <li class="cta"><a href="candidat-en.html">Apply →</a></li>
+        <li class="has-dropdown fr-lang-switch">
+          <a href="#" class="no-nav"><i class="fas fa-globe"></i> EN <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown" style="min-width:150px">
+            <a href="actualites.html">Français</a>
+            <a href="actualites-en.html" style="color:var(--orange);font-weight:600">English</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="fr-bc"><div class="container"><a href="index-en.html">Home</a><span class="sep">/</span><span class="cur">News</span></div></div>
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas fa-newspaper"></i> News</div>
+    <h1 class="heading-xl mb-3">Follow <strong>Our News</strong></h1>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+<div class="container py-5">
+<style>
+.actu-layout { display: grid; grid-template-columns: 200px 1fr; gap: 32px; }
+.actu-sidebar-inner { border: 1px solid var(--bd); border-radius: 12px; padding: 1rem; position: sticky; top: 90px; }
+.filter-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; font-weight: 500; }
+.filter-btn { display: flex; align-items: center; gap: 8px; width: 100%; padding: 8px 12px; border-radius: 8px; border: none; background: transparent; font-size: 13px; color: var(--muted); cursor: pointer; text-align: left; margin-bottom: 2px; }
+.filter-btn:hover { background: #f7f7f5; color: var(--text); }
+.filter-btn.active { background: #0C2251; color: #fff; font-weight: 500; }
+.filter-btn .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.filter-count { margin-left: auto; font-size: 11px; opacity: 0.6; }
+.filter-sep { height: 0.5px; background: var(--bd); margin: 10px 0; }
+.actu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.actu-card { background: #fff; border: 1px solid var(--bd); border-radius: 12px; overflow: hidden; transition: border-color 0.15s; text-decoration: none; display: block; }
+.actu-card:hover { border-color: var(--orange); }
+.actu-card.hidden { display: none; }
+.actu-img { width: 100%; height: 140px; object-fit: cover; display: block; background: #f0f0f0; }
+.actu-body { padding: 12px; }
+.actu-badge { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 20px; display: inline-block; margin-bottom: 6px; }
+.badge-portrait { background: #faeeda; color: #854f0b; }
+.badge-bourse { background: #e6f1fb; color: #185fa5; }
+.badge-rapport { background: #eaf3de; color: #3b6d11; }
+.badge-evenement { background: #faece7; color: #993c1d; }
+.actu-title { font-size: 13px; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 6px; }
+.actu-date { font-size: 11px; color: var(--muted); }
+.actu-dl { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--orange); font-weight: 600; margin-top: 8px; }
+</style>
+
+<div class="actu-layout">
+  <div class="actu-sidebar">
+    <div class="actu-sidebar-inner">
+      <div class="filter-label">Filter</div>
+      <button class="filter-btn active" data-cat="tous">
+        <span class="dot" style="background:#888;"></span> All
+        <span class="filter-count" id="count-tous">7</span>
+      </button>
+      <div class="filter-sep"></div>
+      <button class="filter-btn" data-cat="portraits">
+        <span class="dot" style="background:#EF9F27;"></span> Profiles
+        <span class="filter-count" id="count-portraits">4</span>
+      </button>
+      <button class="filter-btn" data-cat="bourses">
+        <span class="dot" style="background:#378ADD;"></span> Scholarships
+        <span class="filter-count" id="count-bourses">1</span>
+      </button>
+      <button class="filter-btn" data-cat="evenements">
+        <span class="dot" style="background:#D85A30;"></span> Events
+        <span class="filter-count" id="count-evenements">1</span>
+      </button>
+      <button class="filter-btn" data-cat="rapports">
+        <span class="dot" style="background:#639922;"></span> Reports
+        <span class="filter-count" id="count-rapports">1</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="actu-grid" id="actu-grid">
+
+    <a href="article.html?id=khaoula-riad" class="actu-card" data-cat="portraits">
+      <img class="actu-img" src="https://firsi.org/sites/default/files/2026-02/Capture%20d%E2%80%99e%CC%81cran%202026-02-26%20a%CC%80%2009.14.04.png" alt="Khaoula Riad">
+      <div class="actu-body">
+        <span class="actu-badge badge-portrait">Profile</span>
+        <div class="actu-title">Khaoula Riad: Charting Her Path in Quantitative Finance</div>
+        <div class="actu-date">Feb 26, 2026</div>
+      </div>
+    </a>
+
+    <a href="article.html?id=nouhaila-agouzal" class="actu-card" data-cat="portraits">
+      <img class="actu-img" src="https://firsi.org/sites/default/files/2026-01/Capture%20d%E2%80%99e%CC%81cran%202026-01-28%20a%CC%80%2014.09.16.png" alt="Nouhaila Agouzal">
+      <div class="actu-body">
+        <span class="actu-badge badge-portrait">Profile</span>
+        <div class="actu-title">Nouhaila Agouzal: A Journey of Excellence Guided by Values</div>
+        <div class="actu-date">Jan 28, 2026</div>
+      </div>
+    </a>
+
+    <a href="article.html?id=campagne-gef-2026" class="actu-card" data-cat="bourses">
+      <img class="actu-img" src="https://firsi.org/sites/default/files/2026-01/New%20Release%20Fashion%20Instagram%20Post%20%28300%20x%20330%20px%29_1.png" alt="GEF Campaign">
+      <div class="actu-body">
+        <span class="actu-badge badge-bourse">GEF Scholarship</span>
+        <div class="actu-title">GEF 2026-2027 Campaign Launch</div>
+        <div class="actu-date">Jan 14, 2026</div>
+      </div>
+    </a>
+
+    <a href="article.html?id=youssef-agouzoul" class="actu-card" data-cat="portraits">
+      <img class="actu-img" src="https://firsi.org/sites/default/files/2023-03/t444-min_0.png" alt="Youssef Agouzoul">
+      <div class="actu-body">
+        <span class="actu-badge badge-portrait">Profile</span>
+        <div class="actu-title">Youssef Agouzoul: An Engineer Who Dares to Reinvent Himself</div>
+        <div class="actu-date">Dec 29, 2025</div>
+      </div>
+    </a>
+
+    <a href="article.html?id=ia-audace-africaine" class="actu-card" data-cat="evenements">
+      <img class="actu-img" src="https://firsi.org/sites/default/files/2024-02/pexels-andrea-piacquadio-3762800%20%281%29.jpeg" alt="AI Event">
+      <div class="actu-body">
+        <span class="actu-badge badge-evenement">Event</span>
+        <div class="actu-title">AI at the Crossroads of African Ambition</div>
+        <div class="actu-date">Apr 2025</div>
+      </div>
+    </a>
+
+    <a href="article.html?id=firsi-talents-premieres-etapes" class="actu-card" data-cat="portraits">
+      <img class="actu-img" src="https://firsi.org/sites/default/files/2023-03/116_FondationIbnRochd%20%282%29%20%281%29-min%20%281%29.jpg" alt="FIRSI Profile">
+      <div class="actu-body">
+        <span class="actu-badge badge-portrait">Profile</span>
+        <div class="actu-title">FIRSI Stands by Talent From the Very First Steps</div>
+        <div class="actu-date">March 2025</div>
+      </div>
+    </a>
+
+    <a href="#" download class="actu-card" data-cat="rapports">
+      <img class="actu-img" src="https://firsi.org/sites/default/files/2023-03/t22-min.png" alt="2024 Report">
+      <div class="actu-body">
+        <span class="actu-badge badge-rapport">Report</span>
+        <div class="actu-title">2024 Annual Report — New Online Edition</div>
+        <div class="actu-date">May 15, 2025</div>
+        <div class="actu-dl"><i class="fas fa-file-pdf"></i> Download PDF</div>
+      </div>
+    </a>
+
+  </div>
+</div>
+</div>
+
+<script>
+document.querySelectorAll('.filter-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    var cat = btn.dataset.cat;
+    document.querySelectorAll('.actu-card').forEach(function(card) {
+      card.classList.toggle('hidden', cat !== 'tous' && card.dataset.cat !== cat);
+    });
+  });
+});
+</script>
+
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-lg-4 fr-foot-col">
+        <a href="index-en.html" style="text-decoration:none"><img src="logo-firsi-white.svg" alt="UM6P — Ibn Rochd Foundation" style="height:36px;margin-bottom:12px"></a>
+        <p>Ibn Rochd Foundation for Sciences and Innovation — affiliated with Mohammed VI Polytechnic University in Benguerir.</p>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>The Foundation</h6>
+        <ul>
+          <li><a href="mission-en.html">Mission</a></li>
+          <li><a href="mot-du-president-en.html">President's Message</a></li>
+          <li><a href="gouvernance-en.html">Governance</a></li>
+          <li><a href="partenaires-en.html">Partners</a></li>
+          <li><a href="faq-en.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>Our Programs</h6>
+        <ul>
+          <li style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.4;pointer-events:none;color:rgba(255,255,255,.4);padding-bottom:2px">Scholarships &amp; Financial Aid</li>
+          <li><a href="programme-lycee-en.html">Mohammed VI Excellence High Schools</a></li>
+          <li><a href="programme-um6p-en.html">UM6P</a></li>
+          <li><a href="programme-gef-en.html">French Engineering &amp; Business Schools</a></li>
+          <li><a href="programme-gem-en.html">Moroccan Engineering &amp; Business Schools</a></li>
+          <li><a href="pret-etudiant-en.html">Student Loan</a></li>
+          <li><a href="accompagnement-en.html">Support &amp; Mentoring</a></li>
+          <li style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.4;pointer-events:none;color:rgba(255,255,255,.4);padding-top:6px;padding-bottom:2px">Entrepreneurship &amp; Innovation</li>
+          <li><a href="entrepreneuriat-en.html">Our Initiatives</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>Our Community</h6>
+        <ul>
+          <li><a href="chiffres-cles-en.html">Key Figures</a></li>
+          <li><a href="boursier-en.html">Scholars</a></li>
+          <li><a href="alumni-en.html">Alumni</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>News</h6>
+        <ul>
+          <li><a href="actualites-en.html">All News</a></li>
+        </ul>
+        <h6 style="margin-top:20px">Contact</h6>
+        <ul>
+          <li><a href="contact-en.html">Get in Touch</a></li>
+        </ul>
+        <h6 style="margin-top:20px">Support Us</h6>
+        <ul>
+          <li><a href="nous-soutenir-en.html">Give</a></li>
+          <li><a href="nous-soutenir-en.html">Become a Partner</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fr-foot-bottom">
+      <p>2026 © All rights reserved — FIRSI</p>
+      <div class="fr-social">
+        <a href="https://www.linkedin.com/company/firsi" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@FondationIbnRochd" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+const burger = document.getElementById('burger');
+const nav = document.getElementById('main-nav');
+if (burger) {
+  burger.addEventListener('click', function() {
+    nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', nav.classList.contains('open'));
+  });
+}
+document.querySelectorAll('a.no-nav').forEach(function(a) {
+  a.addEventListener('click', function(e) { e.preventDefault(); });
+});
+document.querySelectorAll('.fr-nav .has-dropdown > a').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    if (window.innerWidth < 992) {
+      e.preventDefault();
+      a.parentElement.classList.toggle('open');
+    }
+  });
+});
+</script>
+</body>
+</html>

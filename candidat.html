@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Candidater | FIRSI</title>
+<link rel="icon" href="https://firsi.org/sites/default/files/firsiicon_1.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="firsi.css">
+</head>
+<body>
+<style>
+.fr-nav ul li { position: relative; }
+.fr-nav ul li > a { display: flex; align-items: center; gap: 5px; height: 68px; }
+.fr-nav ul li > a .chevron { font-size: 9px; opacity: 0.6; transition: transform .2s; }
+.fr-nav ul li:hover > a .chevron { transform: rotate(180deg); }
+.fr-dropdown { position: absolute; top: 100%; left: 0; background: var(--bg-d); border: 1px solid var(--bd); border-top: 2px solid var(--orange); border-radius: 0 0 8px 8px; min-width: 260px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .2s, transform .2s, visibility .2s; box-shadow: 0 12px 32px rgba(0,0,0,.35); z-index: 300; }
+.fr-nav ul li:hover .fr-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.fr-dropdown a { display: flex; align-items: center; gap: 10px; padding: 10px 20px; color: var(--w70); font-size: 13px; font-weight: 400; transition: background .15s, color .15s; text-decoration: none; }
+.fr-dropdown a:hover { background: rgba(255,255,255,.06); color: #fff; }
+.fr-dropdown a i { width: 16px; text-align: center; opacity: .6; font-size: 12px; }
+.fr-drop-sep { height: 1px; background: var(--bd); margin: 6px 0; }
+.fr-burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.fr-burger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s; }
+@media (max-width: 991px) { .fr-burger { display: flex; } }
+
+/* Tableau docs */
+.docs-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.docs-table th { background: var(--bg); color: #fff; padding: 12px 16px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.5px; }
+.docs-table td { padding: 11px 16px; border-bottom: 1px solid var(--bd); color: var(--text); vertical-align: top; }
+.docs-table tr:last-child td { border-bottom: none; }
+.docs-table tr:hover td { background: #f7f7f5; }
+.doc-check { color: var(--orange); font-size: 14px; }
+.doc-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
+</style>
+
+<header>
+  <div class="fr-header">
+    <div class="fr-logo-area">
+      <a href="index.html" class="fr-logo"><img src="logo-firsi-white.svg" alt="UM6P — Fondation Ibn Rochd" style="height:42px;width:auto"></a>
+    </div>
+    <button class="fr-burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="fr-nav" id="main-nav">
+      <ul>
+        <li class="has-dropdown">
+          <a href="#" class="no-nav">La Fondation <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="mission.html"><i class="fas fa-bullseye"></i> Mission</a>
+            <a href="mot-du-president.html"><i class="fas fa-user-tie"></i> Mot du Président</a>
+            <a href="gouvernance.html"><i class="fas fa-sitemap"></i> Gouvernance</a>
+            <a href="partenaires.html"><i class="fas fa-handshake"></i> Partenaires</a>
+            <div class="fr-drop-sep"></div>
+            <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#" class="no-nav">Nos programmes <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="programme-lycee.html" style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.5;pointer-events:none;padding-bottom:4px">Bourses &amp; aides</a>
+            <a href="programme-lycee.html"><i class="fas fa-school"></i> Lycées Mohammed VI d'Excellence</a>
+            <a href="programme-um6p.html"><i class="fas fa-university"></i> UM6P</a>
+            <a href="programme-gef.html"><i class="fas fa-flag"></i> GEF — Grandes Écoles Françaises</a>
+            <a href="programme-gem.html"><i class="fas fa-star-and-crescent"></i> GEM — Grandes Écoles Marocaines</a>
+            <a href="pret-etudiant.html"><i class="fas fa-hand-holding-usd"></i> Prêt étudiant</a>
+            <a href="accompagnement.html"><i class="fas fa-hands-helping"></i> Accompagnement</a>
+            <div class="fr-drop-sep"></div>
+            <a href="entrepreneuriat.html" style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.5;pointer-events:none;padding-bottom:4px">Entrepreneuriat &amp; innovation</a>
+            <a href="entrepreneuriat.html"><i class="fas fa-rocket"></i> Nos initiatives</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#" class="no-nav">Notre communauté <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="chiffres-cles.html"><i class="fas fa-chart-bar"></i> Chiffres clés</a>
+            <a href="boursier.html"><i class="fas fa-award"></i> Boursiers</a>
+            <a href="alumni.html"><i class="fas fa-users"></i> Alumni</a>
+          </div>
+        </li>
+        <li><a href="actualites.html">Toutes les actualités</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="nous-soutenir.html">Nous soutenir</a></li>
+        <li class="cta active"><a href="candidat.html">Candidater →</a></li>
+        <li class="has-dropdown fr-lang-switch">
+          <a href="#" class="no-nav"><i class="fas fa-globe"></i> FR <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown" style="min-width:150px">
+            <a href="candidat.html" style="color:var(--orange);font-weight:600">Français</a>
+            <a href="candidat-en.html">English</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="fr-bc"><div class="container"><a href="index.html">Accueil</a><span class="sep">/</span><span class="cur">Candidater</span></div></div>
+
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas fa-graduation-cap"></i> Candidature</div>
+    <h1 class="heading-xl mb-3">Comment <strong>candidater</strong> ?</h1>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75">Le processus, les critères et les documents requis — tout ce qu'il faut savoir avant de déposer votre dossier.</p>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+
+<div class="container py-5">
+
+  <!-- ══ 4 ÉTAPES ══ -->
+  <p class="fr-label">Processus</p>
+  <h2 class="heading-lg mb-4">Les 4 étapes de <span>la candidature</span></h2>
+  <div class="row g-4 mb-5">
+    <div class="col-12 col-md-3">
+      <div class="fr-card" style="border-top:3px solid var(--orange);text-align:center">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--orange);color:#fff;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">1</div>
+        <h4 style="font-size:15px">Ouverture de la plateforme</h4>
+        <p style="font-size:13px;color:var(--muted)">La plateforme de candidature ouvre selon un calendrier propre à chaque programme. Suivez nos actualités pour être informé dès l'ouverture.</p>
+      </div>
+    </div>
+    <div class="col-12 col-md-3">
+      <div class="fr-card" style="border-top:3px solid var(--bg);text-align:center">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--bg);color:#fff;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">2</div>
+        <h4 style="font-size:15px">Constitution du dossier</h4>
+        <p style="font-size:13px;color:var(--muted)">Remplissez le formulaire en ligne et joignez les pièces justificatives. Les documents varient selon le programme — consultez le tableau ci-dessous.</p>
+      </div>
+    </div>
+    <div class="col-12 col-md-3">
+      <div class="fr-card" style="border-top:3px solid var(--bg);text-align:center">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--bg);color:#fff;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">3</div>
+        <h4 style="font-size:15px">Traitement des dossiers</h4>
+        <p style="font-size:13px;color:var(--muted)">Le Comité de Sélection examine chaque dossier. Les candidats présélectionnés sont convoqués à un entretien individuel.</p>
+      </div>
+    </div>
+    <div class="col-12 col-md-3">
+      <div class="fr-card" style="border-top:3px solid var(--bg);text-align:center">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--bg);color:#fff;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">4</div>
+        <h4 style="font-size:15px">Communication des résultats</h4>
+        <p style="font-size:13px;color:var(--muted)">Chaque candidat reçoit une réponse individuelle par email. En cas d'admission, un délai de confirmation est accordé.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CRITÈRES UNIVERSELS ══ -->
+  <div class="row g-4 mb-5">
+    <div class="col-12">
+      <p class="fr-label">Critères d'éligibilité</p>
+      <h2 class="heading-lg mb-4">Ce que nous <span>recherchons</span></h2>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="fr-card" style="border-left:4px solid var(--orange)">
+        <div class="fr-card-icon"><i class="fas fa-star"></i></div>
+        <h4>Excellence académique</h4>
+        <p>La FIRSI s'adresse aux étudiants qui figurent parmi les meilleurs de leur promotion. L'excellence académique est le premier critère de sélection, quelle que soit la filière ou l'établissement visé.</p>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="fr-card" style="border-left:4px solid var(--orange)">
+        <div class="fr-card-icon"><i class="fas fa-users"></i></div>
+        <h4>Situation sociale</h4>
+        <p>La bourse est prioritairement destinée aux étudiants dont la situation familiale ne permet pas de financer leurs études dans les meilleures conditions. Le mérite seul ne suffit pas d'obstacles financiers.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TABLEAU DOCUMENTS ══ -->
+  <div class="mb-5">
+    <p class="fr-label">Documents requis</p>
+    <h2 class="heading-lg mb-4">Selon votre <span>programme</span></h2>
+    <div style="border:1px solid var(--bd);border-radius:12px;overflow:hidden">
+      <table class="docs-table">
+        <thead>
+          <tr>
+            <th style="width:36%">Document</th>
+            <th style="text-align:center">LM6E</th>
+            <th style="text-align:center">UM6P</th>
+            <th style="text-align:center">GEF</th>
+            <th style="text-align:center">GEM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Relevés de notes<div class="doc-label">2 dernières années</div></td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+          </tr>
+          <tr>
+            <td>Lettre de motivation</td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+          </tr>
+          <tr>
+            <td>Justificatifs de ressources familiales<div class="doc-label">Revenus, composition du foyer</div></td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+          </tr>
+          <tr>
+            <td>Attestation de scolarité au LM6E</td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+            <td style="text-align:center" style="color:var(--muted)">—</td>
+            <td style="text-align:center">—</td>
+            <td style="text-align:center">—</td>
+          </tr>
+          <tr>
+            <td>Lettre d'admission UM6P</td>
+            <td style="text-align:center">—</td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+            <td style="text-align:center">—</td>
+            <td style="text-align:center">—</td>
+          </tr>
+          <tr>
+            <td>Lettre d'admission grande école<div class="doc-label">Ou candidature conditionnelle</div></td>
+            <td style="text-align:center">—</td>
+            <td style="text-align:center">—</td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+          </tr>
+          <tr>
+            <td>Résultats CPGE ou équivalent</td>
+            <td style="text-align:center">—</td>
+            <td style="text-align:center">—</td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+            <td style="text-align:center"><i class="fas fa-check doc-check"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ══ FAQ ══ -->
+  <div class="row">
+    <div class="col-12 col-lg-8 offset-lg-2">
+      <p class="fr-label" style="text-align:center;justify-content:center">Questions fréquentes</p>
+      <h2 class="heading-lg mb-4" style="text-align:center">Vos <span>questions</span></h2>
+      <div class="fr-faq-item open"><div class="fr-faq-q" onclick="toggleFaq(this)">Peut-on candidater si on n'a pas encore son admission ?<i class="fas fa-plus"></i></div><div class="fr-faq-a">Pour certains programmes (GEF, GEM), une candidature conditionnelle est possible. La bourse sera finalisée sur présentation de la lettre d'admission officielle.</div></div>
+      <div class="fr-faq-item"><div class="fr-faq-q" onclick="toggleFaq(this)">Peut-on postuler à plusieurs programmes en même temps ?<i class="fas fa-plus"></i></div><div class="fr-faq-a">Non. Un seul dossier à la fois. Choisissez le programme qui correspond le mieux à votre projet académique.</div></div>
+      <div class="fr-faq-item"><div class="fr-faq-q" onclick="toggleFaq(this)">Quelle est la nationalité requise ?<i class="fas fa-plus"></i></div><div class="fr-faq-a">Les bourses FIRSI sont destinées aux étudiants de nationalité marocaine.</div></div>
+      <div class="mt-4 text-center"><a href="faq.html" class="fr-link">Voir toutes les questions fréquentes <i class="fas fa-arrow-right"></i></a></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-lg-4 fr-foot-col">
+        <a href="index.html" style="text-decoration:none"><img src="logo-firsi-white.svg" alt="UM6P — Fondation Ibn Rochd" style="height:36px;margin-bottom:12px"></a>
+        <p>Fondation Ibn Rochd pour les Sciences et l'Innovation — adossée à l'Université Mohammed VI Polytechnique de Benguérir.</p>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>La fondation</h6>
+        <ul>
+          <li><a href="mission.html">Mission</a></li>
+          <li><a href="mot-du-president.html">Mot du Président</a></li>
+          <li><a href="gouvernance.html">Gouvernance</a></li>
+          <li><a href="partenaires.html">Partenaires</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>Nos programmes</h6>
+        <ul>
+          <li style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.4;pointer-events:none;color:rgba(255,255,255,.4);padding-bottom:2px">Bourses &amp; aides</li>
+          <li><a href="programme-lycee.html">Lycées Mohammed VI d'Excellence</a></li>
+          <li><a href="programme-um6p.html">UM6P</a></li>
+          <li><a href="programme-gef.html">Grandes Écoles FR</a></li>
+          <li><a href="programme-gem.html">Grandes Écoles MA</a></li>
+          <li><a href="pret-etudiant.html">Prêt étudiant</a></li>
+          <li><a href="accompagnement.html">Accompagnement</a></li>
+          <li style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.4;pointer-events:none;color:rgba(255,255,255,.4);padding-top:6px;padding-bottom:2px">Entrepreneuriat &amp; innovation</li>
+          <li><a href="entrepreneuriat.html">Nos initiatives</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>Notre communauté</h6>
+        <ul>
+          <li><a href="chiffres-cles.html">Chiffres clés</a></li>
+          <li><a href="boursier.html">Boursiers</a></li>
+          <li><a href="alumni.html">Alumni</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>Actualités</h6>
+        <ul>
+          <li><a href="actualites.html">Toutes les actualités</a></li>
+        </ul>
+        <h6 style="margin-top:20px">Contact</h6>
+        <ul>
+          <li><a href="contact.html">Nous contacter</a></li>
+        </ul>
+        <h6 style="margin-top:20px">Nous soutenir</h6>
+        <ul>
+          <li><a href="nous-soutenir.html">Faire un don</a></li>
+          <li><a href="nous-soutenir.html">Devenir mécène</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fr-foot-bottom">
+      <p>2026 © Tous droits réservés — FIRSI</p>
+      <div class="fr-social">
+        <a href="https://www.linkedin.com/company/firsi" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@FondationIbnRochd" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+function toggleFaq(el){var i=el.parentElement;var o=i.classList.contains('open');document.querySelectorAll('.fr-faq-item').forEach(function(x){x.classList.remove('open')});if(!o)i.classList.add('open')}
+const burger=document.getElementById('burger');const nav=document.getElementById('main-nav');
+if(burger){burger.addEventListener('click',function(){nav.classList.toggle('open');burger.setAttribute('aria-expanded',nav.classList.contains('open'))});}
+document.querySelectorAll('a.no-nav').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+document.querySelectorAll('.fr-nav .has-dropdown > a').forEach(function(a){a.addEventListener('click',function(e){if(window.innerWidth<992){e.preventDefault();a.parentElement.classList.toggle('open');}});});
+</script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Key Figures | FIRSI</title>
+<link rel="icon" href="https://firsi.org/sites/default/files/firsiicon_1.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="firsi.css">
+</head>
+<body class="pb-sticky">
+<style>
+/* ══ HEADER DROPDOWN ══ */
+.fr-nav ul li { position: relative; }
+.fr-nav ul li > a { display: flex; align-items: center; gap: 5px; height: 68px; }
+.fr-nav ul li > a .chevron { font-size: 9px; opacity: 0.6; transition: transform .2s; }
+.fr-nav ul li:hover > a .chevron { transform: rotate(180deg); }
+.fr-dropdown { position: absolute; top: 100%; left: 0; background: var(--bg-d); border: 1px solid var(--bd); border-top: 2px solid var(--orange); border-radius: 0 0 8px 8px; min-width: 260px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .2s, transform .2s, visibility .2s; box-shadow: 0 12px 32px rgba(0,0,0,.35); z-index: 300; }
+.fr-nav ul li:hover .fr-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.fr-dropdown a { display: flex; align-items: center; gap: 10px; padding: 10px 20px; color: var(--w70); font-size: 13px; font-weight: 400; transition: background .15s, color .15s; text-decoration: none; }
+.fr-dropdown a:hover { background: rgba(255,255,255,.06); color: #fff; }
+.fr-dropdown a i { width: 16px; text-align: center; opacity: .6; font-size: 12px; }
+.fr-drop-sep { height: 1px; background: var(--bd); margin: 6px 0; }
+.fr-lang-switch a { display: flex; align-items: center; height: 68px; padding: 0 4px; font-size: 12px; font-weight: 600; letter-spacing: .5px; color: var(--w70); text-decoration: none; }
+.fr-lang-switch a:hover { color: #fff; }
+@media (max-width: 991px) {
+  .fr-nav { display: none; position: fixed; top: 0; right: 0; bottom: 0; width: 300px; background: var(--bg-d); z-index: 500; padding: 80px 24px 24px; overflow-y: auto; flex-direction: column; }
+  .fr-nav.open { display: flex; }
+  .fr-nav ul { flex-direction: column; gap: 0; }
+  .fr-nav ul li > a { height: auto; padding: 12px 0; border-bottom: 1px solid var(--bd); }
+  .fr-lang-switch a { height: auto; padding: 12px 0; border-bottom: 1px solid var(--bd); }
+  .fr-dropdown { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; border-top: none; padding: 0 0 0 16px; display: none; }
+  .fr-nav ul li.open .fr-dropdown { display: block; }
+  .fr-burger { display: flex; }
+}
+</style>
+<header>
+  <div class="fr-header">
+    <div class="fr-logo-area">
+      <a href="index-en.html" class="fr-logo">
+        <img src="logo-firsi-white.svg" alt="UM6P — Ibn Rochd Foundation for Sciences and Innovation" style="height:42px;width:auto">
+      </a>
+    </div>
+    <button class="fr-burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="fr-nav" id="main-nav">
+      <ul>
+        <li class="has-dropdown">
+          <a href="#" class="no-nav">The Foundation <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="mission-en.html"><i class="fas fa-bullseye"></i> Mission</a>
+            <a href="mot-du-president-en.html"><i class="fas fa-user-tie"></i> President's Message</a>
+            <a href="gouvernance-en.html"><i class="fas fa-sitemap"></i> Governance</a>
+            <a href="partenaires-en.html"><i class="fas fa-handshake"></i> Partners</a>
+            <div class="fr-drop-sep"></div>
+            <a href="faq-en.html"><i class="fas fa-question-circle"></i> FAQ</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#" class="no-nav">Our Programs <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="programme-lycee-en.html" style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.5;pointer-events:none;padding-bottom:4px">Scholarships &amp; Financial Aid</a>
+            <a href="programme-lycee-en.html"><i class="fas fa-school"></i> Mohammed VI Excellence High Schools</a>
+            <a href="programme-um6p-en.html"><i class="fas fa-university"></i> UM6P</a>
+            <a href="programme-gef-en.html"><i class="fas fa-flag"></i> GEF — French Engineering &amp; Business Schools</a>
+            <a href="programme-gem-en.html"><i class="fas fa-star-and-crescent"></i> GEM — Moroccan Engineering &amp; Business Schools</a>
+            <a href="pret-etudiant-en.html"><i class="fas fa-hand-holding-usd"></i> Student Loan</a>
+            <a href="accompagnement-en.html"><i class="fas fa-hands-helping"></i> Support &amp; Mentoring</a>
+            <div class="fr-drop-sep"></div>
+            <a href="entrepreneuriat-en.html" style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.5;pointer-events:none;padding-bottom:4px">Entrepreneurship &amp; Innovation</a>
+            <a href="entrepreneuriat-en.html"><i class="fas fa-rocket"></i> Our Initiatives</a>
+          </div>
+        </li>
+        <li class="has-dropdown active">
+          <a href="#" class="no-nav">Our Community <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="chiffres-cles-en.html"><i class="fas fa-chart-bar"></i> Key Figures</a>
+            <a href="boursier-en.html"><i class="fas fa-award"></i> Scholars</a>
+            <a href="alumni-en.html"><i class="fas fa-users"></i> Alumni</a>
+          </div>
+        </li>
+        <li>
+          <a href="actualites-en.html">All News</a>
+        </li>
+        <li><a href="contact-en.html">Contact</a></li>
+        <li><a href="nous-soutenir-en.html">Support Us</a></li>
+        <li class="fr-lang-switch"><a href="mission.html">FR</a></li>
+        <li class="cta"><a href="candidat-en.html">Apply →</a></li>
+        <li class="has-dropdown fr-lang-switch">
+          <a href="#" class="no-nav"><i class="fas fa-globe"></i> EN <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown" style="min-width:150px">
+            <a href="chiffres-cles.html">Français</a>
+            <a href="chiffres-cles-en.html" style="color:var(--orange);font-weight:600">English</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="fr-bc"><div class="container"><a href="index-en.html">Home</a><span class="sep">/</span><span class="cur">Key Figures</span></div></div>
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas fa-chart-line"></i> Impact &amp; Community</div>
+    <h1 class="heading-xl mb-3">A <strong>Measurable</strong> Impact</h1>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75">Since its founding, FIRSI has transformed thousands of paths. Every number represents a life changed, a family transformed, a building block in Africa's development.</p>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+<section id="chiffres" class="container py-5">
+  <p class="fr-label">Key Figures</p>
+  <h2 class="heading-lg mb-5">The Foundation <span>by the Numbers</span></h2>
+
+  <!-- Stats animées -->
+  <div class="row g-3 mb-4">
+    <div class="col-12 col-md-4">
+      <div class="fr-card" style="border-radius:12px">
+        <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px">2025–2026 Scholars (new and renewed)</div>
+        <div id="stat1" style="font-size:44px;font-weight:700;color:var(--bg);line-height:1">0</div>
+        <div style="width:28px;height:3px;background:var(--orange);margin-top:10px;border-radius:2px"></div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="fr-card" style="border-radius:12px">
+        <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Women Scholars 2025–2026</div>
+        <div id="stat2" style="font-size:44px;font-weight:700;color:var(--orange);line-height:1">0%</div>
+        <div style="width:28px;height:3px;background:var(--bg);margin-top:10px;border-radius:2px"></div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="fr-card" style="border-radius:12px">
+        <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Countries Represented</div>
+        <div id="stat3" style="font-size:44px;font-weight:700;color:var(--bg);line-height:1">0</div>
+        <div style="width:28px;height:3px;background:var(--orange);margin-top:10px;border-radius:2px"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Courbe de croissance -->
+  <div class="fr-card mb-4" style="border-radius:12px;padding:28px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem">
+      <div>
+        <div style="font-size:14px;font-weight:600;color:var(--text)">Growth in New Scholars</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">2021-2022 → 2025-2026</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)">
+        <span style="width:20px;height:2px;background:var(--orange);display:inline-block;border-radius:1px"></span>
+        New Scholars
+      </div>
+    </div>
+    <div style="position:relative;width:100%;height:220px">
+      <canvas id="growthChart" role="img" aria-label="Growth chart of new FIRSI Scholars from 2021-2022 to 2025-2026">Data from 2021-2022 to 2025-2026.</canvas>
+    </div>
+  </div>
+
+  <!-- Chiffres secondaires -->
+  <div class="row g-3">
+    <div class="col-6 col-md-3"><div class="fr-stat"><span class="fr-stat-num">3 129</span><div class="fr-stat-label">supported in Morocco</div></div></div>
+    <div class="col-6 col-md-3"><div class="fr-stat"><span class="fr-stat-num">623</span><div class="fr-stat-label">abroad</div></div></div>
+    <div class="col-6 col-md-3"><div class="fr-stat"><span class="fr-stat-num">6+</span><div class="fr-stat-label">partner schools in France</div></div></div>
+    <div class="col-6 col-md-3"><div class="fr-stat"><span class="fr-stat-num">2020</span><div class="fr-stat-label">year founded</div></div></div>
+  </div>
+
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+function animateCount(el, target, suffix, duration) {
+  const start = Date.now();
+  const tick = () => {
+    const elapsed = Date.now() - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const val = Math.round(ease * target);
+    el.textContent = val.toLocaleString('en-US') + suffix;
+    if (progress < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+setTimeout(() => {
+  animateCount(document.getElementById('stat1'), 4546, '', 1800);
+  animateCount(document.getElementById('stat2'), 59, '%', 1800);
+  animateCount(document.getElementById('stat3'), 15, '+', 1400);
+}, 300);
+
+const years = ['2021-2022','2022-2023','2023-2024','2024-2025','2025-2026'];
+const data  = [1353, 1242, 1386, 1456, 1841];
+
+new Chart(document.getElementById('growthChart'), {
+  type: 'line',
+  data: {
+    labels: years,
+    datasets: [{
+      data: data,
+      borderColor: '#D46B2B',
+      borderWidth: 2,
+      pointBackgroundColor: '#D46B2B',
+      pointBorderColor: '#D46B2B',
+      pointRadius: 4,
+      pointHoverRadius: 6,
+      fill: true,
+      backgroundColor: function(ctx) {
+        const g = ctx.chart.canvas.getContext('2d').createLinearGradient(0, 0, 0, 200);
+        g.addColorStop(0, 'rgba(212,107,43,0.15)');
+        g.addColorStop(1, 'rgba(212,107,43,0)');
+        return g;
+      },
+      tension: 0.4
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: { duration: 1500, easing: 'easeInOutQuart' },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#0C2251',
+        titleColor: 'rgba(255,255,255,0.6)',
+        bodyColor: '#fff',
+        padding: 10,
+        callbacks: { label: ctx => ctx.parsed.y.toLocaleString('en-US') + ' new Scholars' }
+      }
+    },
+    scales: {
+      x: { grid: { display: false }, border: { display: false }, ticks: { color: '#888', font: { size: 11 } } },
+      y: { grid: { color: 'rgba(0,0,0,0.05)' }, border: { display: false }, ticks: { color: '#888', font: { size: 11 }, callback: v => v.toLocaleString('en-US') } }
+    }
+  }
+});
+</script>
+
+
+<div class="fr-sticky">
+  
+  <a href="programme-lycee-en.html" class="btn-orange" style="font-size:12px;padding:7px 18px"><i class="fas fa-graduation-cap me-2"></i>Our Scholarship Programs</a>
+  <a href="nous-soutenir-en.html" class="btn-outline-w" style="font-size:12px;padding:7px 18px">Support Us</a>
+</div>
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-lg-4 fr-foot-col">
+        <a href="index-en.html" style="text-decoration:none"><img src="logo-firsi-white.svg" alt="UM6P — Ibn Rochd Foundation" style="height:36px;margin-bottom:12px"></a>
+        <p>Ibn Rochd Foundation for Sciences and Innovation — affiliated with Mohammed VI Polytechnic University in Benguerir.</p>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>The Foundation</h6>
+        <ul>
+          <li><a href="mission-en.html">Mission</a></li>
+          <li><a href="mot-du-president-en.html">President's Message</a></li>
+          <li><a href="gouvernance-en.html">Governance</a></li>
+          <li><a href="partenaires-en.html">Partners</a></li>
+          <li><a href="faq-en.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>Our Programs</h6>
+        <ul>
+          <li style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.4;pointer-events:none;color:rgba(255,255,255,.4);padding-bottom:2px">Scholarships &amp; Financial Aid</li>
+          <li><a href="programme-lycee-en.html">Mohammed VI Excellence High Schools</a></li>
+          <li><a href="programme-um6p-en.html">UM6P</a></li>
+          <li><a href="programme-gef-en.html">French Engineering &amp; Business Schools</a></li>
+          <li><a href="programme-gem-en.html">Moroccan Engineering &amp; Business Schools</a></li>
+          <li><a href="pret-etudiant-en.html">Student Loan</a></li>
+          <li><a href="accompagnement-en.html">Support &amp; Mentoring</a></li>
+          <li style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.4;pointer-events:none;color:rgba(255,255,255,.4);padding-top:6px;padding-bottom:2px">Entrepreneurship &amp; Innovation</li>
+          <li><a href="entrepreneuriat-en.html">Our Initiatives</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>Our Community</h6>
+        <ul>
+          <li><a href="chiffres-cles-en.html">Key Figures</a></li>
+          <li><a href="boursier-en.html">Scholars</a></li>
+          <li><a href="alumni-en.html">Alumni</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>News</h6>
+        <ul>
+          <li><a href="actualites-en.html">All News</a></li>
+        </ul>
+        <h6 style="margin-top:20px">Contact</h6>
+        <ul>
+          <li><a href="contact-en.html">Get in Touch</a></li>
+        </ul>
+        <h6 style="margin-top:20px">Support Us</h6>
+        <ul>
+          <li><a href="nous-soutenir-en.html">Give</a></li>
+          <li><a href="nous-soutenir-en.html">Become a Partner</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fr-foot-bottom">
+      <p>2026 © All rights reserved — FIRSI</p>
+      <div class="fr-social">
+        <a href="https://www.linkedin.com/company/firsi" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@FondationIbnRochd" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+const burger = document.getElementById('burger');
+const nav = document.getElementById('main-nav');
+if (burger) {
+  burger.addEventListener('click', function() {
+    nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', nav.classList.contains('open'));
+  });
+}
+document.querySelectorAll('a.no-nav').forEach(function(a) {
+  a.addEventListener('click', function(e) { e.preventDefault(); });
+});
+document.querySelectorAll('.fr-nav .has-dropdown > a').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    if (window.innerWidth < 992) {
+      e.preventDefault();
+      a.parentElement.classList.toggle('open');
+    }
+  });
+});
+</script>
+</body>
+</html>

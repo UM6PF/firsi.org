@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Partners | FIRSI</title>
+<link rel="icon" href="https://firsi.org/sites/default/files/firsiicon_1.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="firsi.css">
+</head>
+<body class="pb-sticky">
+<style>
+/* ══ HEADER DROPDOWN ══ */
+.fr-nav ul li { position: relative; }
+.fr-nav ul li > a { display: flex; align-items: center; gap: 5px; height: 68px; }
+.fr-nav ul li > a .chevron { font-size: 9px; opacity: 0.6; transition: transform .2s; }
+.fr-nav ul li:hover > a .chevron { transform: rotate(180deg); }
+.fr-dropdown { position: absolute; top: 100%; left: 0; background: var(--bg-d); border: 1px solid var(--bd); border-top: 2px solid var(--orange); border-radius: 0 0 8px 8px; min-width: 260px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .2s, transform .2s, visibility .2s; box-shadow: 0 12px 32px rgba(0,0,0,.35); z-index: 300; }
+.fr-nav ul li:hover .fr-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.fr-dropdown a { display: flex; align-items: center; gap: 10px; padding: 10px 20px; color: var(--w70); font-size: 13px; font-weight: 400; transition: background .15s, color .15s; text-decoration: none; }
+.fr-dropdown a:hover { background: rgba(255,255,255,.06); color: #fff; }
+.fr-dropdown a i { width: 16px; text-align: center; opacity: .6; font-size: 12px; }
+.fr-drop-sep { height: 1px; background: var(--bd); margin: 6px 0; }
+.fr-lang-switch a { display: flex; align-items: center; height: 68px; padding: 0 4px; font-size: 12px; font-weight: 600; letter-spacing: .5px; color: var(--w70); text-decoration: none; }
+.fr-lang-switch a:hover { color: #fff; }
+@media (max-width: 991px) {
+  .fr-nav { display: none; position: fixed; top: 0; right: 0; bottom: 0; width: 300px; background: var(--bg-d); z-index: 500; padding: 80px 24px 24px; overflow-y: auto; flex-direction: column; }
+  .fr-nav.open { display: flex; }
+  .fr-nav ul { flex-direction: column; gap: 0; }
+  .fr-nav ul li > a { height: auto; padding: 12px 0; border-bottom: 1px solid var(--bd); }
+  .fr-lang-switch a { height: auto; padding: 12px 0; border-bottom: 1px solid var(--bd); }
+  .fr-dropdown { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; border-top: none; padding: 0 0 0 16px; display: none; }
+  .fr-nav ul li.open .fr-dropdown { display: block; }
+  .fr-burger { display: flex; }
+}
+</style>
+<header>
+  <div class="fr-header">
+    <div class="fr-logo-area">
+      <a href="index-en.html" class="fr-logo">
+        <img src="logo-firsi-white.svg" alt="UM6P — Ibn Rochd Foundation for Sciences and Innovation" style="height:42px;width:auto">
+      </a>
+    </div>
+    <button class="fr-burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="fr-nav" id="main-nav">
+      <ul>
+        <li class="has-dropdown active">
+          <a href="#" class="no-nav">The Foundation <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="mission-en.html"><i class="fas fa-bullseye"></i> Mission</a>
+            <a href="mot-du-president-en.html"><i class="fas fa-user-tie"></i> President's Message</a>
+            <a href="gouvernance-en.html"><i class="fas fa-sitemap"></i> Governance</a>
+            <a href="partenaires-en.html"><i class="fas fa-handshake"></i> Partners</a>
+            <div class="fr-drop-sep"></div>
+            <a href="faq-en.html"><i class="fas fa-question-circle"></i> FAQ</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#" class="no-nav">Our Programs <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="programme-lycee-en.html" style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.5;pointer-events:none;padding-bottom:4px">Scholarships &amp; Financial Aid</a>
+            <a href="programme-lycee-en.html"><i class="fas fa-school"></i> Mohammed VI Excellence High Schools</a>
+            <a href="programme-um6p-en.html"><i class="fas fa-university"></i> UM6P</a>
+            <a href="programme-gef-en.html"><i class="fas fa-flag"></i> GEF — French Engineering &amp; Business Schools</a>
+            <a href="programme-gem-en.html"><i class="fas fa-star-and-crescent"></i> GEM — Moroccan Engineering &amp; Business Schools</a>
+            <a href="pret-etudiant-en.html"><i class="fas fa-hand-holding-usd"></i> Student Loan</a>
+            <a href="accompagnement-en.html"><i class="fas fa-hands-helping"></i> Support &amp; Mentoring</a>
+            <div class="fr-drop-sep"></div>
+            <a href="entrepreneuriat-en.html" style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.5;pointer-events:none;padding-bottom:4px">Entrepreneurship &amp; Innovation</a>
+            <a href="entrepreneuriat-en.html"><i class="fas fa-rocket"></i> Our Initiatives</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#" class="no-nav">Our Community <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="chiffres-cles-en.html"><i class="fas fa-chart-bar"></i> Key Figures</a>
+            <a href="boursier-en.html"><i class="fas fa-award"></i> Scholars</a>
+            <a href="alumni-en.html"><i class="fas fa-users"></i> Alumni</a>
+          </div>
+        </li>
+        <li>
+          <a href="actualites-en.html">All News</a>
+        </li>
+        <li><a href="contact-en.html">Contact</a></li>
+        <li><a href="nous-soutenir-en.html">Support Us</a></li>
+        <li class="fr-lang-switch"><a href="mission.html">FR</a></li>
+        <li class="cta"><a href="candidat-en.html">Apply →</a></li>
+        <li class="has-dropdown fr-lang-switch">
+          <a href="#" class="no-nav"><i class="fas fa-globe"></i> EN <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown" style="min-width:150px">
+            <a href="partenaires.html">Français</a>
+            <a href="partenaires-en.html" style="color:var(--orange);font-weight:600">English</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="fr-bc"><div class="container"><a href="index-en.html">Home</a><span class="sep">/</span><a href="la-fondation-en.html">The Foundation</a><span class="sep">/</span><span class="cur">Partners</span></div></div>
+
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas fa-handshake"></i> Partners</div>
+    <h1 class="heading-xl mb-3">Our <strong>Academic Partners</strong></h1>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75">
+      FIRSI relies on a network of outstanding academic partners in France and Morocco, who welcome our Scholars and share our vision of quality education.
+    </p>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+<div class="container py-5">
+  <div class="mb-5">
+    <p class="fr-label">France</p>
+    <h2 class="heading-lg mb-4">French <span>Engineering &amp; Business Schools</span></h2>
+    <div class="row g-4">
+      <div class="col-6 col-md-4 col-lg-3 text-center">
+        <div class="fr-card" style="align-items:center;display:flex;flex-direction:column">
+          <img src="https://firsi.org/sites/default/files/2023-03/lgogogo.png" alt="École Polytechnique" style="max-height:60px;max-width:140px;object-fit:contain;margin-bottom:12px" onerror="this.style.display='none'">
+          <h5 style="font-size:13px;font-weight:600;color:var(--text)">École Polytechnique</h5>
+          <p style="font-size:12px;color:var(--muted)">Paris-Saclay</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 text-center">
+        <div class="fr-card" style="align-items:center;display:flex;flex-direction:column">
+          <img src="https://firsi.org/sites/default/files/2023-03/CentraleSupelec-Quadri-UPSaclay-%28002%294.png" alt="CentraleSupélec" style="max-height:60px;max-width:140px;object-fit:contain;margin-bottom:12px" onerror="this.style.display='none'">
+          <h5 style="font-size:13px;font-weight:600;color:var(--text)">CentraleSupélec</h5>
+          <p style="font-size:12px;color:var(--muted)">Université Paris-Saclay</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 text-center">
+        <div class="fr-card" style="align-items:center;display:flex;flex-direction:column">
+          <img src="https://firsi.org/sites/default/files/2023-03/Logo_IMT_Atlantique.svg_0.png" alt="IMT Atlantique" style="max-height:60px;max-width:140px;object-fit:contain;margin-bottom:12px" onerror="this.style.display='none'">
+          <h5 style="font-size:13px;font-weight:600;color:var(--text)">IMT Atlantique</h5>
+          <p style="font-size:12px;color:var(--muted)">Brittany — Pays de la Loire</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 text-center">
+        <div class="fr-card" style="align-items:center;display:flex;flex-direction:column">
+          <img src="https://firsi.org/sites/default/files/2023-03/logocn-q_0.png" alt="Centrale Nantes" style="max-height:60px;max-width:140px;object-fit:contain;margin-bottom:12px" onerror="this.style.display='none'">
+          <h5 style="font-size:13px;font-weight:600;color:var(--text)">Centrale Nantes</h5>
+          <p style="font-size:12px;color:var(--muted)">Nantes</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 text-center">
+        <div class="fr-card" style="align-items:center;display:flex;flex-direction:column">
+          <img src="https://firsi.org/sites/default/files/2023-03/inp-grenoble.png" alt="ENSIMAG" style="max-height:60px;max-width:140px;object-fit:contain;margin-bottom:12px" onerror="this.style.display='none'">
+          <h5 style="font-size:13px;font-weight:600;color:var(--text)">ENSIMAG</h5>
+          <p style="font-size:12px;color:var(--muted)">Grenoble INP</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 text-center">
+        <div class="fr-card" style="align-items:center;display:flex;flex-direction:column">
+<img src="data:image/png;base64,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" alt="École des Ponts ParisTech" style="max-height:60px;max-width:140px;object-fit:contain;margin-bottom:12px">
+          <h5 style="font-size:13px;font-weight:600;color:var(--text)">École des Ponts ParisTech</h5>
+          <p style="font-size:12px;color:var(--muted)">Paris</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 text-center">
+        <div class="fr-card" style="align-items:center;display:flex;flex-direction:column">
+<img src="data:image/jpeg;base64,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" alt="Phelma Grenoble" style="max-height:60px;max-width:140px;object-fit:contain;margin-bottom:12px">
+          <h5 style="font-size:13px;font-weight:600;color:var(--text)">Phelma Grenoble</h5>
+          <p style="font-size:12px;color:var(--muted)">Grenoble INP</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 text-center">
+        <div class="fr-card" style="align-items:center;display:flex;flex-direction:column">
+<img src="data:image/png;base64,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" alt="Mines de Nancy" style="max-height:60px;max-width:140px;object-fit:contain;margin-bottom:12px">
+          <h5 style="font-size:13px;font-weight:600;color:var(--text)">Mines de Nancy</h5>
+          <p style="font-size:12px;color:var(--muted)">Université de Lorraine</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mb-5">
+    <p class="fr-label">Morocco</p>
+    <h2 class="heading-lg mb-4"><span>Moroccan</span> Institutions</h2>
+    <div class="row g-4">
+      <div class="col-6 col-md-4 col-lg-3 text-center">
+        <div class="fr-card" style="align-items:center;display:flex;flex-direction:column">
+          <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTcuMSAxNDUuMiI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogIzNiM2IzYzsKICAgICAgfQoKICAgICAgLmNscy0xLCAuY2xzLTIsIC5jbHMtMyB7CiAgICAgICAgc3Ryb2tlLXdpZHRoOiAwcHg7CiAgICAgIH0KCiAgICAgIC5jbHMtMiB7CiAgICAgICAgZmlsbDogI2Q3NDkyYTsKICAgICAgfQoKICAgICAgLmNscy0zIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im0zNDAuOCw0Mi45djkuMmMwLDEuOS0uNiwzLjQtMS43LDQuNi0xLjEsMS4yLTIuNiwxLjctNC42LDEuN3MtMy41LS42LTQuNi0xLjdjLTEuMS0xLjItMS43LTIuNy0xLjctNC42di05LjJoMS44djkuMWMwLDEuNS40LDIuNiwxLjIsMy41LjguOSwxLjksMS4zLDMuMywxLjNzMi42LS40LDMuNC0xLjNjLjgtLjksMS4yLTIsMS4yLTMuNXYtOS4xaDEuN1ptMTEuOCw1LjRjLS44LS44LTEuOC0xLjMtMy4yLTEuM3MtMS43LjItMi40LjZjLS43LjQtMS4yLjktMS42LDEuNnYtMS45aC0xLjd2MTAuOGgxLjd2LTUuNWMwLTEuMi4zLTIuMiwxLTMsLjctLjgsMS41LTEuMSwyLjYtMS4xczEuNy4zLDIuMy45Yy41LjYuOCwxLjQuOCwyLjV2Ni4xaDEuN3YtNi40YzAtMS41LS40LTIuNi0xLjItMy41bTQsOS44aDEuN3YtMTAuOGgtMS43djEwLjhabTAtMTMuMmMuMi4yLjUuMy44LjNzLjYtLjEuOC0uM2MuMi0uMi4zLS41LjMtLjhzLS4xLS42LS4zLS44Yy0uMi0uMi0uNS0uMy0uOC0uM3MtLjYuMS0uOC4zYy0uMi4yLS4zLjUtLjMuOHMuMS42LjMuOG0xMi44LDIuM2wtMy44LDktMy44LTloLTEuOGw0LjcsMTAuOGgxLjhsNC43LTEwLjhoLTEuOFptNCw0LjdjMC0xLC41LTEuOCwxLjItMi41LjctLjcsMS42LTEsMi43LTFzMiwuMywyLjcsMWMuNy42LDEsMS41LDEuMSwyLjVoLTcuNlptMCw0LjhjMS4xLDEsMi40LDEuNiw0LjEsMS42czIuMy0uMywzLjItLjljLjktLjYsMS41LTEuMywxLjktMi4ybC0xLjUtLjVjLS4zLjYtLjcsMS4xLTEuMywxLjUtLjYuNC0xLjQuNi0yLjIuNnMtMi4xLS4zLTIuOS0xYy0uNy0uNy0xLjEtMS42LTEuMi0yLjdoOS4zYzAtLjIsMC0uNSwwLS44LDAtMS42LS41LTIuOS0xLjUtMy45LTEtMS0yLjMtMS41LTQtMS41cy0yLjkuNS00LDEuNmMtMSwxLjEtMS41LDIuNC0xLjUsNC4xcy41LDMuMSwxLjYsNC4xbTE0LjktOS4zYy0uNy40LTEuMi45LTEuNSwxLjd2LTEuOWgtMS43djEwLjhoMS43di01LjFjMC0xLjcuMy0yLjgsMS0zLjUuNy0uNywxLjYtMSwyLjktLjh2LTEuNmMtLjktLjEtMS43LDAtMi40LjNtNSwxMGMuOS42LDIsMSwzLjIsMXMyLjMtLjMsMy4yLTFjLjgtLjYsMS4zLTEuNCwxLjMtMi40cy0uMi0xLjQtLjctMS44Yy0uNS0uNC0xLjEtLjgtMi0xbC0zLjEtLjljLTEtLjMtMS41LS43LTEuNS0xLjNzLjItLjguNi0xLjFjLjQtLjMsMS0uNSwxLjctLjVzMS40LjIsMiwuNWMuNS4zLjkuNywxLjEsMS4ybDEuNS0uNWMtLjMtLjgtLjktMS40LTEuNy0xLjktLjgtLjUtMS44LS44LTIuOS0uOHMtMi4xLjMtMi44LjljLS44LjYtMS4yLDEuMy0xLjIsMi4xLDAsMS4zLjgsMi4xLDIuNSwyLjZsMy4xLjljLjYuMiwxLC40LDEuMi42LjIuMi40LjYuNCwxcy0uMy45LS44LDEuM2MtLjUuMy0xLjIuNS0yLC41cy0xLjYtLjItMi4yLS42Yy0uNi0uNC0xLTEtMS4zLTEuNmwtMS42LjRjLjMuOS45LDEuNywxLjgsMi4zbTkuOS43aDEuN3YtMTAuOGgtMS43djEwLjhabTAtMTMuMmMuMi4yLjUuMy44LjNzLjYtLjEuOC0uM2MuMi0uMi4zLS41LjMtLjhzLS4xLS42LS4zLS44Yy0uMi0uMi0uNS0uMy0uOC0uM3MtLjYuMS0uOC4zYy0uMi4yLS4zLjUtLjMuOHMuMS42LjMuOG0xMC42LDExLjRjLS41LjItMSwuNC0xLjUuNC0xLjIsMC0xLjgtLjYtMS44LTEuOXYtNmgzLjd2LTEuNWgtMy43di0zLjdoLTEuN3YzLjdoLTIuMnYxLjVoMi4ydjZjMCwxLjEuMywxLjkuOCwyLjUuNS42LDEuMy45LDIuNC45czEuNS0uMiwyLjMtLjVsLS41LTEuNFptMTEuMy05LjFsLTMuNyw4LjgtNC04LjhoLTEuOGw1LDEwLjYtMi4xLDQuOGgxLjhsNi43LTE1LjRoLTEuOFptLTgzLjYsMTcuNGwtNS42LDguMS01LjctOC4xaC0xLjZ2MTUuMmgxLjd2LTEyLjJsNS42LDcuOSw1LjYtNy45djEyLjJoMS43di0xNS4yaC0xLjdabTEyLjcsMTIuOGMtLjguOC0xLjgsMS4yLTIuOSwxLjJzLTIuMi0uNC0yLjktMS4yYy0uOC0uOC0xLjItMS44LTEuMi0zcy40LTIuMiwxLjItM2MuOC0uOCwxLjgtMS4yLDIuOS0xLjJzMi4xLjQsMi45LDEuMmMuOC44LDEuMiwxLjgsMS4yLDNzLS40LDIuMi0xLjIsM20tNywxLjFjMS4xLDEuMSwyLjUsMS42LDQuMSwxLjZzMy0uNiw0LjEtMS42YzEuMS0xLjEsMS42LTIuNSwxLjYtNC4xcy0uNS0zLTEuNi00LjFjLTEuMS0xLjEtMi41LTEuNi00LjEtMS42cy0zLC41LTQuMSwxLjZjLTEuMSwxLjEtMS42LDIuNC0xLjYsNC4xcy42LDMsMS42LDQuMW0yMS04LjVjLS44LS44LTEuOC0xLjMtMy4yLTEuM3MtMS43LjItMi40LjZjLS43LjQtMS4yLjktMS42LDEuNnYtNi45aC0xLjd2MTUuOWgxLjd2LTUuNWMwLTEuMi4zLTIuMiwxLTMsLjctLjgsMS41LTEuMSwyLjYtMS4xczEuNy4zLDIuMy45Yy41LjYuOCwxLjQuOCwyLjV2Ni4xaDEuN3YtNi40YzAtMS41LS40LTIuNi0xLjItMy41bTEyLDcuNGMtLjguOC0xLjgsMS4yLTIuOSwxLjJzLTIuMi0uNC0yLjktMS4yYy0uOC0uOC0xLjEtMS44LTEuMS0zcy40LTIuMiwxLjEtM2MuOC0uOCwxLjctMS4yLDIuOS0xLjJzMi4xLjQsMi45LDEuMmMuOC44LDEuMiwxLjgsMS4yLDNzLS40LDIuMi0xLjIsM20tNywxLjFjMSwxLjEsMi4zLDEuNiwzLjksMS42czMuMy0uOCw0LjMtMi4zdjJoMS43di0xMC44aC0xLjd2MmMtMS0xLjUtMi40LTIuMi00LjMtMi4ycy0yLjkuNS0zLjksMS42Yy0xLjEsMS4xLTEuNiwyLjQtMS42LDQuMXMuNSwzLDEuNiw0LjFtMjguNS04LjVjLS44LS44LTEuOC0xLjItMy4xLTEuMnMtMy4xLjctMy45LDIuMWMtLjctMS40LTEuOC0yLjEtMy41LTIuMXMtMi44LjctMy42LDJ2LTEuOGgtMS43djEwLjhoMS43di01LjVjMC0xLjIuMy0yLjIuOS0yLjkuNi0uNywxLjQtMS4xLDIuMy0xLjFzMS41LjMsMiwuOWMuNS42LjcsMS40LjcsMi40djYuM2gxLjd2LTUuOGMwLTEuMS4zLTIsLjktMi43LjYtLjcsMS4zLTEsMi4yLTFzMS42LjMsMi4xLjljLjUuNi43LDEuNC43LDIuNHY2LjNoMS43di02LjVjMC0xLjUtLjQtMi42LTEuMS0zLjRtMTkuNywwYy0uOC0uOC0xLjgtMS4yLTMuMS0xLjJzLTMuMS43LTMuOSwyLjFjLS43LTEuNC0xLjgtMi4xLTMuNS0yLjFzLTIuOC43LTMuNiwydi0xLjhoLTEuN3YxMC44aDEuN3YtNS41YzAtMS4yLjMtMi4yLjktMi45LjYtLjcsMS40LTEuMSwyLjMtMS4xczEuNS4zLDIsLjljLjUuNi43LDEuNC43LDIuNHY2LjNoMS43di01LjhjMC0xLjEuMy0yLC45LTIuNy42LS43LDEuMy0xLDIuMi0xczEuNi4zLDIuMS45Yy41LjYuNywxLjQuNywyLjR2Ni4zaDEuN3YtNi41YzAtMS41LS40LTIuNi0xLjEtMy40bTUsMy44YzAtMSwuNS0xLjgsMS4yLTIuNS43LS43LDEuNi0xLDIuNy0xczIsLjMsMi43LDFjLjcuNiwxLDEuNSwxLjEsMi41aC03LjZabTAsNC44YzEuMSwxLDIuNCwxLjYsNC4xLDEuNnMyLjMtLjMsMy4yLS45Yy45LS42LDEuNS0xLjMsMS45LTIuMmwtMS41LS41Yy0uMy42LS43LDEuMS0xLjMsMS41LS42LjQtMS40LjYtMi4yLjZzLTIuMS0uMy0yLjktMWMtLjctLjctMS4xLTEuNi0xLjItMi43aDkuM2MwLS4yLDAtLjUsMC0uOCwwLTEuNi0uNS0yLjktMS41LTMuOS0xLTEtMi4zLTEuNS00LTEuNXMtMi45LjUtNCwxLjZjLTEsMS4xLTEuNSwyLjQtMS41LDQuMXMuNSwzLjEsMS42LDQuMW0xOS43LTEuMmMtLjguOC0xLjgsMS4yLTIuOSwxLjJzLTIuMi0uNC0yLjktMS4yYy0uOC0uOC0xLjEtMS44LTEuMS0zcy40LTIuMiwxLjEtM2MuOC0uOCwxLjctMS4yLDIuOS0xLjJzMi4xLjQsMi45LDEuMmMuOC44LDEuMiwxLjgsMS4yLDNzLS40LDIuMi0xLjIsM20xLjEtMTMuNHY3Yy0xLTEuNS0yLjQtMi4yLTQuMy0yLjJzLTIuOS41LTMuOSwxLjZjLTEuMSwxLjEtMS42LDIuNC0xLjYsNC4xcy41LDMsMS42LDQuMWMxLDEuMSwyLjMsMS42LDMuOSwxLjZzMy4zLS44LDQuMy0yLjN2MmgxLjd2LTE1LjloLTEuN1ptMjEuMy42bC01LjIsMTMuMS01LjItMTMuMWgtMS45bDYuMSwxNS4yaDEuOGw2LjEtMTUuMmgtMS45Wm0zLjUsMTUuMmgxLjd2LTE1LjJoLTEuN3YxNS4yWm0tMTM0LjMsMTMuOGMtLjYuNy0xLjUsMS0yLjUsMWgtNC45di02LjdoNWMxLDAsMS44LjMsMi40LDEsLjYuNy45LDEuNC45LDIuM3MtLjMsMS43LS45LDIuM20xLjMtNS43Yy0uOS0xLTIuMS0xLjUtMy42LTEuNWgtNi43djE1LjJoMS43di01LjRoNC45YzEuNiwwLDIuOC0uNSwzLjctMS41LjktMSwxLjQtMi4xLDEuNC0zLjRzLS40LTIuNC0xLjMtMy40bTExLDExLjNjLS44LjgtMS44LDEuMi0yLjksMS4ycy0yLjItLjQtMi45LTEuMmMtLjgtLjgtMS4yLTEuOC0xLjItM3MuNC0yLjIsMS4yLTNjLjgtLjgsMS44LTEuMiwyLjktMS4yczIuMS40LDIuOSwxLjJjLjguOCwxLjIsMS44LDEuMiwzcy0uNCwyLjItMS4yLDNtLTcsMS4xYzEuMSwxLjEsMi40LDEuNiw0LjEsMS42czMtLjYsNC4xLTEuNmMxLjEtMS4xLDEuNi0yLjUsMS42LTQuMXMtLjUtMy0xLjYtNC4xYy0xLjEtMS4xLTIuNC0xLjYtNC4xLTEuNnMtMywuNS00LjEsMS42Yy0xLjEsMS4xLTEuNiwyLjQtMS42LDQuMXMuNiwzLDEuNiw0LjFtMTIuMSwxLjRoMS43di0xNS45aC0xLjd2MTUuOVptMTIuOS0xMC44bC0zLjcsOC44LTQtOC44aC0xLjhsNSwxMC42LTIuMSw0LjhoMS44bDYuNy0xNS40aC0xLjhabTEwLDkuMWMtLjUuMi0xLC40LTEuNS40LTEuMiwwLTEuOC0uNi0xLjgtMS45di02aDMuN3YtMS41aC0zLjd2LTMuN2gtMS43djMuN2gtMi4ydjEuNWgyLjJ2NmMwLDEuMS4zLDEuOS44LDIuNS41LjYsMS4zLjksMi40LjlzMS41LS4yLDIuMy0uNWwtLjUtMS40Wm0zLjEtNC40YzAtMSwuNS0xLjgsMS4yLTIuNS43LS43LDEuNi0xLDIuNy0xczIsLjMsMi43LDFjLjcuNiwxLDEuNSwxLjEsMi41aC03LjZabTAsNC44YzEuMSwxLDIuNCwxLjYsNC4xLDEuNnMyLjMtLjMsMy4yLS45Yy45LS42LDEuNS0xLjMsMS45LTIuMmwtMS41LS41Yy0uMy42LS43LDEuMS0xLjMsMS41LS42LjQtMS40LjYtMi4yLjZzLTIuMS0uMy0yLjktMWMtLjctLjctMS4xLTEuNi0xLjItMi43aDkuM2MwLS4yLDAtLjUsMC0uOCwwLTEuNi0uNS0yLjktMS41LTMuOS0xLTEtMi4zLTEuNS00LTEuNXMtMi45LjUtNCwxLjZjLTEsMS4xLTEuNSwyLjQtMS41LDQuMXMuNSwzLjEsMS42LDQuMW0xMi42LDBjMS4xLDEuMSwyLjQsMS42LDQsMS42czIuNC0uMywzLjMtMWMuOS0uNywxLjUtMS40LDEuNy0yLjNsLTEuNi0uNGMtLjIuNi0uNiwxLjEtMS4yLDEuNS0uNi40LTEuNC42LTIuMi42cy0yLjEtLjQtMi45LTEuMmMtLjgtLjgtMS4xLTEuOC0xLjEtMi45cy40LTIuMiwxLjEtM2MuNy0uOCwxLjctMS4yLDIuOS0xLjJzMS42LjIsMi4yLjdjLjYuNSwxLjEsMSwxLjIsMS42bDEuNi0uNWMtLjItLjgtLjgtMS42LTEuNy0yLjMtLjktLjctMi0xLTMuMy0xcy0zLC41LTQsMS42Yy0xLjEsMS4xLTEuNiwyLjQtMS42LDRzLjUsMywxLjYsNC4xbTIwLjEtOC41Yy0uOC0uOC0xLjgtMS4zLTMuMi0xLjNzLTEuNy4yLTIuNC42Yy0uNy40LTEuMi45LTEuNiwxLjZ2LTYuOWgtMS43djE1LjloMS43di01LjVjMC0xLjIuMy0yLjIsMS0zLC43LS44LDEuNS0xLjEsMi42LTEuMXMxLjcuMywyLjMuOWMuNS42LjgsMS40LjgsMi41djYuMWgxLjd2LTYuNGMwLTEuNS0uNC0yLjYtMS4yLTMuNW0xMi45LDBjLS44LS44LTEuOC0xLjMtMy4yLTEuM3MtMS43LjItMi40LjZjLS43LjQtMS4yLjktMS42LDEuNnYtMS45aC0xLjd2MTAuOGgxLjd2LTUuNWMwLTEuMi4zLTIuMiwxLTMsLjctLjgsMS41LTEuMSwyLjYtMS4xczEuNy4zLDIuMy45Yy41LjYuOCwxLjQuOCwyLjV2Ni4xaDEuN3YtNi40YzAtMS41LS40LTIuNi0xLjItMy41bTQsOS44aDEuN3YtMTAuOGgtMS43djEwLjhabTAtMTMuMmMuMi4yLjUuMy44LjNzLjYtLjEuOC0uM2MuMi0uMi4zLS41LjMtLjhzLS4xLS42LS4zLS44Yy0uMi0uMi0uNS0uMy0uOC0uM3MtLjYuMS0uOC4zYy0uMi4yLS4zLjUtLjMuOHMuMS42LjMuOG01LjYsMTEuOGMxLjEsMS4xLDIuNCwxLjYsNCwxLjZzMi40LS4zLDMuMy0xYy45LS43LDEuNS0xLjQsMS43LTIuM2wtMS42LS40Yy0uMi42LS42LDEuMS0xLjIsMS41LS42LjQtMS40LjYtMi4yLjZzLTIuMS0uNC0yLjktMS4yYy0uOC0uOC0xLjEtMS44LTEuMS0yLjlzLjQtMi4yLDEuMS0zYy43LS44LDEuNy0xLjIsMi45LTEuMnMxLjYuMiwyLjIuN2MuNi41LDEuMSwxLDEuMiwxLjZsMS42LS41Yy0uMi0uOC0uOC0xLjYtMS43LTIuMy0uOS0uNy0yLTEtMy4zLTFzLTMsLjUtNCwxLjZjLTEuMSwxLjEtMS42LDIuNC0xLjYsNHMuNSwzLDEuNiw0LjEiLz4KICA8cmVjdCBjbGFzcz0iY2xzLTIiIHg9IjQzLjYiIHk9IjQzLjYiIHdpZHRoPSI1OC4xIiBoZWlnaHQ9IjU4LjEiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Im04OCw1NS4zdjIwLjRjMCw0LjYtMS40LDguMy00LjEsMTEtMi43LDIuOC02LjUsNC4yLTExLjQsNC4ycy04LjctMS40LTExLjQtNC4yYy0yLjctMi44LTQuMS02LjQtNC4xLTExdi0yMC40aDguNHYyMC4yYzAsMi4zLjYsNC4yLDEuOCw1LjYsMS4yLDEuNCwzLDIuMSw1LjMsMi4xczQuMS0uNyw1LjMtMi4xYzEuMi0xLjQsMS44LTMuMywxLjgtNS42di0yMC4yaDguNFoiLz4KICA8cmVjdCBjbGFzcz0iY2xzLTIiIHg9IjEwNy41IiB5PSI0My42IiB3aWR0aD0iNTguMSIgaGVpZ2h0PSI1OC4xIi8+CiAgPHJlY3QgY2xhc3M9ImNscy0yIiB4PSIxNzEuMyIgeT0iNDMuNiIgd2lkdGg9IjU4LjEiIGhlaWdodD0iNTguMSIvPgogIDxyZWN0IGNsYXNzPSJjbHMtMiIgeD0iMjM1LjIiIHk9IjQzLjYiIHdpZHRoPSI1OC4xIiBoZWlnaHQ9IjU4LjEiLz4KICA8cG9seWdvbiBjbGFzcz0iY2xzLTMiIHBvaW50cz0iMTU1IDU1LjIgMTU1IDkwIDE0Ni43IDkwIDE0Ni43IDY5LjYgMTM2LjUgODMuNiAxMjYuMyA2OS42IDEyNi4zIDkwIDExOCA5MCAxMTggNTUuMiAxMjUuOSA1NS4yIDEzNi41IDcwLjYgMTQ3LjEgNTUuMiAxNTUgNTUuMiIvPgogIDxwYXRoIGNsYXNzPSJjbHMtMyIgZD0ibTIwNC4zLDgyYzEtMSwxLjUtMi4yLDEuNS0zLjdzLS41LTIuNy0xLjUtMy43Yy0xLTEtMi4zLTEuNS0zLjktMS41cy0yLjkuNS0zLjksMS41Yy0xLDEtMS41LDIuMi0xLjUsMy43cy41LDIuOCwxLjUsMy43YzEsMSwyLjMsMS40LDMuOSwxLjRzMi45LS41LDMuOS0xLjRtNi4yLTEyLjJjMi4zLDIuMywzLjQsNS4xLDMuNCw4LjVzLTEuMyw2LjYtMy45LDljLTIuNiwyLjQtNS44LDMuNi05LjcsMy42cy03LjEtMS4yLTkuNy0zLjZjLTIuNi0yLjQtMy45LTUuNC0zLjktOXMuOC00LjgsMi41LTcuNGw5LjktMTUuNmg5LjNsLTYuOCwxMC44YzMuNi4zLDYuNiwxLjUsOC45LDMuOCIvPgogIDxwYXRoIGNsYXNzPSJjbHMtMyIgZD0ibTI2OS40LDcxLjNjLjktMSwxLjQtMi4yLDEuNC0zLjZzLS40LTIuNi0xLjMtMy42Yy0uOS0xLTItMS41LTMuMy0xLjVoLTguNHYxMC4yaDguMWMxLjUsMCwyLjctLjUsMy42LTEuNW02LTEyLjNjMi4zLDIuNiwzLjUsNS41LDMuNSw4LjdzLTEuMiw2LjItMy41LDguN2MtMi4zLDIuNS01LjQsMy44LTkuMywzLjhoLTguM3Y5LjdoLTguMnYtMzQuOGgxNi44YzMuNywwLDYuNywxLjMsOSwzLjgiLz4KPC9zdmc+" alt="UM6P" style="max-height:60px;max-width:140px;object-fit:contain;margin-bottom:12px" onerror="this.style.display='none'">
+          <h5 style="font-size:13px;font-weight:600;color:var(--text)">UM6P</h5>
+          <p style="font-size:12px;color:var(--muted)">Mohammed VI Polytechnic University</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3 text-center">
+        <div class="fr-card" style="align-items:center;display:flex;flex-direction:column">
+          <img src="data:image/png;base64,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" alt="Mohammed VI Excellence High School" style="max-height:60px;max-width:140px;object-fit:contain;margin-bottom:12px">
+          <h5 style="font-size:13px;font-weight:600;color:var(--text)">Mohammed VI Excellence High School</h5>
+          <p style="font-size:12px;color:var(--muted)">Benguerir</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div style="background:var(--bg);border-radius:12px;padding:32px;text-align:center">
+        <h3 style="color:var(--white);font-weight:300;margin-bottom:12px">Interested in becoming a <strong style="color:var(--orange)">partner</strong>?</h3>
+        <p style="color:rgba(255,255,255,.7);font-size:14px;font-weight:300;margin-bottom:24px;max-width:480px;margin-left:auto;margin-right:auto">Join our network of partner institutions and help shape the talents of tomorrow.</p>
+        <a href="nous-soutenir-en.html" class="btn-orange">Become a Partner</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-lg-4 fr-foot-col">
+        <a href="index-en.html" style="text-decoration:none"><img src="logo-firsi-white.svg" alt="UM6P — Ibn Rochd Foundation" style="height:36px;margin-bottom:12px"></a>
+        <p>Ibn Rochd Foundation for Sciences and Innovation — affiliated with Mohammed VI Polytechnic University in Benguerir.</p>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>The Foundation</h6>
+        <ul>
+          <li><a href="mission-en.html">Mission</a></li>
+          <li><a href="mot-du-president-en.html">President's Message</a></li>
+          <li><a href="gouvernance-en.html">Governance</a></li>
+          <li><a href="partenaires-en.html">Partners</a></li>
+          <li><a href="faq-en.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>Our Programs</h6>
+        <ul>
+          <li style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.4;pointer-events:none;color:rgba(255,255,255,.4);padding-bottom:2px">Scholarships &amp; Financial Aid</li>
+          <li><a href="programme-lycee-en.html">Mohammed VI Excellence High Schools</a></li>
+          <li><a href="programme-um6p-en.html">UM6P</a></li>
+          <li><a href="programme-gef-en.html">French Engineering &amp; Business Schools</a></li>
+          <li><a href="programme-gem-en.html">Moroccan Engineering &amp; Business Schools</a></li>
+          <li><a href="pret-etudiant-en.html">Student Loan</a></li>
+          <li><a href="accompagnement-en.html">Support &amp; Mentoring</a></li>
+          <li style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.4;pointer-events:none;color:rgba(255,255,255,.4);padding-top:6px;padding-bottom:2px">Entrepreneurship &amp; Innovation</li>
+          <li><a href="entrepreneuriat-en.html">Our Initiatives</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>Our Community</h6>
+        <ul>
+          <li><a href="chiffres-cles-en.html">Key Figures</a></li>
+          <li><a href="boursier-en.html">Scholars</a></li>
+          <li><a href="alumni-en.html">Alumni</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>News</h6>
+        <ul>
+          <li><a href="actualites-en.html">All News</a></li>
+        </ul>
+        <h6 style="margin-top:20px">Contact</h6>
+        <ul>
+          <li><a href="contact-en.html">Get in Touch</a></li>
+        </ul>
+        <h6 style="margin-top:20px">Support Us</h6>
+        <ul>
+          <li><a href="nous-soutenir-en.html">Give</a></li>
+          <li><a href="nous-soutenir-en.html">Become a Partner</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fr-foot-bottom">
+      <p>2026 © All rights reserved — FIRSI</p>
+      <div class="fr-social">
+        <a href="https://www.linkedin.com/company/firsi" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@FondationIbnRochd" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+const burger = document.getElementById('burger');
+const nav = document.getElementById('main-nav');
+if (burger) {
+  burger.addEventListener('click', function() {
+    nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', nav.classList.contains('open'));
+  });
+}
+document.querySelectorAll('a.no-nav').forEach(function(a) {
+  a.addEventListener('click', function(e) { e.preventDefault(); });
+});
+document.querySelectorAll('.fr-nav .has-dropdown > a').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    if (window.innerWidth < 992) {
+      e.preventDefault();
+      a.parentElement.classList.toggle('open');
+    }
+  });
+});
+</script>
+</body>
+</html>

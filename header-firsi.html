@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Header FIRSI — Prototype</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+/* ══════════════════════════════════════════════
+   FIRSI DESIGN SYSTEM — Header v2.0
+   ══════════════════════════════════════════════ */
+:root {
+  --bg:       #0C2251;
+  --bg-d:     #07162E;
+  --bg-mid:   #0E2A5E;
+  --bg-l:     #122D6A;
+  --orange:   #D46B2B;
+  --orange-d: #B05520;
+  --white:    #FFFFFF;
+  --w70:      rgba(255,255,255,0.70);
+  --w45:      rgba(255,255,255,0.45);
+  --w15:      rgba(255,255,255,0.15);
+  --w08:      rgba(255,255,255,0.08);
+  --bd:       rgba(255,255,255,0.10);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Work Sans', 'Inter', sans-serif; background: #F5F7FA; }
+
+/* ── HEADER ── */
+.fr-header {
+  background: var(--bg);
+  padding: 0 48px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  border-bottom: 1px solid var(--bd);
+}
+
+/* ── LOGO ── */
+.fr-logo-area {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.fr-logo-area img {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+/* ── NAV ── */
+.fr-nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.fr-nav ul li {
+  position: relative;
+}
+
+.fr-nav ul li > a {
+  color: var(--w70);
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: none;
+  padding: 8px 13px;
+  border-radius: 4px;
+  transition: color .2s, background .2s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  height: 68px;
+}
+
+.fr-nav ul li > a .chevron {
+  font-size: 9px;
+  opacity: 0.6;
+  transition: transform .2s;
+}
+
+.fr-nav ul li:hover > a {
+  color: var(--white);
+  background: var(--w08);
+}
+
+.fr-nav ul li:hover > a .chevron {
+  transform: rotate(180deg);
+}
+
+.fr-nav ul li.active > a {
+  color: var(--orange);
+  font-weight: 500;
+}
+
+/* CTA */
+.fr-nav ul li.cta > a {
+  background: var(--orange);
+  color: var(--white);
+  font-weight: 600;
+  padding: 8px 18px;
+  height: auto;
+  border-radius: 4px;
+}
+.fr-nav ul li.cta > a:hover {
+  background: var(--orange-d);
+}
+
+/* ── DROPDOWN ── */
+.fr-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--bg-d);
+  border: 1px solid var(--bd);
+  border-top: 2px solid var(--orange);
+  border-radius: 0 0 8px 8px;
+  min-width: 240px;
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity .2s, transform .2s, visibility .2s;
+  box-shadow: 0 12px 32px rgba(0,0,0,.35);
+  z-index: 300;
+}
+
+.fr-nav ul li:hover .fr-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.fr-dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 20px;
+  color: var(--w70);
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color .15s, background .15s, padding-left .15s;
+}
+
+.fr-dropdown a:hover {
+  color: var(--white);
+  background: var(--w08);
+  padding-left: 26px;
+}
+
+.fr-dropdown a i {
+  font-size: 11px;
+  color: var(--orange);
+  width: 14px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.fr-dropdown .fr-drop-sep {
+  height: 1px;
+  background: var(--bd);
+  margin: 6px 20px;
+}
+
+/* ── MOBILE BURGER ── */
+.fr-burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+}
+.fr-burger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--w70);
+  border-radius: 2px;
+  transition: all .3s;
+}
+
+/* ── MOBILE NAV ── */
+@media(max-width: 991px) {
+  .fr-header { padding: 0 20px; }
+  .fr-burger { display: flex; }
+
+  .fr-nav {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-d);
+    padding: 24px 20px;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform .3s ease;
+    z-index: 190;
+  }
+
+  .fr-nav.open {
+    transform: translateX(0);
+  }
+
+  .fr-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .fr-nav ul li > a {
+    height: auto;
+    padding: 12px 4px;
+    border-radius: 0;
+    border-bottom: 1px solid var(--bd);
+    justify-content: space-between;
+  }
+
+  .fr-nav ul li.cta {
+    margin-top: 16px;
+  }
+  .fr-nav ul li.cta > a {
+    justify-content: center;
+    border-radius: 4px;
+    border-bottom: none;
+    padding: 12px 18px;
+  }
+
+  .fr-dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-top: none;
+    border-radius: 0;
+    background: transparent;
+    padding: 0 0 0 16px;
+    display: none;
+  }
+
+  .fr-nav ul li.drop-open .fr-dropdown {
+    display: block;
+  }
+
+  .fr-dropdown a {
+    padding: 9px 4px;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+    font-size: 12px;
+  }
+  .fr-dropdown a:hover {
+    padding-left: 10px;
+  }
+}
+
+/* ── DEMO CONTENT ── */
+.demo-body {
+  padding: 60px 48px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.demo-body h1 {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #0C2251;
+  margin-bottom: 12px;
+}
+.demo-body p {
+  font-size: 14px;
+  color: #5A6570;
+  line-height: 1.7;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="fr-header">
+
+    <!-- LOGO -->
+    <div class="fr-logo-area">
+      <a href="index.html">
+        <!-- Logo officiel UM6P | Fondation Ibn Rochd -->
+        <!-- Remplacer src par le chemin local de votre logo une fois intégré -->
+        <img
+          src="https://firsi.org/themes/custom/firsi/assets/img/Icons/Logo1.svg"
+          alt="UM6P — Fondation Ibn Rochd pour les Sciences et l'Innovation"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+        >
+        <!-- Fallback texte si logo indisponible -->
+        <span style="display:none;align-items:center;gap:10px">
+          <span style="color:#D46B2B;font-family:'Work Sans',sans-serif;font-weight:800;font-size:16px;letter-spacing:2px">UM6P</span>
+          <span style="width:1px;height:22px;background:rgba(255,255,255,.2);display:block"></span>
+          <span style="color:#fff;font-family:'Work Sans',sans-serif;font-weight:600;font-size:13px;line-height:1.2">Fondation<br>Ibn Rochd</span>
+        </span>
+      </a>
+    </div>
+
+    <!-- BURGER mobile -->
+    <button class="fr-burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- NAV -->
+    <nav class="fr-nav" id="main-nav">
+      <ul>
+
+        <!-- La Fondation -->
+        <li class="has-dropdown">
+          <a href="la-fondation.html">
+            La Fondation <i class="fas fa-chevron-down chevron"></i>
+          </a>
+          <div class="fr-dropdown">
+            <a href="mission.html"><i class="fas fa-bullseye"></i> Mission</a>
+            <a href="mot-du-president.html"><i class="fas fa-user-tie"></i> Mot du Président</a>
+            <a href="gouvernance.html"><i class="fas fa-sitemap"></i> Gouvernance</a>
+            <a href="partenaires.html"><i class="fas fa-handshake"></i> Partenaires</a>
+            <div class="fr-drop-sep"></div>
+            <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+          </div>
+        </li>
+
+        <!-- Nos programmes -->
+        <li class="has-dropdown">
+          <a href="nos-programmes.html">
+            Nos programmes <i class="fas fa-chevron-down chevron"></i>
+          </a>
+          <div class="fr-dropdown">
+            <a href="programme-lycee.html"><i class="fas fa-school"></i> Lycées d'Excellence MVI</a>
+            <a href="programme-um6p.html"><i class="fas fa-university"></i> Programme UM6P</a>
+            <a href="programme-gef.html"><i class="fas fa-flag"></i> GEF — Grandes Écoles Françaises</a>
+            <a href="programme-gem.html"><i class="fas fa-star-and-crescent"></i> GEM — Grandes Écoles Marocaines</a>
+            <div class="fr-drop-sep"></div>
+            <a href="accompagnement.html"><i class="fas fa-hands-helping"></i> Accompagnement</a>
+          </div>
+        </li>
+
+        <!-- Impact & communauté -->
+        <li class="has-dropdown">
+          <a href="impact.html">
+            Impact &amp; communauté <i class="fas fa-chevron-down chevron"></i>
+          </a>
+          <div class="fr-dropdown">
+            <a href="impact.html#chiffres"><i class="fas fa-chart-bar"></i> Chiffres clés</a>
+            <a href="boursier.html"><i class="fas fa-award"></i> Boursiers</a>
+            <a href="alumni.html"><i class="fas fa-users"></i> Alumni</a>
+          </div>
+        </li>
+
+        <!-- Actualités -->
+        <li class="has-dropdown">
+          <a href="actualites.html">
+            Actualités <i class="fas fa-chevron-down chevron"></i>
+          </a>
+          <div class="fr-dropdown">
+            <a href="actualites.html"><i class="fas fa-newspaper"></i> Toutes les actualités</a>
+            <a href="actualites.html?cat=rapports"><i class="fas fa-file-alt"></i> Rapports &amp; publications</a>
+          </div>
+        </li>
+
+        <!-- Contact -->
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+
+        <!-- Nous soutenir — dernière position, sans sous-menu -->
+        <li>
+          <a href="nous-soutenir.html">Nous soutenir</a>
+        </li>
+
+        <!-- CTA -->
+        <li class="cta">
+          <a href="candidat.html">Candidater →</a>
+        </li>
+
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<!-- DEMO BODY -->
+<div class="demo-body">
+  <h1>Prototype header — FIRSI v2</h1>
+  <p>Ce fichier isole le header pour validation avant intégration dans les 22 pages. Survolez les items de navigation pour tester les dropdowns. Sur mobile, le burger ouvre la nav en panneau latéral.</p>
+  <br>
+  <p><strong>Note logo :</strong> remplacer le <code>src</code> de l'image par le chemin local vers le fichier PNG/SVG du logo officiel UM6P | Fondation Ibn Rochd une fois placé dans le dossier du projet.</p>
+</div>
+
+<script>
+// ── BURGER TOGGLE (mobile) ──
+const burger = document.getElementById('burger');
+const nav = document.getElementById('main-nav');
+
+burger.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open);
+  // animate burger → X
+  burger.querySelectorAll('span')[0].style.transform = open ? 'translateY(7px) rotate(45deg)' : '';
+  burger.querySelectorAll('span')[1].style.opacity = open ? '0' : '1';
+  burger.querySelectorAll('span')[2].style.transform = open ? 'translateY(-7px) rotate(-45deg)' : '';
+});
+
+// ── MOBILE DROPDOWN TOGGLE ──
+document.querySelectorAll('.fr-nav .has-dropdown > a').forEach(link => {
+  link.addEventListener('click', e => {
+    if (window.innerWidth < 992) {
+      e.preventDefault();
+      const li = link.parentElement;
+      li.classList.toggle('drop-open');
+      const chevron = link.querySelector('.chevron');
+      if (chevron) chevron.style.transform = li.classList.contains('drop-open') ? 'rotate(180deg)' : '';
+    }
+  });
+});
+
+// ── CLOSE NAV ON RESIZE ──
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 992) {
+    nav.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  }
+});
+</script>
+
+</body>
+</html>

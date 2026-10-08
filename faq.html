@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FAQ | FIRSI</title>
+<link rel="icon" href="https://firsi.org/sites/default/files/firsiicon_1.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="firsi.css">
+</head>
+<body class="pb-sticky">
+<style>
+/* ══ HEADER DROPDOWN ══ */
+.fr-nav ul li { position: relative; }
+.fr-nav ul li > a { display: flex; align-items: center; gap: 5px; height: 68px; }
+.fr-nav ul li > a .chevron { font-size: 9px; opacity: 0.6; transition: transform .2s; }
+.fr-nav ul li:hover > a .chevron { transform: rotate(180deg); }
+.fr-dropdown { position: absolute; top: 100%; left: 0; background: var(--bg-d); border: 1px solid var(--bd); border-top: 2px solid var(--orange); border-radius: 0 0 8px 8px; min-width: 260px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .2s, transform .2s, visibility .2s; box-shadow: 0 12px 32px rgba(0,0,0,.35); z-index: 300; }
+.fr-nav ul li:hover .fr-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.fr-dropdown a { display: flex; align-items: center; gap: 10px; padding: 10px 20px; color: var(--w70); font-size: 13px; font-weight: 400; transition: background .15s, color .15s; text-decoration: none; }
+.fr-dropdown a:hover { background: rgba(255,255,255,.06); color: #fff; }
+.fr-dropdown a i { width: 16px; text-align: center; opacity: .6; font-size: 12px; }
+.fr-drop-sep { height: 1px; background: var(--bd); margin: 6px 0; }
+@media (max-width: 991px) {
+  .fr-nav { display: none; position: fixed; top: 0; right: 0; bottom: 0; width: 300px; background: var(--bg-d); z-index: 500; padding: 80px 24px 24px; overflow-y: auto; flex-direction: column; }
+  .fr-nav.open { display: flex; }
+  .fr-nav ul { flex-direction: column; gap: 0; }
+  .fr-nav ul li > a { height: auto; padding: 12px 0; border-bottom: 1px solid var(--bd); }
+  .fr-dropdown { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; border-top: none; padding: 0 0 0 16px; display: none; }
+  .fr-nav ul li.open .fr-dropdown { display: block; }
+  .fr-burger { display: flex; }
+}
+</style>
+<header>
+  <div class="fr-header">
+    <div class="fr-logo-area">
+      <a href="index.html" class="fr-logo">
+        <img src="logo-firsi-white.svg" alt="UM6P — Fondation Ibn Rochd pour les Sciences et l'Innovation" style="height:42px;width:auto">
+      </a>
+    </div>
+    <button class="fr-burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="fr-nav" id="main-nav">
+      <ul>
+        <li class="has-dropdown active">
+          <a href="#" class="no-nav">La Fondation <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="mission.html"><i class="fas fa-bullseye"></i> Mission</a>
+            <a href="mot-du-president.html"><i class="fas fa-user-tie"></i> Mot du Président</a>
+            <a href="gouvernance.html"><i class="fas fa-sitemap"></i> Gouvernance</a>
+            <a href="partenaires.html"><i class="fas fa-handshake"></i> Partenaires</a>
+            <div class="fr-drop-sep"></div>
+            <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#" class="no-nav">Nos programmes <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="programme-lycee.html" style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.5;pointer-events:none;padding-bottom:4px">Bourses &amp; aides</a>
+            <a href="programme-lycee.html"><i class="fas fa-school"></i> Lycées Mohammed VI d'Excellence</a>
+            <a href="programme-um6p.html"><i class="fas fa-university"></i> UM6P</a>
+            <a href="programme-gef.html"><i class="fas fa-flag"></i> GEF — Grandes Écoles Françaises</a>
+            <a href="programme-gem.html"><i class="fas fa-star-and-crescent"></i> GEM — Grandes Écoles Marocaines</a>
+            <a href="pret-etudiant.html"><i class="fas fa-hand-holding-usd"></i> Prêt étudiant</a>
+            <a href="accompagnement.html"><i class="fas fa-hands-helping"></i> Accompagnement</a>
+            <div class="fr-drop-sep"></div>
+            <a href="entrepreneuriat.html" style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.5;pointer-events:none;padding-bottom:4px">Entrepreneuriat &amp; innovation</a>
+            <a href="entrepreneuriat.html"><i class="fas fa-rocket"></i> Nos initiatives</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#" class="no-nav">Notre communauté <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="chiffres-cles.html"><i class="fas fa-chart-bar"></i> Chiffres clés</a>
+            <a href="boursier.html"><i class="fas fa-award"></i> Boursiers</a>
+            <a href="alumni.html"><i class="fas fa-users"></i> Alumni</a>
+          </div>
+        </li>
+        <li>
+          <a href="actualites.html">Toutes les actualités</a>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="nous-soutenir.html">Nous soutenir</a></li>
+        <li class="cta"><a href="candidat.html">Candidater →</a></li>
+        <li class="has-dropdown fr-lang-switch">
+          <a href="#" class="no-nav"><i class="fas fa-globe"></i> FR <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown" style="min-width:150px">
+            <a href="faq.html" style="color:var(--orange);font-weight:600">Français</a>
+            <a href="faq-en.html">English</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="fr-bc"><div class="container"><a href="index.html">Accueil</a><span class="sep">/</span><a href="la-fondation.html">La fondation</a><span class="sep">/</span><span class="cur">FAQ</span></div></div>
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas fa-question-circle"></i> FAQ</div>
+    <h1 class="heading-xl mb-3">Questions <strong>fréquentes</strong></h1>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-lg-8 offset-lg-2">
+      <div class="mb-5">
+        <p class="fr-label">Candidature</p>
+        <div class="fr-faq-item open">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Qui peut candidater aux bourses de la FIRSI ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">Les bourses FIRSI sont ouvertes aux étudiants marocains et sub-sahariens (programme UM6P seulement) sous conditions de ressources ayant obtenu d'excellents résultats académiques. Chaque programme a ses propres critères. Consultez la page de chaque programme pour les conditions spécifiques.</div>
+        </div>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Comment se déroule la sélection ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">La sélection se fait en plusieurs étapes : dépôt de dossier en ligne, examen des dossiers par le Comité de Sélection, entretiens individuels pour les candidats présélectionnés, puis notification de la décision finale.</div>
+        </div>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Quand sont ouvertes les campagnes de candidature ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">Les campagnes sont ouvertes une fois par an, généralement entre novembre et mars selon les programmes. Suivez nos actualités pour être informé dès l'ouverture.</div>
+        </div>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Peut-on postuler à plusieurs programmes en même temps ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">Non, vous ne pouvez candidater qu'à un seul programme à la fois. Choisissez le programme qui correspond le mieux à votre projet académique et professionnel.</div>
+        </div>
+      </div>
+      <div class="mb-5">
+        <p class="fr-label">Bourses</p>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Qu'est-ce que couvre exactement la bourse ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">Selon le programme, la bourse peut couvrir : les frais de scolarité, une allocation mensuelle de subsistance, les frais de voyage (billet d'avion aller-retour). Les détails sont précisés sur la page de chaque programme.</div>
+        </div>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">La bourse est-elle renouvelée automatiquement ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">Non. La reconduction est soumise chaque année à un dossier de renouvellement incluant votre relevé de notes. Les conditions académiques minimales doivent être satisfaites et la campagne de reconduction doit être respectée dans les délais.</div>
+        </div>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Puis-je travailler en parallèle de ma bourse ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">Oui, dans la mesure où cela n'impacte pas vos résultats académiques. La FIRSI encourage même les expériences professionnelles (stages, missions) qui enrichissent votre parcours.</div>
+        </div>
+      </div>
+      <div class="mb-5">
+        <p class="fr-label">Bourse GEF — conditions spécifiques</p>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Je suis en classe préparatoire (CPGE). Puis-je candidater à la bourse GEF ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">La bourse GEF est ouverte aux étudiants issus des CPGE publiques marocaines et des CPGE du Lycée Mohammed VI d'Excellence de Benguérir. Les étudiants de CPGE françaises peuvent également candidater, à condition d'être admis à Chimie ParisTech, AgroParisTech ou ESPCI. Les CPGE privées marocaines ne sont pas éligibles.</div>
+        </div>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Je suis étudiant(e) en 4ᵉ année d'une école, puis-je bénéficier de la bourse GEF ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">Non. La bourse GEF est accordée pour une durée maximale de trois années d'études. Un étudiant intégrant directement une 4ᵉ année n'est donc pas éligible.</div>
+        </div>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Je suis en 2ᵉ année de CPGE et admis(e) dans une école non éligible. Puis-je bénéficier de la bourse ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">Non. La FIRSI ne propose pas de bourse pour les cursus suivis dans des établissements non éligibles. Nous vous invitons à consulter la liste des écoles éligibles avant de déposer votre candidature.</div>
+        </div>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Je suis en 1ʳᵉ année GEM et je souhaite repasser les concours français en candidat libre. Si j'intègre une école éligible, pourrai-je bénéficier de la bourse ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">Non. La bourse GEF est destinée aux lauréats des CPGE admis sur concours en première année d'une école éligible.</div>
+        </div>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Dans le cadre d'une double diplomation, puis-je conserver ma bourse FIRSI ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">Oui. La bourse est maintenue dans la limite de trois années d'études et selon les conditions propres à votre programme, à condition de rester inscrit(e) dans votre école d'origine.</div>
+        </div>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Dans quels cas la bourse FIRSI peut-elle être suspendue ou interrompue ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">La bourse peut être suspendue ou annulée dans les cas suivants : redoublement, année de césure, apprentissage, alternance ou contrat de professionnalisation, stage rémunéré de plus de six mois, abandon des études, décision académique de l'établissement, ou toute autre situation prévue par la lettre d'engagement signée par le boursier. Toute interruption d'études doit être déclarée immédiatement à la Fondation.</div>
+        </div>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Je suis déjà bénéficiaire d'une autre bourse couvrant mes frais de scolarité. Puis-je également bénéficier de la bourse FIRSI ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">Le cumul est étudié au cas par cas, en fonction des règles du programme et de la nature des financements déjà obtenus.</div>
+        </div>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Si je change d'établissement ou de formation après l'attribution de la bourse, puis-je la conserver ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">Tout changement doit être signalé à la Fondation. Le maintien de la bourse est soumis à l'approbation du programme et au respect des critères d'éligibilité.</div>
+        </div>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Devrai-je rembourser la bourse FIRSI à la fin de mes études ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">Non. La bourse FIRSI est une aide financière non remboursable, destinée aux étudiants ne disposant pas des ressources nécessaires pour financer leurs études.</div>
+        </div>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">La bourse FIRSI garantit-elle l'obtention d'un visa d'études pour la France ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">Non. La bourse constitue un soutien financier ; l'obtention du visa relève exclusivement des autorités consulaires françaises. Les bénéficiaires doivent satisfaire à l'ensemble des exigences administratives applicables.</div>
+        </div>
+      </div>
+      <div class="mb-5">
+        <p class="fr-label">Soutien et accompagnement</p>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Quel soutien la FIRSI apporte-t-elle au-delà de la bourse financière ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">La FIRSI offre un accompagnement global : ateliers soft-skills, ateliers de préparation professionnelle (CV, entretiens), aide à l'intégration dans le pays d'accueil et accès à un réseau d'alumni et d'entreprises partenaires.</div>
+        </div>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Comment rejoindre le réseau alumni ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">À la fin de votre programme, vous serez automatiquement invité à rejoindre la communauté alumni FIRSI. Vous pourrez alors accéder à des événements networking, des offres d'emploi et devenir mentor pour les futurs boursiers.</div>
+        </div>
+      </div>
+      <div class="mb-5">
+        <p class="fr-label">La Fondation</p>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">La FIRSI peut-elle recevoir des dons ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">Oui. La FIRSI peut recevoir des dons et des contributions destinés à soutenir ses missions d'intérêt général, dans le respect de la réglementation en vigueur et de ses procédures internes. Les personnes ou organismes souhaitant contribuer peuvent prendre contact avec la Fondation afin d'être accompagnés dans leurs démarches.</div>
+        </div>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Comment la FIRSI protège-t-elle les données personnelles ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">La FIRSI traite les données personnelles conformément à la réglementation applicable et uniquement pour les finalités pour lesquelles elles ont été collectées. Des mesures techniques et organisationnelles appropriées sont mises en œuvre afin d'en assurer la sécurité, la confidentialité et l'intégrité.</div>
+        </div>
+      </div>
+      <div class="mb-5">
+        <p class="fr-label">Contact</p>
+        <div class="fr-faq-item">
+          <div class="fr-faq-q" onclick="toggleFaq(this)">Comment transmettre une réclamation ou une demande d'information à la Fondation ?<i class="fas fa-plus"></i></div>
+          <div class="fr-faq-a">Vous pouvez adresser votre demande directement par email : equipebourses@firsi.org pour toute question relative à votre bourse ou votre candidature, ou contact@firsi.org pour toute autre demande. Votre message sera pris en charge dans les meilleurs délais.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-lg-4 fr-foot-col">
+        <a href="index.html" style="text-decoration:none"><img src="logo-firsi-white.svg" alt="UM6P — Fondation Ibn Rochd" style="height:36px;margin-bottom:12px"></a>
+        <p>Fondation Ibn Rochd pour les Sciences et l'Innovation — adossée à l'Université Mohammed VI Polytechnique de Benguérir.</p>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>La fondation</h6>
+        <ul>
+          <li><a href="mission.html">Mission</a></li>
+          <li><a href="mot-du-president.html">Mot du Président</a></li>
+          <li><a href="gouvernance.html">Gouvernance</a></li>
+          <li><a href="partenaires.html">Partenaires</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>Nos programmes</h6>
+        <ul>
+          <li style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.4;pointer-events:none;color:rgba(255,255,255,.4);padding-bottom:2px">Bourses &amp; aides</li>
+          <li><a href="programme-lycee.html">Lycées Mohammed VI d'Excellence</a></li>
+          <li><a href="programme-um6p.html">UM6P</a></li>
+          <li><a href="programme-gef.html">Grandes Écoles FR</a></li>
+          <li><a href="programme-gem.html">Grandes Écoles MA</a></li>
+          <li><a href="pret-etudiant.html">Prêt étudiant</a></li>
+          <li><a href="accompagnement.html">Accompagnement</a></li>
+          <li style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.4;pointer-events:none;color:rgba(255,255,255,.4);padding-top:6px;padding-bottom:2px">Entrepreneuriat &amp; innovation</li>
+          <li><a href="entrepreneuriat.html">Nos initiatives</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>Notre communauté</h6>
+        <ul>
+          <li><a href="chiffres-cles.html">Chiffres clés</a></li>
+          <li><a href="boursier.html">Boursiers</a></li>
+          <li><a href="alumni.html">Alumni</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>Actualités</h6>
+        <ul>
+          <li><a href="actualites.html">Toutes les actualités</a></li>
+        </ul>
+        <h6 style="margin-top:20px">Contact</h6>
+        <ul>
+          <li><a href="contact.html">Nous contacter</a></li>
+        </ul>
+        <h6 style="margin-top:20px">Nous soutenir</h6>
+        <ul>
+          <li><a href="nous-soutenir.html">Faire un don</a></li>
+          <li><a href="nous-soutenir.html">Devenir mécène</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fr-foot-bottom">
+      <p>2026 © Tous droits réservés — FIRSI</p>
+      <div class="fr-social">
+        <a href="https://www.linkedin.com/company/firsi" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@FondationIbnRochd" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+function toggleFaq(el){const i=el.parentElement;const o=i.classList.contains('open');document.querySelectorAll('.fr-faq-item').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')}
+document.querySelectorAll('.fr-profil-btn').forEach(b=>{b.addEventListener('click',e=>{e.preventDefault();document.querySelectorAll('.fr-profil-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active')})});
+const tabs=document.querySelectorAll('.fr-tab');const ids=['ressources','reconduction','accompagnement','communaute','faq','contact','mission','vision','chiffres','temoignages'];
+window.addEventListener('scroll',()=>{let c='';ids.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-160)c=id});tabs.forEach(t=>t.classList.toggle('active',t.getAttribute('href')==='#'+c))});
+</script>
+<script>
+const burger = document.getElementById('burger');
+const nav = document.getElementById('main-nav');
+if (burger) {
+  burger.addEventListener('click', function() {
+    nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', nav.classList.contains('open'));
+  });
+}
+document.querySelectorAll('a.no-nav').forEach(function(a) {
+  a.addEventListener('click', function(e) { e.preventDefault(); });
+});
+document.querySelectorAll('.fr-nav .has-dropdown > a').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    if (window.innerWidth < 992) {
+      e.preventDefault();
+      a.parentElement.classList.toggle('open');
+    }
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Contact | FIRSI</title>
+<link rel="icon" href="https://firsi.org/sites/default/files/firsiicon_1.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Work+Sans:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="firsi.css">
+</head>
+<body class="pb-sticky">
+<style>
+/* ══ HEADER DROPDOWN ══ */
+.fr-nav ul li { position: relative; }
+.fr-nav ul li > a { display: flex; align-items: center; gap: 5px; height: 68px; }
+.fr-nav ul li > a .chevron { font-size: 9px; opacity: 0.6; transition: transform .2s; }
+.fr-nav ul li:hover > a .chevron { transform: rotate(180deg); }
+.fr-dropdown { position: absolute; top: 100%; left: 0; background: var(--bg-d); border: 1px solid var(--bd); border-top: 2px solid var(--orange); border-radius: 0 0 8px 8px; min-width: 260px; padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(-6px); transition: opacity .2s, transform .2s, visibility .2s; box-shadow: 0 12px 32px rgba(0,0,0,.35); z-index: 300; }
+.fr-nav ul li:hover .fr-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.fr-dropdown a { display: flex; align-items: center; gap: 10px; padding: 10px 20px; color: var(--w70); font-size: 13px; font-weight: 400; transition: background .15s, color .15s; text-decoration: none; }
+.fr-dropdown a:hover { background: rgba(255,255,255,.06); color: #fff; }
+.fr-dropdown a i { width: 16px; text-align: center; opacity: .6; font-size: 12px; }
+.fr-drop-sep { height: 1px; background: var(--bd); margin: 6px 0; }
+@media (max-width: 991px) {
+  .fr-nav { display: none; position: fixed; top: 0; right: 0; bottom: 0; width: 300px; background: var(--bg-d); z-index: 500; padding: 80px 24px 24px; overflow-y: auto; flex-direction: column; }
+  .fr-nav.open { display: flex; }
+  .fr-nav ul { flex-direction: column; gap: 0; }
+  .fr-nav ul li > a { height: auto; padding: 12px 0; border-bottom: 1px solid var(--bd); }
+  .fr-dropdown { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; border-top: none; padding: 0 0 0 16px; display: none; }
+  .fr-nav ul li.open .fr-dropdown { display: block; }
+  .fr-burger { display: flex; }
+}
+</style>
+<header>
+  <div class="fr-header">
+    <div class="fr-logo-area">
+      <a href="index.html" class="fr-logo">
+        <img src="logo-firsi-white.svg" alt="UM6P — Fondation Ibn Rochd pour les Sciences et l'Innovation" style="height:42px;width:auto">
+      </a>
+    </div>
+    <button class="fr-burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="fr-nav" id="main-nav">
+      <ul>
+        <li class="has-dropdown">
+          <a href="#" class="no-nav">La Fondation <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="mission.html"><i class="fas fa-bullseye"></i> Mission</a>
+            <a href="mot-du-president.html"><i class="fas fa-user-tie"></i> Mot du Président</a>
+            <a href="gouvernance.html"><i class="fas fa-sitemap"></i> Gouvernance</a>
+            <a href="partenaires.html"><i class="fas fa-handshake"></i> Partenaires</a>
+            <div class="fr-drop-sep"></div>
+            <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#" class="no-nav">Nos programmes <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="programme-lycee.html" style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.5;pointer-events:none;padding-bottom:4px">Bourses &amp; aides</a>
+            <a href="programme-lycee.html"><i class="fas fa-school"></i> Lycées Mohammed VI d'Excellence</a>
+            <a href="programme-um6p.html"><i class="fas fa-university"></i> UM6P</a>
+            <a href="programme-gef.html"><i class="fas fa-flag"></i> GEF — Grandes Écoles Françaises</a>
+            <a href="programme-gem.html"><i class="fas fa-star-and-crescent"></i> GEM — Grandes Écoles Marocaines</a>
+            <a href="pret-etudiant.html"><i class="fas fa-hand-holding-usd"></i> Prêt étudiant</a>
+            <a href="accompagnement.html"><i class="fas fa-hands-helping"></i> Accompagnement</a>
+            <div class="fr-drop-sep"></div>
+            <a href="entrepreneuriat.html" style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.5;pointer-events:none;padding-bottom:4px">Entrepreneuriat &amp; innovation</a>
+            <a href="entrepreneuriat.html"><i class="fas fa-rocket"></i> Nos initiatives</a>
+          </div>
+        </li>
+        <li class="has-dropdown">
+          <a href="#" class="no-nav">Notre communauté <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown">
+            <a href="chiffres-cles.html"><i class="fas fa-chart-bar"></i> Chiffres clés</a>
+            <a href="boursier.html"><i class="fas fa-award"></i> Boursiers</a>
+            <a href="alumni.html"><i class="fas fa-users"></i> Alumni</a>
+          </div>
+        </li>
+        <li>
+          <a href="actualites.html">Toutes les actualités</a>
+        </li>
+        <li class="active"><a href="contact.html">Contact</a></li>
+        <li><a href="nous-soutenir.html">Nous soutenir</a></li>
+        <li class="cta"><a href="candidat.html">Candidater →</a></li>
+        <li class="has-dropdown fr-lang-switch">
+          <a href="#" class="no-nav"><i class="fas fa-globe"></i> FR <i class="fas fa-chevron-down chevron"></i></a>
+          <div class="fr-dropdown" style="min-width:150px">
+            <a href="contact.html" style="color:var(--orange);font-weight:600">Français</a>
+            <a href="contact-en.html">English</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="fr-bc"><div class="container"><a href="index.html">Accueil</a><span class="sep">/</span><span class="cur">Contact</span></div></div>
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas fa-envelope"></i> Contact</div>
+    <h1 class="heading-xl mb-3">Parlons de <strong>votre projet</strong></h1>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75">Notre équipe est à votre disposition pour répondre à toutes vos questions — candidature, partenariat, soutien ou simple information.</p>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+<div class="container py-5">
+<style>
+.contact-card { background:#EEF3FA; border-radius:10px; padding:20px; transition: border 0.25s, background 0.25s; border: 2px solid transparent; }
+.contact-card.highlighted { border-color: var(--orange); background: #fff8f3; }
+.ctx-field { display: none; animation: fadeIn 0.25s ease; }
+.ctx-field.show { display: block; }
+@keyframes fadeIn { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:translateY(0); } }
+</style>
+  <div class="row g-5">
+    <div class="col-12 col-lg-7">
+      <p class="fr-label">Formulaire de contact</p>
+      <h2 class="heading-lg mb-4">Écrivez-<span>nous</span></h2>
+      <div class="fr-form">
+        <div class="row g-3 mb-3">
+          <div class="col-12 col-md-6"><label>Prénom *</label><input type="text" class="form-control" placeholder="Votre prénom"></div>
+          <div class="col-12 col-md-6"><label>Nom *</label><input type="text" class="form-control" placeholder="Votre nom"></div>
+        </div>
+        <div class="mb-3"><label>Email *</label><input type="email" class="form-control" placeholder="votre@email.com"></div>
+        <div class="mb-3">
+          <label>Vous êtes *</label>
+          <select class="form-select" id="profil-select">
+            <option value="">— Sélectionnez votre profil</option>
+            <option value="candidat">Candidat / futur boursier</option>
+            <option value="boursier">Boursier actuel</option>
+            <option value="alumni">Alumni</option>
+            <option value="entreprise">Entreprise / organisation</option>
+            <option value="soutien">Particulier souhaitant soutenir</option>
+            <option value="presse">Journaliste / presse</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div class="mb-3 ctx-field" id="ctx-candidat">
+          <label>Programme visé *</label>
+          <select class="form-select">
+            <option value="">— Sélectionnez un programme</option>
+            <option>Lycées d'Excellence MVI</option>
+            <option>Programme UM6P</option>
+            <option>GEF — Grandes Écoles Françaises</option>
+            <option>GEM — Grandes Écoles Marocaines</option>
+            <option>Prêt étudiant</option>
+          </select>
+        </div>
+        <div class="mb-3 ctx-field" id="ctx-boursier">
+          <label>Votre programme actuel *</label>
+          <select class="form-select">
+            <option value="">— Sélectionnez votre programme</option>
+            <option>Lycées d'Excellence MVI</option>
+            <option>Programme UM6P</option>
+            <option>GEF — Grandes Écoles Françaises</option>
+            <option>GEM — Grandes Écoles Marocaines</option>
+          </select>
+        </div>
+        <div class="mb-3 ctx-field" id="ctx-alumni">
+          <label>Promotion (année de diplôme) *</label>
+          <input type="number" class="form-control" placeholder="Ex : 2023" min="2015" max="2030">
+        </div>
+        <div class="mb-3 ctx-field" id="ctx-entreprise">
+          <label>Nature de la demande *</label>
+          <select class="form-select">
+            <option value="">— Sélectionnez</option>
+            <option>Recrutement / offre d'emploi</option>
+            <option>Partenariat académique</option>
+            <option>Don / mécénat</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="mb-3 ctx-field" id="ctx-presse">
+          <label>Média / publication *</label>
+          <input type="text" class="form-control" placeholder="Nom de votre média">
+        </div>
+        <div class="mb-3"><label>Sujet *</label><input type="text" class="form-control" placeholder="Objet de votre message"></div>
+        <div class="mb-4"><label>Message *</label><textarea class="form-control" rows="5" placeholder="Décrivez votre demande..."></textarea></div>
+        <button class="btn-orange" style="font-size:14px;padding:13px 32px"><i class="fas fa-paper-plane me-2"></i>Envoyer le message</button>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4 offset-lg-1">
+      <p class="fr-label">Coordonnées</p>
+      <h2 class="heading-md mb-4"><span>Nos équipes</span></h2>
+      <div class="d-flex flex-column gap-3 mb-5">
+        <div class="contact-card" id="card-bourses">
+          <p style="font-size:11px;color:var(--orange);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Candidats &amp; boursiers</p>
+          <p style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px">Équipe bourses</p>
+          <p style="font-size:12px;color:var(--muted);margin-bottom:4px"><i class="fas fa-envelope me-2"></i>equipebourses@firsi.org</p>
+          <p style="font-size:12px;color:var(--muted)"><i class="fas fa-clock me-2"></i>Lun–Ven, 9h–17h (Rabat)</p>
+        </div>
+        <div class="contact-card" id="card-partenariats">
+          <p style="font-size:11px;color:var(--orange);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Entreprises &amp; partenariats</p>
+          <p style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px">Équipe partenariats</p>
+          <p style="font-size:12px;color:var(--muted);margin-bottom:4px"><i class="fas fa-envelope me-2"></i>contact@firsi.org</p>
+        </div>
+        <div class="contact-card" id="card-adresse">
+          <p style="font-size:11px;color:var(--orange);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px">Adresse</p>
+          <p style="font-size:13px;color:var(--text);font-weight:300;line-height:1.6"><i class="fas fa-map-marker-alt me-2" style="color:var(--orange)"></i>Université Mohammed VI Polytechnique<br>Benguérir, Maroc</p>
+        </div>
+      </div>
+      <div style="background:var(--bg);border-radius:10px;padding:24px;text-align:center">
+        <p style="color:rgba(255,255,255,.7);font-size:13px;font-weight:300;margin-bottom:16px">Suivez-nous sur les réseaux</p>
+        <div class="fr-social d-flex justify-content-center gap-2">
+          <a href="https://www.linkedin.com/company/firsi" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/@FondationIbnRochd" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var select = document.getElementById('profil-select');
+  if (!select) return;
+  var cards = { candidat:'card-bourses', boursier:'card-bourses', alumni:'card-bourses', entreprise:'card-partenariats', soutien:'card-partenariats', presse:null, autre:null };
+  select.addEventListener('change', function() {
+    var val = this.value;
+    document.querySelectorAll('.ctx-field').forEach(function(f) { f.classList.remove('show'); });
+    var ctx = document.getElementById('ctx-' + val);
+    if (ctx) ctx.classList.add('show');
+    document.querySelectorAll('.contact-card').forEach(function(c) { c.classList.remove('highlighted'); });
+    var cid = cards[val];
+    if (cid) document.getElementById(cid).classList.add('highlighted');
+  });
+})();
+</script>
+
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-lg-4 fr-foot-col">
+        <a href="index.html" style="text-decoration:none"><img src="logo-firsi-white.svg" alt="UM6P — Fondation Ibn Rochd" style="height:36px;margin-bottom:12px"></a>
+        <p>Fondation Ibn Rochd pour les Sciences et l'Innovation — adossée à l'Université Mohammed VI Polytechnique de Benguérir.</p>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>La fondation</h6>
+        <ul>
+          <li><a href="mission.html">Mission</a></li>
+          <li><a href="mot-du-president.html">Mot du Président</a></li>
+          <li><a href="gouvernance.html">Gouvernance</a></li>
+          <li><a href="partenaires.html">Partenaires</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>Nos programmes</h6>
+        <ul>
+          <li style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.4;pointer-events:none;color:rgba(255,255,255,.4);padding-bottom:2px">Bourses &amp; aides</li>
+          <li><a href="programme-lycee.html">Lycées Mohammed VI d'Excellence</a></li>
+          <li><a href="programme-um6p.html">UM6P</a></li>
+          <li><a href="programme-gef.html">Grandes Écoles FR</a></li>
+          <li><a href="programme-gem.html">Grandes Écoles MA</a></li>
+          <li><a href="pret-etudiant.html">Prêt étudiant</a></li>
+          <li><a href="accompagnement.html">Accompagnement</a></li>
+          <li style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.4;pointer-events:none;color:rgba(255,255,255,.4);padding-top:6px;padding-bottom:2px">Entrepreneuriat &amp; innovation</li>
+          <li><a href="entrepreneuriat.html">Nos initiatives</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>Notre communauté</h6>
+        <ul>
+          <li><a href="chiffres-cles.html">Chiffres clés</a></li>
+          <li><a href="boursier.html">Boursiers</a></li>
+          <li><a href="alumni.html">Alumni</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-2 fr-foot-col">
+        <h6>Actualités</h6>
+        <ul>
+          <li><a href="actualites.html">Toutes les actualités</a></li>
+        </ul>
+        <h6 style="margin-top:20px">Contact</h6>
+        <ul>
+          <li><a href="contact.html">Nous contacter</a></li>
+        </ul>
+        <h6 style="margin-top:20px">Nous soutenir</h6>
+        <ul>
+          <li><a href="nous-soutenir.html">Faire un don</a></li>
+          <li><a href="nous-soutenir.html">Devenir mécène</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fr-foot-bottom">
+      <p>2026 © Tous droits réservés — FIRSI</p>
+      <div class="fr-social">
+        <a href="https://www.linkedin.com/company/firsi" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@FondationIbnRochd" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+function toggleFaq(el){const i=el.parentElement;const o=i.classList.contains('open');document.querySelectorAll('.fr-faq-item').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')}
+document.querySelectorAll('.fr-profil-btn').forEach(b=>{b.addEventListener('click',e=>{e.preventDefault();document.querySelectorAll('.fr-profil-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active')})});
+const tabs=document.querySelectorAll('.fr-tab');const ids=['ressources','reconduction','accompagnement','communaute','faq','contact','mission','vision','chiffres','temoignages'];
+window.addEventListener('scroll',()=>{let c='';ids.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-160)c=id});tabs.forEach(t=>t.classList.toggle('active',t.getAttribute('href')==='#'+c))});
+</script>
+<script>
+const burger = document.getElementById('burger');
+const nav = document.getElementById('main-nav');
+if (burger) {
+  burger.addEventListener('click', function() {
+    nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', nav.classList.contains('open'));
+  });
+}
+document.querySelectorAll('a.no-nav').forEach(function(a) {
+  a.addEventListener('click', function(e) { e.preventDefault(); });
+});
+document.querySelectorAll('.fr-nav .has-dropdown > a').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    if (window.innerWidth < 992) {
+      e.preventDefault();
+      a.parentElement.classList.toggle('open');
+    }
+  });
+});
+</script>
+</body>
+</html>
