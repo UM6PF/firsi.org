@@ -1,0 +1,29 @@
+{
+    "_commentaire":  "Documents de l\u0027ancien firsi.org rapatriés dans le site ; leurs anciennes adresses redirigent ici.",
+    "documents":  [
+                      {
+                          "ancien":  "/sites/default/files/2024-09/Annonce des résultats GEF 2024-2025- VF.pdf",
+                          "nouveau":  "/assets/docs/ancien-site/2024-09-annonce-des-resultats-gef-2024-2025-vf.pdf"
+                      },
+                      {
+                          "ancien":  "/sites/default/files/2025-09/liste retenus GEF.pdf",
+                          "nouveau":  "/assets/docs/ancien-site/2025-09-liste-retenus-gef.pdf"
+                      },
+                      {
+                          "ancien":  "/sites/default/files/2024-12/Communiqué GEF 2025- 2026.pdf",
+                          "nouveau":  "/assets/docs/ancien-site/2024-12-communique-gef-2025-2026.pdf"
+                      },
+                      {
+                          "ancien":  "/sites/default/files/2024-04/CommuniquéGEF-09042024--[2]_0.pdf",
+                          "nouveau":  "/assets/docs/ancien-site/2024-04-communiquegef-09042024-2-0.pdf"
+                      },
+                      {
+                          "ancien":  "/sites/default/files/2023-04/CNDP.pdf",
+                          "nouveau":  "/assets/docs/ancien-site/2023-04-cndp.pdf"
+                      },
+                      {
+                          "ancien":  "/sites/default/files/2024-04/CommuniquéGEF-09042024-VF_1.pdf",
+                          "nouveau":  "/assets/docs/ancien-site/2024-04-communiquegef-09042024-vf-1.pdf"
+                      }
+                  ]
+}
