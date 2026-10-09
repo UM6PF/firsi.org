@@ -23,7 +23,7 @@ hero:
     icone: fa-graduation-cap
     page: candidat
   bouton_secondaire:
-    texte: Nous soutnir
+    texte: Nous soutenir
     icone: fa-heart
     page: nous-soutenir
 profils:
