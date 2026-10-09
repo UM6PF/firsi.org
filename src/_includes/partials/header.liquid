@@ -11,6 +11,10 @@
 .fr-dropdown a:hover { background: rgba(255,255,255,.06); color: #fff; }
 .fr-dropdown a i { width: 16px; text-align: center; opacity: .6; font-size: 12px; }
 .fr-drop-sep { height: 1px; background: var(--bd); margin: 6px 0; }
+/* Correctifs (sans effet visuel au repos) : le menu des langues s'ouvre aligné à droite au lieu de sortir de l'écran,
+   et les marges négatives des grilles Bootstrap « g-5 » ne créent plus de barre de défilement horizontale sur mobile. */
+.fr-nav ul li.fr-lang-switch .fr-dropdown { left: auto; right: 0; }
+body { overflow-x: clip; }
 @media (max-width: 991px) {
   .fr-nav { display: none; position: fixed; top: 0; right: 0; bottom: 0; width: 300px; background: var(--bg-d); z-index: 500; padding: 80px 24px 24px; overflow-y: auto; flex-direction: column; }
   .fr-nav.open { display: flex; }
