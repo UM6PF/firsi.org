@@ -1,0 +1,21 @@
+---
+# Page de confirmation après l'envoi du formulaire de contact (visiteurs sans JavaScript).
+# Composants existants uniquement : en-tête, bannière, boutons, pied de page.
+layout: layouts/base.liquid
+section: contact
+---
+{% include "partials/header.liquid" %}
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas fa-paper-plane"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
+    <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="text" data-prop="hero.texte">{{ hero.texte }}</p>
+    <div class="d-flex flex-wrap gap-3 mt-4">
+      <a href="{{ 'index' | page_url: lang }}" class="btn-orange"><editable-text data-type="span" data-prop="boutons.accueil">{{ boutons.accueil }}</editable-text></a>
+      <a href="{{ 'actualites' | page_url: lang }}" class="btn-outline-w"><editable-text data-type="span" data-prop="boutons.actualites">{{ boutons.actualites }}</editable-text></a>
+    </div>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+{% include "partials/footer.liquid" %}
+{% include "partials/scripts.liquid" %}

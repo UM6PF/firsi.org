@@ -82,6 +82,10 @@ formulaire:
     label: Message *
     placeholder: Describe your request...
   bouton: Send Message
+  objet_email: Message from the FIRSI website
+  succes_titre: Message sent
+  succes_texte: Thank you, your message has been sent. Our team will get back to you as soon as possible.
+  erreur: Your message could not be sent. Please check your connection and try again, or email us at contact@firsi.org.
 coordonnees:
   surtitre: Contact Details
   titre:

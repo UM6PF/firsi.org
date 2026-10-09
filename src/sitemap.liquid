@@ -5,7 +5,7 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {%- for p in collections.all %}
-{%- if p.data.lang and p.data.brouillon != true and p.url != "/404.html" %}
+{%- if p.data.lang and p.data.brouillon != true and p.data.noindex != true and p.url != "/404.html" %}
   <url>
     <loc>{{ site.url }}{{ p.url }}</loc>
     <lastmod>{{ p.date | date: "%Y-%m-%d" }}</lastmod>

@@ -9,6 +9,9 @@
 {%- endif %}
 {%- assign alt_lang = "en" %}{% if lang == "en" %}{% assign alt_lang = "fr" %}{% endif %}
 {%- assign self_url = page.url %}
+{%- if noindex %}
+<meta name="robots" content="noindex">
+{%- endif %}
 <link rel="canonical" href="{{ site.url }}{{ self_url }}">
 {%- if alternate_url %}
 <link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}{{ self_url }}">

@@ -25,16 +25,25 @@ section: contact
     <div class="col-12 col-lg-7">
       <p class="fr-label" data-editable="text" data-type="span" data-prop="formulaire.surtitre">{{ f.surtitre }}</p>
       <h2 class="heading-lg mb-4"><editable-text data-type="span" data-prop="formulaire.titre.avant">{{ f.titre.avant }}</editable-text><span data-editable="text" data-type="span" data-prop="formulaire.titre.valeur">{{ f.titre.valeur }}</span></h2>
-      {%- comment -%} Formulaire repris tel quel du prototype : aucun envoi n'est branché (pas d'action ni de name). {%- endcomment %}
-      <div class="fr-form">
+      {%- comment -%}
+      Formulaire envoyé par CloudCannon Forms (boîte « firsi-contact », transférée à contact@firsi.org).
+      Sans JavaScript : envoi classique puis page de confirmation (action). Avec JavaScript : envoi en arrière-plan
+      et message de confirmation sur place (voir le script en bas de page).
+      Réf. : https://cloudcannon.com/documentation/articles/connecting-your-site-to-an-inbox/
+      {%- endcomment %}
+      <form class="fr-form" id="contact-form" method="post" action="{{ 'contact-merci' | page_url: lang }}">
+        <input type="hidden" name="inbox_key" value="firsi-contact">
+        <input type="hidden" name="_subject" value="{{ f.objet_email | default: 'Message depuis le site FIRSI' }}">
+        <input type="hidden" name="langue" value="{{ lang }}">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <div class="row g-3 mb-3">
-          <div class="col-12 col-md-6"><label data-editable="text" data-type="span" data-prop="formulaire.prenom.label">{{ f.prenom.label }}</label><input type="text" class="form-control" placeholder="{{ f.prenom.placeholder }}"></div>
-          <div class="col-12 col-md-6"><label data-editable="text" data-type="span" data-prop="formulaire.nom.label">{{ f.nom.label }}</label><input type="text" class="form-control" placeholder="{{ f.nom.placeholder }}"></div>
+          <div class="col-12 col-md-6"><label data-editable="text" data-type="span" data-prop="formulaire.prenom.label">{{ f.prenom.label }}</label><input type="text" name="prenom" autocomplete="given-name" class="form-control" placeholder="{{ f.prenom.placeholder }}"></div>
+          <div class="col-12 col-md-6"><label data-editable="text" data-type="span" data-prop="formulaire.nom.label">{{ f.nom.label }}</label><input type="text" name="nom" autocomplete="family-name" class="form-control" placeholder="{{ f.nom.placeholder }}"></div>
         </div>
-        <div class="mb-3"><label data-editable="text" data-type="span" data-prop="formulaire.email.label">{{ f.email.label }}</label><input type="email" class="form-control" placeholder="{{ f.email.placeholder }}"></div>
+        <div class="mb-3"><label data-editable="text" data-type="span" data-prop="formulaire.email.label">{{ f.email.label }}</label><input type="email" name="_replyto" autocomplete="email" required class="form-control" placeholder="{{ f.email.placeholder }}"></div>
         <div class="mb-3">
           <label data-editable="text" data-type="span" data-prop="formulaire.profil.label">{{ f.profil.label }}</label>
-          <select class="form-select" id="profil-select">
+          <select class="form-select" id="profil-select" name="profil">
             <option value="">{{ f.profil.vide }}</option>
 {%- for o in f.profil.options %}
             <option value="{{ o.valeur }}">{{ o.libelle }}</option>
@@ -43,7 +52,7 @@ section: contact
         </div>
         <div class="mb-3 ctx-field" id="ctx-candidat">
           <label data-editable="text" data-type="span" data-prop="formulaire.programme_vise.label">{{ f.programme_vise.label }}</label>
-          <select class="form-select">
+          <select class="form-select" name="programme_vise">
             <option value="">{{ f.programme_vise.vide }}</option>
 {%- for o in f.programme_vise.options %}
             <option>{{ o.libelle }}</option>
@@ -52,7 +61,7 @@ section: contact
         </div>
         <div class="mb-3 ctx-field" id="ctx-boursier">
           <label data-editable="text" data-type="span" data-prop="formulaire.programme_actuel.label">{{ f.programme_actuel.label }}</label>
-          <select class="form-select">
+          <select class="form-select" name="programme_actuel">
             <option value="">{{ f.programme_actuel.vide }}</option>
 {%- for o in f.programme_actuel.options %}
             <option>{{ o.libelle }}</option>
@@ -61,11 +70,11 @@ section: contact
         </div>
         <div class="mb-3 ctx-field" id="ctx-alumni">
           <label data-editable="text" data-type="span" data-prop="formulaire.promotion.label">{{ f.promotion.label }}</label>
-          <input type="number" class="form-control" placeholder="{{ f.promotion.placeholder }}" min="2015" max="2030">
+          <input type="number" name="promotion" class="form-control" placeholder="{{ f.promotion.placeholder }}" min="2015" max="2030">
         </div>
         <div class="mb-3 ctx-field" id="ctx-entreprise">
           <label data-editable="text" data-type="span" data-prop="formulaire.nature.label">{{ f.nature.label }}</label>
-          <select class="form-select">
+          <select class="form-select" name="nature">
             <option value="">{{ f.nature.vide }}</option>
 {%- for o in f.nature.options %}
             <option>{{ o.libelle }}</option>
@@ -74,11 +83,16 @@ section: contact
         </div>
         <div class="mb-3 ctx-field" id="ctx-presse">
           <label data-editable="text" data-type="span" data-prop="formulaire.media.label">{{ f.media.label }}</label>
-          <input type="text" class="form-control" placeholder="{{ f.media.placeholder }}">
+          <input type="text" name="media" class="form-control" placeholder="{{ f.media.placeholder }}">
         </div>
-        <div class="mb-3"><label data-editable="text" data-type="span" data-prop="formulaire.sujet.label">{{ f.sujet.label }}</label><input type="text" class="form-control" placeholder="{{ f.sujet.placeholder }}"></div>
-        <div class="mb-4"><label data-editable="text" data-type="span" data-prop="formulaire.message.label">{{ f.message.label }}</label><textarea class="form-control" rows="5" placeholder="{{ f.message.placeholder }}"></textarea></div>
-        <button class="btn-orange" style="font-size:14px;padding:13px 32px"><i class="fas fa-paper-plane me-2"></i><editable-text data-type="span" data-prop="formulaire.bouton">{{ f.bouton }}</editable-text></button>
+        <div class="mb-3"><label data-editable="text" data-type="span" data-prop="formulaire.sujet.label">{{ f.sujet.label }}</label><input type="text" name="sujet" class="form-control" placeholder="{{ f.sujet.placeholder }}"></div>
+        <div class="mb-4"><label data-editable="text" data-type="span" data-prop="formulaire.message.label">{{ f.message.label }}</label><textarea name="message" required class="form-control" rows="5" placeholder="{{ f.message.placeholder }}"></textarea></div>
+        <button type="submit" class="btn-orange" style="font-size:14px;padding:13px 32px"><i class="fas fa-paper-plane me-2"></i><editable-text data-type="span" data-prop="formulaire.bouton">{{ f.bouton }}</editable-text></button>
+        <p class="fr-form-statut" id="contact-erreur" role="alert" hidden style="font-size:13px;color:var(--orange);margin:14px 0 0"><editable-text data-type="span" data-prop="formulaire.erreur">{{ f.erreur }}</editable-text></p>
+      </form>
+      <div class="contact-card" id="contact-merci" role="status" hidden>
+        <p style="font-size:11px;color:var(--orange);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px" data-editable="text" data-type="span" data-prop="formulaire.succes_titre">{{ f.succes_titre }}</p>
+        <p style="font-size:13px;color:var(--text);margin:0" data-editable="text" data-type="span" data-prop="formulaire.succes_texte">{{ f.succes_texte }}</p>
       </div>
     </div>
     <div class="col-12 col-lg-4 offset-lg-1">
@@ -127,6 +141,38 @@ section: contact
     document.querySelectorAll('.contact-card').forEach(function(c) { c.classList.remove('highlighted'); });
     var cid = cards[val];
     if (cid) document.getElementById(cid).classList.add('highlighted');
+  });
+})();
+
+// Envoi du formulaire en arrière-plan (CloudCannon Forms) et confirmation sur place.
+// Sans JavaScript, le formulaire est envoyé normalement et le visiteur arrive sur la page de confirmation.
+(function() {
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var erreur = document.getElementById('contact-erreur');
+    var bouton = form.querySelector('button[type=submit]');
+    erreur.hidden = true;
+    var sujet = form.elements.sujet.value.trim();
+    if (sujet) form.elements._subject.value = '[Site FIRSI] ' + sujet;
+    var data = [];
+    new FormData(form).forEach(function(v, k) { data.push(encodeURIComponent(k) + '=' + encodeURIComponent(v)); });
+    bouton.disabled = true;
+    var req = new XMLHttpRequest();
+    req.open('POST', form.action);
+    req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    req.onload = function() {
+      bouton.disabled = false;
+      if (req.status === 200) {
+        form.hidden = true;
+        document.getElementById('contact-merci').hidden = false;
+      } else {
+        erreur.hidden = false;
+      }
+    };
+    req.onerror = function() { bouton.disabled = false; erreur.hidden = false; };
+    req.send(data.join('&'));
   });
 })();
 </script>

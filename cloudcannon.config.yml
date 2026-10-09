@@ -296,6 +296,8 @@ _inputs:
     hidden: true
   id:
     hidden: true
+  noindex:
+    hidden: true
 
   # --- Référencement ---
   title:
