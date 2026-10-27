@@ -1,9 +1,9 @@
 ---
-titre: "Call for Applications: UM6P International PhD Program (deadline: 02/24/2024)"
+titre: "Call for Applications: UM6P International PhD Program (deadline: 02/29/2024)"
 date: 2023-12-22
 categorie: bourses
 image: "/assets/img/actualites/appel-candidatures-programme-de-doctorat-international-de-lum6p-date-l.jpg"
-image_alt: "Visual: Call for Applications: UM6P International PhD Program (deadline: 02/24/2024)"
+image_alt: "Visual: Call for Applications: UM6P International PhD Program (deadline: 02/29/2024)"
 resume: "The Center for Doctoral Studies (CEDoc) is launching the second cohort of UM6P's International PhD Program, offering mentoring, scientific support and scholarships."
 pdf: ""
 a_la_une: false
