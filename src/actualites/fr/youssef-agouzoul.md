@@ -4,7 +4,7 @@ date: 2025-12-29
 categorie: portraits
 image: "/assets/img/actualites/youssef-agouzoul.jpg"
 image_alt: "Youssef Agouzoul : Un ingénieur qui ose se réinventer"
-resume: "1. Pouvez-vous vous présenter brièvement ?Je m’appelle Youssef Agouzoul, je suis né et j’ai grandi à Casablanca. Je suis ingénieur de formation et je travaille…"
+resume: "Ingénieur de formation né à Casablanca, Youssef Agouzoul est aujourd’hui Product Marketing Manager chez Metroscope, éditeur SaaS au service des centrales."
 pdf: ""
 a_la_une: false
 brouillon: false

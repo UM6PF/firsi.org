@@ -3,8 +3,8 @@ titre: "Rencontre Inspirante avec Claudie Haigneré"
 date: 2024-11-19
 categorie: evenements
 image: "/assets/img/actualites/rencontre-inspirante-avec-claudie-haignere.jpg"
-image_alt: "clause haignere"
-resume: "Le 15 novembre dernier, la Fondation Ibn Rochd pour les Sciences et l'Innovation (FIRSI), en partenariat avec l'UM6P France, a eu le plaisir d'accueillir Mme…"
+image_alt: "Claudie Haigneré"
+resume: "Le 15 novembre, la FIRSI et l’UM6P France ont accueilli l’astronaute Claudie Haigneré pour une soirée d’échanges inspirante avec les boursiers de la fondation."
 pdf: ""
 a_la_une: false
 brouillon: false

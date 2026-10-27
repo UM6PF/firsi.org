@@ -1,15 +1,14 @@
 ---
-titre: 2024 Annual Report — New Online Edition
-# Sort date intentionally earlier than the displayed date (May 15, 2025):
-# the prototype shows this card last in the list.
-date: 2025-02-28
-date_affichee: May 15, 2025
+titre: "The 2024 Annual Activity Report Is Now Online!"
+date: 2025-05-15
 categorie: rapports
-image: /assets/img/t22-min.png
-image_alt: 2024 Report
-resume: "The 2024 annual report of the Ibn Rochd Foundation for Sciences and Innovation (FIRSI) is available in a new online edition, ready to download as a PDF."
+image: "/assets/img/actualites/rapport-2024.jpg"
+image_alt: "The 2024 Annual Activity Report is now online"
+resume: "This comprehensive report highlights the foundation's main achievements over the past year, reflecting its ongoing commitment to promoting science and innovation."
 pdf: ""
 a_la_une: true
 ordre_une: 4
 brouillon: false
+ancienne_adresse: "https://firsi.org/actualites/le-rapport-dactivite-2024-est-en-ligne"
 ---
+<p>This comprehensive report highlights the foundation's significant achievements over the past year, reflecting its ongoing commitment to promoting science and innovation.</p><p>The report is organized as follows: </p><ol><li>FIRSI scholarship programs</li><li>FIRSI's support for students</li><li>Entrepreneurship programs supported by FIRSI</li></ol>

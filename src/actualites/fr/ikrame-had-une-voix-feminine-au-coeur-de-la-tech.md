@@ -4,7 +4,7 @@ date: 2025-11-28
 categorie: portraits
 image: "/assets/img/actualites/ikrame-had-une-voix-feminine-au-coeur-de-la-tech.jpg"
 image_alt: "Ikrame Had : une voix féminine au cœur de la tech"
-resume: "1. Pouvez-vous vous présenter brièvement ?Je m’appelle Ikrame, diplômée de l’École Centrale de Nantes où j’ai suivi un parcours d’ingénieur généraliste. Avant…"
+resume: "Diplômée de l’École Centrale de Nantes après les classes préparatoires du Lycée d’Excellence, Ikrame Had travaille aujourd’hui dans le numérique pour EDF."
 pdf: ""
 a_la_une: false
 brouillon: false

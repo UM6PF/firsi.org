@@ -4,7 +4,7 @@ date: 2022-10-08
 categorie: evenements
 image: "/assets/img/actualites/limportance-de-la-vision-de-la-prospective-pour-linnovation.jpg"
 image_alt: "L’importance de la vision de la prospective pour l’innovation"
-resume: "Gilles Spenlehauer, Head of Department of Sciences and Skills of the Future chez L’Oréal Group, nous partage sa vision de l’innovation, comment l’initier et…"
+resume: "Gilles Spenlehauer, du groupe L’Oréal, a partagé avec les lauréats de la FIRSI sa vision de l’innovation et la manière d’en faire une valeur pour l’entreprise."
 pdf: ""
 a_la_une: false
 brouillon: false

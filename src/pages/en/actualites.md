@@ -14,5 +14,7 @@ hero:
 filtres:
   titre: Filter
   tous: All
+  annee: Year
+  toutes_annees: All years
 libelle_pdf: Download PDF
 ---

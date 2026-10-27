@@ -4,7 +4,7 @@ date: 2022-11-19
 categorie: evenements
 image: "/assets/img/actualites/rencontre-inspirante-avec-mohamed-marfouk-directeur-des-operations-che.jpg"
 image_alt: "Rencontre Inspirante avec Mohamed Marfouk, Directeur des Opérations chez LVMH"
-resume: "Dans le cadre des Rencontres Inspirantes organisées par la fondation Ibn Rochd pour la Recherche et l’Innovation (FIRSI), l’école Centrale Supélec a eu le…"
+resume: "Mohamed Marfouk, directeur des opérations chez LVMH et alumnus de CentraleSupélec, a partagé son expérience avec les lauréats de la FIRSI le 19 novembre."
 pdf: ""
 a_la_une: false
 brouillon: false

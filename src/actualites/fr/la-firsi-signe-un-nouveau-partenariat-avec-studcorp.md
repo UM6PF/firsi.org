@@ -4,7 +4,7 @@ date: 2024-05-21
 categorie: evenements
 image: "/assets/img/actualites/la-firsi-signe-un-nouveau-partenariat-avec-studcorp.jpg"
 image_alt: "STUDCORP"
-resume: "La Fondation Ibn Rochd pour la recherche et l’innovation (FIRSI) et STUDCORP ont établi une collaboration pour soutenir les boursiers FIRSI en France. Ce…"
+resume: "La FIRSI s’associe à STUDCORP pour offrir à ses boursiers en France des tarifs négociés : couverture santé, assurance habitation et protection du matériel."
 pdf: "/assets/docs/ancien-site/2024-05-flyer-fr-firsi.pdf"
 a_la_une: false
 brouillon: false

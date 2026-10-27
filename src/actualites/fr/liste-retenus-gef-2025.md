@@ -4,7 +4,7 @@ date: 2025-09-11
 categorie: bourses
 image: "/assets/img/actualites/liste-retenus-gef-2025.jpg"
 image_alt: "LISTE RETENUS GEF"
-resume: "La Fondation Ibn Rochd pour les Sciences et l’Innovation a le plaisir d’annoncer que, dans le cadre de son programme de Bourses « Grandes Écoles Françaises »…"
+resume: "La FIRSI a sélectionné 72 étudiantes et étudiants pour ses bourses Grandes Écoles Françaises 2025-2026. Félicitations à cette nouvelle promotion !"
 pdf: "/assets/docs/ancien-site/2025-09-liste-retenus-gef.pdf"
 a_la_une: false
 brouillon: false

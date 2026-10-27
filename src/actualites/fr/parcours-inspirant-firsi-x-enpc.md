@@ -4,7 +4,7 @@ date: 2025-06-03
 categorie: evenements
 image: "/assets/img/actualites/parcours-inspirant-firsi-x-enpc.jpg"
 image_alt: "“Parcours inspirant” FIRSI X ENPC 03 Juin 2025 / 18H30 @ENPC"
-resume: "La Fondation Ibn Rochd pour les Sciences et l'Innovation - UM6P a le plaisir de vous inviter à assister à la conférence « Parcours inspirant » qui se tiendra…"
+resume: "La FIRSI vous invite à la conférence « Parcours inspirant » le 3 juin à l’École des Ponts : témoignages d’alumni, questions-réponses et networking."
 pdf: ""
 a_la_une: false
 brouillon: false

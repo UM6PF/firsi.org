@@ -1,14 +1,18 @@
 ---
-titre: FIRSI Stands by Talent From the Very First Steps
-date: 2025-03-01
-date_affichee: March 2025
-categorie: portraits
-image: /assets/img/116-fondationibnrochd-2-1-min-1-.jpg
-image_alt: FIRSI Profile
-resume: "Discover how FIRSI supports young talent from the very first steps, from high school all the way through top engineering schools, with continuous, demanding support."
+titre: "FIRSI Supports Talent from the Very First Steps"
+date: 2025-08-18
+categorie: evenements
+image: "/assets/img/actualites/firsi-talents-premieres-etapes.jpg"
+image_alt: "Support"
+resume: "Every year, hundreds of preparatory-class students at the Mohammed VI Excellence High School reach a key milestone: applying for the FIRSI scholarship."
+pdf: ""
+a_la_une: false
 brouillon: false
+evenement:
+ date_debut:
+ date_fin:
+ lieu: ""
+ lien_inscription: ""
+ancienne_adresse: "https://firsi.org/actualites/la-firsi-aux-cotes-des-talents-des-les-premieres-etapes"
 ---
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Discover how FIRSI supports students from high school all the way through top engineering schools.</p>
-<h2>Support Starting in High School</h2>
-<p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+<p>Every year, hundreds of students in the preparatory classes of the Mohammed VI Excellence High School reach a key milestone in their journey: applying for the FIRSI scholarship.</p><p>For many, it is their first experience of a complex administrative process. For all of them, it is a decisive moment.</p><p>This year, FIRSI teams ran a series of hands-on workshops to help them prepare their applications on the application platform. The result: <strong>400 students supported</strong> with rigor, attentiveness and care.</p><p>A learning experience, but also a moment of sharing — because behind every application lies an ambition, a path, a story.</p>

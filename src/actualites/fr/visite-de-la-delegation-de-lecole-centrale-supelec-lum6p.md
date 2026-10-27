@@ -4,7 +4,7 @@ date: 2023-02-20
 categorie: evenements
 image: "/assets/img/actualites/visite-de-la-delegation-de-lecole-centrale-supelec-lum6p.jpg"
 image_alt: "Visite de la délégation de l'école Centrale Supélec à l'UM6P"
-resume: "La Fondation Ibn Rochd pour les Sciences et l’Innovation (FIRSI) a eu le plaisir d’organiser les 25 et 26 novembre derniers une rencontre entre une délégation…"
+resume: "Les 25 et 26 novembre, la FIRSI a réuni une délégation de CentraleSupélec et des représentants de l’UM6P pour renforcer les collaborations académiques."
 pdf: ""
 a_la_une: false
 brouillon: false

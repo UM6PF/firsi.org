@@ -4,7 +4,7 @@ date: 2024-05-16
 categorie: evenements
 image: "/assets/img/actualites/ceremonie-de-signature-et-lancement-officiel-du-programme-massarates-r.jpg"
 image_alt: "signature et lancement officiel du programme Massarates RHAMNA"
-resume: "Cette initiative synergique entre l'UM6P, la province de Rhamna, la Fondation Ibn Rochd (FIRSI) et l'Initiative nationale pour le développement humain (INDH)…"
+resume: "L’UM6P, la province de Rhamna, la FIRSI et l’INDH lancent Massarates Rhamna : compétences, entrepreneuriat et coopératives au service des jeunes de la région."
 pdf: ""
 a_la_une: false
 brouillon: false

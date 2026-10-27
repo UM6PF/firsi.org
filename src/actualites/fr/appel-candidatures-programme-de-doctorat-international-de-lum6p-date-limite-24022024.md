@@ -3,8 +3,8 @@ titre: "Appel à candidatures : Programme de doctorat international de l'UM6P (d
 date: 2023-12-22
 categorie: bourses
 image: "/assets/img/actualites/appel-candidatures-programme-de-doctorat-international-de-lum6p-date-l.jpg"
-image_alt: "dddd"
-resume: "Le Centre d’Etudes Doctorales (CEDoc) lance la deuxième cohorte du programme de doctoratinternational de l’UM6PCe programme offre du mentorat, un soutien…"
+image_alt: "Visuel : Appel à candidatures : Programme de doctorat international de l'UM6P (date limite : 24/02/2024)"
+resume: "Le CEDoc lance la deuxième cohorte du programme de doctorat international de l’UM6P : mentorat, soutien scientifique et bourses pour les futurs chercheurs."
 pdf: ""
 a_la_une: false
 brouillon: false

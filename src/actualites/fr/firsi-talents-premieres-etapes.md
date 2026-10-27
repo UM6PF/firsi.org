@@ -4,7 +4,7 @@ date: 2025-08-18
 categorie: evenements
 image: "/assets/img/actualites/firsi-talents-premieres-etapes.jpg"
 image_alt: "Accompagnement"
-resume: "Chaque année, des centaines d’étudiants des classes préparatoires du Lycée Mohammed VI d’Excellence franchissent une étape clé de leur parcours : déposer leur…"
+resume: "Les équipes FIRSI ont accompagné 400 élèves des classes préparatoires du Lycée Mohammed VI d’Excellence dans la préparation de leur candidature à la bourse."
 pdf: ""
 a_la_une: false
 brouillon: false

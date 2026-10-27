@@ -4,7 +4,7 @@ date: 2025-10-30
 categorie: portraits
 image: "/assets/img/actualites/anas-abdelhakmi-la-recherche-marocaine-rayonne-singapour.jpg"
 image_alt: "Anas Abdelhakmi : La recherche marocaine rayonne à Singapour"
-resume: "Pouvez-vous vous présenter brièvement ? Je m'appelle Anas Abdelhakmi, et je suis actuellement doctorant en recherche opérationnelle à la National University of…"
+resume: "Ingénieur diplômé d’EMINES (UM6P), Anas Abdelhakmi prépare un doctorat en recherche opérationnelle à la National University of Singapore. Portrait."
 pdf: ""
 a_la_une: false
 brouillon: false

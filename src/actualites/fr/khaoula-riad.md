@@ -4,7 +4,7 @@ date: 2026-02-26
 categorie: portraits
 image: "/assets/img/actualites/khaoula-riad.jpg"
 image_alt: "Khaoula Riad : Tracer sa voie au coeur de la finance quantitative"
-resume: "1. Pouvez-vous vous présenter brièvement ?Khaoula Riad, je travaille actuellement en tant que quantitative developer au sein de CFM, un hedge fund…"
+resume: "Passée par l’ENSIMAG, BNP Paribas et Natixis, Khaoula Riad est aujourd’hui quantitative developer chez CFM, un hedge fund systématique. Portrait."
 pdf: ""
 a_la_une: true
 ordre_une: 1

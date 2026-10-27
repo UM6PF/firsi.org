@@ -17,7 +17,7 @@
     "id": "evenements",
     "classe": "badge-evenement",
     "couleur": "#D85A30",
-    "fr": { "badge": "Évènement", "filtre": "Évènements" },
+    "fr": { "badge": "Événement", "filtre": "Événements" },
     "en": { "badge": "Event", "filtre": "Events" }
   },
   {

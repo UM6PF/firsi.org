@@ -3,8 +3,8 @@ titre: "L’UM6P et le Moroccan Center of Game Theory organisent un workshop int
 date: 2023-12-22
 categorie: evenements
 image: "/assets/img/actualites/lum6p-et-le-moroccan-center-game-theory-organisent-un-workshop-interna.jpg"
-image_alt: "f"
-resume: "Le Moroccan Center of Game Theory a pour objectif de faire progresser la recherche en matière de prise de décision rationnelle, avec des applications diverses…"
+image_alt: "Visuel : L’UM6P et le Moroccan Center of Game Theory organisent un workshop international"
+resume: "L’UM6P et le Moroccan Center of Game Theory organisent un workshop international les 22 et 23 janvier 2024 à Rabat, suivi d’une journée portes ouvertes."
 pdf: ""
 a_la_une: false
 brouillon: false
