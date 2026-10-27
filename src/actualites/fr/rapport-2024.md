@@ -1,15 +1,14 @@
 ---
-titre: Rapport d'activité 2024 — Nouvelle édition en ligne
-# Date de tri volontairement antérieure à la date affichée (15 mai 2025) :
-# le prototype place cette carte en dernière position de la liste.
-date: 2025-02-28
-date_affichee: 15 Mai 2025
+titre: "Le rapport d'activité 2024 est en ligne !"
+date: 2025-05-15
 categorie: rapports
-image: /assets/img/t22-min.png
-image_alt: Rapport 2024
-resume: "Le rapport d'activité 2024 de la Fondation Ibn Rochd pour les Sciences et l'Innovation (FIRSI) est disponible dans une nouvelle édition en ligne, à télécharger."
+image: "/assets/img/actualites/rapport-2024.jpg"
+image_alt: "Le rapport d'activité 2024 est en ligne"
+resume: "Ce document exhaustif met en lumière les réalisations significatives de la fondation au cours de l'année écoulée, reflétant son engagement constant en faveur…"
 pdf: ""
 a_la_une: true
 ordre_une: 4
 brouillon: false
+ancienne_adresse: "https://firsi.org/actualites/le-rapport-dactivite-2024-est-en-ligne"
 ---
+<p>Ce document exhaustif met en lumière les réalisations significatives de la fondation au cours de l'année écoulée, reflétant son engagement constant en faveur de la promotion des sciences et de l'innovation.</p><p>Ce rapport est construit de la manière suivante : </p><ol><li>Les programmes bourses de la FIRSI</li><li>L'accompagnement des étudiants par la FIRSI</li><li>Les programmes d'entrepreneuriat soutenus par la FIRSI</li></ol>
