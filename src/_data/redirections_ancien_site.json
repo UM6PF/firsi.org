@@ -1,52 +1,249 @@
 {
   "_commentaire": "Adresses de l'ancien site firsi.org (Drupal) redirigées vers le nouveau site (301). Inventaire du 9 octobre 2026. Chaque adresse est aussi redirigée avec le préfixe /index.php et avec un / final.",
   "pages": [
-    { "from": "/a-propos", "to": "/mission/" },
-    { "from": "/a-propos/notre-mission", "to": "/mission/" },
-    { "from": "/a-propos/le-mot-du-president", "to": "/mot-du-president/" },
-    { "from": "/action", "to": "/programme-lycee/" },
-    { "from": "/action/soutien-a-l-enseignement-d-excellence", "to": "/programme-lycee/" },
-    { "from": "/action/soutien-recherche-innovation", "to": "/entrepreneuriat/" },
-    { "from": "/soutien-a-l-enseignement-d-excellence/lycee-mohammed-vi-d-excellence", "to": "/programme-lycee/" },
-    { "from": "/soutien-a-l-enseignement-d-excellence/programme-um6p", "to": "/programme-um6p/" },
-    { "from": "/soutien-a-l-enseignement-d-excellence/grandes-ecoles-fran%C3%A7aises", "to": "/programme-gef/" },
-    { "from": "/soutien-a-l-enseignement-d-excellence/grandes-ecoles-françaises", "to": "/programme-gef/" },
-    { "from": "/service-daccompagnement", "to": "/accompagnement/" },
-    { "from": "/nous-contacter", "to": "/contact/" },
-    { "from": "/actualites", "to": "/actualites/" },
-
-    { "from": "/actualites/khaoula-riad-tracer-sa-voie-au-coeur-de-la-finance-quantitative", "to": "/actualites/khaoula-riad/" },
-    { "from": "/actualites/nouhaila-agouzal-un-parcours-dexcellence-guide-par-les-valeurs-et-la-resilience", "to": "/actualites/nouhaila-agouzal/" },
-    { "from": "/actualites/youssef-agouzoul-un-ingenieur-qui-ose-se-reinventer", "to": "/actualites/youssef-agouzoul/" },
-    { "from": "/actualites/lia-au-croisement-de-laudace-africaine", "to": "/actualites/ia-audace-africaine/" },
-    { "from": "/actualites/le-rapport-dactivite-2024-est-en-ligne", "to": "/actualites/rapport-2024/" },
-    { "from": "/actualites/lancement-de-la-campagne-de-bourse-grandes-ecoles-francaises-pour-lannee-universitaire-0", "to": "/actualites/campagne-gef-2026/" },
-    { "from": "/actualites/la-firsi-aux-cotes-des-talents-des-les-premieres-etapes", "to": "/actualites/firsi-talents-premieres-etapes/" },
-    { "from": "/actualites/grandes-ecoles-francaises-liste-des-retenus-2025-2026", "to": "/actualites/liste-retenus-gef-2025/" },
-
-    { "from": "/actualites/anas-abdelhakmi-la-recherche-marocaine-rayonne-singapour", "to": "/actualites/" },
-    { "from": "/actualites/bourse-grandes-ecoles-francaises-liste-des-retenus-au-titre-de-lannee-universitaire-2024", "to": "/actualites/" },
-    { "from": "/actualites/bourses-grandes-ecoles-2025-2026-soumettez-votre-admission-des-obtention", "to": "/actualites/" },
-    { "from": "/actualites/campagne-de-bourses-gef-2025-2026", "to": "/actualites/" },
-    { "from": "/actualites/grandes-ecoles-francaises-liste-des-retenus-2026-2027", "to": "/actualites/" },
-    { "from": "/actualites/ikrame-had-une-voix-feminine-au-coeur-de-la-tech", "to": "/actualites/" },
-    { "from": "/actualites/lancement-de-la-campagne-de-bourse-grandes-ecoles-francaises-pour-lannee-universitaire", "to": "/actualites/" },
-    { "from": "/actualites/lancement-de-la-campagne-de-reconduction-des-bourses-gef-2025-2026", "to": "/actualites/" },
-    { "from": "/actualites/zakaria-akil-de-marrakech-au-luxembourg-un-parcours-dexcellence", "to": "/actualites/" },
-    { "from": "/actualites/zineb-karrakchou-de-la-finance-la-cuisine-des-chefs-etoiles", "to": "/actualites/" },
-
-    { "from": "/en/a-propos", "to": "/en/mission/" },
-    { "from": "/en/a-propos/notre-mission", "to": "/en/mission/" },
-    { "from": "/en/a-propos/le-mot-du-president", "to": "/en/mot-du-president/" },
-    { "from": "/en/action", "to": "/en/programme-lycee/" },
-    { "from": "/en/action/soutien-a-l-enseignement-d-excellence", "to": "/en/programme-lycee/" },
-    { "from": "/en/action/soutien-recherche-innovation", "to": "/en/entrepreneuriat/" },
-    { "from": "/en/soutien-a-l-enseignement-d-excellence/lycee-mohammed-vi-d-excellence", "to": "/en/programme-lycee/" },
-    { "from": "/en/soutien-a-l-enseignement-d-excellence/programme-um6p", "to": "/en/programme-um6p/" },
-    { "from": "/en/soutien-a-l-enseignement-d-excellence/grandes-ecoles-fran%C3%A7aises", "to": "/en/programme-gef/" },
-    { "from": "/en/soutien-a-l-enseignement-d-excellence/grandes-ecoles-françaises", "to": "/en/programme-gef/" },
-    { "from": "/en/actualites", "to": "/en/actualites/" },
-    { "from": "/en/nous-contactez", "to": "/en/contact/" },
-    { "from": "/en/nous-contacter", "to": "/en/contact/" }
+    {
+      "from": "/a-propos",
+      "to": "/mission/"
+    },
+    {
+      "from": "/a-propos/notre-mission",
+      "to": "/mission/"
+    },
+    {
+      "from": "/a-propos/le-mot-du-president",
+      "to": "/mot-du-president/"
+    },
+    {
+      "from": "/action",
+      "to": "/programme-lycee/"
+    },
+    {
+      "from": "/action/soutien-a-l-enseignement-d-excellence",
+      "to": "/programme-lycee/"
+    },
+    {
+      "from": "/action/soutien-recherche-innovation",
+      "to": "/entrepreneuriat/"
+    },
+    {
+      "from": "/soutien-a-l-enseignement-d-excellence/lycee-mohammed-vi-d-excellence",
+      "to": "/programme-lycee/"
+    },
+    {
+      "from": "/soutien-a-l-enseignement-d-excellence/programme-um6p",
+      "to": "/programme-um6p/"
+    },
+    {
+      "from": "/soutien-a-l-enseignement-d-excellence/grandes-ecoles-fran%C3%A7aises",
+      "to": "/programme-gef/"
+    },
+    {
+      "from": "/soutien-a-l-enseignement-d-excellence/grandes-ecoles-françaises",
+      "to": "/programme-gef/"
+    },
+    {
+      "from": "/service-daccompagnement",
+      "to": "/accompagnement/"
+    },
+    {
+      "from": "/nous-contacter",
+      "to": "/contact/"
+    },
+    {
+      "from": "/actualites",
+      "to": "/actualites/"
+    },
+    {
+      "from": "/actualites/khaoula-riad-tracer-sa-voie-au-coeur-de-la-finance-quantitative",
+      "to": "/actualites/khaoula-riad/"
+    },
+    {
+      "from": "/actualites/nouhaila-agouzal-un-parcours-dexcellence-guide-par-les-valeurs-et-la-resilience",
+      "to": "/actualites/nouhaila-agouzal/"
+    },
+    {
+      "from": "/actualites/youssef-agouzoul-un-ingenieur-qui-ose-se-reinventer",
+      "to": "/actualites/youssef-agouzoul/"
+    },
+    {
+      "from": "/actualites/lia-au-croisement-de-laudace-africaine",
+      "to": "/actualites/ia-audace-africaine/"
+    },
+    {
+      "from": "/actualites/le-rapport-dactivite-2024-est-en-ligne",
+      "to": "/actualites/rapport-2024/"
+    },
+    {
+      "from": "/actualites/lancement-de-la-campagne-de-bourse-grandes-ecoles-francaises-pour-lannee-universitaire-0",
+      "to": "/actualites/campagne-gef-2026/"
+    },
+    {
+      "from": "/actualites/la-firsi-aux-cotes-des-talents-des-les-premieres-etapes",
+      "to": "/actualites/firsi-talents-premieres-etapes/"
+    },
+    {
+      "from": "/actualites/grandes-ecoles-francaises-liste-des-retenus-2025-2026",
+      "to": "/actualites/liste-retenus-gef-2025/"
+    },
+    {
+      "from": "/actualites/anas-abdelhakmi-la-recherche-marocaine-rayonne-singapour",
+      "to": "/actualites/anas-abdelhakmi-la-recherche-marocaine-rayonne-singapour/"
+    },
+    {
+      "from": "/actualites/bourse-grandes-ecoles-francaises-liste-des-retenus-au-titre-de-lannee-universitaire-2024",
+      "to": "/actualites/bourse-grandes-ecoles-francaises-liste-des-retenus-au-titre-de-lannee-universitaire-2024/"
+    },
+    {
+      "from": "/actualites/bourses-grandes-ecoles-2025-2026-soumettez-votre-admission-des-obtention",
+      "to": "/actualites/bourses-grandes-ecoles-2025-2026-soumettez-votre-admission-des-obtention/"
+    },
+    {
+      "from": "/actualites/campagne-de-bourses-gef-2025-2026",
+      "to": "/actualites/campagne-de-bourses-gef-2025-2026/"
+    },
+    {
+      "from": "/actualites/grandes-ecoles-francaises-liste-des-retenus-2026-2027",
+      "to": "/actualites/grandes-ecoles-francaises-liste-des-retenus-2026-2027/"
+    },
+    {
+      "from": "/actualites/ikrame-had-une-voix-feminine-au-coeur-de-la-tech",
+      "to": "/actualites/ikrame-had-une-voix-feminine-au-coeur-de-la-tech/"
+    },
+    {
+      "from": "/actualites/lancement-de-la-campagne-de-bourse-grandes-ecoles-francaises-pour-lannee-universitaire",
+      "to": "/actualites/lancement-de-la-campagne-de-bourse-grandes-ecoles-francaises-pour-lannee-universitaire/"
+    },
+    {
+      "from": "/actualites/lancement-de-la-campagne-de-reconduction-des-bourses-gef-2025-2026",
+      "to": "/actualites/lancement-de-la-campagne-de-reconduction-des-bourses-gef-2025-2026/"
+    },
+    {
+      "from": "/actualites/zakaria-akil-de-marrakech-au-luxembourg-un-parcours-dexcellence",
+      "to": "/actualites/zakaria-akil-de-marrakech-au-luxembourg-un-parcours-dexcellence/"
+    },
+    {
+      "from": "/actualites/zineb-karrakchou-de-la-finance-la-cuisine-des-chefs-etoiles",
+      "to": "/actualites/zineb-karrakchou-de-la-finance-la-cuisine-des-chefs-etoiles/"
+    },
+    {
+      "from": "/en/a-propos",
+      "to": "/en/mission/"
+    },
+    {
+      "from": "/en/a-propos/notre-mission",
+      "to": "/en/mission/"
+    },
+    {
+      "from": "/en/a-propos/le-mot-du-president",
+      "to": "/en/mot-du-president/"
+    },
+    {
+      "from": "/en/action",
+      "to": "/en/programme-lycee/"
+    },
+    {
+      "from": "/en/action/soutien-a-l-enseignement-d-excellence",
+      "to": "/en/programme-lycee/"
+    },
+    {
+      "from": "/en/action/soutien-recherche-innovation",
+      "to": "/en/entrepreneuriat/"
+    },
+    {
+      "from": "/en/soutien-a-l-enseignement-d-excellence/lycee-mohammed-vi-d-excellence",
+      "to": "/en/programme-lycee/"
+    },
+    {
+      "from": "/en/soutien-a-l-enseignement-d-excellence/programme-um6p",
+      "to": "/en/programme-um6p/"
+    },
+    {
+      "from": "/en/soutien-a-l-enseignement-d-excellence/grandes-ecoles-fran%C3%A7aises",
+      "to": "/en/programme-gef/"
+    },
+    {
+      "from": "/en/soutien-a-l-enseignement-d-excellence/grandes-ecoles-françaises",
+      "to": "/en/programme-gef/"
+    },
+    {
+      "from": "/en/actualites",
+      "to": "/en/actualites/"
+    },
+    {
+      "from": "/en/nous-contactez",
+      "to": "/en/contact/"
+    },
+    {
+      "from": "/en/nous-contacter",
+      "to": "/en/contact/"
+    },
+    {
+      "from": "/actualites/graduation-party-firsi",
+      "to": "/actualites/graduation-party-firsi/"
+    },
+    {
+      "from": "/actualites/parcours-inspirant-firsi-x-enpc",
+      "to": "/actualites/parcours-inspirant-firsi-x-enpc/"
+    },
+    {
+      "from": "/actualites/rencontre-inspirante-avec-claudie-haignere",
+      "to": "/actualites/rencontre-inspirante-avec-claudie-haignere/"
+    },
+    {
+      "from": "/actualites/le-rapport-dactivite-2023-est-en-ligne",
+      "to": "/actualites/le-rapport-dactivite-2023-est-en-ligne/"
+    },
+    {
+      "from": "/actualites/cooperation-lequipe-bourses-firsi-soutient-lequipe-lm6e-dans-letude-des-dossiers-des",
+      "to": "/actualites/cooperation-lequipe-bourses-firsi-soutient-lequipe-lm6e-dans-letude-des-dossiers-des/"
+    },
+    {
+      "from": "/actualites/la-firsi-participe-au-um6p-entrepreneurship-venturing-2024-roadshow",
+      "to": "/actualites/la-firsi-participe-au-um6p-entrepreneurship-venturing-2024-roadshow/"
+    },
+    {
+      "from": "/actualites/la-firsi-signe-un-nouveau-partenariat-avec-studcorp",
+      "to": "/actualites/la-firsi-signe-un-nouveau-partenariat-avec-studcorp/"
+    },
+    {
+      "from": "/actualites/ceremonie-de-signature-et-lancement-officiel-du-programme-massarates-rhamna",
+      "to": "/actualites/ceremonie-de-signature-et-lancement-officiel-du-programme-massarates-rhamna/"
+    },
+    {
+      "from": "/actualites/appel-candidatures-campagne-bourses-gef-2024-2025",
+      "to": "/actualites/appel-candidatures-campagne-bourses-gef-2024-2025/"
+    },
+    {
+      "from": "/actualites/lum6p-et-le-moroccan-center-game-theory-organisent-un-workshop-international",
+      "to": "/actualites/lum6p-et-le-moroccan-center-game-theory-organisent-un-workshop-international/"
+    },
+    {
+      "from": "/actualites/appel-candidatures-programme-de-doctorat-international-de-lum6p-date-limite-24022024",
+      "to": "/actualites/appel-candidatures-programme-de-doctorat-international-de-lum6p-date-limite-24022024/"
+    },
+    {
+      "from": "/actualites/visite-de-la-delegation-de-lecole-centrale-supelec-lum6p",
+      "to": "/actualites/visite-de-la-delegation-de-lecole-centrale-supelec-lum6p/"
+    },
+    {
+      "from": "/actualites/introduction-lanalyse-economique-pour-la-prise-de-decision-en-avenir-incertain",
+      "to": "/actualites/introduction-lanalyse-economique-pour-la-prise-de-decision-en-avenir-incertain/"
+    },
+    {
+      "from": "/actualites/rencontre-inspirante-avec-mohamed-marfouk-directeur-des-operations-chez-lvmh",
+      "to": "/actualites/rencontre-inspirante-avec-mohamed-marfouk-directeur-des-operations-chez-lvmh/"
+    },
+    {
+      "from": "/actualites/limportance-de-la-vision-de-la-prospective-pour-linnovation",
+      "to": "/actualites/limportance-de-la-vision-de-la-prospective-pour-linnovation/"
+    },
+    {
+      "from": "/actualites/cycle-de-conferences-paris-robotics-artificial-intelligence",
+      "to": "/actualites/cycle-de-conferences-paris-robotics-artificial-intelligence/"
+    },
+    {
+      "from": "/actualites/cycle-de-conferences-paris-transition-energetique-tendance-aujourdhui-et-objectifs-long",
+      "to": "/actualites/cycle-de-conferences-paris-transition-energetique-tendance-aujourdhui-et-objectifs-long/"
+    }
   ]
 }

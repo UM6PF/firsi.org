@@ -298,6 +298,8 @@ _inputs:
     hidden: true
   noindex:
     hidden: true
+  ancienne_adresse:
+    hidden: true
 
   # --- Référencement ---
   title:
