@@ -1,6 +1,6 @@
 ---
 titre: "Launch of the French Grandes Écoles Scholarship campaign for the 2025-2026 academic year"
-date: 2025-12-13
+date: 2024-12-13
 categorie: bourses
 image: "/assets/img/actualites/lancement-de-la-campagne-de-bourse-grandes-ecoles-francaises-pour-lann.jpg"
 image_alt: "banner"
