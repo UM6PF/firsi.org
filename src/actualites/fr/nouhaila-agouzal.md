@@ -4,7 +4,7 @@ date: 2026-01-28
 categorie: portraits
 image: "/assets/img/actualites/nouhaila-agouzal.jpg"
 image_alt: "Nouhaila AGOUZAL : Un parcours d'excellence guidé par les valeurs et la résilience"
-resume: "1. Pouvez-vous vous présenter brièvement ?Je m’appelle Nouhaila AGOUZAL, j’ai 24 ans. Après avoir obtenu mon baccalauréat au lycée Mohammed VI de Marrakech,…"
+resume: "Du Lycée d’Excellence de Benguerir à l’ENSIMAG puis au KTH de Stockholm, Nouhaila Agouzal est aujourd’hui ingénieure en machine learning chez Dassault Systèmes."
 pdf: ""
 a_la_une: true
 ordre_une: 2

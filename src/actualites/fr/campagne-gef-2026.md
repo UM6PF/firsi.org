@@ -4,11 +4,10 @@ titre_une: "Lancement campagne GEF pour l'année universitaire 2026-2027"
 date: 2026-01-14
 categorie: bourses
 image: "/assets/img/actualites/campagne-gef-2026.jpg"
-image_alt: "Communiqué"
-resume: "Dans le cadre de son engagement en faveur de l’excellence, du mérite et de l’égalité des chances, la Fondation Ibn Rochd pour les Sciences et l'Innovation -…"
+image_alt: "Visuel : Lancement de la campagne de bourse Grandes Écoles Françaises pour l’année universitaire 2026-2027"
+resume: "La FIRSI lance la campagne de bourses Grandes Écoles Françaises 2026-2027 pour les lauréats des CPGE. Candidatures ouvertes du 14 janvier au 15 mai 2026."
 pdf: ""
-a_la_une: true
-ordre_une: 3
+a_la_une: false
 brouillon: false
 ancienne_adresse: "https://firsi.org/actualites/lancement-de-la-campagne-de-bourse-grandes-ecoles-francaises-pour-lannee-universitaire-0"
 ---

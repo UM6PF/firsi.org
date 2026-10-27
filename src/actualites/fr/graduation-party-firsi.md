@@ -4,7 +4,7 @@ date: 2025-06-28
 categorie: evenements
 image: "/assets/img/actualites/graduation-party-firsi.jpg"
 image_alt: "Graduation Party 28 juin"
-resume: "Nous avons le plaisir d’inviter nos boursiers à une Graduation Party organisée en leur honneur, afin de célébrer ensemble la fin de leur parcours et les succès…"
+resume: "La FIRSI invite ses boursiers à une Graduation Party le 28 juin 2025 à Paris, pour célébrer ensemble la fin de leurs études et leurs réussites."
 pdf: ""
 a_la_une: false
 brouillon: false

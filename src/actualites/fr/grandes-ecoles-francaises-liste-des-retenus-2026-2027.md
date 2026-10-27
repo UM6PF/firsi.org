@@ -4,9 +4,10 @@ date: 2026-09-11
 categorie: bourses
 image: "/assets/img/actualites/grandes-ecoles-francaises-liste-des-retenus-2026-2027.jpg"
 image_alt: "Grandes écoles françaises : Liste des retenus 2026-2027"
-resume: "La Fondation Ibn Rochd pour les Sciences et l’Innovation a le plaisir d’annoncer que, dans le cadre de son programme de Bourses « Grandes Écoles Françaises »…"
+resume: "La FIRSI a sélectionné 65 étudiantes et étudiants pour ses bourses Grandes Écoles Françaises 2026-2027. Félicitations à cette nouvelle promotion !"
 pdf: ""
-a_la_une: false
+a_la_une: true
+ordre_une: 3
 brouillon: false
 ancienne_adresse: "https://firsi.org/actualites/grandes-ecoles-francaises-liste-des-retenus-2026-2027"
 ---

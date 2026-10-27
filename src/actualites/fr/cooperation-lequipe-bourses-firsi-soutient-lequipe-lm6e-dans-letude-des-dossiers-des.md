@@ -4,7 +4,7 @@ date: 2024-08-06
 categorie: bourses
 image: "/assets/img/actualites/cooperation-lequipe-bourses-firsi-soutient-lequipe-lm6e-dans-letude-de.jpg"
 image_alt: "équipe bourses FIRSI"
-resume: "Chaque année, de nombreux étudiants talentueux, mais avec des ressources financières limitées, cherchent à bénéficier de ces aides pour poursuivre leurs études…"
+resume: "Les équipes de la FIRSI et du LM6E accompagnent les élèves de CPGE dans leurs dossiers de bourse 2024-2025, avec séances d’information et ateliers pratiques."
 pdf: ""
 a_la_une: false
 brouillon: false

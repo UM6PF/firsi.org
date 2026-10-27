@@ -4,7 +4,7 @@ date: 2025-05-15
 categorie: rapports
 image: "/assets/img/actualites/rapport-2024.jpg"
 image_alt: "Le rapport d'activité 2024 est en ligne"
-resume: "Ce document exhaustif met en lumière les réalisations significatives de la fondation au cours de l'année écoulée, reflétant son engagement constant en faveur…"
+resume: "Le rapport d’activité 2024 de la FIRSI présente ses programmes de bourses, l’accompagnement des étudiants et les programmes d’entrepreneuriat qu’elle soutient."
 pdf: ""
 a_la_une: true
 ordre_une: 4

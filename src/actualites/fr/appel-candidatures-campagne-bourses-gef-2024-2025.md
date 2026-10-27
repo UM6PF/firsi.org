@@ -4,7 +4,7 @@ date: 2024-05-15
 categorie: bourses
 image: "/assets/img/actualites/appel-candidatures-campagne-bourses-gef-2024-2025.jpg"
 image_alt: "Campagne GEF 2024-2025"
-resume: "La Bourse grandes écoles françaises (GEF) est proposée aux élèves marocains, excellents, sous conditions de ressources, lauréats des Classes Préparatoires aux…"
+resume: "La FIRSI ouvre la campagne de bourses Grandes Écoles Françaises 2024-2025 pour les lauréats marocains des CPGE. Candidatures du 29 mars au 31 mai 2024."
 pdf: "/assets/docs/ancien-site/2024-04-communiquegef-09042024-2.pdf"
 a_la_une: false
 brouillon: false

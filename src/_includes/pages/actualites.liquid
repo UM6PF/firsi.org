@@ -43,16 +43,31 @@ section: actualites
   <div class="actu-sidebar">
     <div class="actu-sidebar-inner">
       <div class="filter-label" data-editable="text" data-type="span" data-prop="filtres.titre">{{ filtres.titre }}</div>
-      <button class="filter-btn active" data-cat="tous">
+      <button class="filter-btn active" data-groupe="cat" data-valeur="tous">
         <span class="dot" style="background:#888;"></span> <editable-text data-type="span" data-prop="filtres.tous">{{ filtres.tous }}</editable-text>
         <span class="filter-count" id="count-tous">{{ liste | size }}</span>
       </button>
       <div class="filter-sep"></div>
 {%- for c in categories %}
       {%- assign nb = liste | where_value: "categorie", c.id | size %}
-      <button class="filter-btn" data-cat="{{ c.id }}">
+      <button class="filter-btn" data-groupe="cat" data-valeur="{{ c.id }}">
         <span class="dot" style="background:{{ c.couleur }};"></span> {{ c[lang].filtre }}
         <span class="filter-count" id="count-{{ c.id }}">{{ nb }}</span>
+      </button>
+{%- endfor %}
+      <div class="filter-sep"></div>
+      <div class="filter-label" style="margin-top:18px" data-editable="text" data-type="span" data-prop="filtres.annee">{{ filtres.annee }}</div>
+      <button class="filter-btn active" data-groupe="annee" data-valeur="toutes">
+        <span class="dot" style="background:#888;"></span> <editable-text data-type="span" data-prop="filtres.toutes_annees">{{ filtres.toutes_annees }}</editable-text>
+      </button>
+{%- assign annees = "" %}
+{%- for a in liste %}{% assign y = a.date | date: "%Y" %}{% unless annees contains y %}{% assign annees = annees | append: y | append: "," %}{% endunless %}{% endfor %}
+{%- assign annees = annees | split: "," %}
+{%- for y in annees %}
+      {%- assign nb = 0 %}{% for a in liste %}{% assign ya = a.date | date: "%Y" %}{% if ya == y %}{% assign nb = nb | plus: 1 %}{% endif %}{% endfor %}
+      <button class="filter-btn" data-groupe="annee" data-valeur="{{ y }}">
+        <span class="dot" style="background:transparent;border:1.5px solid #888;"></span> {{ y }}
+        <span class="filter-count">{{ nb }}</span>
       </button>
 {%- endfor %}
     </div>
@@ -60,17 +75,18 @@ section: actualites
 
   <div class="actu-grid" id="actu-grid">
 {% for a in liste %}
-{%- if a.data.categorie == "rapports" %}
-    <a href="{% if a.data.pdf != blank %}{{ a.data.pdf }}{% else %}#{% endif %}" download class="actu-card" data-cat="{{ a.data.categorie }}">
+{%- assign annee = a.date | date: "%Y" %}
+{%- if a.data.categorie == "rapports" and a.data.pdf != blank %}
+    <a href="{{ a.data.pdf }}" download class="actu-card" data-cat="{{ a.data.categorie }}" data-annee="{{ annee }}">
 {%- else %}
-    <a href="{{ 'actualites' | page_url: lang }}{{ a.data.article_id }}/" class="actu-card" data-cat="{{ a.data.categorie }}">
+    <a href="{{ 'actualites' | page_url: lang }}{{ a.data.article_id }}/" class="actu-card" data-cat="{{ a.data.categorie }}" data-annee="{{ annee }}">
 {%- endif %}
       <img class="actu-img" src="{{ a.data.image }}" alt="{{ a.data.image_alt }}">
       <div class="actu-body">
         <span class="actu-badge {{ a.data.badge.classe }}">{{ a.data.badge.libelle }}</span>
         <div class="actu-title">{{ a.data.titre }}</div>
         <div class="actu-date">{{ a.data.date_liste }}</div>
-{%- if a.data.categorie == "rapports" %}
+{%- if a.data.categorie == "rapports" and a.data.pdf != blank %}
         <div class="actu-dl"><i class="fas fa-file-pdf"></i> <editable-text data-type="span" data-prop="libelle_pdf">{{ libelle_pdf }}</editable-text></div>
 {%- endif %}
       </div>
@@ -81,13 +97,17 @@ section: actualites
 </div>
 
 <script>
+// Filtres combinés : catégorie et année.
+var filtres = { cat: 'tous', annee: 'toutes' };
 document.querySelectorAll('.filter-btn').forEach(function(btn) {
   btn.addEventListener('click', function() {
-    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    var groupe = btn.dataset.groupe;
+    document.querySelectorAll('.filter-btn[data-groupe="' + groupe + '"]').forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
-    var cat = btn.dataset.cat;
+    filtres[groupe] = btn.dataset.valeur;
     document.querySelectorAll('.actu-card').forEach(function(card) {
-      card.classList.toggle('hidden', cat !== 'tous' && card.dataset.cat !== cat);
+      var ok = (filtres.cat === 'tous' || card.dataset.cat === filtres.cat) && (filtres.annee === 'toutes' || card.dataset.annee === filtres.annee);
+      card.classList.toggle('hidden', !ok);
     });
   });
 });

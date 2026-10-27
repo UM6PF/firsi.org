@@ -4,7 +4,7 @@ date: 2022-05-12
 categorie: evenements
 image: "/assets/img/actualites/cycle-de-conferences-paris-transition-energetique-tendance-aujourdhui-.jpg"
 image_alt: "Cycle de Conférences à Paris - Transition énergétique : tendance aujourd'hui et objectifs long term"
-resume: "Joël Couse, Special Advisor Directorate of Energy Markets & Security at IEA, a partagé avec les étudiants le contexte d’une transition énergétique réaliste qui…"
+resume: "Joël Couse, de l’Agence internationale de l’énergie, a présenté aux lauréats de la FIRSI une transition énergétique réaliste, entre économie et climat."
 pdf: ""
 a_la_une: false
 brouillon: false

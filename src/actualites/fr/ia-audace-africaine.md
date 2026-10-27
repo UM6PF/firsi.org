@@ -4,7 +4,7 @@ date: 2025-06-19
 categorie: evenements
 image: "/assets/img/actualites/ia-audace-africaine.jpg"
 image_alt: "L'IA au croisement de l'audace africaine"
-resume: "La conférence IRIS est un événement scientifique et stratégique porté par l'Université Mohammed VI Polytechnique (UM6P), la Fondation Ibn Rochd pour les…"
+resume: "Portée par l’UM6P, la FIRSI et leurs partenaires, la conférence IRIS explore l’apport de l’innovation et de la recherche appliquée au développement africain."
 pdf: ""
 a_la_une: false
 brouillon: false

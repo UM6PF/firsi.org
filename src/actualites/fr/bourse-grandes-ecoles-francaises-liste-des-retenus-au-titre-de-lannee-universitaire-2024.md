@@ -4,7 +4,7 @@ date: 2024-09-13
 categorie: bourses
 image: "/assets/img/actualites/bourse-grandes-ecoles-francaises-liste-des-retenus-au-titre-de-lannee-.jpg"
 image_alt: "LISTE DES RETENUS"
-resume: "La Fondation Ibn Rochd pour les Sciences et l’innovation, a retenu dans le cadre du programme de Bourses Grandes Écoles Françaises pour la rentrée…"
+resume: "Pour l’année 2024-2025, la FIRSI a retenu 87 étudiants inscrits dans 12 Grandes Écoles d’ingénieurs au titre de ses bourses Grandes Écoles Françaises."
 pdf: ""
 a_la_une: false
 brouillon: false

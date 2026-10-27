@@ -4,7 +4,7 @@ date: 2024-06-11
 categorie: evenements
 image: "/assets/img/actualites/la-firsi-participe-au-um6p-entrepreneurship-venturing-2024-roadshow.jpg"
 image_alt: "Tarik El Fehri, SG FIRSI"
-resume: "Yassine LAGHZIOUI CEO de l'UM6P Ventures et Tarik El Fehri secrétaire général de la FIRSI ont partagé leurs visions sur l'innovation technologique et…"
+resume: "Au UM6P Entrepreneurship Venturing 2024 Roadshow, UM6P Ventures et la FIRSI ont partagé leur vision de l’innovation et de l’entrepreneuriat en Afrique."
 pdf: ""
 a_la_une: false
 brouillon: false

@@ -4,7 +4,7 @@ date: 2025-09-29
 categorie: portraits
 image: "/assets/img/actualites/zakaria-akil-de-marrakech-au-luxembourg-un-parcours-dexcellence.jpg"
 image_alt: "Zakaria Akil : De Marrakech au Luxembourg, un parcours d’excellence"
-resume: "Pouvez-vous vous présenter brièvement ?Je m’appelle Zakaria Akil. J’ai effectué ma scolarité secondaire au lycée Hassan II à Marrakech, avant de poursuivre une…"
+resume: "De Marrakech au Lycée d’Excellence de Benguerir, puis à Télécom Paris et Polytechnique, Zakaria Akil effectue aujourd’hui un stage chez Amazon au Luxembourg."
 pdf: ""
 a_la_une: false
 brouillon: false

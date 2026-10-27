@@ -3,8 +3,8 @@ titre: "Le rapport d’activité 2023 est en ligne"
 date: 2024-10-16
 categorie: rapports
 image: "/assets/img/actualites/le-rapport-dactivite-2023-est-en-ligne.jpg"
-image_alt: "image article"
-resume: "Ce document exhaustif met en lumière les réalisations significatives de la fondation au cours de l'année écoulée, reflétant son engagement constant en faveur…"
+image_alt: "Visuel : Le rapport d’activité 2023 est en ligne"
+resume: "Le rapport d’activité 2023 de la FIRSI retrace les réalisations de l’année, les événements organisés en France et au Maroc et les perspectives de la fondation."
 pdf: ""
 a_la_une: false
 brouillon: false

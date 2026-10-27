@@ -3,8 +3,8 @@ titre: "Bourses Grandes Écoles 2025-2026 : Soumettez votre admission dès obten
 date: 2025-07-19
 categorie: bourses
 image: "/assets/img/actualites/bourses-grandes-ecoles-2025-2026-soumettez-votre-admission-des-obtenti.jpg"
-image_alt: "X"
-resume: "La Fondation Ibn Rochd pour les Sciences et l’Innovation lance la campagne de bourses FIRSI 2025-2026 à destination des étudiants admis dans une Grande École…"
+image_alt: "Visuel : Bourses Grandes Écoles 2025-2026 : Soumettez votre admission dès obtention"
+resume: "Bourses FIRSI 2025-2026 : les étudiants admis dans une Grande École française éligible sont invités à déposer leur « oui définitif » sans attendre."
 pdf: ""
 a_la_une: false
 brouillon: false

@@ -4,7 +4,7 @@ date: 2025-12-13
 categorie: bourses
 image: "/assets/img/actualites/lancement-de-la-campagne-de-bourse-grandes-ecoles-francaises-pour-lann.jpg"
 image_alt: "bannière"
-resume: "La Bourse grandes écoles françaises (GEF) est proposée aux élèves marocains, excellents, sous conditions de ressources, lauréats des Classes Préparatoires aux…"
+resume: "La FIRSI lance la campagne de bourses Grandes Écoles Françaises 2025-2026 pour les lauréats marocains des CPGE. Date limite de candidature : 15 mai 2025."
 pdf: "/assets/docs/ancien-site/2024-12-communique-gef-2025-2026.pdf"
 a_la_une: false
 brouillon: false
