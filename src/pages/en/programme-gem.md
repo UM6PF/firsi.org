@@ -32,8 +32,8 @@ intro:
   paragraphes:
     - texte: "The GEM program is open to LM6E preparatory class graduates admitted through the Concours National Commun (CNC) into the first year of a Moroccan engineering school. Choosing to stay in Morocco is an act of conviction."
     - texte: "FIRSI supports this choice with the same ambition as its international programs, providing financial support to these students over three years of study — so that merit alone determines their path, not their resources."
-  image: /assets/img/programme-gem.jpg
-  image_alt: Moroccan Engineering Schools
+  image: /assets/img/programme-gem-emi.jpg
+  image_alt: École Mohammadia d'Ingénieurs, Rabat
 cartes:
   - icone: fa-graduation-cap
     titre: Who Can Apply

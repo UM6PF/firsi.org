@@ -32,8 +32,8 @@ intro:
   paragraphes:
     - texte: "Le programme GEM s'adresse aux lauréats des classes préparatoires du LM6E admis via le Concours National Commun (CNC) en première année des grandes écoles d'ingénieurs marocaines. Choisir de rester au Maroc est un acte de conviction."
     - texte: "La FIRSI soutient ce choix avec la même ambition que ses programmes à l'international, en accompagnant financièrement ces étudiants sur trois années d'études — pour que le mérite seul détermine leur parcours, pas leurs ressources."
-  image: /assets/img/programme-gem.jpg
-  image_alt: Grandes Écoles Marocaines
+  image: /assets/img/programme-gem-emi.jpg
+  image_alt: École Mohammadia d'Ingénieurs, Rabat
 cartes:
   - icone: fa-graduation-cap
     titre: Qui peut candidater

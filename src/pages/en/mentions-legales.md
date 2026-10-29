@@ -15,5 +15,5 @@ sections:
   - titre: Hosting
     texte: "<p>CloudCannon Limited (New Zealand) — <a href=\"https://cloudcannon.com\" target=\"_blank\" rel=\"noopener\">cloudcannon.com</a></p>"
   - titre: Photo Credits
-    texte: "<p>École Mohammadia d'Ingénieurs, Rabat (home page): photo by Aannaque, <a href=\"https://commons.wikimedia.org/wiki/File:EMI6.JPG\" target=\"_blank\" rel=\"noopener\">Wikimedia Commons</a>, licensed under <a href=\"https://creativecommons.org/licenses/by-sa/3.0/deed.en\" target=\"_blank\" rel=\"noopener\">CC BY-SA 3.0</a>, resized.</p>"
+    texte: "<p>École Mohammadia d'Ingénieurs, Rabat (home page and GEM page): photo by Aannaque, <a href=\"https://commons.wikimedia.org/wiki/File:EMI6.JPG\" target=\"_blank\" rel=\"noopener\">Wikimedia Commons</a>, licensed under <a href=\"https://creativecommons.org/licenses/by-sa/3.0/deed.en\" target=\"_blank\" rel=\"noopener\">CC BY-SA 3.0</a>, cropped and resized.</p>"
 ---
