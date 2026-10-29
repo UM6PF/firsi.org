@@ -362,6 +362,8 @@ _inputs:
         - { id: contact, name: Contact }
         - { id: nous-soutenir, name: Nous soutenir }
         - { id: candidat, name: Candidater }
+        - { id: mentions-legales, name: Mentions légales }
+        - { id: conditions-utilisation, name: Conditions d'utilisation }
       value_key: id
       preview:
         text:
