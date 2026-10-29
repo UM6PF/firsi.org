@@ -1,12 +1,12 @@
 ---
-# Mentions légales : éditeur, hébergeur, crédits. Composants existants uniquement (bannière, textes, pied de page).
+# Pages de texte légal (mentions légales, conditions d'utilisation) : bannière et sections titre + texte. Composants existants uniquement (bannière, textes, pied de page).
 layout: layouts/base.liquid
 section: ""
 ---
 {% include "partials/header.liquid" %}
 <section class="fr-hero">
   <div class="container">
-    <div class="fr-hero-tag"><i class="fas fa-balance-scale"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
+    <div class="fr-hero-tag"><i class="fas {{ hero.icone | default: 'fa-balance-scale' }}"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
     <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
     <div class="fr-ribbon"></div>
   </div>

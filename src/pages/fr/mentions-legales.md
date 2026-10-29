@@ -4,6 +4,7 @@ title: Mentions légales | FIRSI
 seo:
   description: "Mentions légales du site de la Fondation Ibn Rochd pour les Sciences et l'Innovation : éditeur, hébergement et crédits photographiques."
 hero:
+  icone: fa-balance-scale
   etiquette: Informations légales
   titre:
     avant: Mentions
