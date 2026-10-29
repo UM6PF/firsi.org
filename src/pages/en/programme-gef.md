@@ -9,7 +9,7 @@ breadcrumb:
       page: programme-lycee
   current: GEF — French Engineering Schools
 hero:
-  icone: fa-flag
+  icone: fa-graduation-cap
   etiquette: GEF — French Engineering Schools
   titre:
     avant: French

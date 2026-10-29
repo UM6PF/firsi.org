@@ -9,7 +9,7 @@ breadcrumb:
       page: programme-lycee
   current: GEF — Grandes Écoles Françaises
 hero:
-  icone: fa-flag
+  icone: fa-graduation-cap
   etiquette: GEF — Grandes Écoles Françaises
   titre:
     avant: Grandes Écoles
