@@ -75,5 +75,5 @@ cta:
     apres: "?"
   texte: Rejoignez notre réseau d'établissements partenaires et contribuez à la formation des talents de demain.
   bouton: Devenir partenaire
-  page: nous-soutenir
+  page: contact
 ---

@@ -42,7 +42,9 @@ section: communaute
 
 <div class="fr-sticky">
   <a href="{{ barre.bouton.page | page_url: lang }}" class="btn-orange" style="font-size:12px;padding:7px 18px"><i class="fas {{ barre.bouton.icone }} me-2"></i><editable-text data-type="span" data-prop="barre.bouton.texte">{{ barre.bouton.texte }}</editable-text></a>
+{%- unless pages_masquees.pages contains barre.bouton2.page %}
   <a href="{{ barre.bouton2.page | page_url: lang }}" class="btn-outline-w" style="font-size:12px;padding:7px 18px" data-editable="text" data-type="span" data-prop="barre.bouton2.texte">{{ barre.bouton2.texte }}</a>
+{%- endunless %}
 </div>
 {% include "partials/footer.liquid" %}
 {% include "partials/scripts.liquid" %}

@@ -54,6 +54,7 @@ body { overflow-x: clip; }
         </li>
 {%- endfor %}
 {%- for l in n.links %}
+{%- if pages_masquees.pages contains l.page %}{% continue %}{% endif %}
         <li{% if section == l.id %} class="active"{% endif %}><a href="{{ l.page | page_url: lang }}">{{ l.label }}</a></li>
 {%- endfor %}
         <li class="cta{% if section == n.cta.id %} active{% endif %}"><a href="{{ n.cta.page | page_url: lang }}">{{ n.cta.label }}</a></li>

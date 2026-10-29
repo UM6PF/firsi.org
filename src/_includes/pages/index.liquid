@@ -271,7 +271,9 @@ header_logo_height: 36
         <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);line-height:1.75;max-width:500px;margin-bottom:32px" data-editable="text" data-type="text" data-prop="hero.texte">{{ hero.texte }}</p>
         <div class="d-flex gap-3 flex-wrap">
           <a href="{{ hero.bouton_principal.page | page_url: lang }}" class="btn-orange"><i class="fas {{ hero.bouton_principal.icone }}"></i> <editable-text data-type="span" data-prop="hero.bouton_principal.texte">{{ hero.bouton_principal.texte }}</editable-text></a>
+{%- unless pages_masquees.pages contains hero.bouton_secondaire.page %}
           <a href="{{ hero.bouton_secondaire.page | page_url: lang }}" class="btn-outline-w"><i class="fas {{ hero.bouton_secondaire.icone }}"></i> <editable-text data-type="span" data-prop="hero.bouton_secondaire.texte">{{ hero.bouton_secondaire.texte }}</editable-text></a>
+{%- endunless %}
         </div>
       </div>
     </div>
@@ -285,7 +287,7 @@ header_logo_height: 36
     <p class="fr-profils-label" data-editable="text" data-type="span" data-prop="profils.titre">{{ profils.titre }}</p>
     <div data-editable="array" data-prop="profils.boutons">
 {%- for b in profils.boutons %}
-      <a href="{{ b.page | page_url: lang }}" class="fr-profil-btn" data-editable="array-item"><i class="fas {{ b.icone }}"></i> <editable-text data-type="span" data-prop="texte">{{ b.texte }}</editable-text></a>
+      <a href="{{ b.page | page_url: lang }}" class="fr-profil-btn" data-editable="array-item"{% if pages_masquees.pages contains b.page %} style="display:none"{% endif %}><i class="fas {{ b.icone }}"></i> <editable-text data-type="span" data-prop="texte">{{ b.texte }}</editable-text></a>
 {%- endfor %}
     </div>
   </div>
@@ -423,7 +425,9 @@ header_logo_height: 36
   </div>
   <div class="fr-sticky-right">
     <a href="{{ barre.bouton_principal.page | page_url: lang }}" class="btn-orange" style="font-size:12px;padding:7px 18px"><i class="fas {{ barre.bouton_principal.icone }} me-2"></i><editable-text data-type="span" data-prop="barre.bouton_principal.texte">{{ barre.bouton_principal.texte }}</editable-text></a>
+{%- unless pages_masquees.pages contains barre.bouton_secondaire.page %}
     <a href="{{ barre.bouton_secondaire.page | page_url: lang }}" class="btn-outline-w" style="font-size:12px;padding:7px 18px" data-editable="text" data-type="span" data-prop="barre.bouton_secondaire.texte">{{ barre.bouton_secondaire.texte }}</a>
+{%- endunless %}
   </div>
 </div>
 

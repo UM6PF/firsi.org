@@ -1,0 +1,4 @@
+{
+  "_commentaire": "Pages masquées : retirées du menu, du pied de page, des boutons et du plan du site, non indexées par Google, mais toujours accessibles par leur adresse. Retirer l'identifiant de la liste pour les réafficher (et enlever « noindex » de la page).",
+  "pages": ["nous-soutenir"]
+}
