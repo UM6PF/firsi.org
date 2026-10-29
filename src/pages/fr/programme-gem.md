@@ -9,7 +9,7 @@ breadcrumb:
       page: programme-lycee
   current: GEM — Grandes Écoles Marocaines
 hero:
-  icone: fa-star-and-crescent
+  icone: fa-user-graduate
   etiquette: GEM — Grandes Écoles Marocaines
   titre:
     avant: Grandes Écoles
