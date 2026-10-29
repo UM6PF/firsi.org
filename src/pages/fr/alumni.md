@@ -21,8 +21,8 @@ reseau:
     valeur: dans le monde
     apres: ""
   chiffres:
-    - nombre: 1 254
-      libelle: alumni dans le réseau
+    - nombre: 1 987
+      libelle: alumni dans le réseau (GEF et GEM)
     - nombre: "16"
       libelle: pays représentés
     - nombre: 59%

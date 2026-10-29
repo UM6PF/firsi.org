@@ -50,8 +50,8 @@ formulaire:
     options:
       - libelle: MVI Excellence High Schools
       - libelle: UM6P
-      - libelle: "GEF — French Engineering & Business Schools"
-      - libelle: "GEM — Moroccan Engineering & Business Schools"
+      - libelle: "GEF — French Engineering Schools"
+      - libelle: "GEM — Moroccan Engineering Schools"
       - libelle: Student Loan
   programme_actuel:
     label: Your Current Program *
@@ -59,8 +59,8 @@ formulaire:
     options:
       - libelle: MVI Excellence High Schools
       - libelle: UM6P
-      - libelle: "GEF — French Engineering & Business Schools"
-      - libelle: "GEM — Moroccan Engineering & Business Schools"
+      - libelle: "GEF — French Engineering Schools"
+      - libelle: "GEM — Moroccan Engineering Schools"
   promotion:
     label: Class Year (graduation year) *
     placeholder: e.g. 2023

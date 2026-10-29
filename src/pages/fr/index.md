@@ -48,11 +48,11 @@ chiffres:
     apres: ""
   texte: Un nombre croissant de jeunes talents ont rejoint la fondation pour donner vie à leurs ambitions et contribuer au développement de l'Afrique.
   elements:
-    - nombre: 4 546
+    - nombre: 4 910
       libelle: étudiants accompagnés
     - nombre: 59%
       libelle: d'étudiantes accompagnées
-    - nombre: "14"
+    - nombre: "20"
       libelle: nationalités représentées
     - nombre: "4"
       libelle: programmes actifs
@@ -80,18 +80,18 @@ programmes:
       image_alt: UM6P
       lien_texte: Découvrir
       page: programme-um6p
-    - titre: Grandes Écoles Françaises
+    - titre: Grandes écoles d'ingénieurs françaises
       texte: Soutien complet pour rejoindre les meilleures grandes écoles d'ingénieurs en France.
       badge: GEF
       image: /assets/img/19-fondationibnrochd-min.jpg
-      image_alt: Grandes Écoles Françaises
+      image_alt: Grandes écoles d'ingénieurs françaises
       lien_texte: Découvrir
       page: programme-gef
-    - titre: Grandes Écoles Marocaines
-      texte: Accompagnement pour intégrer les grandes écoles d'ingénieurs et de management marocaines.
+    - titre: Grandes écoles d'ingénieurs marocaines
+      texte: Accompagnement pour intégrer les grandes écoles d'ingénieurs marocaines.
       badge: GEM
       image: /assets/img/hem-business-school.jpg
-      image_alt: Grandes Écoles Marocaines
+      image_alt: Grandes écoles d'ingénieurs marocaines
       lien_texte: Découvrir
       page: programme-gem
 temoignages_section:
@@ -109,7 +109,7 @@ temoignages:
   - nom: Soufiane Sondali
     photo: /assets/img/temoignage-soufiane.jpg
     citation: « Il y avait peut-être une voie qui pouvait m'amener très loin. Il suffisait de tout donner pour n'avoir aucun regret plus tard. »
-    ecole: École Nationale des Ponts et Chaussées
+    ecole: École nationale des ponts et chaussées
     origine: Agadir
   - nom: Nada Bezza
     photo: /assets/img/temoignage-nada.jpg

@@ -34,6 +34,6 @@ cartes:
     titre: Values
     texte: Excellence, equity, inclusion, and social diversity. FIRSI believes that talent knows no social boundaries, and is committed to removing financial barriers so every student can realize their full potential.
   - icone: fa-globe-africa
-    titre: Impact 2025–2026
-    texte: 4,546 Scholars supported, 59% women, 48% receiving full funding, 4,154 in Morocco and 392 abroad, across 12 partner institutions.
+    titre: Impact 2026–2027
+    texte: 4,910 Scholars supported, including 1,715 new ones, 59% women, and 20 nationalities represented.
 ---

@@ -2,7 +2,7 @@
 layout: pages/chiffres-cles.liquid
 title: Key Figures | FIRSI
 seo:
-  description: "FIRSI by the numbers: 4,546 Scholars in 2025-2026, 59% women, more than 15 countries represented and steady growth in new Scholars since 2021."
+  description: "FIRSI by the numbers: 4,910 Scholars in 2026-2027, including 1,715 new ones, 59% women, 20 nationalities and 9,832 young people supported in Morocco and abroad."
 breadcrumb:
   parents: []
   current: Key Figures
@@ -21,28 +21,28 @@ chiffres:
     valeur: by the Numbers
     apres: ""
   elements:
-    - nombre: 3 129
+    - nombre: 8 827
       libelle: supported in Morocco
-    - nombre: "623"
+    - nombre: 1 005
       libelle: abroad
-    - nombre: 6+
+    - nombre: "7"
       libelle: partner schools in France
     - nombre: "2020"
       libelle: year founded
 # Animated counters: final value (number), suffix shown after the number, animation duration in milliseconds.
 compteurs:
-  - valeur: 4546
+  - valeur: 4910
     suffixe: ""
     duree: 1800
-    libelle: 2025–2026 Scholars (new and renewed)
+    libelle: 2026–2027 Scholars (new and renewed)
   - valeur: 59
     suffixe: "%"
     duree: 1800
-    libelle: Women Scholars 2025–2026
-  - valeur: 15
-    suffixe: "+"
+    libelle: Women Scholars 2026–2027
+  - valeur: 20
+    suffixe: ""
     duree: 1400
-    libelle: Countries Represented
+    libelle: Nationalities Represented
 barre:
   bouton:
     texte: Our Scholarship Programs

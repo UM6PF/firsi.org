@@ -1,19 +1,19 @@
 ---
 layout: pages/programme.liquid
-title: GEM — Moroccan Engineering & Business Schools | FIRSI
+title: GEM — Moroccan Engineering Schools | FIRSI
 seo:
   description: "FIRSI's GEM program: a three-year scholarship for LM6E CPGE graduates admitted through the national entrance exam to Morocco's leading engineering schools."
 breadcrumb:
   parents:
     - label: Our Programs
       page: programme-lycee
-  current: GEM — Moroccan Engineering & Business Schools
+  current: GEM — Moroccan Engineering Schools
 hero:
   icone: fa-star-and-crescent
-  etiquette: GEM — Moroccan Engineering & Business Schools
+  etiquette: GEM — Moroccan Engineering Schools
   titre:
     avant: Moroccan
-    valeur: Engineering & Business Schools
+    valeur: Engineering Schools
     apres: ""
   texte: "FIRSI supports LM6E CPGE graduates who choose to build their future in Morocco — joining the country's leading engineering schools through the Concours National Commun (national entrance exam)."
   boutons:
@@ -43,7 +43,7 @@ cartes:
     texte: "The GEM Scholarship provides MAD 6,334 per year, paid over 3 years. It is suspended in cases of grade repetition, gap years, dropping out, or changing programs."
   - icone: fa-chart-bar
     titre: The Program in Numbers
-    texte: "146 GEM Scholars in 2025-2026, 47% of them women. 57 new Scholars, 89 renewed. 328 alumni in the FIRSI network."
+    texte: "183 GEM Scholars in 2026-2027, including 74 new Scholars. 281 alumni in the FIRSI network."
 cta:
   style: clair
   surtitre: Application

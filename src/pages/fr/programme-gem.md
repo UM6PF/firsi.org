@@ -43,7 +43,7 @@ cartes:
     texte: "La bourse GEM est composée annuellement d'un montant de 6 334 MAD, versée sur 3 ans. Elle est suspendue en cas de redoublement, césure, abandon scolaire ou changement de filière."
   - icone: fa-chart-bar
     titre: Le programme en chiffres
-    texte: "146 boursiers GEM en 2025-2026, dont 47% de femmes. 57 nouveaux boursiers, 89 reconduits. 328 alumni dans le réseau FIRSI."
+    texte: "183 boursiers GEM en 2026-2027, dont 74 nouveaux boursiers. 281 alumni dans le réseau FIRSI."
 cta:
   style: clair
   surtitre: Candidature

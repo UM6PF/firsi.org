@@ -34,6 +34,6 @@ cartes:
     titre: Valeurs
     texte: Excellence, équité, inclusion et diversité sociale. La FIRSI croit que le talent n'a pas de frontières sociales et s'engage à lever les obstacles financiers pour libérer le potentiel de chaque étudiant.
   - icone: fa-globe-africa
-    titre: Impact 2025-2026
-    texte: 4 546 boursiers accompagnés, 59% de femmes, 48% en prise en charge totale, 4 154 au Maroc et 392 à l'international dans 12 établissements partenaires.
+    titre: Impact 2026-2027
+    texte: 4 910 boursiers accompagnés, dont 1 715 nouveaux, 59% de femmes et 20 nationalités représentées.
 ---
