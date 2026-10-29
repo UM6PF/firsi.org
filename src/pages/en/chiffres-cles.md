@@ -43,25 +43,6 @@ compteurs:
     suffixe: "+"
     duree: 1400
     libelle: Countries Represented
-graphique:
-  titre: Growth in New Scholars
-  sous_titre: 2021-2022 → 2025-2026
-  legende: New Scholars
-  description: Growth chart of new FIRSI Scholars from 2021-2022 to 2025-2026
-  texte_alternatif: Data from 2021-2022 to 2025-2026.
-  infobulle_suffixe: " new Scholars"
-  annees:
-    - 2021-2022
-    - 2022-2023
-    - 2023-2024
-    - 2024-2025
-    - 2025-2026
-  valeurs:
-    - 1353
-    - 1242
-    - 1386
-    - 1456
-    - 1841
 barre:
   bouton:
     texte: Our Scholarship Programs

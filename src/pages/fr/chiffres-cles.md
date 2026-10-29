@@ -43,25 +43,6 @@ compteurs:
     suffixe: "+"
     duree: 1400
     libelle: Pays représentés
-graphique:
-  titre: Croissance du nombre de nouveaux boursiers
-  sous_titre: 2021-2022 → 2025-2026
-  legende: Nouveaux boursiers
-  description: Courbe de croissance du nombre de nouveaux boursiers FIRSI de 2021-2022 à 2025-2026
-  texte_alternatif: Données 2021-2022 à 2025-2026.
-  infobulle_suffixe: " nouveaux boursiers"
-  annees:
-    - 2021-2022
-    - 2022-2023
-    - 2023-2024
-    - 2024-2025
-    - 2025-2026
-  valeurs:
-    - 1353
-    - 1242
-    - 1386
-    - 1456
-    - 1841
 barre:
   bouton:
     texte: Nos programmes de bourses

@@ -31,23 +31,6 @@ section: communaute
 {%- endfor %}
   </div>
 
-  <!-- Courbe de croissance -->
-  <div class="fr-card mb-4" style="border-radius:12px;padding:28px">
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem">
-      <div>
-        <div style="font-size:14px;font-weight:600;color:var(--text)" data-editable="text" data-type="span" data-prop="graphique.titre">{{ graphique.titre }}</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:2px" data-editable="text" data-type="text" data-prop="graphique.sous_titre">{{ graphique.sous_titre }}</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)">
-        <span style="width:20px;height:2px;background:var(--orange);display:inline-block;border-radius:1px"></span>
-        <editable-text data-type="span" data-prop="graphique.legende">{{ graphique.legende }}</editable-text>
-      </div>
-    </div>
-    <div style="position:relative;width:100%;height:220px">
-      <canvas id="growthChart" role="img" aria-label="{{ graphique.description | escape }}">{{ graphique.texte_alternatif }}</canvas>
-    </div>
-  </div>
-
   <!-- Chiffres secondaires -->
   <div class="row g-3" data-editable="array" data-prop="chiffres.elements">
 {%- for s in chiffres.elements %}
@@ -63,11 +46,9 @@ section: communaute
 </div>
 {% include "partials/footer.liquid" %}
 {% include "partials/scripts.liquid" %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
 const LOCALE = {{ locale | json }};
 const COMPTEURS = {{ compteurs | json }};
-const GRAPHIQUE = {{ graphique | json }};
 
 function animateCount(el, target, suffix, duration) {
   const start = Date.now();
@@ -87,49 +68,3 @@ setTimeout(() => {
   });
 }, 300);
 
-const years = GRAPHIQUE.annees;
-const data  = GRAPHIQUE.valeurs.map(Number);
-
-new Chart(document.getElementById('growthChart'), {
-  type: 'line',
-  data: {
-    labels: years,
-    datasets: [{
-      data: data,
-      borderColor: '#D46B2B',
-      borderWidth: 2,
-      pointBackgroundColor: '#D46B2B',
-      pointBorderColor: '#D46B2B',
-      pointRadius: 4,
-      pointHoverRadius: 6,
-      fill: true,
-      backgroundColor: function(ctx) {
-        const g = ctx.chart.canvas.getContext('2d').createLinearGradient(0, 0, 0, 200);
-        g.addColorStop(0, 'rgba(212,107,43,0.15)');
-        g.addColorStop(1, 'rgba(212,107,43,0)');
-        return g;
-      },
-      tension: 0.4
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    animation: { duration: 1500, easing: 'easeInOutQuart' },
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        backgroundColor: '#0C2251',
-        titleColor: 'rgba(255,255,255,0.6)',
-        bodyColor: '#fff',
-        padding: 10,
-        callbacks: { label: ctx => ctx.parsed.y.toLocaleString(LOCALE) + GRAPHIQUE.infobulle_suffixe }
-      }
-    },
-    scales: {
-      x: { grid: { display: false }, border: { display: false }, ticks: { color: '#888', font: { size: 11 } } },
-      y: { grid: { color: 'rgba(0,0,0,0.05)' }, border: { display: false }, ticks: { color: '#888', font: { size: 11 }, callback: v => v.toLocaleString(LOCALE) } }
-    }
-  }
-});
-</script>
