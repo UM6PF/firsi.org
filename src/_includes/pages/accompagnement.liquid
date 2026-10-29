@@ -8,7 +8,7 @@ section: programmes
   <div class="container">
     <div class="fr-hero-tag"><i class="fas {{ hero.icone }}"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
     <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
-    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="text" data-prop="hero.texte">{{ hero.texte }}</p>
     <div class="fr-ribbon"></div>
   </div>
 </section>
@@ -21,7 +21,7 @@ section: programmes
       <div class="fr-card" style="border-top:3px solid var(--bg)">
         <div class="fr-card-icon"><i class="fas {{ c.icone }}"></i></div>
         <h4 data-editable="text" data-type="span" data-prop="titre">{{ c.titre }}</h4>
-        <p data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</p>
+        <p data-editable="text" data-type="text" data-prop="texte">{{ c.texte }}</p>
       </div>
     </div>
 {%- endfor %}
@@ -37,7 +37,7 @@ section: programmes
         <div class="fr-card">
           <div class="fr-card-icon"><i class="{{ c.icone_famille | default: 'fas' }} {{ c.icone }}"></i></div>
           <h4 data-editable="text" data-type="span" data-prop="titre">{{ c.titre }}</h4>
-          <p data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</p>
+          <p data-editable="text" data-type="text" data-prop="texte">{{ c.texte }}</p>
           <a href="{% if c.lien.page %}{{ c.lien.page | page_url: lang }}{% else %}{{ c.lien.url }}{% endif %}"{% if c.lien.url %} target="_blank"{% endif %} class="fr-link"><editable-text data-type="span" data-prop="lien.texte">{{ c.lien.texte }} </editable-text><i class="fas fa-arrow-right"></i></a>
         </div>
       </div>

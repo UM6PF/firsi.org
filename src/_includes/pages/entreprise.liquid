@@ -8,7 +8,7 @@ section: ""
   <div class="container">
     <div class="fr-hero-tag"><i class="fas {{ hero.icone }}"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
     <h1 class="heading-xl mb-3" data-editable="text" data-type="span" data-prop="hero.titre">{{ hero.titre }}</h1>
-    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="text" data-prop="hero.texte">{{ hero.texte }}</p>
     <div class="fr-ribbon"></div>
   </div>
 </section>
@@ -16,10 +16,10 @@ section: ""
   <div class="mb-sec">
     <p class="fr-label" data-editable="text" data-type="span" data-prop="pourquoi.surtitre">{{ pourquoi.surtitre }}</p>
     <h2 class="heading-lg mb-2">{% include "partials/hl.liquid", t: pourquoi.titre, prop: "pourquoi.titre", tag: "span" %}</h2>
-    <p class="fr-sub" data-editable="text" data-type="span" data-prop="pourquoi.texte">{{ pourquoi.texte }}</p>
+    <p class="fr-sub" data-editable="text" data-type="text" data-prop="pourquoi.texte">{{ pourquoi.texte }}</p>
     <div class="row g-4" data-editable="array" data-prop="pourquoi.cartes">
 {%- for c in pourquoi.cartes %}
-      <div class="col-12 col-md-4" data-editable="array-item"><div class="fr-card"><div class="fr-card-icon"><i class="fas {{ c.icone }}"></i></div><h4 data-editable="text" data-type="span" data-prop="titre">{{ c.titre }}</h4><p data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</p></div></div>
+      <div class="col-12 col-md-4" data-editable="array-item"><div class="fr-card"><div class="fr-card-icon"><i class="fas {{ c.icone }}"></i></div><h4 data-editable="text" data-type="span" data-prop="titre">{{ c.titre }}</h4><p data-editable="text" data-type="text" data-prop="texte">{{ c.texte }}</p></div></div>
 {%- endfor %}
     </div>
   </div>
@@ -28,7 +28,7 @@ section: ""
     <h2 class="heading-lg mb-4">{% include "partials/hl.liquid", t: modalites.titre, prop: "modalites.titre", tag: "span" %}</h2>
     <div class="row g-4" data-editable="array" data-prop="modalites.cartes">
 {%- for c in modalites.cartes %}
-      <div class="col-12 col-md-6" data-editable="array-item"><div class="fr-card" style="border-top:4px solid var(--orange)"><h4><i class="fas {{ c.icone }} me-2 text-orange"></i><editable-text data-type="span" data-prop="titre">{{ c.titre }}</editable-text></h4><p data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</p><ul style="font-size:13px;color:var(--muted);padding-left:20px;line-height:2" data-editable="array" data-prop="elements">{% for e in c.elements %}<li data-editable="array-item"><editable-text data-type="span" data-prop="texte">{{ e.texte }}</editable-text></li>{% endfor %}</ul></div></div>
+      <div class="col-12 col-md-6" data-editable="array-item"><div class="fr-card" style="border-top:4px solid var(--orange)"><h4><i class="fas {{ c.icone }} me-2 text-orange"></i><editable-text data-type="span" data-prop="titre">{{ c.titre }}</editable-text></h4><p data-editable="text" data-type="text" data-prop="texte">{{ c.texte }}</p><ul style="font-size:13px;color:var(--muted);padding-left:20px;line-height:2" data-editable="array" data-prop="elements">{% for e in c.elements %}<li data-editable="array-item"><editable-text data-type="text" data-prop="texte">{{ e.texte }}</editable-text></li>{% endfor %}</ul></div></div>
 {%- endfor %}
     </div>
   </div>

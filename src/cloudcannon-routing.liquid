@@ -1,13 +1,17 @@
 ---
-# Règles de routage de l'hébergement CloudCannon (redirections 301 des anciennes adresses, page 404).
-# Référence : https://cloudcannon.com/documentation/articles/routing-reference/
+# Règles de routage de l'hébergement CloudCannon : redirections 301 (prototype et ancien site firsi.org), page 404.
+# Le champ « from » est une expression régulière appliquée à l'adresse entière.
+# Référence : https://cloudcannon.com/documentation/articles/configure-a-404-page/
 permalink: /_cloudcannon/routing.json
 eleventyExcludeFromCollections: true
 ---
 {
   "routes": [
 {%- for r in redirections %}
-    { "from": "{{ r.from }}", "to": "{{ r.to }}", "status": 301 },
+    { "from": {{ r.from | json }}, "to": {{ r.to | json }}, "status": 301 },
+{%- endfor %}
+{%- for r in routes_ancien_site %}
+    { "from": {{ r.from | json }}, "to": {{ r.to | json }}, "status": 301 },
 {%- endfor %}
     { "from": "/.*", "to": "/404.html", "status": 404, "forced": false }
   ]

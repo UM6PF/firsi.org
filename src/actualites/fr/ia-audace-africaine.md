@@ -1,22 +1,18 @@
 ---
-titre: L'IA au croisement de l'audace africaine
-date: 2025-04-01
-date_affichee: Avril 2025
-date_courte: Avr 2025
+titre: "L'IA au croisement de l'audace africaine"
+date: 2025-06-19
 categorie: evenements
-image: /assets/img/pexels-andrea-piacquadio-3762800-1-.jpeg
-image_alt: Évènement IA
-resume: "Retour sur la conférence internationale organisée par la FIRSI sur l'intelligence artificielle et l'innovation en Afrique : un moment de convergence et ses temps forts."
-evenement:
-  date_debut: ""
-  date_fin: ""
-  lieu: ""
-  lien_inscription: ""
+image: "/assets/img/actualites/ia-audace-africaine.jpg"
+image_alt: "L'IA au croisement de l'audace africaine"
+resume: "Portée par l’UM6P, la FIRSI et leurs partenaires, la conférence IRIS explore l’apport de l’innovation et de la recherche appliquée au développement africain."
+pdf: ""
+a_la_une: false
 brouillon: false
+evenement:
+ date_debut:
+ date_fin:
+ lieu: ""
+ lien_inscription: ""
+ancienne_adresse: "https://firsi.org/actualites/lia-au-croisement-de-laudace-africaine"
 ---
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. La FIRSI a organisé une conférence internationale sur l'intelligence artificielle et l'innovation en Afrique.</p>
-<h2>Un moment de convergence</h2>
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-<h2>Les temps forts</h2>
-<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.</p>
+<p>La conférence <strong>IRIS </strong>est un événement scientifique et stratégique porté par l'Université Mohammed VI Polytechnique (UM6P), la Fondation Ibn Rochd pour les sciences et l'innovation (FIRSI) et ses partenaires, visant à explorer le rôle de l'<strong>innovation et de la recherche appliquée</strong> dans le développement de l’Afrique.</p><p>Les objectifs clairement identifiés sont les suivants : </p><ul><li>Mettre en lumière les <strong>avancées scientifiques et technologiques</strong> issues de la recherche académique et industrielle.</li><li>Favoriser les <strong>collaborations entre chercheurs, institutions, startups et décideurs</strong> publics et privés.</li><li>Discuter des <strong>enjeux majeurs de développement</strong> pour l’Afrique (santé, agriculture, climat, éducation, énergie…) à travers le prisme de la science et de l’innovation.</li><li>Stimuler la <strong>mobilisation des talents africains</strong>, notamment ceux issus de la diaspora.</li></ul><p><em><strong>Inscription simple et rapide via le code QR</strong></em></p>

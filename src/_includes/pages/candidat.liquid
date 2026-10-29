@@ -21,7 +21,7 @@ section: candidater
   <div class="container">
     <div class="fr-hero-tag"><i class="fas fa-graduation-cap"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
     <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
-    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="text" data-prop="hero.texte">{{ hero.texte }}</p>
     <div class="fr-ribbon"></div>
   </div>
 </section>
@@ -38,7 +38,7 @@ section: candidater
       <div class="fr-card" style="border-top:3px solid {{ couleur }};text-align:center">
         <div style="width:40px;height:40px;border-radius:50%;background:{{ couleur }};color:#fff;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">{{ forloop.index }}</div>
         <h4 style="font-size:15px" data-editable="text" data-type="span" data-prop="titre">{{ e.titre }}</h4>
-        <p style="font-size:13px;color:var(--muted)" data-editable="text" data-type="span" data-prop="texte">{{ e.texte }}</p>
+        <p style="font-size:13px;color:var(--muted)" data-editable="text" data-type="text" data-prop="texte">{{ e.texte }}</p>
       </div>
     </div>
 {%- endfor %}
@@ -56,7 +56,7 @@ section: candidater
       <div class="fr-card" style="border-left:4px solid var(--orange)">
         <div class="fr-card-icon"><i class="fas {{ c.icone }}"></i></div>
         <h4 data-editable="text" data-type="span" data-prop="criteres.cartes.{{ forloop.index0 }}.titre">{{ c.titre }}</h4>
-        <p data-editable="text" data-type="span" data-prop="criteres.cartes.{{ forloop.index0 }}.texte">{{ c.texte }}</p>
+        <p data-editable="text" data-type="text" data-prop="criteres.cartes.{{ forloop.index0 }}.texte">{{ c.texte }}</p>
       </div>
     </div>
 {%- endfor %}

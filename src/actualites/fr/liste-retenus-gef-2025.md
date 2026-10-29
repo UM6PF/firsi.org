@@ -1,11 +1,13 @@
 ---
-titre: Liste des retenus GEF 2025-2026
-date: 2025-06-01
-date_affichee: Juin 2025
+titre: "Grandes écoles françaises : Liste des retenus 2025-2026"
+date: 2025-09-11
 categorie: bourses
-image: /assets/img/19-fondationibnrochd-min.jpg
-image_alt: Liste des retenus GEF 2025-2026
-resume: "La liste des étudiants retenus pour le programme de bourses GEF 2025-2026 de la FIRSI est disponible. Félicitations aux lauréats de cette nouvelle promotion."
-brouillon: true
+image: "/assets/img/actualites/liste-retenus-gef-2025.jpg"
+image_alt: "LISTE RETENUS GEF"
+resume: "La FIRSI a sélectionné 72 étudiantes et étudiants pour ses bourses Grandes Écoles Françaises 2025-2026. Félicitations à cette nouvelle promotion !"
+pdf: "/assets/docs/ancien-site/2025-09-liste-retenus-gef.pdf"
+a_la_une: false
+brouillon: false
+ancienne_adresse: "https://firsi.org/actualites/grandes-ecoles-francaises-liste-des-retenus-2025-2026"
 ---
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. La liste des étudiants retenus pour le programme GEF 2025-2026 est disponible.</p><h2>Félicitations aux lauréats</h2><p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+<p><strong>La Fondation Ibn Rochd pour les Sciences et l’Innovation</strong> a le plaisir d’annoncer que, dans le cadre de son programme de <strong>Bourses « Grandes Écoles Françaises »</strong> pour l’année universitaire <strong>2025-2026</strong>, <strong>72 étudiantes et étudiants</strong> ont été sélectionnés.</p><p>Cette nouvelle promotion vient enrichir la communauté des boursiers de la Fondation et témoigne de notre engagement à soutenir l’excellence académique et l’accès équitable aux formations d’ingénierie de haut niveau.</p><p>Nous leur adressons nos <strong>plus sincères félicitations</strong> et leur souhaitons plein succès dans la poursuite de leur parcours d’études en France.</p><p> <a href="/assets/docs/ancien-site/2025-09-liste-retenus-gef.pdf"> Consultez la liste ici </a></p>

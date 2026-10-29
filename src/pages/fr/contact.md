@@ -82,6 +82,10 @@ formulaire:
     label: Message *
     placeholder: Décrivez votre demande...
   bouton: Envoyer le message
+  objet_email: Message depuis le site FIRSI
+  succes_titre: Message envoyé
+  succes_texte: Merci, votre message a bien été envoyé. Notre équipe vous répondra dans les meilleurs délais.
+  erreur: L'envoi n'a pas abouti. Vérifiez votre connexion et réessayez, ou écrivez-nous directement à contact@firsi.org.
 coordonnees:
   surtitre: Coordonnées
   titre:

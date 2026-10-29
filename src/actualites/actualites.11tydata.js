@@ -13,8 +13,14 @@ const MOIS = {
   en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
 };
 
+// Mois abrégés des dates calculées (cartes) : minuscules et point abréviatif en français.
+const MOIS_COURT = {
+  fr: ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
+  en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+};
+
 const MOIS_LONG = {
-  fr: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+  fr: ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
   en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
 };
 
@@ -22,7 +28,7 @@ const MOIS_LONG = {
 function formatDate(d, lang, style) {
   if (!d) return "";
   const j = d.getUTCDate(), m = d.getUTCMonth(), a = d.getUTCFullYear();
-  const mois = (style === "long" ? MOIS_LONG : MOIS)[lang][m];
+  const mois = (style === "long" ? MOIS_LONG : MOIS_COURT)[lang][m];
   return lang === "en" ? `${mois} ${j}, ${a}` : `${j} ${mois} ${a}`;
 }
 

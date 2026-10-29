@@ -9,7 +9,7 @@ section: communaute
   <div class="container">
     <div class="fr-hero-tag"><i class="fas {{ hero.icone }}"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
     <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
-    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="text" data-prop="hero.texte">{{ hero.texte }}</p>
     <div class="fr-ribbon"></div>
   </div>
 </section>
@@ -99,7 +99,7 @@ section: communaute
     </div>
   </div>
 
-  <p style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:2.5rem" data-editable="text" data-type="span" data-prop="carte.avertissement">{{ carte.avertissement }}</p>
+  <p style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:2.5rem" data-editable="text" data-type="text" data-prop="carte.avertissement">{{ carte.avertissement }}</p>
 
   <!-- ══ CONTRIBUTION ══ -->
   <div style="margin-top:2rem;margin-bottom:2.5rem">
@@ -111,7 +111,7 @@ section: communaute
         <div class="fr-card" style="border-top:3px solid var(--bg)">
           <div class="fr-card-icon"><i class="fas {{ c.icone }}"></i></div>
           <h4 data-editable="text" data-type="span" data-prop="titre">{{ c.titre }}</h4>
-          <p data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</p>
+          <p data-editable="text" data-type="text" data-prop="texte">{{ c.texte }}</p>
           <a href="{{ c.lien.page | page_url: lang }}" class="fr-link"><editable-text data-type="span" data-prop="lien.texte">{{ c.lien.texte }}</editable-text> <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>

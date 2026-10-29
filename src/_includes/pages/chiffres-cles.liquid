@@ -9,7 +9,7 @@ section: communaute
   <div class="container">
     <div class="fr-hero-tag"><i class="fas {{ hero.icone }}"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
     <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
-    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;line-height:1.75" data-editable="text" data-type="text" data-prop="hero.texte">{{ hero.texte }}</p>
     <div class="fr-ribbon"></div>
   </div>
 </section>
@@ -36,7 +36,7 @@ section: communaute
     <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem">
       <div>
         <div style="font-size:14px;font-weight:600;color:var(--text)" data-editable="text" data-type="span" data-prop="graphique.titre">{{ graphique.titre }}</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:2px" data-editable="text" data-type="span" data-prop="graphique.sous_titre">{{ graphique.sous_titre }}</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px" data-editable="text" data-type="text" data-prop="graphique.sous_titre">{{ graphique.sous_titre }}</div>
       </div>
       <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)">
         <span style="width:20px;height:2px;background:var(--orange);display:inline-block;border-radius:1px"></span>

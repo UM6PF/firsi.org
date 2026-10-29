@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Contenus à corriger — Site FIRSI</title>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --navy:#0C2251; --orange:#D46B2B; --orange-p:#FDF0E8; --ink:#1A1A1A; --muted:#5A6570; --line:#D9DEE7; --soft:#F5F7FA; --red:#B3261E; --red-p:#FBE9E7; --warn:#9A6A00; --warn-p:#FDF3D8; --ok:#2F7D4F; --ok-p:#E6F3EB; }
+@page { size: A4; margin: 16mm 14mm 18mm 14mm; }
+@page :first { margin: 0; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin:0; font-family:"Inter","Segoe UI",Arial,sans-serif; font-size:9.6pt; line-height:1.5; color:var(--ink); }
+h1,h2,h3 { font-family:"Work Sans","Segoe UI",Arial,sans-serif; color:var(--navy); margin:0; line-height:1.2; }
+h2 { font-size:17pt; font-weight:800; margin:0 0 3mm; }
+h2 .n { color:var(--orange); margin-right:2.5mm; }
+h3 { font-size:11.5pt; font-weight:700; margin:5mm 0 2mm; }
+p { margin:0 0 2.2mm; }
+ul { margin:0 0 3mm; padding-left:5mm; } li { margin-bottom:1.2mm; }
+strong { color:#07162E; }
+code { font-family:Consolas,monospace; font-size:8.4pt; background:#EEF1F7; padding:0 1mm; border-radius:1mm; }
+.chapter { page-break-before: always; }
+.lead { color:var(--muted); font-size:10.2pt; margin-bottom:4mm; }
+table { width:100%; border-collapse:collapse; margin:1.5mm 0 4mm; font-size:8.8pt; }
+thead { display: table-header-group; }
+tr { page-break-inside: avoid; }
+th { text-align:left; font-family:"Work Sans",sans-serif; font-size:7.6pt; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); border-bottom:1.5px solid var(--navy); padding:1.6mm 1.8mm; }
+td { padding:1.6mm 1.8mm; border-bottom:1px solid var(--line); vertical-align:top; }
+td.c { width:6mm; text-align:center; } td.c::before { content:""; display:inline-block; width:3.4mm; height:3.4mm; border:1.3px solid var(--navy); border-radius:.6mm; margin-top:.4mm; }
+.tag { display:inline-block; font-size:7.2pt; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:.2mm 1.6mm; border-radius:1mm; white-space:nowrap; }
+.dir { background:var(--red-p); color:var(--red); } .com { background:var(--ok-p); color:var(--ok); } .dev { background:#E8EDF7; color:var(--navy); }
+.box { border-radius:2mm; padding:3mm 4mm; margin:2.5mm 0 4mm; page-break-inside:avoid; }
+.box.info { background:var(--orange-p); border-left:1.2mm solid var(--orange); }
+.box.warn { background:var(--warn-p); border-left:1.2mm solid var(--warn); }
+.box p:last-child, .box ul:last-child { margin-bottom:0; }
+.small { font-size:8.4pt; color:var(--muted); }
+.cover { height:297mm; background:var(--navy); color:#fff; padding:32mm 22mm 22mm; display:flex; flex-direction:column; position:relative; overflow:hidden; }
+.cover::after { content:""; position:absolute; right:-60mm; top:80mm; width:150mm; height:150mm; border:26mm solid rgba(255,255,255,.05); border-radius:50%; }
+.cover .tag2 { font-family:"Work Sans",sans-serif; font-size:9pt; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--orange); }
+.cover h1 { color:#fff; font-size:34pt; font-weight:800; margin:8mm 0 6mm; line-height:1.08; }
+.cover h1 span { color:var(--orange); }
+.cover p { color:rgba(255,255,255,.78); font-size:11.5pt; max-width:140mm; }
+.cover .ribbon { height:1.4mm; width:120mm; background:linear-gradient(90deg,var(--orange),rgba(212,107,43,.15)); margin:10mm 0; }
+.kpis { display:grid; grid-template-columns:repeat(3,1fr); gap:4mm; max-width:150mm; position:relative; z-index:1; }
+.kpis div { border:1px solid rgba(255,255,255,.18); border-radius:2mm; padding:4mm; }
+.kpis b { display:block; font-family:"Work Sans",sans-serif; font-size:22pt; color:var(--orange); line-height:1; margin-bottom:1.5mm; }
+.kpis span { font-size:9pt; color:rgba(255,255,255,.8); }
+.legend { margin-top:10mm; position:relative; z-index:1; display:grid; gap:2mm; font-size:9.5pt; color:rgba(255,255,255,.85); }
+.cover .meta { margin-top:auto; font-size:9pt; color:rgba(255,255,255,.6); position:relative; z-index:1; }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="tag2">Site FIRSI · Avant la mise en ligne</div>
+  <h1>Contenus à <span>corriger</span></h1>
+  <p>Chiffres incohérents, textes provisoires, articles à reprendre, liens et libellés à revoir. Chaque ligne est à cocher une fois corrigée sur le site de travail (FIRSI - Staging), en français et en anglais.</p>
+  <div class="ribbon"></div>
+  <div class="kpis">
+    <div><b>14</b><span>décisions à prendre par la direction</span></div>
+    <div><b>8</b><span>articles en faux texte ou vides</span></div>
+    <div><b>27</b><span>articles de l'ancien site à reprendre ou non</span></div>
+  </div>
+  <div class="legend">
+    <div><span class="tag dir">Direction</span> une décision ou une information officielle est nécessaire</div>
+    <div><span class="tag com">Équipe com</span> correction à faire dans CloudCannon</div>
+    <div><span class="tag dev">Développeur</span> hors CloudCannon, à transmettre</div>
+  </div>
+  <div class="meta">Audit du 9 octobre 2026 · pages FR et EN, 8 articles, données partagées, ancien site firsi.org</div>
+</section>
+
+<!-- 1 DÉCISIONS -->
+<section class="chapter">
+  <h2><span class="n">1</span>Décisions à prendre d'abord</h2>
+  <p class="lead">Beaucoup de corrections dépendent de ces réponses. Une fois tranchées, reportez les mêmes valeurs partout (section 2), en français et en anglais.</p>
+  <table>
+    <thead><tr><th></th><th style="width:30%">Question</th><th>Ce qu'on trouve aujourd'hui</th></tr></thead>
+    <tbody>
+      <tr><td class="c"></td><td><strong>Année de référence des chiffres</strong></td><td>Tout le site présente 2025-2026, alors que la campagne 2026-2027 est close et que sa liste des retenus est publiée sur l'ancien site (11/09/2026).</td></tr>
+      <tr><td class="c"></td><td><strong>Nombre officiel de boursiers</strong></td><td>4 546 (Accueil, Mission, Chiffres clés) · 3 752 (Entreprise, ancien site) · « plus de 3 500 » (Mot du Président).</td></tr>
+      <tr><td class="c"></td><td><strong>Répartition Maroc / international</strong></td><td>4 154 / 392 (Mission) · 3 129 / 623 (Chiffres clés, = 3 752, chiffres de l'ancien site).</td></tr>
+      <tr><td class="c"></td><td><strong>Pourcentage de femmes</strong></td><td>59 % (Accueil, Mission, Chiffres clés) · 50 % (ancien site).</td></tr>
+      <tr><td class="c"></td><td><strong>Pays ou nationalités</strong></td><td>14 nationalités (Accueil) · 15+ pays (Chiffres clés) · « plus de 15 » et 16 pays (Alumni). Parle-t-on des nationalités des boursiers ou des pays de résidence des alumni ?</td></tr>
+      <tr><td class="c"></td><td><strong>Éligibilité par nationalité</strong></td><td>Candidater (FAQ) : « nationalité marocaine » · FAQ générale : « marocains et sub-sahariens (UM6P seulement) ». Contradictoire avec « 14 nationalités ».</td></tr>
+      <tr><td class="c"></td><td><strong>Nombre d'écoles partenaires</strong></td><td>19 écoles éligibles (GEF) · 12 établissements (Mission) · 6+ (Chiffres clés) · 8 + 2 listées (Partenaires). Faut-il lister les 19 sur la page Partenaires ?</td></tr>
+      <tr><td class="c"></td><td><strong>Nombre d'alumni et vraies données Alumni</strong></td><td>1 254 (Alumni, données provisoires) alors que GEF annonce 1 533 et GEM 328 (total 1 861). Carte, pays et secteurs sont fictifs.</td></tr>
+      <tr><td class="c"></td><td><strong>Montant d'une bourse, devise</strong></td><td>« 15 000 à 25 000 € par an » et « 10 000 € = une année complète » sur la même page (Nous soutenir) ; montants en dirhams sur GEF ; billet 2 000 € (Nous soutenir) contre 4 000 MAD (GEF).</td></tr>
+      <tr><td class="c"></td><td><strong>Périmètre GEF / GEM</strong></td><td>Les titres anglais disent « Engineering &amp; Business Schools », les contenus ne parlent que d'écoles d'ingénieurs ; la carte GEM de l'Accueil parle « d'écoles d'ingénieurs et de management ».</td></tr>
+      <tr><td class="c"></td><td><strong>Noms officiels</strong></td><td>« Lycée » ou « Lycées » Mohammed VI d'Excellence, « Mohammed 6 », « MVI », LM6E, Lydex ; « UM6P » ou « Programme UM6P ».</td></tr>
+      <tr><td class="c"></td><td><strong>Dates à confirmer</strong></td><td>Année de création « 2020 » (Chiffres clés) ; Massarates « lancé en 2023 » (l'ancien site annonce un lancement officiel le 16/05/2024).</td></tr>
+      <tr><td class="c"></td><td><strong>Parcours « Nous soutenir »</strong></td><td>Tous les boutons mènent à Contact : prévoir un vrai moyen de don ? une page projets ?</td></tr>
+      <tr><td class="c"></td><td><strong>Articles de l'ancien site à reprendre</strong></td><td>27 articles réels n'existent pas sur le nouveau site (section 4).</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 2 CHIFFRES -->
+<section class="chapter">
+  <h2><span class="n">2</span>Où reporter les chiffres</h2>
+  <p class="lead">Une fois les valeurs décidées, voici chaque emplacement à mettre à jour. Toujours dans les deux langues.</p>
+
+  <table>
+    <thead><tr><th></th><th style="width:22%">Chiffre</th><th style="width:25%">Page</th><th>Emplacement</th><th style="width:16%">Valeur actuelle</th></tr></thead>
+    <tbody>
+      <tr><td class="c"></td><td>Boursiers</td><td>Accueil</td><td>Section « Notre impact », 1er chiffre</td><td>4 546</td></tr>
+      <tr><td class="c"></td><td>Boursiers</td><td>Chiffres clés</td><td>1er compteur animé + description Google</td><td>4 546</td></tr>
+      <tr><td class="c"></td><td>Boursiers</td><td>Mission</td><td>3e carte « Impact 2025-2026 »</td><td>4 546</td></tr>
+      <tr><td class="c"></td><td>Boursiers</td><td>Je suis entreprise / partenaire</td><td>1re carte « Accès aux talents » (parle d'« étudiants et alumni »)</td><td>3 752</td></tr>
+      <tr><td class="c"></td><td>Boursiers</td><td>Mot du Président</td><td>2e paragraphe</td><td>« plus de 3 500 »</td></tr>
+      <tr><td class="c"></td><td>Maroc / international</td><td>Mission</td><td>3e carte</td><td>4 154 / 392</td></tr>
+      <tr><td class="c"></td><td>Maroc / international</td><td>Chiffres clés</td><td>Bloc « La fondation en chiffres », 1er et 2e</td><td>3 129 / 623</td></tr>
+      <tr><td class="c"></td><td>International / GEF</td><td>Programme GEF</td><td>3e carte : « 392 boursiers GEF actifs » (même chiffre que « 392 à l'international » sur Mission : voulu ?)</td><td>392</td></tr>
+      <tr><td class="c"></td><td>% femmes</td><td>Accueil · Chiffres clés · Mission</td><td>2e chiffre · 2e compteur + description Google · 3e carte</td><td>59 %</td></tr>
+      <tr><td class="c"></td><td>% femmes GEM</td><td>Programme GEM</td><td>3e carte (propre à GEM, cohérent)</td><td>47 %</td></tr>
+      <tr><td class="c"></td><td>Pays / nationalités</td><td>Accueil</td><td>3e chiffre</td><td>14</td></tr>
+      <tr><td class="c"></td><td>Pays / nationalités</td><td>Chiffres clés</td><td>3e compteur + description Google</td><td>15+</td></tr>
+      <tr><td class="c"></td><td>Pays / nationalités</td><td>Alumni</td><td>Texte du haut + description Google · bandeau « Réseau mondial », 2e chiffre</td><td>« plus de 15 » · 16</td></tr>
+      <tr><td class="c"></td><td>Écoles partenaires</td><td>Programme GEF</td><td>Description Google, 1er paragraphe, 3e carte, bandeau « Écoles éligibles »</td><td>19</td></tr>
+      <tr><td class="c"></td><td>Écoles partenaires</td><td>Mission · Chiffres clés · Partenaires</td><td>3e carte · 3e chiffre · liste affichée</td><td>12 · 6+ · 8 + 2</td></tr>
+      <tr><td class="c"></td><td>Alumni</td><td>Alumni · GEF · GEM</td><td>1er chiffre · 3e carte · 3e carte</td><td>1 254 · 1 533 · 328</td></tr>
+      <tr><td class="c"></td><td>Montant de bourse</td><td>Nous soutenir</td><td>« Pourquoi soutenir », 1er paragraphe · « Impact de votre don » (500 €, 2 000 €, 10 000 €, 50 000 €)</td><td>15–25 k€ / 10 k€</td></tr>
+      <tr><td class="c"></td><td>Montant de bourse</td><td>Je suis entreprise / partenaire</td><td>Carte « Mécénat financier » (10 000 €, 50 000 €)</td><td>10 k€</td></tr>
+      <tr><td class="c"></td><td>Montants GEF</td><td>Programme GEF</td><td>2e carte : préciser annuel ou total (scolarité 30 000 MAD, vie 60 000 MAD…)</td><td>MAD</td></tr>
+      <tr><td class="c"></td><td>Programmes actifs</td><td>Accueil</td><td>4e chiffre « 4 programmes » alors que menu et formulaire en proposent 5 (+ entrepreneuriat)</td><td>4</td></tr>
+      <tr><td class="c"></td><td>Filières HEWB</td><td>Entrepreneuriat</td><td>Chiffre « 3 filières » mais 4 citées dans le texte</td><td>3</td></tr>
+      <tr><td class="c"></td><td>Année de création</td><td>Chiffres clés</td><td>4e chiffre (graphique commence en 2021-2022)</td><td>2020</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Les compteurs, le graphique de Chiffres clés et les données de la carte Alumni se modifient dans le panneau de gauche de la page (guide, chapitre 3).</p>
+</section>
+
+<!-- 3 PROVISOIRE -->
+<section class="chapter">
+  <h2><span class="n">3</span>Textes provisoires et articles</h2>
+
+  <h3>Page Alumni : données fictives</h3>
+  <table>
+    <thead><tr><th></th><th>À faire</th><th style="width:16%">Qui</th></tr></thead>
+    <tbody>
+      <tr><td class="c"></td><td>Le texte « Données provisoires à titre d'illustration — à remplacer par les chiffres réels » est visible sous la carte. Obtenir les vrais chiffres (total, pays, international, secteurs), les saisir, puis vider le champ « avertissement ».</td><td><span class="tag dir">Direction</span> <span class="tag com">Équipe com</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Les 8 articles actuels</h3>
+  <p>Le texte de 7 articles sur 8 est en <strong>faux texte latin (lorem ipsum)</strong>, en français et en anglais. Le texte réel existe sur l'ancien site pour chacun : le reprendre.</p>
+  <table>
+    <thead><tr><th></th><th style="width:30%">Article</th><th>Problèmes</th><th style="width:27%">Source sur l'ancien site</th></tr></thead>
+    <tbody>
+      <tr><td class="c"></td><td>Khaoula Riad : Tracer sa voie au cœur de la finance quantitative</td><td>Faux texte (sauf la citation, à vérifier). À la une n°1.</td><td><code>/actualites/khaoula-riad-tracer-sa-voie-…</code> (26/02/2026)</td></tr>
+      <tr><td class="c"></td><td>Nouhaila Agouzal : Un parcours d'excellence guidé par les valeurs</td><td>Faux texte. Titre raccourci (l'original finit par « … et la résilience »).</td><td><code>/actualites/nouhaila-agouzal-…</code> (28/01/2026)</td></tr>
+      <tr><td class="c"></td><td>Lancement campagne GEF 2026-2027</td><td>1re phrase réelle puis faux texte. <strong>Campagne close le 15/05/2026</strong> : mettre à jour ou retirer de la une. Le bouton mène à « Candidater », pas à la plateforme d'inscription.</td><td><code>/actualites/lancement-de-la-campagne-…-0</code> (14/01/2026)</td></tr>
+      <tr><td class="c"></td><td>Youssef Agouzoul : Un ingénieur qui ose se réinventer</td><td>Faux texte.</td><td><code>/actualites/youssef-agouzoul-…</code> (29/12/2025)</td></tr>
+      <tr><td class="c"></td><td>L'IA au croisement de l'audace africaine</td><td>Faux texte. Date « Avril 2025 » contre 19/06/2025. Informations de l'événement vides.</td><td><code>/actualites/lia-au-croisement-…</code></td></tr>
+      <tr><td class="c"></td><td>La FIRSI aux côtés des talents dès les premières étapes</td><td>Faux texte. Catégorie « Portraits » alors que c'est un atelier (400 élèves de CPGE). Date « Mars 2025 » contre 18/08/2025.</td><td><code>/actualites/la-firsi-aux-cotes-…</code></td></tr>
+      <tr><td class="c"></td><td>Liste des retenus GEF 2025-2026</td><td>Faux texte, en brouillon, sans PDF. <strong>Remplacer par la liste 2026-2027</strong> ?</td><td><code>/actualites/grandes-ecoles-…-2025-2026</code> (72 retenus, PDF disponible)</td></tr>
+      <tr><td class="c"></td><td>Rapport d'activité 2024</td><td><strong>Texte vide, PDF absent</strong> : le bouton « Télécharger » ne fait rien. Le PDF de l'ancien site s'appelle « RAPPORT FONDATION 2025 » : vérifier que c'est le bon document.</td><td><code>/actualites/le-rapport-dactivite-2024-est-en-ligne</code> (15/05/2025)</td></tr>
+    </tbody>
+  </table>
+  <div class="box warn">
+    <p><strong>Citations des portraits</strong> (Khaoula Riad, Nouhaila Agouzal, Youssef Agouzoul) : elles semblent écrites pour la maquette. Les remplacer par de vraies citations tirées des articles de l'ancien site.</p>
+    <p><strong>Pas de version anglaise sur l'ancien site</strong> (ses pages anglaises sont inaccessibles) : les traductions des articles sont à rédiger.</p>
+  </div>
+</section>
+
+<!-- 4 ANCIEN SITE -->
+<section class="chapter">
+  <h2><span class="n">4</span>Articles de l'ancien site à reprendre ou non</h2>
+  <p class="lead">27 articles publiés sur firsi.org n'existent pas sur le nouveau site. Cochez ceux à reprendre ; je peux les importer automatiquement (texte et images) une fois la liste validée. Les autres adresses redirigeront vers la page Actualités.</p>
+  <table>
+    <thead><tr><th>Reprendre</th><th>Article</th><th style="width:16%">Date</th></tr></thead>
+    <tbody>
+      <tr><td class="c"></td><td>Grandes écoles françaises : Liste des retenus 2026-2027</td><td>11/09/2026</td></tr>
+      <tr><td class="c"></td><td>Ikrame Had : une voix féminine au cœur de la tech</td><td>28/11/2025</td></tr>
+      <tr><td class="c"></td><td>Lancement de la campagne GEF 2025-2026</td><td>13/12/2025</td></tr>
+      <tr><td class="c"></td><td>Anas Abdelhakmi : La recherche marocaine rayonne à Singapour</td><td>30/10/2025</td></tr>
+      <tr><td class="c"></td><td>Zakaria Akil : De Marrakech au Luxembourg, un parcours d'excellence</td><td>29/09/2025</td></tr>
+      <tr><td class="c"></td><td>Zineb Karrakchou : De la finance à la cuisine des chefs étoilés</td><td>28/08/2025</td></tr>
+      <tr><td class="c"></td><td>Bourses Grandes Écoles 2025-2026 : soumettez votre admission dès obtention</td><td>19/07/2025</td></tr>
+      <tr><td class="c"></td><td>Lancement de la campagne de reconduction des bourses GEF 2025-2026</td><td>03/07/2025</td></tr>
+      <tr><td class="c"></td><td>Campagne de bourses GEF 2025-2026</td><td>01/07/2025</td></tr>
+      <tr><td class="c"></td><td>Graduation Party FIRSI</td><td>28/06/2025</td></tr>
+      <tr><td class="c"></td><td>Parcours inspirant FIRSI x ENPC</td><td>03/06/2025</td></tr>
+      <tr><td class="c"></td><td>Rencontre inspirante avec Claudie Haigneré</td><td>19/11/2024</td></tr>
+      <tr><td class="c"></td><td>Le rapport d'activité 2023 est en ligne</td><td>16/10/2024</td></tr>
+      <tr><td class="c"></td><td>Liste des retenus GEF 2024-2025</td><td>13/09/2024</td></tr>
+      <tr><td class="c"></td><td>Coopération équipe Bourses FIRSI / LM6E</td><td>06/08/2024</td></tr>
+      <tr><td class="c"></td><td>UM6P Entrepreneurship Venturing 2024 Roadshow</td><td>11/06/2024</td></tr>
+      <tr><td class="c"></td><td>Partenariat avec STUDCORP</td><td>21/05/2024</td></tr>
+      <tr><td class="c"></td><td>Cérémonie de lancement Massarates Rhamna</td><td>16/05/2024</td></tr>
+      <tr><td class="c"></td><td>Appel à candidatures GEF 2024-2025</td><td>15/05/2024</td></tr>
+      <tr><td class="c"></td><td>Workshop Moroccan Center of Game Theory</td><td>22/12/2023</td></tr>
+      <tr><td class="c"></td><td>Doctorat international UM6P</td><td>22/12/2023</td></tr>
+      <tr><td class="c"></td><td>Visite de la délégation CentraleSupélec à l'UM6P</td><td>20/02/2023</td></tr>
+      <tr><td class="c"></td><td>Introduction à l'analyse économique…</td><td>06/12/2022</td></tr>
+      <tr><td class="c"></td><td>Rencontre avec Mohamed Marfouk, LVMH</td><td>19/11/2022</td></tr>
+      <tr><td class="c"></td><td>L'importance de la vision de la prospective…</td><td>08/10/2022</td></tr>
+      <tr><td class="c"></td><td>Cycle de conférences Paris : Robotics &amp; AI</td><td>08/09/2022</td></tr>
+      <tr><td class="c"></td><td>Cycle de conférences Paris : Transition énergétique</td><td>12/05/2022</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 5 LIENS -->
+<section class="chapter">
+  <h2><span class="n">5</span>Liens à vérifier</h2>
+  <table>
+    <thead><tr><th></th><th style="width:24%">Page</th><th>Problème</th><th style="width:15%">Qui</th></tr></thead>
+    <tbody>
+      <tr><td class="c"></td><td>Accueil, témoignages</td><td>« Voir tous les témoignages » mène à Chiffres clés, qui n'en contient aucun. Choisir une autre page (Actualités, catégorie Portraits) ou retirer le bouton.</td><td><span class="tag dir">Direction</span></td></tr>
+      <tr><td class="c"></td><td>Accueil, Chiffres clés, barre du bas</td><td>« Voir tous les programmes » / « Nos programmes » mènent aux Lycées Mohammed VI : il n'existe pas de page de présentation de tous les programmes.</td><td><span class="tag dir">Direction</span></td></tr>
+      <tr><td class="c"></td><td>Fil d'Ariane des programmes</td><td>« Nos programmes » mène aux Lycées Mohammed VI (y compris depuis la page Lycées elle-même). « La fondation » mène à Mission depuis Mission.</td><td><span class="tag dev">Développeur</span></td></tr>
+      <tr><td class="c"></td><td>Nous soutenir</td><td>Les 2 boutons du haut et les 4 cartes (« Faire un don », « Voir les projets »…) mènent tous à Contact. « Voir les projets » pourrait viser Entrepreneuriat.</td><td><span class="tag dir">Direction</span></td></tr>
+      <tr><td class="c"></td><td>Partenaires</td><td>« Devenir partenaire » mène à Nous soutenir, qui renvoie à Contact : viser directement Contact ou Entreprise.</td><td><span class="tag com">Équipe com</span></td></tr>
+      <tr><td class="c"></td><td>Programme GEF</td><td>« Voir toutes les écoles » mène à une page qui n'en montre que 8 sur 19.</td><td><span class="tag dir">Direction</span></td></tr>
+      <tr><td class="c"></td><td>Accompagnement</td><td>« Voir les événements » (EN « See Upcoming Events ») mène à Actualités, qui n'a qu'un événement passé. Adapter le libellé.</td><td><span class="tag com">Équipe com</span></td></tr>
+      <tr><td class="c"></td><td>Lycées Mohammed VI</td><td>3e carte du réseau (Laâyoune) : aucun lien. Fournir un site ou laisser ainsi.</td><td><span class="tag com">Équipe com</span></td></tr>
+      <tr><td class="c"></td><td>Article campagne GEF</td><td>Le bouton mène à Candidater et non à la plateforme d'inscription (lien eudonet sur l'ancien site).</td><td><span class="tag com">Équipe com</span></td></tr>
+      <tr><td class="c"></td><td>Rapport 2024</td><td>Lien « Télécharger le PDF » vide (voir section 3).</td><td><span class="tag com">Équipe com</span></td></tr>
+      <tr><td class="c"></td><td>Partout</td><td>Vérifier les comptes : LinkedIn <code>linkedin.com/company/firsi</code>, YouTube <code>@FondationIbnRochd</code>, et les sites externes : lm6e.ma, lydex-rabat.ma, um6p.ma, theforge.ma, massarates.ma, hewb.org, studcorp.com/firsi.</td><td><span class="tag com">Équipe com</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 6 LIBELLÉS -->
+<section class="chapter">
+  <h2><span class="n">6</span>Fautes, libellés et traductions</h2>
+
+  <h3>Fautes en français</h3>
+  <table>
+    <thead><tr><th></th><th style="width:22%">Page</th><th style="width:38%">Texte actuel</th><th>Correction proposée</th></tr></thead>
+    <tbody>
+      <tr><td class="c"></td><td>Alumni, 5e carte</td><td>« Le cooptation alumni »</td><td>« La cooptation alumni »</td></tr>
+      <tr><td class="c"></td><td>Candidater, carte « Situation sociale »</td><td>« Le mérite seul ne suffit pas d'obstacles financiers »</td><td>« Le mérite seul ne suffit pas face aux obstacles financiers »</td></tr>
+      <tr><td class="c"></td><td>Programme GEF, haut de page</td><td>« lauréats des CPGE marocains »</td><td>« CPGE marocaines »</td></tr>
+      <tr><td class="c"></td><td>Programme GEF, 1re carte</td><td>« Agro ParisTech » ; « certaines CPGE françaises (Chimie ParisTech, AgroParisTech et ESPCI) »</td><td>« AgroParisTech » ; reformuler comme la FAQ (« à condition d'être admis à … »)</td></tr>
+      <tr><td class="c"></td><td>Mission, UM6P</td><td>« Benguerir »</td><td>« Benguérir », comme ailleurs</td></tr>
+      <tr><td class="c"></td><td>Mot du Président, titre</td><td>« pour la Recherche et l'Innovation »</td><td>minuscules en milieu de phrase</td></tr>
+      <tr><td class="c"></td><td>Mot du Président</td><td>La citation reprend mot pour mot le 3e paragraphe</td><td>choisir une autre phrase</td></tr>
+      <tr><td class="c"></td><td>Actualités (badge, filtre)</td><td>« Évènement »</td><td>« Événement », comme sur Alumni et Accompagnement</td></tr>
+      <tr><td class="c"></td><td>Articles, dates</td><td>« 14 Janvier 2026 », « 14 Janv 2026 »</td><td>mois en minuscule en français ; dates complètes partout (voir dates de l'ancien site)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Contradictions dans les textes</h3>
+  <table>
+    <thead><tr><th></th><th style="width:22%">Page</th><th>Problème</th></tr></thead>
+    <tbody>
+      <tr><td class="c"></td><td>Lycées Mohammed VI</td><td>Le 2e paragraphe parle du « Lydex de Benguérir », la carte du réseau appelle Benguérir « LM6E » et réserve « Lydex » à Rabat et Laâyoune.</td></tr>
+      <tr><td class="c"></td><td>Prêt étudiant</td><td>Bandeau final « Vous êtes boursier UM6P ? » alors que le prêt est ouvert aux étudiants « boursiers ou non ».</td></tr>
+      <tr><td class="c"></td><td>Gouvernance</td><td>Le texte parle d'un « Bureau Exécutif » absent de l'organigramme ; la description Google parle de « quatre pôles », l'organigramme en montre trois. L'organigramme se corrige par le développeur.</td></tr>
+      <tr><td class="c"></td><td>Candidater / FAQ</td><td>« Campagnes généralement entre novembre et mars » alors que la campagne GEF 2026-2027 allait du 14 janvier au 15 mai 2026.</td></tr>
+      <tr><td class="c"></td><td>Accueil, Nous soutenir</td><td>« Partenaires académiques » et « grandes écoles françaises et marocaines » : les logos montrent 5 écoles françaises, aucune marocaine, et Studcorp (pas une école).</td></tr>
+      <tr><td class="c"></td><td>Je suis entreprise</td><td>« 3 752 étudiants et alumni » : ce chiffre correspond aux boursiers (section 1).</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Titres et noms incohérents</h3>
+  <table>
+    <thead><tr><th></th><th style="width:22%">Page</th><th>Problème</th></tr></thead>
+    <tbody>
+      <tr><td class="c"></td><td>Lycées</td><td>Titre d'onglet « Lycée » (singulier) / page « Lycées » ; Accueil « Mohammed 6 » ; Contact « MVI » ; EN « MVI Excellence High Schools ».</td></tr>
+      <tr><td class="c"></td><td>UM6P</td><td>« Programme UM6P » (FR) contre « UM6P » (EN, menu, Accueil).</td></tr>
+      <tr><td class="c"></td><td>GEF et GEM (EN)</td><td>« Engineering &amp; Business Schools » alors que le contenu ne parle que d'écoles d'ingénieurs (décision section 1).</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Pages anglaises</h3>
+  <table>
+    <thead><tr><th></th><th style="width:22%">Page</th><th>À revoir</th></tr></thead>
+    <tbody>
+      <tr><td class="c"></td><td>Accompagnement EN</td><td>Titre « Beyond Support » (traduction littérale sans sens).</td></tr>
+      <tr><td class="c"></td><td>Prêt étudiant EN</td><td>« Support Beyond the Scholarship » identique au titre d'Accompagnement ; le FR dit « Un soutien complémentaire à la bourse ».</td></tr>
+      <tr><td class="c"></td><td>Alumni EN</td><td>« Graduates thanks to FIRSI, they are now… » : tournure maladroite.</td></tr>
+      <tr><td class="c"></td><td>GEF, GEM, Lycées, Candidater, FAQ (EN)</td><td>Sigles non expliqués aux anglophones : CPGE, LM6E, Lydex, CNC, « Grande École program ».</td></tr>
+      <tr><td class="c"></td><td>Partenaires EN</td><td>« Université Paris-Saclay », « Université de Lorraine » : garder ou traduire.</td></tr>
+      <tr><td class="c"></td><td>Accueil, articles, Mot du Président (EN)</td><td>Citations sans guillemets en anglais, entre « » en français, entre "…" sur Mot du Président : choisir une règle.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Textes alternatifs d'images</h3>
+  <table>
+    <tbody>
+      <tr><td class="c"></td><td>Articles : « Campagne GEF », « Portrait FIRSI », « Évènement IA », « Rapport 2024 » (et EN) sont trop génériques : décrire ce que montre l'image. Vérifier aussi l'image de la campagne GEF (fichier nommé « new-release-fashion-instagram-post… »).</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box info">
+    <p><strong>Déjà traité par le développeur :</strong> formulaire de contact branché (messages envoyés à contact@firsi.org), redirections de toutes les adresses de l'ancien site, icône manquante, tableau des pièces en anglais. Reste côté développeur : organigramme de Gouvernance, fil d'Ariane des programmes, affichage des informations d'événement et du PDF sur la page article.</p>
+  </div>
+</section>
+
+</body>
+</html>

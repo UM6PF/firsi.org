@@ -6,12 +6,14 @@ Chaque morceau est une zone de texte simple : l'équipe ne peut pas casser le ba
 Les morceaux non mis en valeur utilisent <editable-text> (élément en ligne neutre) et non <span>,
 car le CSS colore en orange tout <span> placé dans un titre.
 Les espaces sont placés à l'intérieur des éléments pour un rendu identique au texte d'origine.
+Dans l'éditeur visuel, CloudCannon réaffiche chaque morceau depuis sa valeur (sans l'espace) :
+les attributs data-esp-apres / data-esp-avant permettent de rétablir l'espace dans l'éditeur seulement (voir base.liquid).
 Pas d'espace après une apostrophe (« l'<strong>excellence</strong> »).
 {%- endcomment -%}
 {%- if t.avant != blank -%}
 {%- assign last = t.avant | slice: -1 -%}
 {%- assign sp = " " -%}{%- if last == "'" or last == "’" or last == "-" -%}{%- assign sp = "" -%}{%- endif -%}
-<editable-text data-type="span" data-prop="{{ prop }}.avant">{{ t.avant }}{{ sp }}</editable-text>
+<editable-text data-type="span" data-prop="{{ prop }}.avant"{% if sp != "" %} data-esp-apres{% endif %}>{{ t.avant }}{{ sp }}</editable-text>
 {%- endif -%}
 <{{ tag }}{% if style %} style="{{ style }}"{% endif %} data-editable="text" data-type="span" data-prop="{{ prop }}.valeur">{{ t.valeur }}</{{ tag }}>
 {%- if t.apres != blank -%}
@@ -21,5 +23,5 @@ Pas d'espace après une apostrophe (« l'<strong>excellence</strong> »).
 {%- assign sp2 = " " -%}
 {%- if first == "," or first == "." -%}{%- assign sp2 = "" -%}{%- endif -%}
 {%- if lang != "fr" -%}{%- if first == "?" or first == "!" or first == ":" or first == ";" -%}{%- assign sp2 = "" -%}{%- endif -%}{%- endif -%}
-<editable-text data-type="span" data-prop="{{ prop }}.apres">{{ sp2 }}{{ apres }}</editable-text>
+<editable-text data-type="span" data-prop="{{ prop }}.apres"{% if sp2 != "" %} data-esp-avant{% endif %}>{{ sp2 }}{{ apres }}</editable-text>
 {%- endif -%}

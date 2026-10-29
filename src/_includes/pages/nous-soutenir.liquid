@@ -8,7 +8,7 @@ section: soutenir
   <div class="container">
     <div class="fr-hero-tag"><i class="fas fa-heart"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
     <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
-    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;margin-bottom:32px;line-height:1.75" data-editable="text" data-type="span" data-prop="hero.texte">{{ hero.texte }}</p>
+    <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.7);max-width:560px;margin-bottom:32px;line-height:1.75" data-editable="text" data-type="text" data-prop="hero.texte">{{ hero.texte }}</p>
     <div class="d-flex gap-3 flex-wrap">
       <a href="{{ hero.bouton_principal.page | page_url: lang }}" class="btn-orange"><i class="fas {{ hero.bouton_principal.icone }}"></i> <editable-text data-type="span" data-prop="hero.bouton_principal.texte">{{ hero.bouton_principal.texte }}</editable-text></a>
       <a href="{{ hero.bouton_secondaire.page | page_url: lang }}" class="btn-outline-w"><i class="fas {{ hero.bouton_secondaire.icone }}"></i> <editable-text data-type="span" data-prop="hero.bouton_secondaire.texte">{{ hero.bouton_secondaire.texte }}</editable-text></a>
@@ -23,7 +23,7 @@ section: soutenir
       <h2 class="heading-lg mb-3">{% include "partials/hl.liquid", t: pourquoi.titre, prop: "pourquoi.titre", tag: "span" %}</h2>
       <div data-editable="array" data-prop="pourquoi.paragraphes" style="display:contents">
 {%- for p in pourquoi.paragraphes %}
-      <p style="font-size:15px;color:var(--muted);line-height:1.75;font-weight:300{% unless forloop.last %};margin-bottom:20px{% endunless %}" data-editable="array-item"><editable-text data-type="span" data-prop="texte">{{ p.texte }}</editable-text></p>
+      <p style="font-size:15px;color:var(--muted);line-height:1.75;font-weight:300{% unless forloop.last %};margin-bottom:20px{% endunless %}" data-editable="array-item"><editable-text data-type="text" data-prop="texte">{{ p.texte }}</editable-text></p>
 {%- endfor %}
       </div>
     </div>
@@ -32,7 +32,7 @@ section: soutenir
         <p style="font-size:12px;color:var(--orange);letter-spacing:2px;text-transform:uppercase;font-weight:600;margin-bottom:16px" data-editable="text" data-type="span" data-prop="impact.titre">{{ impact.titre }}</p>
         <div style="display:flex;flex-direction:column;gap:14px" data-editable="array" data-prop="impact.elements">
 {%- for i in impact.elements %}
-          <div style="display:flex;align-items:center;gap:14px{% unless forloop.last %};padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.1){% endunless %}" data-editable="array-item"><span style="font-size:1.4rem;font-weight:700;color:var(--orange);min-width:80px" data-editable="text" data-type="span" data-prop="montant">{{ i.montant }}</span><span style="font-size:13px;color:rgba(255,255,255,.7);font-weight:300" data-editable="text" data-type="span" data-prop="texte">{{ i.texte }}</span></div>
+          <div style="display:flex;align-items:center;gap:14px{% unless forloop.last %};padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.1){% endunless %}" data-editable="array-item"><span style="font-size:1.4rem;font-weight:700;color:var(--orange);min-width:80px" data-editable="text" data-type="span" data-prop="montant">{{ i.montant }}</span><span style="font-size:13px;color:rgba(255,255,255,.7);font-weight:300" data-editable="text" data-type="text" data-prop="texte">{{ i.texte }}</span></div>
 {%- endfor %}
         </div>
       </div>
@@ -44,7 +44,7 @@ section: soutenir
       <a href="{{ c.page | page_url: lang }}" class="fr-card d-block text-decoration-none text-center" style="padding:32px 20px">
         <i class="fas {{ c.icone }}" style="font-size:2rem;color:var(--orange);margin-bottom:16px;display:block"></i>
         <h4 data-editable="text" data-type="span" data-prop="titre">{{ c.titre }}</h4>
-        <p data-editable="text" data-type="span" data-prop="texte">{{ c.texte }}</p>
+        <p data-editable="text" data-type="text" data-prop="texte">{{ c.texte }}</p>
         <span class="fr-link justify-content-center"><editable-text data-type="span" data-prop="lien_texte">{{ c.lien_texte }}</editable-text> <i class="fas fa-arrow-right"></i></span>
       </a>
     </div>
@@ -57,7 +57,7 @@ section: soutenir
     <h2 class="heading-lg on-dark mb-5">{% include "partials/hl.liquid", t: partenaires.titre, prop: "partenaires.titre", tag: "span" %}</h2>
 
     <div class="text-center mb-4">
-      <p style="font-size:11px;letter-spacing:2px;color:#aaa;text-transform:uppercase;font-weight:500" data-editable="text" data-type="span" data-prop="partenaires.sous_titre">{{ partenaires.sous_titre }}</p>
+      <p style="font-size:11px;letter-spacing:2px;color:#aaa;text-transform:uppercase;font-weight:500" data-editable="text" data-type="text" data-prop="partenaires.sous_titre">{{ partenaires.sous_titre }}</p>
     </div>
     <div class="d-flex flex-wrap justify-content-center align-items-center gap-4" data-editable="array" data-prop="@data[logos_partenaires].logos">
 {%- for l in logos_partenaires.logos %}
