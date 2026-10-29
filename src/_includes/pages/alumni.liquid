@@ -99,7 +99,9 @@ section: communaute
     </div>
   </div>
 
+{%- if carte.avertissement != blank %}
   <p style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:2.5rem" data-editable="text" data-type="text" data-prop="carte.avertissement">{{ carte.avertissement }}</p>
+{%- endif %}
 
   <!-- ══ CONTRIBUTION ══ -->
   <div style="margin-top:2rem;margin-bottom:2.5rem">
@@ -107,7 +109,7 @@ section: communaute
     <h2 class="heading-lg mb-4">{% include "partials/hl.liquid", t: contribuer.titre, prop: "contribuer.titre", tag: "span" %}</h2>
     <div class="row g-4" data-editable="array" data-prop="contribuer.cartes">
 {%- for c in contribuer.cartes %}
-      <div class="col-12 col-md-4" data-editable="array-item">
+      <div class="col-12 col-md-4" data-editable="array-item"{% if pages_masquees.pages contains c.lien.page %} style="display:none"{% endif %}>
         <div class="fr-card" style="border-top:3px solid var(--bg)">
           <div class="fr-card-icon"><i class="fas {{ c.icone }}"></i></div>
           <h4 data-editable="text" data-type="span" data-prop="titre">{{ c.titre }}</h4>
@@ -124,7 +126,9 @@ section: communaute
 
 <div class="fr-sticky">
   <span data-editable="text" data-type="span" data-prop="barre.texte">{{ barre.texte }}</span>
+{%- unless pages_masquees.pages contains barre.bouton.page %}
   <a href="{{ barre.bouton.page | page_url: lang }}" class="btn-orange" style="font-size:12px;padding:7px 18px" data-editable="text" data-type="span" data-prop="barre.bouton.texte">{{ barre.bouton.texte }}</a>
+{%- endunless %}
 </div>
 
 {% include "partials/footer.liquid" %}

@@ -21,6 +21,7 @@
           <li style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.4;pointer-events:none;color:rgba(255,255,255,.4);padding-bottom:2px">{{ it.label }}</li>
 {%- elsif it.heading == "next" %}
           <li style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.4;pointer-events:none;color:rgba(255,255,255,.4);padding-top:6px;padding-bottom:2px">{{ it.label }}</li>
+{%- elsif pages_masquees.pages contains it.page %}
 {%- else %}
           <li><a href="{{ it.page | page_url: lang }}">{{ it.label }}</a></li>
 {%- endif %}
@@ -30,9 +31,12 @@
 {%- endfor %}
       <div class="col-6 col-md-2 fr-foot-col">
 {%- for blk in f.last_col %}
+{%- assign visibles = 0 %}{% for it in blk.items %}{% unless pages_masquees.pages contains it.page %}{% assign visibles = visibles | plus: 1 %}{% endunless %}{% endfor %}
+{%- if visibles == 0 %}{% continue %}{% endif %}
         <h6{% unless forloop.first %} style="margin-top:20px"{% endunless %}>{{ blk.title }}</h6>
         <ul>
 {%- for it in blk.items %}
+{%- if pages_masquees.pages contains it.page %}{% continue %}{% endif %}
           <li><a href="{{ it.page | page_url: lang }}">{{ it.label }}</a></li>
 {%- endfor %}
         </ul>
@@ -40,7 +44,7 @@
       </div>
     </div>
     <div class="fr-foot-bottom">
-      <p>{{ f.copyright }}</p>
+      <p>{{ f.copyright }} · <a href="{{ 'mentions-legales' | page_url: lang }}" style="color:inherit">{{ f.mentions }}</a></p>
       <div class="fr-social">
         <a href="https://www.linkedin.com/company/firsi" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://www.youtube.com/@FondationIbnRochd" aria-label="YouTube"><i class="fab fa-youtube"></i></a>

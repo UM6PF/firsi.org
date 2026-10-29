@@ -47,11 +47,11 @@ chiffres:
     apres: Community
   texte: A growing number of young talents have joined the foundation to bring their ambitions to life and contribute to Africa's development.
   elements:
-    - nombre: 4 546
+    - nombre: 4 910
       libelle: students supported
     - nombre: 59%
       libelle: female students supported
-    - nombre: "14"
+    - nombre: "20"
       libelle: nationalities represented
     - nombre: "4"
       libelle: active programs
@@ -79,18 +79,18 @@ programmes:
       image_alt: UM6P
       lien_texte: Discover
       page: programme-um6p
-    - titre: French Engineering & Business Schools
+    - titre: French Engineering Schools
       texte: Comprehensive support to join France's top engineering schools.
       badge: GEF
       image: /assets/img/19-fondationibnrochd-min.jpg
       image_alt: French Engineering Schools
       lien_texte: Discover
       page: programme-gef
-    - titre: Moroccan Engineering & Business Schools
-      texte: Support to join Morocco's top engineering and management schools.
+    - titre: Moroccan Engineering Schools
+      texte: Support to join Morocco's top engineering schools.
       badge: GEM
-      image: /assets/img/hem-business-school.jpg
-      image_alt: Moroccan Engineering Schools
+      image: /assets/img/ecole-mohammadia-ingenieurs-rabat.jpg
+      image_alt: École Mohammadia d'Ingénieurs, Rabat
       lien_texte: Discover
       page: programme-gem
 temoignages_section:
@@ -108,7 +108,7 @@ temoignages:
   - nom: Soufiane Sondali
     photo: /assets/img/temoignage-soufiane.jpg
     citation: There was maybe a path that could take me very far. I just had to give everything so I'd have no regrets later.
-    ecole: École Nationale des Ponts et Chaussées
+    ecole: École nationale des ponts et chaussées
     origine: Agadir
   - nom: Nada Bezza
     photo: /assets/img/temoignage-nada.jpg

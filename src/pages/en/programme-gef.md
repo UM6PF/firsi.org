@@ -1,19 +1,19 @@
 ---
 layout: pages/programme.liquid
-title: GEF — French Engineering & Business Schools | FIRSI
+title: GEF — French Engineering Schools | FIRSI
 seo:
   description: "FIRSI's GEF program: scholarships and mentoring for Moroccan CPGE graduates admitted to one of 19 partner engineering schools in France, with full financial support."
 breadcrumb:
   parents:
     - label: Our Programs
       page: programme-lycee
-  current: GEF — French Engineering & Business Schools
+  current: GEF — French Engineering Schools
 hero:
   icone: fa-flag
-  etiquette: GEF — French Engineering & Business Schools
+  etiquette: GEF — French Engineering Schools
   titre:
     avant: French
-    valeur: Engineering & Business Schools
+    valeur: Engineering Schools
     apres: ""
   texte: "FIRSI supports top CPGE graduates from Morocco on their way to France's leading engineering schools — with full financial support and personalized mentoring throughout their studies."
   boutons:
@@ -43,7 +43,7 @@ cartes:
     texte: "Tuition (up to MAD 30,000), living expenses (MAD 60,000), settling-in costs (MAD 6,000), and round-trip France-Morocco airfare (MAD 4,000). Paid in three installments over three years."
   - icone: fa-chart-bar
     titre: The Program in Numbers
-    texte: "392 active GEF Scholars in 2025-2026, 90% of them from LM6E. 1,533 alumni in the FIRSI network. 19 eligible engineering schools."
+    texte: "251 active GEF Scholars in 2026-2027, 85% of them from LM6E. 1,706 alumni in the FIRSI network. 19 eligible engineering schools."
 bandeau:
   surtitre: Eligible Schools
   texte:

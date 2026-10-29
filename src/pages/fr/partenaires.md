@@ -42,14 +42,10 @@ groupes:
         lieu: Grenoble INP
         logo: /assets/img/inp-grenoble.png
         logo_alt: ENSIMAG
-      - nom: École des Ponts ParisTech
+      - nom: École nationale des ponts et chaussées
         lieu: Paris
         logo: /assets/img/logo-ecole-des-ponts.png
-        logo_alt: École des Ponts ParisTech
-      - nom: Phelma Grenoble
-        lieu: Grenoble INP
-        logo: /assets/img/logo-phelma.jpg
-        logo_alt: Phelma Grenoble
+        logo_alt: École nationale des ponts et chaussées
       - nom: Mines de Nancy
         lieu: Université de Lorraine
         logo: /assets/img/logo-mines-nancy.png
@@ -68,6 +64,14 @@ groupes:
         lieu: Benguérir
         logo: /assets/img/logo-lycee-mohammed-vi.png
         logo_alt: Lycée Mohammed VI d'Excellence
+      - nom: Lycée Mohammed VI d'Excellence
+        lieu: Rabat
+        logo: /assets/img/logo-lycee-mohammed-vi.png
+        logo_alt: Lycée Mohammed VI d'Excellence
+      - nom: Lycée Mohammed VI d'Excellence
+        lieu: Laâyoune
+        logo: /assets/img/logo-lycee-mohammed-vi.png
+        logo_alt: Lycée Mohammed VI d'Excellence
 cta:
   titre:
     avant: Vous souhaitez devenir
@@ -75,5 +79,5 @@ cta:
     apres: "?"
   texte: Rejoignez notre réseau d'établissements partenaires et contribuez à la formation des talents de demain.
   bouton: Devenir partenaire
-  page: nous-soutenir
+  page: contact
 ---

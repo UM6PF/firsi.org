@@ -21,8 +21,8 @@ reseau:
     valeur: Around the World
     apres: ""
   chiffres:
-    - nombre: 1 254
-      libelle: alumni in the network
+    - nombre: 1 987
+      libelle: alumni in the network (GEF and GEM)
     - nombre: "16"
       libelle: countries represented
     - nombre: 59%
@@ -33,7 +33,7 @@ carte:
   aide: Double-click to zoom · Drag
   legende: Dot size proportional to number of alumni · Hover or click
   titre_top5: Top 5 Countries
-  avertissement: Provisional data for illustration purposes — to be replaced with actual figures.
+  avertissement: ""
   # Texts shown by the map script (tooltip on hover, card on click).
   infobulle_suffixe: " alumni"
   fiche_suffixe: "% of the alumni network"
@@ -109,12 +109,6 @@ contribuer:
       lien:
         texte: Offer to Speak
         page: contact
-    - icone: fa-briefcase
-      titre: Share a Job Opening
-      texte: Hiring? Share your internship and job openings with a talent pool from the top engineering schools.
-      lien:
-        texte: Post an Opening
-        page: contact
     - icone: fa-microphone-alt
       titre: Share Your Story
       texte: Tell us about your journey. Take part in our profile series or our Inspiring Journeys events to inspire the next generation of Scholars.
@@ -127,12 +121,6 @@ contribuer:
       lien:
         texte: Support FIRSI
         page: nous-soutenir
-    - icone: fa-user-plus
-      titre: Refer a Candidate
-      texte: Know a deserving high school or university student? Recommend them to FIRSI. Alumni referrals are one of our best ways of discovering talent.
-      lien:
-        texte: Refer a Candidate
-        page: contact
 barre:
   texte: FIRSI Alumni Network
   bouton:
