@@ -11,7 +11,7 @@ hero:
     apres: ""
 sections:
   - titre: Publisher
-    texte: "<p>Ibn Rochd Foundation for Sciences and Innovation (FIRSI), affiliated with Mohammed VI Polytechnic University, Benguerir, Morocco.</p><p>Contact: <a href=\"mailto:contact@firsi.org\">contact@firsi.org</a></p>"
+    texte: "<p>Ibn Rochd Foundation for Sciences and Innovation (FIRSI), affiliated with Mohammed VI Polytechnic University, Benguerir, Morocco.</p><p>Registered office: Lot 660, Hay Moulay Rachid, Ben Guerir, Morocco</p><p>Contact: <a href=\"mailto:contact@firsi.org\">contact@firsi.org</a></p>"
   - titre: Hosting
     texte: "<p>CloudCannon Limited (New Zealand) — <a href=\"https://cloudcannon.com\" target=\"_blank\" rel=\"noopener\">cloudcannon.com</a></p>"
   - titre: Photo Credits

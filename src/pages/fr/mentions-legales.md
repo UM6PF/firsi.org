@@ -11,7 +11,7 @@ hero:
     apres: ""
 sections:
   - titre: Éditeur du site
-    texte: "<p>Fondation Ibn Rochd pour les Sciences et l'Innovation (FIRSI), adossée à l'Université Mohammed VI Polytechnique, Benguérir, Maroc.</p><p>Contact : <a href=\"mailto:contact@firsi.org\">contact@firsi.org</a></p>"
+    texte: "<p>Fondation Ibn Rochd pour les Sciences et l'Innovation (FIRSI), adossée à l'Université Mohammed VI Polytechnique, Benguérir, Maroc.</p><p>Siège social : Lot 660, Hay Moulay Rachid, Ben Guerir, Maroc</p><p>Contact : <a href=\"mailto:contact@firsi.org\">contact@firsi.org</a></p>"
   - titre: Hébergement
     texte: "<p>CloudCannon Limited (Nouvelle-Zélande) — <a href=\"https://cloudcannon.com\" target=\"_blank\" rel=\"noopener\">cloudcannon.com</a></p>"
   - titre: Crédits photographiques
