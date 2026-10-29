@@ -75,5 +75,5 @@ cta:
     apres: "?"
   texte: Join our network of partner institutions and help shape the talents of tomorrow.
   bouton: Become a Partner
-  page: nous-soutenir
+  page: contact
 ---

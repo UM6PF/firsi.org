@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: pages/nous-soutenir.liquid
 title: Support Us | FIRSI
 seo:
