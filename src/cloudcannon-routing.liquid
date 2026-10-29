@@ -1,11 +1,23 @@
 ---
-# Règles de routage de l'hébergement CloudCannon : redirections 301 (prototype et ancien site firsi.org), page 404.
+# Règles de routage de l'hébergement CloudCannon : redirections 301 (prototype et ancien site firsi.org), page 404, en-têtes de sécurité.
 # Le champ « from » est une expression régulière appliquée à l'adresse entière.
 # Référence : https://cloudcannon.com/documentation/articles/configure-a-404-page/
 permalink: /_cloudcannon/routing.json
 eleventyExcludeFromCollections: true
 ---
 {
+  "headers": [
+    {
+      "match": "/.*",
+      "headers": [
+        { "name": "Strict-Transport-Security", "value": "max-age=31536000" },
+        { "name": "X-Content-Type-Options", "value": "nosniff" },
+        { "name": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "name": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=()" },
+        { "name": "Content-Security-Policy", "value": "frame-ancestors 'self' https://app.cloudcannon.com https://*.cloudcannon.com; base-uri 'self'; form-action 'self'; object-src 'none'" }
+      ]
+    }
+  ],
   "routes": [
 {%- for r in redirections %}
     { "from": {{ r.from | json }}, "to": {{ r.to | json }}, "status": 301 },
