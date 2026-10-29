@@ -4,6 +4,7 @@ title: Legal Notice | FIRSI
 seo:
   description: "Legal notice for the Ibn Rochd Foundation for Sciences and Innovation website: publisher, hosting, and photo credits."
 hero:
+  icone: fa-balance-scale
   etiquette: Legal Information
   titre:
     avant: Legal
