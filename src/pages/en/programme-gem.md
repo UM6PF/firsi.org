@@ -9,7 +9,7 @@ breadcrumb:
       page: programme-lycee
   current: GEM — Moroccan Engineering Schools
 hero:
-  icone: fa-star-and-crescent
+  icone: fa-user-graduate
   etiquette: GEM — Moroccan Engineering Schools
   titre:
     avant: Moroccan
