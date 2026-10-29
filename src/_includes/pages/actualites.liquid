@@ -97,18 +97,30 @@ section: actualites
 </div>
 
 <script>
-// Filtres combinés : catégorie et année.
+// Filtres combinés et synchronisés : chaque groupe ne propose que les valeurs présentes avec le filtre choisi dans l'autre groupe.
 var filtres = { cat: 'tous', annee: 'toutes' };
+var cartes = Array.prototype.slice.call(document.querySelectorAll('.actu-card'));
+function correspond(card, cat, annee) {
+  return (cat === 'tous' || card.dataset.cat === cat) && (annee === 'toutes' || card.dataset.annee === annee);
+}
+function actualiser() {
+  cartes.forEach(function(card) { card.classList.toggle('hidden', !correspond(card, filtres.cat, filtres.annee)); });
+  document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    var g = btn.dataset.groupe, v = btn.dataset.valeur;
+    var cat = g === 'cat' ? v : filtres.cat, annee = g === 'annee' ? v : filtres.annee;
+    var nb = cartes.filter(function(card) { return correspond(card, cat, annee); }).length;
+    var compteur = btn.querySelector('.filter-count');
+    if (compteur) compteur.textContent = nb;
+    btn.style.display = (nb === 0 && v !== 'tous' && v !== 'toutes') ? 'none' : '';
+  });
+}
 document.querySelectorAll('.filter-btn').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var groupe = btn.dataset.groupe;
     document.querySelectorAll('.filter-btn[data-groupe="' + groupe + '"]').forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
     filtres[groupe] = btn.dataset.valeur;
-    document.querySelectorAll('.actu-card').forEach(function(card) {
-      var ok = (filtres.cat === 'tous' || card.dataset.cat === filtres.cat) && (filtres.annee === 'toutes' || card.dataset.annee === filtres.annee);
-      card.classList.toggle('hidden', !ok);
-    });
+    actualiser();
   });
 });
 </script>
