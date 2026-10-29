@@ -2,7 +2,7 @@
 layout: pages/pret-etudiant.liquid
 title: Prêt étudiant | FIRSI
 seo:
-  description: "Le prêt étudiant FIRSI aide les étudiants de l'UM6P à financer scolarité et vie sur le campus : intérêts pris en charge, remboursement après le diplôme."
+  description: "Le prêt étudiant FIRSI aide les étudiants de l'UM6P à financer scolarité et vie sur le campus : taux d'intérêt préférentiel, remboursement après le diplôme."
 breadcrumb:
   parents:
     - label: Nos programmes
@@ -24,7 +24,7 @@ dispositif:
     apres: ""
   paragraphes:
     - texte: Lancé en 2023, le prêt étudiant FIRSI s'adresse aux étudiants inscrits à l'UM6P dont la situation financière nécessite un soutien complémentaire pour couvrir les frais de scolarité et de vie. Il vient compléter la bourse pour ceux qui en bénéficient déjà, ou s'y substituer pour ceux qui n'y sont pas éligibles.
-    - texte: "Son atout majeur : la FIRSI prend en charge intégralement les intérêts. L'étudiant rembourse uniquement le capital emprunté, après ses études — sans aucune charge pendant son cursus ni dans l'année suivant l'obtention de son diplôme."
+    - texte: "Son atout majeur : un taux d'intérêt préférentiel. L'étudiant rembourse après ses études — sans aucune charge pendant son cursus ni dans l'année suivant l'obtention de son diplôme."
   chiffres:
     - valeur: "334"
       texte: bénéficiaires depuis le lancement du dispositif en 2023
@@ -32,16 +32,16 @@ dispositif:
     - valeur: "19"
       texte: programmes UM6P éligibles sur l'ensemble des pôles de l'université
       accent: true
-    - valeur: 0%
-      texte: d'intérêts à la charge de l'étudiant — pris en charge intégralement par la FIRSI
+    - valeur: Taux préférentiel
+      texte: d'intérêt accordé à l'étudiant
       accent: false
 cartes:
   - icone: fa-user-graduate
     titre: Qui peut en bénéficier
     texte: Tous les étudiants inscrits dans les programmes de formation initiale de l'UM6P, boursiers ou non, qui font face à un besoin de financement complémentaire pour leur scolarité et leur vie sur le campus.
   - icone: fa-hand-holding-usd
-    titre: Un prêt sans intérêts
-    texte: La FIRSI prend en charge intégralement les intérêts. Aucun remboursement pendant les études, ni dans l'année suivant le diplôme. Remboursement du capital sur 10 ans maximum.
+    titre: Un prêt à taux préférentiel
+    texte: Un taux d'intérêt préférentiel. Aucun remboursement pendant les études, ni dans l'année suivant le diplôme. Remboursement du capital sur 10 ans maximum.
   - icone: fa-shield-alt
     titre: Un circuit sécurisé
     texte: "Le dispositif repose sur un circuit sécurisé : les fonds sont versés directement à l'UM6P pour la scolarité et sur carte étudiante par tranches pour les frais de vie. L'argent ne transite jamais par le compte personnel de l'étudiant."
