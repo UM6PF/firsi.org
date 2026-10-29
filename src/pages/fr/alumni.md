@@ -33,7 +33,7 @@ carte:
   aide: Double-clic pour zoomer · Glissez
   legende: Taille du point proportionnelle au nombre d'alumni · Survolez ou cliquez
   titre_top5: Top 5 pays
-  avertissement: Données provisoires à titre d'illustration — à remplacer par les chiffres réels.
+  avertissement: ""
   # Textes affichés par le script de la carte (infobulle au survol, fiche au clic).
   infobulle_suffixe: " alumni"
   fiche_suffixe: "% du réseau alumni"
@@ -109,12 +109,6 @@ contribuer:
       lien:
         texte: Je propose mon intervention
         page: contact
-    - icone: fa-briefcase
-      titre: Partager une offre d'emploi
-      texte: Vous recrutez ? Diffusez vos offres de stage et d'emploi auprès d'un vivier de talents issus des meilleures écoles d'ingénieurs.
-      lien:
-        texte: Publier une offre
-        page: contact
     - icone: fa-microphone-alt
       titre: Témoigner
       texte: Racontez votre trajectoire. Participez à notre série de portraits ou à nos événements Parcours inspirants pour inspirer les prochaines promotions.
@@ -127,12 +121,6 @@ contribuer:
       lien:
         texte: Soutenir la FIRSI
         page: nous-soutenir
-    - icone: fa-user-plus
-      titre: Parrainer un candidat
-      texte: Vous connaissez un lycéen ou étudiant méritant ? Recommandez-le à la FIRSI. Le cooptation alumni est l'un de nos meilleurs vecteurs de découverte de talents.
-      lien:
-        texte: Recommander un candidat
-        page: contact
 barre:
   texte: Réseau alumni FIRSI
   bouton:

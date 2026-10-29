@@ -43,7 +43,7 @@ cartes:
     texte: "The GEM Scholarship provides MAD 6,334 per year, paid over 3 years. It is suspended in cases of grade repetition, gap years, dropping out, or changing programs."
   - icone: fa-chart-bar
     titre: The Program in Numbers
-    texte: "183 GEM Scholars in 2026-2027, including 74 new Scholars. 281 alumni in the FIRSI network."
+    texte: "183 GEM Scholars in 2026-2027, 52% of them women, including 74 new Scholars. 281 alumni in the FIRSI network."
 cta:
   style: clair
   surtitre: Application
