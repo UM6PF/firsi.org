@@ -19,7 +19,7 @@ groupes:
   - surtitre: France
     titre:
       avant: French
-      valeur: Engineering & Business Schools
+      valeur: Engineering Schools
       apres: ""
     etablissements:
       - nom: École Polytechnique
@@ -42,14 +42,10 @@ groupes:
         lieu: Grenoble INP
         logo: /assets/img/inp-grenoble.png
         logo_alt: ENSIMAG
-      - nom: École des Ponts ParisTech
+      - nom: École nationale des ponts et chaussées
         lieu: Paris
         logo: /assets/img/logo-ecole-des-ponts.png
-        logo_alt: École des Ponts ParisTech
-      - nom: Phelma Grenoble
-        lieu: Grenoble INP
-        logo: /assets/img/logo-phelma.jpg
-        logo_alt: Phelma Grenoble
+        logo_alt: École nationale des ponts et chaussées
       - nom: Mines de Nancy
         lieu: Université de Lorraine
         logo: /assets/img/logo-mines-nancy.png
@@ -66,6 +62,14 @@ groupes:
         logo_alt: UM6P
       - nom: Mohammed VI Excellence High School
         lieu: Benguerir
+        logo: /assets/img/logo-lycee-mohammed-vi.png
+        logo_alt: Mohammed VI Excellence High School
+      - nom: Mohammed VI Excellence High School
+        lieu: Rabat
+        logo: /assets/img/logo-lycee-mohammed-vi.png
+        logo_alt: Mohammed VI Excellence High School
+      - nom: Mohammed VI Excellence High School
+        lieu: Laayoune
         logo: /assets/img/logo-lycee-mohammed-vi.png
         logo_alt: Mohammed VI Excellence High School
 cta:

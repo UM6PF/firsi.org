@@ -43,7 +43,7 @@ cartes:
     texte: "Frais de scolarité (jusqu'à 30 000 MAD), frais de vie (60 000 MAD), frais d'installation (6 000 MAD) et billet A/R France-Maroc (4 000 MAD). Versée en 3 tranches sur 3 ans."
   - icone: fa-chart-bar
     titre: Le programme en chiffres
-    texte: "392 boursiers GEF actifs en 2025-2026, dont 90% issus du LM6E. 1 533 alumni dans le réseau FIRSI. 19 grandes écoles d'ingénieurs éligibles."
+    texte: "251 boursiers GEF actifs en 2026-2027, dont 85% issus du LM6E. 1 706 alumni dans le réseau FIRSI. 19 grandes écoles d'ingénieurs éligibles."
 bandeau:
   surtitre: Écoles éligibles
   texte:

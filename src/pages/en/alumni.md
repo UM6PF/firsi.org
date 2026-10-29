@@ -21,8 +21,8 @@ reseau:
     valeur: Around the World
     apres: ""
   chiffres:
-    - nombre: 1 254
-      libelle: alumni in the network
+    - nombre: 1 987
+      libelle: alumni in the network (GEF and GEM)
     - nombre: "16"
       libelle: countries represented
     - nombre: 59%
