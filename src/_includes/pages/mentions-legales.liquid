@@ -1,0 +1,28 @@
+---
+# Mentions légales : éditeur, hébergeur, crédits. Composants existants uniquement (bannière, textes, pied de page).
+layout: layouts/base.liquid
+section: ""
+---
+{% include "partials/header.liquid" %}
+<section class="fr-hero">
+  <div class="container">
+    <div class="fr-hero-tag"><i class="fas fa-balance-scale"></i> <editable-text data-type="span" data-prop="hero.etiquette">{{ hero.etiquette }}</editable-text></div>
+    <h1 class="heading-xl mb-3">{% include "partials/hl.liquid", t: hero.titre, prop: "hero.titre", tag: "strong" %}</h1>
+    <div class="fr-ribbon"></div>
+  </div>
+</section>
+<div class="container py-5">
+  <div class="row">
+    <style>.fr-mentions a { color: var(--orange); }</style>
+    <div class="col-12 col-lg-8 fr-mentions" data-editable="array" data-prop="sections">
+{%- for s in sections %}
+      <div class="mb-5" data-editable="array-item">
+        <p class="fr-label" data-editable="text" data-type="span" data-prop="titre">{{ s.titre }}</p>
+        <div style="font-size:14px;color:var(--muted);line-height:1.8" data-editable="text" data-type="block" data-prop="texte">{{ s.texte }}</div>
+      </div>
+{%- endfor %}
+    </div>
+  </div>
+</div>
+{% include "partials/footer.liquid" %}
+{% include "partials/scripts.liquid" %}

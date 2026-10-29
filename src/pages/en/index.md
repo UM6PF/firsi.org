@@ -89,8 +89,8 @@ programmes:
     - titre: Moroccan Engineering Schools
       texte: Support to join Morocco's top engineering schools.
       badge: GEM
-      image: /assets/img/hem-business-school.jpg
-      image_alt: Moroccan Engineering Schools
+      image: /assets/img/ecole-mohammadia-ingenieurs-rabat.jpg
+      image_alt: École Mohammadia d'Ingénieurs, Rabat
       lien_texte: Discover
       page: programme-gem
 temoignages_section:

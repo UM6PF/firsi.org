@@ -68,7 +68,8 @@
         { "title": "Contact", "items": [ { "page": "contact", "label": "Nous contacter" } ] },
         { "title": "Nous soutenir", "items": [ { "page": "nous-soutenir", "label": "Faire un don" }, { "page": "nous-soutenir", "label": "Devenir mécène" } ] }
       ],
-      "copyright": "2026 © Tous droits réservés — FIRSI"
+      "copyright": "2026 © Tous droits réservés — FIRSI",
+      "mentions": "Mentions légales"
     }
   },
   "en": {
@@ -140,7 +141,8 @@
         { "title": "Contact", "items": [ { "page": "contact", "label": "Get in Touch" } ] },
         { "title": "Support Us", "items": [ { "page": "nous-soutenir", "label": "Give" }, { "page": "nous-soutenir", "label": "Become a Partner" } ] }
       ],
-      "copyright": "2026 © All rights reserved — FIRSI"
+      "copyright": "2026 © All rights reserved — FIRSI",
+      "mentions": "Legal Notice"
     }
   }
 }

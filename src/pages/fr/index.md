@@ -90,8 +90,8 @@ programmes:
     - titre: Grandes écoles d'ingénieurs marocaines
       texte: Accompagnement pour intégrer les grandes écoles d'ingénieurs marocaines.
       badge: GEM
-      image: /assets/img/hem-business-school.jpg
-      image_alt: Grandes écoles d'ingénieurs marocaines
+      image: /assets/img/ecole-mohammadia-ingenieurs-rabat.jpg
+      image_alt: École Mohammadia d'Ingénieurs, Rabat
       lien_texte: Découvrir
       page: programme-gem
 temoignages_section:
